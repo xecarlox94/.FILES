@@ -1,5 +1,5 @@
 
-source ./updt_upgr.sh
+source ~/.scripts/updt_upgr.sh
 
 
 

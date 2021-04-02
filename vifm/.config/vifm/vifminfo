@@ -30,51 +30,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xecarlox/.mydotfiles/scripts
-	..
-0
-d/home/xecarlox/.mydotfiles
-	zsh
-7
-d/home/xecarlox/.mydotfiles/zsh
-	.zshrc
-1
-d/home/xecarlox/.mydotfiles
-	scripts
-4
-d/home/xecarlox/.mydotfiles/scripts
-	.commit.sh
-1
-d/home/xecarlox/.mydotfiles
-	vim
-6
-d/home/xecarlox/.mydotfiles/vim
-	newfolder
-1
-d/home/xecarlox/.mydotfiles
-	scripts
-4
-d/home/xecarlox/.mydotfiles/scripts
-	.scripts
-1
-d/home/xecarlox/.mydotfiles/scripts/.scripts
-	.sdir.sh
-3
-d/home/xecarlox/.mydotfiles/scripts
-	.scripts
-1
-d/home/xecarlox/.mydotfiles
-	scripts
-4
-d/home/xecarlox/.mydotfiles/scripts
-	.scripts
-1
-d/home/xecarlox/.mydotfiles
-	vim
-6
-d/home/xecarlox/.mydotfiles/vim
-	.vimrc
-3
 d/home/xecarlox/.mydotfiles
 	nvim
 3
@@ -330,6 +285,51 @@ d/home/xecarlox94/.FILES/scripts
 d/home/xecarlox94/.FILES/scripts/.scripts
 	virtmanager.sh
 7
+d/home/xecarlox94/.scripts
+	init_python.sh
+4
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	init_python.sh
+4
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94
+	.scripts
+11
+d/home/xecarlox94/.scripts
+	commit.sh
+1
+d/home/xecarlox94
+	.scripts
+11
+d/home/xecarlox94/.scripts
+	init_install.sh
+3
+d/home/xecarlox94
+	.scripts
+11
+d/home/xecarlox94/.scripts
+	updt_upgr.sh
+7
+d/home/xecarlox94
+	.scripts
+11
+d/home/xecarlox94/.scripts
+	virtmanager.sh
+8
 d
 
 # Right window history (oldest to newest):
@@ -456,7 +456,7 @@ p.vimrc
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xecarlox94/.vifm-Trash-1000/000_stow.txt
+""/home/xecarlox94/.scripts/init_python.sh
 
 # Directory stack (oldest to newest):
 

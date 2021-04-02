@@ -1,3 +1,4 @@
+#!bin/sh
 
 PTHON_PACKGS=(pandas jupyterlab)
 
@@ -6,4 +7,3 @@ do
 	pip3 install "$PACKG"
 done
 
-source ./stow.sh
