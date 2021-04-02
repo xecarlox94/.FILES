@@ -11,20 +11,87 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/case
+~MSle0~/set_ma
+
+# Last Substitute Search Pattern:
+~MSle0&self.m_df
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
+:wq
+|2,0,1617367655,,"wq"
 :q
-|2,0,1616516324,,"q"
+|2,0,1617367639,,"q"
+:[43]j
+|2,0,1617305028,,"[43]j"
 :w
-|2,0,1616516315,,"w"
+|2,0,1617304751,,"w"
+:e .gdir.sh
+|2,0,1617304701,,"e .gdir.sh"
+:e ../scripts/.gdir.sh
+|2,0,1616768072,,"e ../scripts/.gdir.sh"
+:buffers
+|2,0,1616768011,,"buffers"
+:e ../scripts/
+|2,0,1616767991,,"e ../scripts/"
+:-5j
+|2,0,1616767932,,"-5j"
+:100
+|2,0,1616688260,,"100"
+:50
+|2,0,1616688153,,"50"
+:30
+|2,0,1616687857,,"30"
+:%s/self.m_df/self.matches_df/g
+|2,0,1616687849,,"%s/self.m_df/self.matches_df/g"
+:s/self.m_df/self.matches_df/g
+|2,0,1616687813,,"s/self.m_df/self.matches_df/g"
+:shell
+|2,0,1616686850,,"shell"
+:62,0d
+|2,0,1616619329,,"62,0d"
+:14j
+|2,0,1616619208,,"14j"
+:set wrap
+|2,0,1616619180,,"set wrap"
+:b1
+|2,0,1616619175,,"b1"
+:e ~/.vimrc
+|2,0,1616619157,,"e ~/.vimrc"
+:set linebreak!
+|2,0,1616619121,,"set linebreak!"
+:set linebreak
+|2,0,1616619111,,"set linebreak"
+:50j
+|2,0,1616619045,,"50j"
+:10j
+|2,0,1616593947,,"10j"
+:10g
+|2,0,1616593940,,"10g"
+:-10j
+|2,0,1616593928,,"-10j"
+:15j
+|2,0,1616593914,,"15j"
+:h vimrc
+|2,0,1616593205,,"h vimrc"
+:version
+|2,0,1616593068,,"version"
+:h
+|2,0,1616526287,,"h"
+:-13j
+|2,0,1616526015,,"-13j"
+:options
+|2,0,1616525856,,"options"
+:h scrolloff
+|2,0,1616525675,,"h scrolloff"
+:%source
+|2,0,1616525207,,"%source"
+:set relativenumber
+|2,0,1616525141,,"set relativenumber"
 :e ~/.gitconfig
 |2,0,1616516292,,"e ~/.gitconfig"
-:wq
-|2,0,1616514787,,"wq"
 :e parser.c
 |2,0,1615917287,,"e parser.c"
 :e 
@@ -51,74 +118,26 @@ $
 |2,0,1615576570,,"240"
 :213
 |2,0,1615575710,,"213"
-:shell
-|2,0,1615574231,,"shell"
 :190
 |2,0,1615574149,,"190"
-:220
-|2,0,1615573470,,"220"
-:INT
-|2,0,1615573385,,"INT"
-:80
-|2,0,1615573050,,"80"
-:500
-|2,0,1615565995,,"500"
-:290
-|2,0,1615560049,,"290"
-:170
-|2,0,1615559863,,"170"
-:260
-|2,0,1615559629,,"260"
-:50
-|2,0,1615559585,,"50"
-:1000
-|2,0,1615559119,,"1000"
-:93
-|2,0,1615559106,,"93"
-:95
-|2,0,1615559044,,"95"
-:174
-|2,0,1615559032,,"174"
-:92
-|2,0,1615558999,,"92"
-:88
-|2,0,1615558946,,"88"
-:172
-|2,0,1615558900,,"172"
-:87
-|2,0,1615558828,,"87"
-:70
-|2,0,1615558792,,"70"
-:160
-|2,0,1615557370,,"160"
-:/SMCOL
-|2,0,1615557280,,"/SMCOL"
-:w:shell
-|2,0,1615487157,,"w:shell"
-:w!
-|2,0,1615487339,,"w!"
-:150
-|2,0,1615494107,,"150"
-:100
-|2,0,1615494081,,"100"
-:145
-|2,0,1615493172,,"145"
-:141
-|2,0,1615493050,,"141"
-:set number!
-|2,0,1615491123,,"set number!"
-::w!
-|2,0,1615487424,,":w!"
-:w!q
-|2,0,1615487419,,"w!q"
-:62
-|2,0,1615486570,,"62"
-:74
-|2,0,1615486040,,"74"
-:ws
-|2,0,1615485767,,"ws"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1616767991,,"@$"
+?/set_ma
+|2,1,1616688104,47,"set_ma"
+?/set_matches_df()
+|2,1,1616687985,47,"set_matches_df()"
+? self.m_df
+|2,1,1616687849,,"self.m_df"
+? \<m_df\>
+|2,1,1616687718,,"\\<m_df\\>"
+? \<self\>
+|2,1,1616687666,,"\\<self\\>"
+?/self.m_df
+|2,1,1616686968,47,"self.m_df"
+?/color
+|2,1,1616525911,47,"color"
 ?/methods
 |2,1,1615579471,47,"methods"
 ?/printE
@@ -185,8 +204,6 @@ $
 |2,1,1615557280,,"SMCOL"
 ?/SEMI
 |2,1,1615557207,47,"SEMI"
-? @$
-|2,1,1615491182,,"@$"
 ? EOF
 |2,1,1615314471,,"EOF"
 ? \<https\>
@@ -205,8 +222,6 @@ $
 |2,1,1614118698,,"vc2"
 ? cv2
 |2,1,1614118683,,"cv2"
-? cv
-|2,1,1614118675,,"cv"
 
 # Expression History (newest to oldest):
 
@@ -216,270 +231,487 @@ $
 
 # Registers:
 "0	LINE	0
-	[user]
-		email = jf94.uk@gmail.com
-		name = xecarlox94
-|3,0,0,1,3,0,1616516306,"[user]","	email = jf94.uk@gmail.com","	name = xecarlox94"
-""1	LINE	0
-	
-|3,1,1,1,1,0,1616516311,""
+	endif
+|3,0,0,1,1,0,1616767995,"endif"
+""1	BLOCK	0
+	.
+	.
+	.
+|3,1,1,2,3,0,1617367652,".",".","."
 "2	LINE	0
-	PROMPT='$fg[cyan]%m:$fg[yellow] %T %B%30<..<%~%b %(!.#.>) '
-|3,0,2,1,1,0,1616514782,"PROMPT='$fg[cyan]%m:$fg[yellow] %T %B%30<..<%~%b %(!.#.>) '"
+	~/.scripts/sdir.sh
+|3,0,2,1,1,0,1617304791,"~/.scripts/sdir.sh"
 "3	LINE	0
-	# Created by newuser for 5.8
-|3,0,3,1,1,0,1616514743,"# Created by newuser for 5.8"
+	~/.scripts/sdir.sh
+	alias sdir='source ~/.scripts/sdir.sh'
+|3,0,3,1,2,0,1617304735,"~/.scripts/sdir.sh","alias sdir='source ~/.scripts/sdir.sh'"
 "4	LINE	0
-	bindkey -v
-|3,0,4,1,1,0,1616514741,"bindkey -v"
+	[1:59 PM]dd
+|3,0,4,1,1,0,1617304734,"[1:59 PM]dd"
 "5	LINE	0
-	set number
-|3,0,5,1,1,0,1616342710,"set number"
+	endif
+|3,0,5,1,1,0,1616767892,"endif"
 "6	LINE	0
-	eval "$(starship init zsh)"
-|3,0,6,1,1,0,1615917080,"eval \"$(starship init zsh)\""
+	        # converting table 
+|3,0,6,1,1,0,1616689074,"        # converting table "
 "7	LINE	0
-		char * symb = "null";
-|3,0,7,1,1,0,1615579205,"	char * symb = \"null\";"
+	
+|3,0,7,1,1,0,1616688655,""
 "8	LINE	0
-		}
-|3,0,8,1,1,0,1615579024,"	}"
+	        self.init_table()
+|3,0,8,1,1,0,1616688559,"        self.init_table()"
 "9	LINE	0
-		if (symb == SMCOL)
-		{
-|3,0,9,1,2,0,1615579021,"	if (symb == SMCOL)","	{"
+	    def apply_division_season_match(self, match):
+	        self.updateTable(match)
+	
+	        return self.get_data(match)
+|3,0,9,1,4,0,1616688255,"    def apply_division_season_match(self, match):","        self.updateTable(match)","","        return self.get_data(match)"
 "w	CHAR	0
-	€kD€kD€kD€kD€kD€kD€kD€kD€kD€ýV€ýU€%i€kD€kh€kh€kd€kd€kd€ýV€ýV
-|3,0,32,0,1,0,1615578056,"€kD€kD€kD€kD€kD€kD€kD€kD€kD€ýV€ýU€%i€kD€kh€kh€kd€kd€kd€ýV€ýV"
+	i.€kd
+|3,0,32,0,1,0,1616767807,"i.€kd"
 "-	CHAR	0
-	[user]
-|3,0,36,0,1,0,1616516296,"[user]"
+	init_df
+|3,0,36,0,1,0,1616687083,"init_df"
 
 # File marks:
-'0  1  0  ~/.gitconfig
-|4,48,1,0,1616516324,"~/.gitconfig"
-'1  2  0  ~/.gitconfig
-|4,49,2,0,1616516219,"~/.gitconfig"
-'2  2  0  ~/.gitconfig
-|4,50,2,0,1616516219,"~/.gitconfig"
-'3  1  0  ~/.config/vifm/scripts/README
-|4,51,1,0,1616516016,"~/.config/vifm/scripts/README"
-'4  1  12  ~/.zshrc
-|4,52,1,12,1616514787,"~/.zshrc"
-'5  1  58  ~/.zshrc
-|4,53,1,58,1616514757,"~/.zshrc"
-'6  1  0  ~/.vimrc
-|4,54,1,0,1616342712,"~/.vimrc"
-'7  1  0  ~/Desktop/Language_Processors/parser.c
-|4,55,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
-'8  1  0  ~/.zshrc
-|4,56,1,0,1615917107,"~/.zshrc"
-'9  2  0  ~/.zshrc
-|4,57,2,0,1615917107,"~/.zshrc"
+'0  1  0  /tmp/vifm.rename_87098881_00
+|4,48,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+'1  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,49,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+'2  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,50,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
+'3  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,51,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+'4  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,52,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+'5  81  0  ~/.config/vifm/colors/Default.vifm
+|4,53,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+'6  100  0  ~/.bashrc
+|4,54,100,0,1617305267,"~/.bashrc"
+'7  3  13  ~/.mydotfiles/scripts/.sdir.sh
+|4,55,3,13,1617304806,"~/.mydotfiles/scripts/.sdir.sh"
+'8  5  6  ~/.mydotfiles/scripts/.gdir.sh
+|4,56,5,6,1617304556,"~/.mydotfiles/scripts/.gdir.sh"
+'9  5  6  ~/.mydotfiles/scripts/.gdir.sh
+|4,57,5,6,1617304556,"~/.mydotfiles/scripts/.gdir.sh"
 
 # Jumplist (newest first):
--'  1  0  ~/.gitconfig
-|4,39,1,0,1616516324,"~/.gitconfig"
--'  1  0  ~/.mydotfiles/git/.gitconfig
-|4,39,1,0,1616516292,"~/.mydotfiles/git/.gitconfig"
--'  2  0  ~/.gitconfig
-|4,39,2,0,1616516219,"~/.gitconfig"
--'  2  0  ~/.gitconfig
-|4,39,2,0,1616516219,"~/.gitconfig"
--'  1  0  ~/.gitconfig
-|4,39,1,0,1616516216,"~/.gitconfig"
--'  1  0  ~/.config/vifm/scripts/README
-|4,39,1,0,1616516016,"~/.config/vifm/scripts/README"
--'  1  0  ~/.config/vifm/scripts/README
-|4,39,1,0,1616516016,"~/.config/vifm/scripts/README"
--'  1  0  ~/.config/vifm/scripts/README
-|4,39,1,0,1616516016,"~/.config/vifm/scripts/README"
--'  1  0  ~/.config/vifm/scripts/README
-|4,39,1,0,1616516016,"~/.config/vifm/scripts/README"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  12  ~/.zshrc
-|4,39,1,12,1616514787,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  58  ~/.zshrc
-|4,39,1,58,1616514757,"~/.zshrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/.vimrc
-|4,39,1,0,1616342712,"~/.vimrc"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
--'  1  0  ~/Desktop/Language_Processors/parser.c
-|4,39,1,0,1615917325,"~/Desktop/Language_Processors/parser.c"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
+|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  81  0  ~/.config/vifm/colors/Default.vifm
+|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.config/vifm/colors/Default.vifm
+|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
 
 # History of marks within files (newest to oldest):
+
+> /tmp/vifm.rename_87098881_00
+	*	1617367653	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/.mydotfiles/scripts/.scripts/.commit.sh
+	*	1617367636	0
+	"	1	0
+
+> ~/.mydotfiles/scripts/.scripts/stow.txt
+	*	1617367617	0
+	"	1	7
+	^	1	8
+	.	1	7
+	+	2	20
+	+	1	7
+
+> ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
+	*	1617365957	0
+	"	1	0
+
+> ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
+	*	1617365951	0
+	"	145	0
+
+> ~/.config/vifm/colors/Default.vifm
+	*	1617365288	0
+	"	81	0
+
+> ~/.bashrc
+	*	1617305028	0
+	"	100	0
+	^	119	8
+	.	120	0
+	+	119	7
+	+	120	0
+
+> ~/.mydotfiles/scripts/.sdir.sh
+	*	1617304805	0
+	"	3	13
+	^	3	15
+	.	3	15
+	+	1	16
+	+	3	15
+
+> ~/.mydotfiles/scripts/.gdir.sh
+	*	1617304801	0
+	"	7	0
+	.	7	0
+	+	1	15
+	+	4	16
+	+	5	4
+	+	4	19
+	+	5	7
+	+	8	37
+	+	8	0
+	+	7	0
+
+> ~/Desktop/betml/league.py
+	*	1616841767	0
+	"	32	0
+	.	55	0
+	+	32	0
+	+	31	44
+	+	17	35
+	+	20	35
+	+	25	0
+	+	23	53
+	+	20	21
+	+	23	49
+	+	26	23
+	+	23	49
+	+	20	20
+	+	17	31
+	+	28	0
+	+	27	18
+	+	11	13
+	+	28	0
+	+	32	0
+	+	27	0
+	+	10	43
+	+	12	0
+	+	258	0
+	+	48	0
+	+	258	0
+	+	58	0
+	+	206	0
+	+	258	0
+	+	60	0
+	+	64	0
+	+	34	32
+	+	37	10
+	+	40	0
+	+	37	49
+	+	34	29
+	+	44	45
+	+	14	0
+	+	28	0
+	+	47	0
+	+	58	0
+	+	13	0
+	+	50	25
+	+	51	0
+	+	49	27
+	+	59	0
+	+	64	0
+	+	69	0
+	+	188	0
+	+	52	31
+	+	54	0
+	+	55	0
+	+	52	40
+	+	55	0
+
+> ~/.mydotfiles/vim/.vimrc
+	*	1616768018	0
+	"	9	0
+	^	6	0
+	.	5	11
+	+	7	0
+	+	5	11
+
+> ~/.mydotfiles/scripts/.commit.sh
+	*	1616767906	0
+	"	2	1
+	^	3	2
+	.	3	1
+	+	1	12
+	+	3	4
+	+	1	10
+	+	3	1
+
+> /tmp/vifm.rename_54235933_00
+	*	1616767815	0
+	"	2	0
+	^	3	1
+	.	3	0
+	+	1	0
+	+	2	0
+	+	3	0
+
+> ~/.vimrc
+	*	1616767589	0
+	"	12	0
+	.	10	0
+	+	1	9
+	+	3	18
+	+	4	0
+	+	5	11
+	+	4	9
+	+	5	11
+	+	7	0
+	+	13	14
+	+	17	12
+	+	18	14
+	+	19	17
+	+	20	17
+	+	10	26
+	+	20	18
+	+	7	0
+	+	4	0
+	+	5	0
+	+	1	0
+	+	15	0
+	+	5	0
+	+	10	0
+
+> ~/.zhrc
+	*	1616767546	0
+	"	1	0
+
+> ~/Desktop/element.txt
+	*	1616685396	0
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
+
+> ~/Desktop/document.txt
+	*	1616623869	0
+	"	18	35
+	^	5	225
+	.	5	224
+	+	70	0
+	+	1	0
+	+	1	1
+	+	1	0
+	+	7	15
+	+	7	0
+	+	33	0
+	+	44	0
+	+	5	157
+	+	5	20
+	+	5	224
+
+> /usr/share/vim/vim81/doc/starting.txt
+	*	1616593903	0
+	"	868	5
+
+> /usr/share/vim/vim81/doc/help.txt
+	*	1616526319	0
+	"	108	0
+
+> ~/option-window
+	*	1616526229	0
+	"	402	9
+	.	945	0
+	+	945	0
+
+> /usr/share/vim/vim81/doc/options.txt
+	*	1616525675	0
+	"	6305	6
 
 > ~/.gitconfig
 	*	1616516322	0
@@ -509,12 +741,6 @@ $
 	+	1	0
 	+	3	0
 	+	1	12
-
-> ~/.vimrc
-	*	1616342711	0
-	"	1	0
-	.	1	0
-	+	1	0
 
 > ~/Desktop/Language_Processors/parser.c
 	*	1615917287	0
@@ -621,14 +847,6 @@ $
 	+	135	14
 	+	124	0
 	+	121	16
-
-> ~/.bashrc
-	*	1615916982	0
-	"	119	0
-	^	119	8
-	.	120	0
-	+	119	7
-	+	120	0
 
 > ~/Desktop/Language_Processors/tree.c
 	*	1615916953	0
@@ -811,10 +1029,6 @@ $
 	+	4	8
 	+	5	0
 	+	4	0
-
-> /usr/share/vim/vim81/doc/help.txt
-	*	1615473435	0
-	"	26	8
 
 > ~/Desktop/Language_Processors/parser.
 	*	1615472955	0
@@ -1539,22 +1753,3 @@ $
 	.	1	876
 	+	1	1298
 	+	1	876
-
-> ~/Downloads/language processors/exer11.txt
-	*	1613569713	0
-	"	1	1531
-	^	1	1532
-	.	1	1531
-	+	1	1531
-
-> ~/.bash_aliases
-	*	1613518403	0
-	"	3	23
-
-> ~/.bashaliases
-	*	1613518296	0
-	"	5	0
-	^	5	0
-	.	4	0
-	+	3	24
-	+	4	0

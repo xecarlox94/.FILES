@@ -13,6 +13,10 @@
 	/home/xecarlox/
 	..
 1615310305
+'k
+	/home/xecarlox/.mydotfiles/qBitTorrent
+	..
+1617365751
 
 # Bookmarks:
 
@@ -26,66 +30,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xecarlox/Desktop/Language_Processors
-	CW2.1-Starter-code
-1
-d/home/xecarlox/Desktop/Language_Processors/CW2.1-Starter-code
-	..
-0
-d/home/xecarlox/Desktop/Language_Processors
-	CW2.1-Starter-code
-1
-d/home/xecarlox/Desktop/Language_Processors/CW2.1-Starter-code
-	..
-0
-d/home/xecarlox/Desktop/Language_Processors
-	funcFiles
-1
-d/home/xecarlox/Desktop/Language_Processors/funcFiles
-	main1.func
-1
-d/home/xecarlox/Desktop/Language_Processors
-	funcFiles
-1
-d/home/xecarlox/Desktop/Language_Processors/funcFiles
-	main2.func
-4
-d/home/xecarlox/Desktop/Language_Processors
-	funcFiles
-1
-d/home/xecarlox/Desktop/Language_Processors/funcFiles
-	ex2.func
-2
-d/home/xecarlox/Desktop/Language_Processors
-	docs
-1
-d/home/xecarlox/Desktop/Language_Processors/docs
-	CW2.1-specification.pdf
-1
-d/home/xecarlox/Desktop/Language_Processors
-	docs
-1
-d/home/xecarlox/Desktop/Language_Processors/docs
-	README.txt
-2
-d/home/xecarlox/Desktop/Language_Processors
-	FUNC.lex
-3
-d/home/xecarlox/Desktop
-	Language_Processors
-1
-d/home/xecarlox/Desktop/Language_Processors
-	tree.c
-13
-d/home/xecarlox/Desktop
-	Language_Processors
-1
-d/home/xecarlox/Desktop/Language_Processors
-	..
-0
-d/home/xecarlox/Desktop
-	Language_Processors
-1
 d/home/xecarlox
 	Desktop
 1
@@ -275,6 +219,117 @@ d/home/xecarlox/.mydotfiles
 d/home/xecarlox/.mydotfiles/nvim
 	.vimrc
 1
+d/home/xecarlox/.config/vifm
+	colors
+1
+d/home/xecarlox/.config/vifm/colors
+	Default.vifm
+1
+d/home/xecarlox/.config/vifm
+	colors
+1
+d/home/xecarlox/.config
+	vifm
+34
+d/home/xecarlox
+	.mydotfiles
+20
+d/home/xecarlox/.mydotfiles
+	vifm
+5
+d/home/xecarlox/.mydotfiles/vifm
+	..
+0
+d/home/xecarlox/.mydotfiles
+	vifm
+5
+d/home/xecarlox/.mydotfiles/vifm
+	.config
+1
+d/home/xecarlox/.mydotfiles/vifm/.config
+	vifm
+1
+d/home/xecarlox/.mydotfiles/vifm
+	.config
+1
+d/home/xecarlox/.mydotfiles
+	vifm
+5
+d/home/xecarlox
+	.config
+4
+d/home/xecarlox/.config
+	qBittorrent
+28
+d/home/xecarlox
+	.mydotfiles
+20
+d/home/xecarlox/.mydotfiles
+	vifm
+5
+d/home/xecarlox
+	.config
+4
+d/home/xecarlox/.config
+	qBittorrent
+28
+d/home/xecarlox
+	.config
+4
+d/home/xecarlox/.config
+	qBittorrent
+28
+d/home/xecarlox
+	.mydotfiles
+20
+d/home/xecarlox/.mydotfiles
+	qBitTorrent
+4
+d/home/xecarlox/.mydotfiles/qBitTorrent
+	.config
+1
+d/home/xecarlox/.mydotfiles/qBitTorrent/.config
+	qBittorrent
+1
+d/home/xecarlox/.mydotfiles/qBitTorrent
+	.config
+1
+d/home/xecarlox/.mydotfiles
+	qBitTorrent
+4
+d/home/xecarlox
+	.jupyter
+15
+d/home/xecarlox/.mydotfiles
+	qBitTorrent
+4
+d/home/xecarlox/.mydotfiles/qBitTorrent
+	.config
+1
+d/home/xecarlox/.mydotfiles/qBitTorrent/.config
+	qBittorrent
+1
+d/home/xecarlox/.mydotfiles/qBitTorrent/.config/qBittorrent
+	rss
+1
+d/home/xecarlox/.mydotfiles/qBitTorrent/.config/qBittorrent/rss
+	storage.lock
+2
+d/home/xecarlox/.mydotfiles
+	nvim
+3
+d/home/xecarlox/.mydotfiles/nvim
+	.vimrc
+1
+d/home/xecarlox/.mydotfiles
+	nvim
+3
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles
+	zsh
+8
 d
 
 # Right window history (oldest to newest):
@@ -378,8 +433,10 @@ D
 :touch gdir.sh
 :commit.sh
 :touch commit.sh
-:q
 :mkdir .scripts
+:mkdir qBitTorrent
+:mkdir .config
+:q
 
 # Search history (oldest to newest):
 
@@ -389,7 +446,7 @@ pgit_commit.sh
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xecarlox/.mydotfiles/vim/.vimrc
+""/home/xecarlox/.config/qBittorrent
 
 # Directory stack (oldest to newest):
 
