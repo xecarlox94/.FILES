@@ -1,2 +1,2 @@
 TO STOW:
-stow --adopt -nvt ~ *
+stow --adopt -vRt ~ *

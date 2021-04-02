@@ -14,9 +14,9 @@
 	..
 1615310305
 'k
-	/home/xecarlox/.mydotfiles/qBitTorrent
-	..
-1617365751
+	/home/xecarlox/.mydotfiles/nvim/.config
+	.vimrc
+1617367972
 
 # Bookmarks:
 
@@ -30,93 +30,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xecarlox
-	Desktop
-1
-d/home
-	xecarlox
-1
-d/home/xecarlox
-	Documents
-2
-d/home/xecarlox/Documents
-	..
-0
-d/home/xecarlox
-	Desktop
-1
-d/home/xecarlox/Desktop
-	Language_Processors
-1
-d/home/xecarlox/Desktop/Language_Processors
-	tree.c
-14
-d/home/xecarlox/.mydotfiles
-	..
-0
-d/home/xecarlox
-	..
-0
-d/home
-	xecarlox
-1
-d/
-	home
-5
-d/home
-	xecarlox
-1
-d/home/xecarlox
-	.mydotfiles
-17
-d/home/xecarlox/.mydotfiles
-	vim
-3
-d/home/xecarlox
-	.config
-4
-d/home/xecarlox/.config
-	vifm
-33
-d/home/xecarlox/.config/vifm
-	scripts
-2
-d/home/xecarlox/.config/vifm/scripts
-	..
-0
-d/home/xecarlox/.config/vifm
-	scripts
-2
-d/home/xecarlox/.config/vifm/scripts
-	README
-1
-d/home/xecarlox/.config/vifm
-	scripts
-2
-d/home/xecarlox/.config
-	vifm
-33
-d/home/xecarlox
-	.config
-4
-d/home
-	xecarlox
-2
-d/home/xecarlox
-	.config
-4
-d/home
-	xecarlox
-2
-d/home/xecarlox
-	.hypnotix
-12
-d/home/xecarlox/.mydotfiles
-	vim
-4
-d/home/xecarlox
-	.vim
-23
 d/home/xecarlox/.vim
 	..
 0
@@ -328,8 +241,95 @@ d/home/xecarlox/.mydotfiles/nvim
 	.config
 1
 d/home/xecarlox/.mydotfiles
-	zsh
-8
+	nvim
+3
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	.vimrc
+1
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles
+	scripts
+5
+d/home/xecarlox/.mydotfiles/scripts
+	.scripts
+1
+d/home/xecarlox/.mydotfiles
+	scripts
+5
+d/home/xecarlox/.mydotfiles/scripts
+	.scripts
+1
+d/home/xecarlox/.mydotfiles/scripts/.scripts
+	commit.sh
+1
+d/home/xecarlox/.mydotfiles/scripts
+	.scripts
+1
+d/home/xecarlox/.mydotfiles
+	nvim
+3
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	.vimrc
+1
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	.vimrc
+1
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles
+	nvim
+3
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	nvim
+1
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles
+	nvim
+3
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	nvim
+1
+d/home/xecarlox/.mydotfiles/nvim/.config/nvim
+	..
+0
+d/home/xecarlox/.mydotfiles/nvim/.config
+	nvim
+1
+d/home/xecarlox/.mydotfiles/nvim
+	.config
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	nvim
+1
+d/home/xecarlox/.mydotfiles/nvim/.config/nvim
+	init.vim
+1
+d/home/xecarlox/.mydotfiles/nvim/.config
+	nvim
+1
+d/home/xecarlox/.mydotfiles/nvim/.config/nvim
+	init.vim
+1
 d
 
 # Right window history (oldest to newest):
@@ -436,17 +436,22 @@ D
 :mkdir .scripts
 :mkdir qBitTorrent
 :mkdir .config
+:touch stow.txt
+:mkdir nvim
+: 
+:touch init.vim
 :q
 
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
 pgit_commit.sh
+p.vimrc
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xecarlox/.config/qBittorrent
+""/home/xecarlox/.vifm-Trash-1000/000_.vimrc
 
 # Directory stack (oldest to newest):
 
@@ -459,6 +464,8 @@ t/home/xecarlox/.vifm-Trash-1000/000_.main1.func.swp
 	/home/xecarlox/Desktop/Language_Processors/funcFiles/.main1.func.swp
 t/home/xecarlox/.vifm-Trash-1000/000_.gitconfig
 	/home/xecarlox/.gitconfig
+t/home/xecarlox/.vifm-Trash-1000/000_.vimrc
+	/home/xecarlox/.mydotfiles/nvim/.config/.vimrc
 
 # State:
 f

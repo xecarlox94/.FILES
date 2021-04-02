@@ -20,10 +20,10 @@
 $
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1617367655,,"wq"
 :q
-|2,0,1617367639,,"q"
+|2,0,1617368579,,"q"
+:wq
+|2,0,1617368573,,"wq"
 :[43]j
 |2,0,1617305028,,"[43]j"
 :w
@@ -233,39 +233,65 @@ $
 "0	LINE	0
 	endif
 |3,0,0,1,1,0,1616767995,"endif"
-""1	BLOCK	0
+""1	LINE	0
+	syntax error
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+|3,1,1,1,30,0,1617368571,"syntax error","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+"2	BLOCK	0
 	.
 	.
 	.
-|3,1,1,2,3,0,1617367652,".",".","."
-"2	LINE	0
-	~/.scripts/sdir.sh
-|3,0,2,1,1,0,1617304791,"~/.scripts/sdir.sh"
+|3,0,2,2,3,0,1617367652,".",".","."
 "3	LINE	0
 	~/.scripts/sdir.sh
-	alias sdir='source ~/.scripts/sdir.sh'
-|3,0,3,1,2,0,1617304735,"~/.scripts/sdir.sh","alias sdir='source ~/.scripts/sdir.sh'"
+|3,0,3,1,1,0,1617304791,"~/.scripts/sdir.sh"
 "4	LINE	0
-	[1:59 PM]dd
-|3,0,4,1,1,0,1617304734,"[1:59 PM]dd"
+	~/.scripts/sdir.sh
+	alias sdir='source ~/.scripts/sdir.sh'
+|3,0,4,1,2,0,1617304735,"~/.scripts/sdir.sh","alias sdir='source ~/.scripts/sdir.sh'"
 "5	LINE	0
-	endif
-|3,0,5,1,1,0,1616767892,"endif"
+	[1:59 PM]dd
+|3,0,5,1,1,0,1617304734,"[1:59 PM]dd"
 "6	LINE	0
-	        # converting table 
-|3,0,6,1,1,0,1616689074,"        # converting table "
+	endif
+|3,0,6,1,1,0,1616767892,"endif"
 "7	LINE	0
-	
-|3,0,7,1,1,0,1616688655,""
+	        # converting table 
+|3,0,7,1,1,0,1616689074,"        # converting table "
 "8	LINE	0
-	        self.init_table()
-|3,0,8,1,1,0,1616688559,"        self.init_table()"
-"9	LINE	0
-	    def apply_division_season_match(self, match):
-	        self.updateTable(match)
 	
-	        return self.get_data(match)
-|3,0,9,1,4,0,1616688255,"    def apply_division_season_match(self, match):","        self.updateTable(match)","","        return self.get_data(match)"
+|3,0,8,1,1,0,1616688655,""
+"9	LINE	0
+	        self.init_table()
+|3,0,9,1,1,0,1616688559,"        self.init_table()"
 "w	CHAR	0
 	i.€kd
 |3,0,32,0,1,0,1616767807,"i.€kd"
@@ -274,230 +300,236 @@ $
 |3,0,36,0,1,0,1616687083,"init_df"
 
 # File marks:
-'0  1  0  /tmp/vifm.rename_87098881_00
-|4,48,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
-'1  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
-|4,49,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
-'2  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,50,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
-'3  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,51,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
-'4  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,52,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
-'5  81  0  ~/.config/vifm/colors/Default.vifm
-|4,53,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
-'6  100  0  ~/.bashrc
-|4,54,100,0,1617305267,"~/.bashrc"
-'7  3  13  ~/.mydotfiles/scripts/.sdir.sh
-|4,55,3,13,1617304806,"~/.mydotfiles/scripts/.sdir.sh"
-'8  5  6  ~/.mydotfiles/scripts/.gdir.sh
-|4,56,5,6,1617304556,"~/.mydotfiles/scripts/.gdir.sh"
-'9  5  6  ~/.mydotfiles/scripts/.gdir.sh
-|4,57,5,6,1617304556,"~/.mydotfiles/scripts/.gdir.sh"
+'0  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,48,1,0,1617368579,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'1  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,49,1,0,1617368573,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'2  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,50,1,0,1617368540,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'3  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,51,1,0,1617368540,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'4  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,52,1,0,1617368359,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'5  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,53,1,0,1617368359,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'6  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,54,1,0,1617368359,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'7  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,55,1,0,1617368359,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'8  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,56,1,0,1617368229,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+'9  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,57,1,0,1617368229,"~/.mydotfiles/nvim/.config/nvim/init.vim"
 
 # Jumplist (newest first):
+-'  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,39,1,0,1617368579,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+-'  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,39,1,0,1617368573,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+-'  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,39,1,0,1617368540,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+-'  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,39,1,0,1617368359,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+-'  1  0  ~/.mydotfiles/nvim/.config/nvim/init.vim
+|4,39,1,0,1617368229,"~/.mydotfiles/nvim/.config/nvim/init.vim"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
+-'  1  0  /tmp/vifm.rename_87098881_00
+|4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
 -'  1  0  /tmp/vifm.rename_87098881_00
 |4,39,1,0,1617367655,"/tmp/vifm.rename_87098881_00"
 -'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
 |4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
 -'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
 |4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
--'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  1  7  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,1,7,1617367620,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  2  0  ~/.mydotfiles/scripts/.scripts/stow.txt
-|4,39,2,0,1617367595,"~/.mydotfiles/scripts/.scripts/stow.txt"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json
-|4,39,1,0,1617365959,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/rss/feeds.json"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  145  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,145,0,1617365953,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  1  0  ~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf
-|4,39,1,0,1617365942,"~/.mydotfiles/qBitTorrent/.config/qBittorrent/qBittorrent.conf"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  81  0  ~/.config/vifm/colors/Default.vifm
-|4,39,81,0,1617365291,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
--'  1  0  ~/.config/vifm/colors/Default.vifm
-|4,39,1,0,1617365283,"~/.config/vifm/colors/Default.vifm"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
+-'  1  0  ~/.mydotfiles/scripts/.scripts/.commit.sh
+|4,39,1,0,1617367639,"~/.mydotfiles/scripts/.scripts/.commit.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/.mydotfiles/nvim/.config/nvim/init.vim
+	*	1617368577	0
+	"	1	0
+	.	1	0
+	+	1	0
 
 > /tmp/vifm.rename_87098881_00
 	*	1617367653	0
@@ -1745,11 +1777,3 @@ $
 > ~/Downloads/language processors/exer13
 	*	1613571160	0
 	"	1	0
-
-> ~/Downloads/language processors/exer12.txt
-	*	1613570554	0
-	"	1	870
-	^	1	877
-	.	1	876
-	+	1	1298
-	+	1	876
