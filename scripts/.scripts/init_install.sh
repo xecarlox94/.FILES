@@ -8,12 +8,4 @@ do
 	sudo apt install -y "$APP"
 done
 
-
-PYTHON_PACKGS=(pandas jupyterlab)
-
-for PACKG in "${PYTHON_PACKGS[@]}";
-do
-	pip3 install "$PACKG"
-done
-
-source ./stow.sh
+source ./python.sh
