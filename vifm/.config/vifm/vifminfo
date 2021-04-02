@@ -6,13 +6,13 @@
 	..
 1615310305
 'b
-	/home/xecarlox/bin/
+	/home/xecarlox94/bin/
 	..
-1615310305
+1617392481
 'h
-	/home/xecarlox/
+	/home/xecarlox94/
 	..
-1615310305
+1617392481
 'k
 	/home/xecarlox/.mydotfiles/nvim/.config
 	.vimrc
@@ -30,57 +30,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xecarlox/.vim
-	..
-0
-d/home/xecarlox
-	.gitconfig
-37
-d/home
-	xecarlox
-2
-d/home/xecarlox
-	.mydotfiles
-17
-d/home/xecarlox/.mydotfiles
-	git
-1
-d/home/xecarlox/.mydotfiles/git
-	.gitconfig
-1
-d/home/xecarlox/.mydotfiles
-	git
-1
-d/home/xecarlox
-	.hypnotix
-12
-d/home
-	xecarlox
-2
-d/home/xecarlox
-	.mydotfiles
-17
-d/home/xecarlox/.mydotfiles
-	git
-2
-d/home/xecarlox/Desktop/betml
-	league.py
-6
-d/home/xecarlox/.mydotfiles
-	vim
-6
-d/home/xecarlox/.mydotfiles/vim
-	newfolder
-1
-d/home/xecarlox/.mydotfiles/vim/newfolder
-	..
-0
-d/home/xecarlox/.mydotfiles/vim
-	..
-0
-d/home/xecarlox/.mydotfiles
-	scripts
-4
 d/home/xecarlox/.mydotfiles/scripts
 	..
 0
@@ -330,6 +279,57 @@ d/home/xecarlox/.mydotfiles/nvim/.config
 d/home/xecarlox/.mydotfiles/nvim/.config/nvim
 	init.vim
 1
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	init_install.sh
+3
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	init_install.sh
+3
+d/home/xecarlox94/.scripts
+	..
+0
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	virtmanager.sh
+7
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	virtmanager.sh
+7
 d
 
 # Right window history (oldest to newest):
@@ -411,6 +411,9 @@ D/home/xecarlox/Desktop/Language_Processors
 D/home/xecarlox/Desktop
 	
 0
+D/home
+	
+0
 D
 
 # Command line history (oldest to newest):
@@ -440,6 +443,8 @@ D
 :mkdir nvim
 : 
 :touch init.vim
+:touch updt_upgr.sh
+:wq
 :q
 
 # Search history (oldest to newest):
@@ -451,7 +456,7 @@ p.vimrc
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xecarlox/.vifm-Trash-1000/000_.vimrc
+""/home/xecarlox94/.vifm-Trash-1000/000_stow.txt
 
 # Directory stack (oldest to newest):
 
@@ -466,6 +471,8 @@ t/home/xecarlox/.vifm-Trash-1000/000_.gitconfig
 	/home/xecarlox/.gitconfig
 t/home/xecarlox/.vifm-Trash-1000/000_.vimrc
 	/home/xecarlox/.mydotfiles/nvim/.config/.vimrc
+t/home/xecarlox94/.vifm-Trash-1000/000_stow.txt
+	/home/xecarlox94/.FILES/scripts/.scripts/stow.txt
 
 # State:
 f
