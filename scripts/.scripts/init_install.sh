@@ -1,5 +1,5 @@
 
-APPS=(git vim neovim stow vifm g++ python3-pip zsh)
+APPS=(git vim neovim stow vifm g++ python3-pip zsh rpi-imager)
 
 source ~/.scripts/updt_upgr.sh
 

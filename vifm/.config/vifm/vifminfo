@@ -31,33 +31,6 @@ r2
 
 # Left window history (oldest to newest):
 d/home/xecarlox/.mydotfiles
-	nvim
-3
-d/home/xecarlox/.mydotfiles/nvim
-	.vimrc
-1
-d/home/xecarlox/.config/vifm
-	colors
-1
-d/home/xecarlox/.config/vifm/colors
-	Default.vifm
-1
-d/home/xecarlox/.config/vifm
-	colors
-1
-d/home/xecarlox/.config
-	vifm
-34
-d/home/xecarlox
-	.mydotfiles
-20
-d/home/xecarlox/.mydotfiles
-	vifm
-5
-d/home/xecarlox/.mydotfiles/vifm
-	..
-0
-d/home/xecarlox/.mydotfiles
 	vifm
 5
 d/home/xecarlox/.mydotfiles/vifm
@@ -330,6 +303,33 @@ d/home/xecarlox94
 d/home/xecarlox94/.scripts
 	virtmanager.sh
 8
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94
+	.scripts
+11
+d/home/xecarlox94/.scripts
+	virtmanager.sh
+8
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.scripts
+	stow.sh
+6
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+6
 d
 
 # Right window history (oldest to newest):
@@ -473,6 +473,8 @@ t/home/xecarlox/.vifm-Trash-1000/000_.vimrc
 	/home/xecarlox/.mydotfiles/nvim/.config/.vimrc
 t/home/xecarlox94/.vifm-Trash-1000/000_stow.txt
 	/home/xecarlox94/.FILES/scripts/.scripts/stow.txt
+t/home/xecarlox94/.vifm-Trash-1000/000_.viminfo
+	/home/xecarlox94/.FILES/vim/.viminfo
 
 # State:
 f
