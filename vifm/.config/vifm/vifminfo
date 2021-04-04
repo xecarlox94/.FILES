@@ -14,9 +14,9 @@
 	..
 1617392481
 'k
-	/home/xecarlox/.mydotfiles/nvim/.config
-	.vimrc
-1617367972
+	/home/xecarlox94/.FILES/info
+	..
+1617447735
 
 # Bookmarks:
 
@@ -30,12 +30,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/xecarlox/.mydotfiles
-	vifm
-5
-d/home/xecarlox/.mydotfiles/vifm
-	.config
-1
 d/home/xecarlox/.mydotfiles/vifm/.config
 	vifm
 1
@@ -321,15 +315,21 @@ d/home/xecarlox94/.FILES
 d/home/xecarlox94
 	.FILES
 1
-d/home/xecarlox94/.scripts
-	stow.sh
-6
-d/home/xecarlox94
-	.FILES
-1
 d/home/xecarlox94/.FILES
-	scripts
-6
+	info
+3
+d/home/xecarlox94/.FILES/info
+	.INFO
+1
+d/home/xecarlox94/.FILES/info/.INFO
+	..
+0
+d/home/xecarlox94/.FILES/info
+	.INFO
+1
+d/home/xecarlox94/.FILES/info/.INFO
+	SD_CARDS.md
+1
 d
 
 # Right window history (oldest to newest):
@@ -417,6 +417,7 @@ D/home
 D
 
 # Command line history (oldest to newest):
+:touch foundations_II.txt
 :parser.c
 :help
 :--help
@@ -446,6 +447,10 @@ D
 :touch updt_upgr.sh
 :wq
 :q
+:mkdir info
+:mkdir .INFO
+:mkdir SD_CARDS.md
+:touch SD_CARDS.md
 
 # Search history (oldest to newest):
 
@@ -456,7 +461,7 @@ p.vimrc
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xecarlox94/.scripts/init_python.sh
+""/home/xecarlox94/.vifm-Trash-1000/000_SD_CARDS.md
 
 # Directory stack (oldest to newest):
 
@@ -475,6 +480,8 @@ t/home/xecarlox94/.vifm-Trash-1000/000_stow.txt
 	/home/xecarlox94/.FILES/scripts/.scripts/stow.txt
 t/home/xecarlox94/.vifm-Trash-1000/000_.viminfo
 	/home/xecarlox94/.FILES/vim/.viminfo
+t/home/xecarlox94/.vifm-Trash-1000/000_SD_CARDS.md
+	/home/xecarlox94/.FILES/info/.INFO/SD_CARDS.md
 
 # State:
 f
