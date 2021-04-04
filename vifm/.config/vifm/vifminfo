@@ -31,18 +31,6 @@ r2
 
 # Left window history (oldest to newest):
 d/home/xecarlox
-	.mydotfiles
-20
-d/home/xecarlox/.mydotfiles
-	vifm
-5
-d/home/xecarlox
-	.config
-4
-d/home/xecarlox/.config
-	qBittorrent
-28
-d/home/xecarlox
 	.config
 4
 d/home/xecarlox/.config
@@ -330,6 +318,18 @@ d/home/xecarlox94
 d/home/xecarlox94/.scripts
 	commit.sh
 1
+d/home/xecarlox94
+	.scripts
+15
+d/home/xecarlox94/.scripts
+	init_install.sh
+4
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+5
 d
 
 # Right window history (oldest to newest):
@@ -445,13 +445,13 @@ D
 : 
 :touch init.vim
 :touch updt_upgr.sh
-:wq
 :mkdir info
 :mkdir .INFO
 :mkdir SD_CARDS.md
 :touch SD_CARDS.md
 :show number!
 :q
+:wq
 
 # Search history (oldest to newest):
 
@@ -462,7 +462,7 @@ p.vimrc
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/xecarlox94/.vifm-Trash-1000/000_SD_CARDS.md
+""/home/xecarlox94/.vifm-Trash-1000/000_qBitTorrent
 
 # Directory stack (oldest to newest):
 
@@ -483,6 +483,8 @@ t/home/xecarlox94/.vifm-Trash-1000/000_.viminfo
 	/home/xecarlox94/.FILES/vim/.viminfo
 t/home/xecarlox94/.vifm-Trash-1000/000_SD_CARDS.md
 	/home/xecarlox94/.FILES/info/.INFO/SD_CARDS.md
+t/home/xecarlox94/.vifm-Trash-1000/000_qBitTorrent
+	/home/xecarlox94/.FILES/qBitTorrent
 
 # State:
 f

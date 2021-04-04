@@ -1,3 +1,5 @@
 [user]
 	email = jf94.uk@gmail.com
 	name = xecarlox94
+[alias]
+	ci = commit
