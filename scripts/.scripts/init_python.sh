@@ -1,5 +1,5 @@
 
-PTHON_PACKGS=(pandas jupyterlab sklearn)
+PTHON_PACKGS=(pandas jupyterlab jupyterlab_vim sklearn)
 
 source ~/.scripts/updt_upgr.sh
 
