@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # source bash aliases, if file exists
-[[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 PS1='[\u@\h \W]\$ '
 
