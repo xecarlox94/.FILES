@@ -4,7 +4,7 @@ export PATH="$PATH:$HOME/.scripts"
 export VIMINIT="source ~/.config/vim/vimrc"
 
 
-[ -f ~/.bashrc ] && source ~/bashrc
+[ -f ~/.bashrc ] && source ~/.bashrc
 
 
 # working directories
