@@ -12,10 +12,10 @@ set bg=dark
 set nowrap
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
+set undodir=~/.cache/vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=80
+set colorcolumn=85
 set guicursor=

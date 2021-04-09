@@ -12,7 +12,7 @@ set bg=dark
 set nowrap
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
+set undodir=~/.cache/vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
