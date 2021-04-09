@@ -1,6 +1,6 @@
-#!/bin/sh
 
 export PATH="$PATH:$HOME/.scripts"
+
 export VIMINIT="source ~/.config/vim/vimrc"
 
 

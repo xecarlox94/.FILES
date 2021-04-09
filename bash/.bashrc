@@ -1,9 +1,4 @@
 
-shopt -s autocd
-
-
-# If not running interactively, don't do anything
-#[[ $- != *i* ]] && return
 
 # source bash aliases, if file exists
 [[ -f ~/.aliases ]] && . ~/.aliases
@@ -11,5 +6,7 @@ shopt -s autocd
 PS1='[\u@\h \W]\$ '
 
 HISTFILE=~/.cache/zsh/histfile
+
+export PATH=$PATH:$HOME/.local/bin
 
 #exec zsh
