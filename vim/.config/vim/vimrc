@@ -19,3 +19,7 @@ set scrolloff=8
 set signcolumn=yes
 set colorcolumn=90
 set guicursor=
+
+if !has('nvim')
+    set viminfo+=n~/.config/vim/viminfo
+endif
