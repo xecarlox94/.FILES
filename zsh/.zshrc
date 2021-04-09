@@ -1,1 +1,1 @@
-source .aliases
+#source .aliases

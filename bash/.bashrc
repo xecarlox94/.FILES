@@ -4,6 +4,6 @@
 # source bash aliases, if file exists
 [[ -f ~/.aliases ]] && . ~/.aliases
 
-#PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]\$ '
 
-exec zsh
+#exec zsh
