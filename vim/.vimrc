@@ -17,4 +17,5 @@ set undofile
 set incsearch
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=95
+set colorcolumn=90
+set guicursor=

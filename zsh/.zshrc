@@ -1,2 +1,1 @@
-PROMPT="%~$ "
-
+source .aliases

@@ -2,8 +2,8 @@
 [[ $- != *i* ]] && return
 
 # source bash aliases, if file exists
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/.aliases ]] && . ~/.aliases
 
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
 
 exec zsh
