@@ -7,6 +7,5 @@ PS1='[\u@\h \W]\$ '
 
 HISTFILE=~/.cache/zsh/histfile
 
-export PATH=$PATH:$HOME/.local/bin
 
 #exec zsh
