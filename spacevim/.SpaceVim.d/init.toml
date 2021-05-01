@@ -37,7 +37,7 @@ auto_completion_tab_key_behavior = "cycle"
 
 [[layers]]
   name = "checkers"
-  lint_on_the_fly = false
+  lint_on_the_fly = true
   lint_on_save = true
   show_cursor_error = true
 
