@@ -3,3 +3,4 @@
 	name = xecarlox94
 [alias]
 	ci = commit
+	s = status
