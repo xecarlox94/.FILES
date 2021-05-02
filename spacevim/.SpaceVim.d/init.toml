@@ -36,6 +36,12 @@ auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "cycle"
 
 [[layers]]
+  name = "checkers"
+  lint_on_the_fly = true
+  lint_on_save = true
+  show_cursor_error = true
+
+[[layers]]
 name = 'shell'
 default_position = 'top'
 default_height = 30
