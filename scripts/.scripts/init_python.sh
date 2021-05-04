@@ -1,5 +1,5 @@
 
-PTHON_PACKGS=(pandas jupyterlab jupyterlab_vim sklearn)
+PTHON_PACKGS= (pandas jupyterlab jupyterlab_vim sklearn)
 
 
 for PACKG in "${PYTHON_PACKGS[@]}";
