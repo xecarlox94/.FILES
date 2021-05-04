@@ -1,7 +1,7 @@
 
 APPS=(git vim neovim stow vifm g++ python3-pip zsh gparted apt-transport-https curl emacs)
 
-source ~/.scripts/updt_upgr.sh
+sudo apt update && sudo apt upgrade -y
 
 for APP in "${APPS[@]}";
 do
