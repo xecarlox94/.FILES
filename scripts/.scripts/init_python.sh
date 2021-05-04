@@ -1,6 +1,7 @@
 
 PTHON_PACKGS=(pandas jupyterlab jupyterlab_vim sklearn)
 
+# isort pipenv nosetests pytest
 
 for PACKG in "${PYTHON_PACKGS[@]}";
 do
