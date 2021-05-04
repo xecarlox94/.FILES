@@ -2,3 +2,5 @@
 
 
 alias g="git"
+
+alias doome="doom run -nw"
