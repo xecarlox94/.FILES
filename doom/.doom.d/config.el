@@ -28,7 +28,7 @@
 
 (setq doom-font (font-spec :family "Mononoki Nerd Font Mono" :size 15))
 
-(setq doom-theme 'doom-palenight)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
