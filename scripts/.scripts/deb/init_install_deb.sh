@@ -1,5 +1,5 @@
 
-APPS=(git vim neovim stow vifm g++ python3-pip zsh gparted apt-transport-https curl emacs)
+source ~/.FILES/scripts/.scripts/packages.sh
 
 sudo apt update && sudo apt upgrade -y
 
@@ -8,6 +8,6 @@ do
 	sudo apt install -y "$APP"
 done
 
-source ~/.scripts/init_python.sh
+source ~/.FILES/scripts/.scripts/init_python.sh
 
-source ~/.scripts/stow.sh
+source ~/.FILES/scripts/.scripts/stow.sh
