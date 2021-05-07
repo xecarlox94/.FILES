@@ -6,6 +6,8 @@ alias gst="g status"
 alias ga="g add ."
 alias gc="g ci -m"
 alias gp="g push"
+
+
 alias commit="commit.sh"
 
 
