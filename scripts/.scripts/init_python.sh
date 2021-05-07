@@ -1,11 +1,7 @@
-
-PTHON_PACKGS=(pandas jupyterlab jupyterlab_vim sklearn)
-
-# isort pipenv nosetests pytest
+PYTHON_PACKGS=(pandas jupyterlab sklearn isort pipenv nose pytest)
 
 for PACKG in "${PYTHON_PACKGS[@]}";
 do
-	echo "pip"
-	pip3 install "$PACKG"
+    pip3 install "$PACKG"
 done
 
