@@ -9,5 +9,6 @@ do
 done
 
 source ~/.FILES/scripts/.scripts/init_python.sh
+source ~/.FILES/scripts/.scripts/init_nodejs.sh
 
 source ~/.FILES/scripts/.scripts/stow.sh
