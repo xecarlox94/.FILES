@@ -8,6 +8,10 @@ alias gc="g ci -m"
 alias gp="g push"
 
 
+alias d="sudo docker"
+alias dcr="sudo docker-compose run --rm"
+
+
 alias commit="commit.sh"
 
 
