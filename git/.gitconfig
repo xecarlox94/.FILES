@@ -5,3 +5,5 @@
 	ci = commit
 	st = status
 	a = add
+[init]
+	defaultBranch = master

@@ -2,14 +2,15 @@
 
 
 alias g="git"
-alias gst="g status"
-alias ga="g add ."
-alias gc="g ci -m"
-alias gp="g push"
+alias gst="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
 
 
 alias d="sudo docker"
-alias dcr="sudo docker-compose run --rm"
+alias dckc="sudo docker-compose"
+alias dck="sudo docker"
 
 
 alias commit="commit.sh"
