@@ -10,6 +10,7 @@ alias gp="git push"
 
 alias d="sudo docker"
 alias dckc="sudo docker-compose"
+alias dckcr="sudo docker-compose run --rm"
 alias dck="sudo docker"
 
 
@@ -17,3 +18,7 @@ alias commit="commit.sh"
 
 
 alias doome="doom run -nw"
+
+
+
+alias shtd="sudo shutdown now"
