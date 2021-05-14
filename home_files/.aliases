@@ -16,6 +16,9 @@ alias dck="sudo docker"
 alias shutdn="sudo shutdown now"
 
 
+alias py="python3"
+
+
 alias commit="commit.sh"
 
 

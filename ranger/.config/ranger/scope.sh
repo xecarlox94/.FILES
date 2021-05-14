@@ -28,6 +28,8 @@ preview_images="$5"  # "True" if image previews are enabled, "False" otherwise.
 
 maxln=200    # Stop after $maxln lines.  Can be used like ls | head -n $maxln
 
+set show_hidden true
+
 # Find out something about the file:
 mimetype=$(file --mime-type -Lb "$path")
 extension=$(/bin/echo "${path##*.}" | awk '{print tolower($0)}')
