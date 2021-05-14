@@ -3,6 +3,9 @@ source ~/.FILES/scripts/.scripts/packages.sh
 
 sudo apt update && sudo apt upgrade -y
 
+APPS+=(g++ apt-transport-https)
+
+
 for APP in "${APPS[@]}";
 do
 	sudo apt install -y "$APP"

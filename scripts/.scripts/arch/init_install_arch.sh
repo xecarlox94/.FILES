@@ -1,4 +1,3 @@
-
 source ~/.FILES/scripts/.scripts/packages.sh
 
 sudo pacman -Syu
@@ -11,6 +10,10 @@ do
 done
 
 source ~/.FILES/scripts/.scripts/init_python.sh
+
 source ~/.FILES/scripts/.scripts/init_nodejs.sh
+
+source ~/.FILES/scripts/.scripts/arch/config_virtmanager.sh
+
 
 source ~/.FILES/scripts/.scripts/stow.sh
