@@ -9,3 +9,5 @@ sudo virsh net-start br10
 
 sudo virsh net-autostart br10
 
+sudo virsh net-start default
+sudo virsh net-autostart default
