@@ -1,0 +1,172 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'b
+	/home/xecarlox94/bin/
+	..
+1621621597
+'h
+	/home/xecarlox94/
+	..
+1621621597
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/xecarlox94/.FILES/scripts/.scripts/deb
+	install_brave.sh
+2
+d/home/xecarlox94/.FILES/scripts/.scripts
+	deb
+2
+d/home/xecarlox94/.FILES/scripts
+	..
+0
+d/home/xecarlox94/.FILES
+	scripts
+9
+d/home/xecarlox94
+	.config
+3
+d/home/xecarlox94/.config
+	gnome-initial-setup-done
+9
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	vifm
+12
+d/home/xecarlox94/.FILES/vifm
+	.config
+1
+d/home/xecarlox94/.FILES/vifm/.config
+	vifm
+1
+d/home/xecarlox94/.FILES/vifm/.config/vifm
+	scripts
+2
+d/home/xecarlox94/.FILES/vifm/.config
+	vifm
+1
+d/home/xecarlox94/.FILES/vifm
+	.config
+1
+d/home/xecarlox94/.FILES
+	zsh
+12
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	zsh
+12
+d/home/xecarlox94
+	.FILES
+1
+d/home
+	xecarlox94
+1
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	zsh
+14
+d/home/xecarlox94
+	.config
+3
+d/home/xecarlox94/.config
+	gnome-initial-setup-done
+9
+d/home/xecarlox94
+	.FILES
+1
+d/home/xecarlox94/.FILES
+	scripts
+10
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	deb
+2
+d/home/xecarlox94/.FILES/scripts/.scripts/deb
+	install_brave.sh
+2
+d/home/xecarlox94/.FILES
+	scripts
+9
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	init_ssh_keys
+7
+d/home/xecarlox94/.FILES/scripts
+	.scripts
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	deb
+2
+d/home/xecarlox94/.FILES/scripts/.scripts/deb
+	init_install_deb.sh
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	deb
+2
+d/home/xecarlox94/.FILES/scripts/.scripts/deb
+	init_install_deb.sh
+1
+d/home/xecarlox94/.FILES/scripts/.scripts
+	packages.sh
+9
+d
+
+# Right window history (oldest to newest):
+D/home/xecarlox94
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:touch ini_ssh_keys
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+pinit_ssh_keys.sh
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/xecarlox94/.local/share/vifm/Trash/000_.profile
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/xecarlox94/.local/share/vifm/Trash/000_vifm
+	/home/xecarlox94/.config/vifm
+t/home/xecarlox94/.local/share/vifm/Trash/000_.profile
+	/home/xecarlox94/.profile
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].1
+]F
+s0

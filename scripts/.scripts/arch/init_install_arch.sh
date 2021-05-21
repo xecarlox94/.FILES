@@ -18,3 +18,6 @@ source ~/.FILES/scripts/.scripts/arch/config_virtmanager.sh
 
 
 source ~/.FILES/scripts/.scripts/stow.sh
+
+
+source ~/.FILES/scripts/.scripts/init_ssh_keys.sh
