@@ -2,7 +2,7 @@ source ~/.FILES/scripts/.scripts/packages.sh
 
 sudo pacman -Syu
 
-APPS+=(brave docker-compose docker qemu ovmf vde2 ebtables dnsmasq bridge-utils openbsd-netcat qemu-arch-extra qtile xmonad spectrwdm herbstluftwm-git)
+APPS+=(brave docker-compose docker qemu ovmf vde2 ebtables dnsmasq bridge-utils openbsd-netcat qemu-arch-extra qtile xmonad i3-wm i3lock i3status)
 
 
 for APP in "${APPS[@]}";
