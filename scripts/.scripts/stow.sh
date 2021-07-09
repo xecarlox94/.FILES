@@ -8,3 +8,5 @@ rm -rf vifm/
 
 cd ~/.FILES/
 stow --adopt -vRt ~ *
+
+cd ~

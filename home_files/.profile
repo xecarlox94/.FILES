@@ -15,3 +15,6 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 
 [ "$(tty)" = "/dev/tty1" ] && echo "RUNNING TTY" || echo "ECHOOOOO"
+
+
+[[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1
