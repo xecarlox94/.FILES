@@ -117,8 +117,8 @@ layouts = [
 
 widget_defaults = dict(
     font='sans',
-    fontsize=12,
-    padding=3,
+    fontsize=16,
+    padding=5,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -138,8 +138,7 @@ screens = [
                 widget.WindowName(),
                 widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.QuickExit(),
+                widget.Clock(format='%I:%M %p, %a %Y-%m-%d'),
             ],
             24,
         ),

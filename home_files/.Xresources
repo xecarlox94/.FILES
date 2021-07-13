@@ -1,0 +1,7 @@
+xterm*background: black
+xterm*foreground: white
+
+xterm*faceName: Monospace
+xterm*faceSize: 15
+
+xterm*savelines: 10
