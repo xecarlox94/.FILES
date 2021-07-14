@@ -128,17 +128,15 @@ screens = [
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
-                widget.Prompt(),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+                widget.Prompt(),
                 widget.WindowName(),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format='%I:%M %p, %a %Y-%m-%d'),
+                #widget.Systray(),
             ],
             24,
         ),

@@ -1,6 +1,8 @@
 [[ -f ~/.aliases ]] && . ~/.aliases
 
-PS1='[\u@\h \W]\$ '
+
+export PS1='\e[1;35m[\d, \A] \e[1;32m\u \e[1;36m\W \n\e[0m# '
+
 
 export VISUAL=vim
 export EDITOR=vim
