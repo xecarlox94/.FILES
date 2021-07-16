@@ -13,14 +13,8 @@ alias dckc="sudo docker-compose"
 alias dckcr="sudo docker-compose run --rm"
 alias dck="sudo docker"
 
-alias shutdn="sudo shutdown now"
-
+alias sd="sudo shutdown now"
+alias rb="reboot"
+alias c="clear"
 
 alias commit="commit.sh"
-
-
-alias doome="doom run -nw"
-
-
-
-alias shtd="sudo shutdown now"

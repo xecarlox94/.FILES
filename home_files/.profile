@@ -12,9 +12,6 @@ export LESSHISTFILE="$HOME/.cache/less/lesshst"
 export HISTFILE="$HOME/.cache/terminal_history"
 
 
-export VIMINIT="source ~/.config/vim/vimrc"
-
-
 [ -f ~/.bashrc ] && source ~/.bashrc
 
 

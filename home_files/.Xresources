@@ -1,5 +1,7 @@
 xterm*background: black
 xterm*foreground: white
+xterm*.background: black
+xterm*.foreground: white
 
 xterm*faceName: Monospace
 xterm*faceSize: 15
