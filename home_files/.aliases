@@ -15,3 +15,5 @@ alias dck="sudo docker"
 alias sd="sudo shutdown now"
 alias rb="reboot"
 alias c="clear"
+
+alias commit="commit.sh"
