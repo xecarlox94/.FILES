@@ -4,7 +4,6 @@ local bo = vim.bo -- buffer-local
 
 
 
--- set scrolloff=8
 -- set undodir=~/.cache/vim/undodir
 -- set bg=dark
 -- set tabstop=4 softtabstop=4
@@ -25,3 +24,4 @@ o.swapfile = false
 o.backup = false
 o.undofile = true
 o.incsearch = true
+o.scrolloff = 4

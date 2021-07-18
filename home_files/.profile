@@ -3,7 +3,6 @@ export PATH="$PATH:$HOME/.emacs.d/bin"
 export PATH=$PATH:$HOME/.local/bin
 
 
-export SPACEVIMDIR="$HOME/.config/spacevim"
 export DOOMDIR="$HOME/.config/doom"
 export ZDOTDIR="$HOME/.config/zsh"
 

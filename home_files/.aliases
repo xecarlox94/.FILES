@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 alias g="git"
 alias gst="git status"
 alias ga="git add ."
@@ -16,5 +15,3 @@ alias dck="sudo docker"
 alias sd="sudo shutdown now"
 alias rb="reboot"
 alias c="clear"
-
-alias commit="commit.sh"
