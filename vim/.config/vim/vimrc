@@ -19,3 +19,20 @@ set scrolloff=8
 set signcolumn=yes
 set guicursor=
 syntax on
+
+let mapleader = " "
+
+
+function! Compile()
+    execute "w %"
+    execute "! pdflatex %"
+endfunction
+
+
+nnoremap <leader>c :call Compile()<CR><CR>
+
+" nnoremap <leader>c :! pdflatex % <CR><CR>
+
+" nnoremap <leader>s :! zathura $(echo % \| sed 's/tex$/pdf/')
+" nnoremap <leader>s :! zathura %<.pdf<CR><CR>
+" nnoremap <leader>s :! zathura <c-r>%<.pdf<CR><CR>
