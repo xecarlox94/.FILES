@@ -1,2 +1,4 @@
 
-APPS=(gcc git vim neovim stow vifm zsh nodejs npm emacs curl make ranger tree virt-manager ca-certificates tar htop zip unzip)
+APPS=(gcc g++ git vim neovim stow vifm zsh nodejs npm emacs curl make tree tar htop zip unzip)
+
+APPS+=(virt-manager)
