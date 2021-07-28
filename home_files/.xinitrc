@@ -34,6 +34,7 @@ fi
 
 
 
-nitrogen --restore &
-picom &
+#nitrogen --restore &
+#picom &
+
 exec xmonad

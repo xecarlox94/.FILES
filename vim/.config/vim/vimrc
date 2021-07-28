@@ -6,6 +6,7 @@ set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set clipboard+=unnamedplus
 set expandtab
 set smartindent
 set bg=dark
@@ -15,10 +16,17 @@ set nobackup
 set undodir=~/.cache/vim/undodir
 set undofile
 set incsearch
-set scrolloff=8
+set scrolloff=3
+set nocompatible
 set signcolumn=yes
 set guicursor=
-syntax on
+
+syntax enable
+
+
+
+
+
 
 let mapleader = " "
 

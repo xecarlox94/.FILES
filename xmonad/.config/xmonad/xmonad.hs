@@ -11,6 +11,10 @@ import XMonad
 import Data.Monoid
 import System.Exit
 
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.Run
+import XMonad.Util.SpawnOnce
+
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -29,14 +33,14 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 1
+myBorderWidth   = 2
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask       = mod1Mask
+myModMask       = mod4Mask
 
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
@@ -51,8 +55,8 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#dcdcdc"
+myFocusedBorderColor = "#00ff00"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -181,7 +185,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -243,14 +247,18 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = do
+    spawnOnce "nitrogen --restore &"
+    spawnOnce "picom &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad defaults
+main = do
+    xmproc <- spawnPipe "xmobar -x 0 /home/xecarlox/.config/xmobar/xmobarrc" 
+    xmonad $ docks defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

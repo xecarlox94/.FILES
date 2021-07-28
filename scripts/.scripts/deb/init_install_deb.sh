@@ -8,8 +8,8 @@ APPS+=(apt-transport-https python3-pip software-properties-common ca-certificate
 sudo apt install -y "$APPS"
 
 source ~/.FILES/scripts/.scripts/deb/install_brave.sh
-source ~/.FILES/scripts/.scripts/deb/install_docker.sh
 
+source ~/.FILES/scripts/.scripts/deb/install_docker.sh
 source ~/.FILES/scripts/.scripts/init_python.sh
 source ~/.FILES/scripts/.scripts/init_nodejs.sh
 

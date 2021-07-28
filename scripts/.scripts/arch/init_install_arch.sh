@@ -2,7 +2,9 @@ source ~/.FILES/scripts/.scripts/packages.sh
 
 sudo pacman -Syu
 
-APPS+=(brave docker-compose docker python-pip xmonad xmonad-contrib ripgrep fd shellcheck zathura zathura-pdf-poppler dmenu texlive-most)
+APPS+=(docker docker-compose python-pip ripgrep fd shellcheck)
+
+APPS+=(brave xmonad xmonad-contrib xmobar zathura zathura-pdf-poppler dmenu texlive-most)
 
 APPS+=(qemu ovmf vde2 ebtables dnsmasq bridge-utils openbsd-netcat qemu-arch-extra iptables-nft nftables)
 
