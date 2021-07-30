@@ -6,7 +6,7 @@ xterm*.foreground: white
 xterm*faceName: Monospace
 xterm*faceSize: 15
 
-xterm*savelines: 10
+xterm*savelines: 100
 
 xterm*selectToClipboard: true
 

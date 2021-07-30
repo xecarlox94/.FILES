@@ -1,8 +1,6 @@
-[[ -f ~/.aliases ]] && . ~/.aliases
+ALIASES=~/.config/profile/aliases
+[ -f $ALIASES ] && source $ALIASES
 
+set -o vi
 
-export PS1='\e[1;35m[\d, \A] \e[1;32m\u \e[1;36m\w \n\e[0m# '
-
-
-export VISUAL=vim
-export EDITOR=vim
+export PS1='\e[1;36m\w \e[0m# '

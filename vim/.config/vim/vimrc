@@ -10,7 +10,7 @@ set clipboard+=unnamedplus
 set expandtab
 set smartindent
 set bg=dark
-set nowrap
+" set nowrap
 set noswapfile
 set nobackup
 set undodir=~/.cache/vim/undodir
@@ -20,6 +20,8 @@ set scrolloff=3
 set nocompatible
 set signcolumn=yes
 set guicursor=
+
+set spell spelllang=en_gb
 
 syntax enable
 
@@ -39,8 +41,8 @@ endfunction
 
 nnoremap <leader>c :call Compile()<CR><CR>
 
+" FAIL
 " nnoremap <leader>c :! pdflatex % <CR><CR>
-
 " nnoremap <leader>s :! zathura $(echo % \| sed 's/tex$/pdf/')
 " nnoremap <leader>s :! zathura %<.pdf<CR><CR>
 " nnoremap <leader>s :! zathura <c-r>%<.pdf<CR><CR>

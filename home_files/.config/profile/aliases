@@ -7,13 +7,16 @@ alias gc="git commit -m"
 alias gp="git push"
 
 
-alias d="sudo docker"
-alias dckc="sudo docker-compose"
-alias dckcr="sudo docker-compose run --rm"
-alias dck="sudo docker"
-
 alias sd="sudo shutdown now"
 alias rb="reboot"
 alias c="clear"
 
 alias commit="commit.sh"
+
+
+alias vim="vim -u ~/.config/vim/vimrc"
+
+alias d="sudo docker"
+alias dckc="sudo docker-compose"
+alias dckcr="sudo docker-compose run --rm"
+alias dck="sudo docker"
