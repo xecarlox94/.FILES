@@ -38,11 +38,9 @@ function! Compile()
     execute "! pdflatex %"
 endfunction
 
+function! ShowPDF()
+    execute "! zathura $(echo % \| sed 's/tex$/pdf/') & disown"
+endfunction
 
 nnoremap <leader>c :call Compile()<CR><CR>
-
-" FAIL
-" nnoremap <leader>c :! pdflatex % <CR><CR>
-" nnoremap <leader>s :! zathura $(echo % \| sed 's/tex$/pdf/')
-" nnoremap <leader>s :! zathura %<.pdf<CR><CR>
-" nnoremap <leader>s :! zathura <c-r>%<.pdf<CR><CR>
+nnoremap <leader>s :call ShowPDF()<CR><CR>
