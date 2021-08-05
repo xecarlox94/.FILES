@@ -1,9 +1,11 @@
--- Loading vimrc config
-vim.cmd 'source ~/.config/vim/vimrc'
+-- SETTINGS
+require('settings')
 
-local o = vim.o -- global
-local wo = vim.wo -- window-local
-local bo = vim.bo -- buffer-local
 
-o.number = true
-o.relativenumber = false
+-- PLUGINS
+require('plugins')
+
+
+
+
+vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'

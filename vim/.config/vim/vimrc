@@ -62,7 +62,7 @@ nnoremap <leader>lw :setlocal nowrap!<CR>
 nnoremap <leader>wh :split<CR>
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>wq <C-w>wq
-nnoremap <leader>w <C-w>w
+" nnoremap <leader>ww <C-w>w
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
@@ -124,9 +124,6 @@ autocmd BufWritePre * %s/\s\+$//e
 " updating X11 configs
 autocmd BufWritePost ~/.Xresources,~/Xdefaults !xrdb %
 autocmd BufWritePost ~/.config/vim/vimrc so %
-
-
-autocmd FileType html inoremap ;e <em></em><Space><++><Esc>FeT>i
 
 
 " C/C++ snippets
