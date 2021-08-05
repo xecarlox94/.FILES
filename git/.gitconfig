@@ -7,3 +7,5 @@
 	a = add
 [init]
 	defaultBranch = master
+[core]
+    editor = "vim"

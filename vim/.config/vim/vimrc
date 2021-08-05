@@ -8,6 +8,16 @@ filetype plugin on
 set encoding=utf-8
 set noerrorbells
 
+" cache settings
+if !has('nvim')
+    set viminfofile=~/.cache/vim/viminfo
+    set noswapfile
+    set nobackup
+    set undodir=~/.cache/vim/undodir
+    let g:netrw_home=$XDG_CACHE_HOME.'/vim'
+    set undofile
+endif
+
 " search settings
 set incsearch
 set nohlsearch
@@ -34,14 +44,6 @@ set exrc
 set scrolloff=3
 set signcolumn=yes
 set guicursor=
-
-" cache settings
-set viminfofile=~/.cache/vim/viminfo
-set noswapfile
-set nobackup
-set undodir=~/.cache/vim/undodir
-set undofile
-let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 
 " cursor lines
 " set cursorcolumn
@@ -80,16 +82,37 @@ function! ShowPDF()
     execute "! zathura $(echo % \| sed 's/tex$/pdf/') & disown"
 endfunction
 
-" Document
-nnoremap <leader>dc :call Compile()<CR><CR>
-nnoremap <leader>ds :call ShowPDF()<CR><CR>
 
 " File
-nnoremap <leader>fo :e<Space>
+nnoremap <leader>fc :call Compile()<CR><CR>
+nnoremap <leader>fl :call ShowPDF()<CR><CR>
+nnoremap <leader>fw :w<CR>
+nnoremap <leader>fq :q<CR>
+nnoremap <leader>fx :x<CR>
+nnoremap <leader>fs :so %<CR>
+nnoremap <leader>fk :q!<CR>
+
+" Open
+nnoremap <leader>of :e<Space>
+nnoremap <leader>os :shell<CR>
+
+" Run
+nnoremap <leader>rp :<up><CR>
 
 " snippet helper
-imap <Space><Space> <Esc><Space><Space>
-nnoremap <Space><Space> /<++><Enter>"_c4l
+imap ;; <Esc>;;
+nnoremap ;; /<++><Enter>"_c4l
+
+
+" pairing operators
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap (<CR> (<CR>)<Esc>O
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<left>
+inoremap [<CR> [<CR>]<Esc>O
 
 
 "-------------------- AUTO COMMANDS
@@ -100,6 +123,18 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " updating X11 configs
 autocmd BufWritePost ~/.Xresources,~/Xdefaults !xrdb %
+autocmd BufWritePost ~/.config/vim/vimrc so %
 
 
-autocmd FileType html inoremap ,e <em></em><Space><++><Esc>FeT>i
+autocmd FileType html inoremap ;e <em></em><Space><++><Esc>FeT>i
+
+
+" C/C++ snippets
+autocmd FileType cpp,hpp,c,h inoremap ;I #include<Space><<++>><Esc>F<"_c4l
+autocmd FileType cpp,hpp,c,h inoremap ;i #include<Space>"<++>"<Esc>F<"_c4l
+autocmd FileType cpp,hpp,c,h inoremap ;f <++><Space><++>(<++>)<CR>{<CR><++><CR>}<Esc>3k^"_c4l
+autocmd FileType cpp,hpp,c,h inoremap ;c <++><Space>(<++>)<CR>{<CR><++><CR>}<Esc>3k0f<"_c4l
+" autocmd FileType cpp,hpp,c,h inoremap ,; <Esc>A;<CR>
+autocmd FileType cpp,hpp,c,h inoremap /* /*<CR><Esc>cc*/<Esc>O
+autocmd FileType cpp,hpp,c,h inoremap std std::
+autocmd FileType cpp,hpp,c,h inoremap cv cv::
