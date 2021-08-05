@@ -2,7 +2,7 @@ source ~/.FILES/scripts/.config/scripts/packages.sh
 
 sudo pacman -Syu --no-confirm
 
-APPS+=(docker docker-compose python-pip ripgrep fd shellcheck)
+APPS+=(docker docker-compose python-pip ripgrep fd shellcheck llvm ccls)
 
 APPS+=(brave xmonad xmonad-contrib xmobar zathura zathura-pdf-poppler dmenu texlive-most)
 
