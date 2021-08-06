@@ -1,12 +1,13 @@
 "-------------------- SETTINGS
 
-source settings.vim
+source ~/.config/vim/settings.vim
+
 
 "-------------------- MAPPINGS
 
-source mappings/mappings.vim
+source ~/.config/vim/mappings/mappings.vim
 
 "-------------------- AUTO COMMANDS
 
-source autocommands.vim
+source ~/.config/vim/autocommands.vim
 
