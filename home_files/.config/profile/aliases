@@ -14,9 +14,13 @@ alias c="clear"
 alias commit="commit.sh"
 
 
-alias vim="vim -u ~/.config/vim/vimrc"
+alias vim="vim -u ~/.config/vim/init.vim"
 
 alias d="sudo docker"
 alias dckc="sudo docker-compose"
 alias dckcr="sudo docker-compose run --rm"
 alias dck="sudo docker"
+
+
+alias doome="doom run"
+

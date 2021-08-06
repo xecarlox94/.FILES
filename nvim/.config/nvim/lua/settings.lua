@@ -1,9 +1,10 @@
 
 -- Loading vimrc config
-vim.cmd 'source ~/.config/vim/vimrc'
+vim.cmd 'source ~/.config/vim/init.vim'
 
 
 -- Aliasing vim environment variables
 local o = vim.o -- global
-local wo = vim.wo -- window-local
-local bo = vim.bo -- buffer-local
+local w = vim.w -- window-local
+local b = vim.b -- buffer-local
+local t = vim.t -- tab_page-local

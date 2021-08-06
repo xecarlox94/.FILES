@@ -1,13 +1,11 @@
-local fn = vim.fn
-local execute = vim.api.nvim_command
-
 -- Auto install packer if necessary
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-
-    vim.cmd [[packadd packer.nvim]]
+local ipath = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+if fn.empty(fn.glob(ipath)) > 0 then
+    execute('!git clone https://github.com/wbthomason/packer.nvim '..ipath)
 end
+
+vim.cmd [[packadd packer.nvim]]
+vim.cmd 'autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua PackerCompile'
 
 
 return require('packer').startup(function()
@@ -18,29 +16,3 @@ return require('packer').startup(function()
     -- LSP
     use { 'neovim/nvim-lspconfig' }
 end)
-
-
---[[
-
-
--- You must run this or `PackerSync` whenever you make changes to your plugin configuration
--- Regenerate compiled loader file
-:PackerCompile
-
--- Remove any disabled or unused plugins
-:PackerClean
-
--- Clean, then install missing plugins
-:PackerInstall
-
--- Clean, then update and install plugins
-:PackerUpdate
-
--- Perform `PackerUpdate` and then `PackerCompile`
-:PackerSync
-
--- Loads opt plugin immediately
-:PackerLoad completion-nvim ale
-
-
-]]--
