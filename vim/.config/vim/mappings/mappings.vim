@@ -2,7 +2,7 @@ let mapleader = " "
 
 
 " change local settings
-nnoremap <leader>ls :setlocal spell! spelllang=en_gb<CR>
+nnoremap <leader>ls :setlocal spell!<CR>
 nnoremap <leader>lw :setlocal nowrap!<CR>
 
 " Window

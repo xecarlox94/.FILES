@@ -8,6 +8,7 @@ set scrolloff=3
 
 " GENERAL
 set nocompatible
+set spelllang=en_gb
 syntax on
 set encoding=utf-8
 set bg=dark
