@@ -35,11 +35,10 @@ endfunction
 
 " File
 nnoremap <leader>fc :call Compile()<CR><CR>
-nnoremap <leader>fl :call ShowPDF()<CR><CR>
+nnoremap <leader>fs :call ShowPDF()<CR><CR>
 nnoremap <leader>fw :w<CR>
 nnoremap <leader>fq :q<CR>
 nnoremap <leader>fx :x<CR>
-nnoremap <leader>fs :so %<CR>
 nnoremap <leader>fk :q!<CR>
 
 " Open
