@@ -67,4 +67,4 @@ inoremap [<CR> [<CR>]<Esc>o<CR><++><Esc>?]<CR>O
 inoremap ,; <Esc>A;<CR>
 
 
-source ~/.config/vim/mappings/c_cpp.vim
+source ~/.vim/mappings/c_cpp.vim

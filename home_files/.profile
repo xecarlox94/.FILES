@@ -15,6 +15,7 @@ export LESSHISTFILE="$HOME/.cache/less/lesshst"
 export HISTFILE="$HOME/.cache/terminal_history"
 
 
+
 BASHRC=~/.bashrc
 [ -f $BASHRC ] && source $BASHRC
 

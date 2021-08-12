@@ -29,7 +29,6 @@ if !has('nvim')
     set undofile
 endif
 
-
 " SEARCH SETTINGS
 set incsearch
 set nohlsearch
