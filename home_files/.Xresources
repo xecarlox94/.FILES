@@ -4,7 +4,7 @@ xterm*.background: black
 xterm*.foreground: white
 
 xterm*faceName: Monospace
-xterm*faceSize: 15
+xterm*faceSize: 20
 
 xterm*savelines: 100
 
@@ -12,4 +12,4 @@ xterm*selectToClipboard: true
 
 xterm*VT100.Translations: #override \
             Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-            Ctrl Shift <Key>C: copy-selection(CLIPBOARD) 
+            Ctrl Shift <Key>C: copy-selection(CLIPBOARD)

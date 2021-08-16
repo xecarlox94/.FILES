@@ -14,7 +14,7 @@ alias c="clear"
 alias commit="commit.sh"
 
 
-alias vim="vim -u ~/.vim/init.vim"
+alias vim="vim -u ~/.config/vim/init.vim"
 
 alias d="sudo docker"
 alias dckc="sudo docker-compose"
