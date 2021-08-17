@@ -14,8 +14,6 @@ alias c="clear"
 alias commit="commit.sh"
 
 
-alias vim="vim -u ~/.config/vim/init.vim"
-
 alias d="sudo docker"
 alias dckc="sudo docker-compose"
 alias dckcr="sudo docker-compose run --rm"
@@ -24,3 +22,6 @@ alias dck="sudo docker"
 
 alias doome="doom run"
 
+
+#alias vim="vim -u ~/.config/vim/init.vim"
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.config/nvim/init.lua" | so $MYVIMRC'

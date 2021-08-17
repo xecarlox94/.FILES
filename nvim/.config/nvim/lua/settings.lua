@@ -1,6 +1,6 @@
 
 -- Loading vimrc config
-vim.cmd 'source ~/.vim/init.vim'
+vim.cmd 'source ~/.config/vim/init.vim'
 
 
 -- Aliasing vim environment variables
