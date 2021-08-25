@@ -48,9 +48,18 @@ nnoremap <leader>os :shell<CR>
 " Run
 nnoremap <leader>rp :<up><CR>
 
+
 " snippet helper
 imap ,. <Esc>,.
 nnoremap ,. /<++><Enter>"_c4l
+
+
+" insert snippets
+inoremap ,a <Esc>A
+inoremap ,e <Esc>ea
+inoremap ,w <Esc>wi
+inoremap ,O <Esc>O
+inoremap ,o <Esc>o
 
 
 " pairing operators
@@ -58,13 +67,14 @@ inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
 
-inoremap (<CR> (<CR>)<Esc>o<CR><++><Esc>?)<CR>O
+inoremap (<CR> (<CR>)<Esc>o<++><Esc>?)<CR>O
 inoremap { {}<left>
-inoremap {<CR> {<CR>}<Esc>o<CR><++><Esc>?}<CR>O
+inoremap {<CR> {<CR>}<Esc>o<++><Esc>?}<CR>O
 inoremap [ []<left>
-inoremap [<CR> [<CR>]<Esc>o<CR><++><Esc>?]<CR>O
+inoremap [<CR> [<CR>]<Esc>o<++><Esc>?]<CR>O
 
-inoremap ,; <Esc>A;<CR>
+inoremap ,; <Esc>A;
 
 
 source ~/.config/vim/mappings/c_cpp.vim
+source ~/.config/vim/mappings/latex.vim

@@ -15,7 +15,7 @@ set bg=dark
 
 
 " BUILT-IN PLUGINS
-filetype plugin on
+filetype plugin indent on
 " filetype on
 
 

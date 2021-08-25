@@ -33,6 +33,4 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
-nitrogen --restore &
-picom &
-exec dwm
+source ~/autostart.sh
