@@ -12,8 +12,8 @@ export LESSHISTFILE="$HOME/.cache/less/lesshst"
 export HISTFILE="$HOME/.cache/terminal_history"
 
 
-export STARSHIP_CONFIG=~/.config/startship/config.toml
-export STARSHIP_CACHE=~/.cache/startship/cache
+export STARSHIP_CONFIG=~/.config/starship/config.toml
+export STARSHIP_CACHE=~/.cache/starship/cache
 
 
 [ "$(tty)" = "/dev/tty1" ] && echo "RUNNING TTY" || echo "ECHOOOOO"
