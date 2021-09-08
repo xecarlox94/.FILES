@@ -25,7 +25,7 @@ nnoremap <leader>9 <C-w>>
 " Functions
 function! Compile()
     execute "w %"
-    execute "! pdflatex %"
+    execute "! pdflatex % && rm -f *.aux *.log *.out"
 endfunction
 
 function! ShowPDF()
