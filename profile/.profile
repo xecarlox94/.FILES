@@ -17,9 +17,3 @@ export STARSHIP_CACHE=~/.cache/starship/cache
 
 
 [ "$(tty)" = "/dev/tty1" ] && echo "RUNNING TTY" || echo "ECHOOOOO"
-
-
-if [[ $(fgconsole 2>/dev/null) == 1 ]];
-then
-    exec startx -- vt1
-fi
