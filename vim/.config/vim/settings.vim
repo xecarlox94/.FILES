@@ -23,11 +23,14 @@ filetype plugin indent on
 set noswapfile
 set nobackup
 if !has('nvim')
-    set viminfofile=~/.cache/vim/viminfo
+    " set viminfofile=~/.cache/vim/viminfo
     set undodir=~/.cache/vim/undodir
     let g:netrw_home=$XDG_CACHE_HOME.'/vim'
     set undofile
 endif
+
+
+
 
 " SEARCH SETTINGS
 set incsearch
