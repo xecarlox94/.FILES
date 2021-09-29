@@ -2,10 +2,10 @@ source ~/.FILES/scripts/.config/scripts/packages.sh
 
 sudo pacman -Syu --noconfirm
 
-APPS+=(docker docker-compose python-pip ripgrep fd shellcheck)
+APPS+=(docker zsh docker-compose python-pip ripgrep fd shellcheck)
 
 # desktop
-APPS+=(libreoffice-still webkit2gtk gcr zathura zathura-pdf-poppler texlive-most gstreamer gst-plugins-good gst-libav sxiv)
+APPS+=(libreoffice-still webkit2gtk gcr zathura zathura-pdf-poppler texlive-most gstreamer gst-plugins-good gst-libav sxiv libxcb)
 
 # virtual machine
 #APPS+=(qemu ovmf vde2 ebtables dnsmasq bridge-utils openbsd-netcat qemu-arch-extra iptables-nft nftables)

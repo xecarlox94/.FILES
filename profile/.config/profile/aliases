@@ -22,6 +22,4 @@ alias dck="sudo docker"
 
 alias doome="doom run"
 
-
-#alias vim="vim -u ~/.config/vim/init.vim"
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.config/nvim/init.lua" | so $MYVIMRC'
