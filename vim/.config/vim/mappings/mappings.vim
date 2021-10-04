@@ -55,6 +55,7 @@ nnoremap ,. /<++><Enter>"_c4l
 
 
 " insert snippets
+inoremap <leader><leader> <Esc>
 inoremap ,a <Esc>A
 inoremap ,e <Esc>ea
 inoremap ,w <Esc>wi
