@@ -11,4 +11,4 @@ bindkey -v
 
 
 
-eval "$(starship init zsh)"
+export PS1="%n@%m $ "
