@@ -3,4 +3,4 @@ APPS=(gcc g++ git vim neovim stow vifm wget zsh nodejs npm emacs curl make tree 
 
 #APPS+=(tor)
 
-#APPS+=(virt-manager)
+APPS+=(virt-manager)

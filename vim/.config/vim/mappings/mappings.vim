@@ -19,13 +19,15 @@ nnoremap <leader>7 <C-w>+
 nnoremap <leader>8 <C-w>-
 nnoremap <leader>9 <C-w>>
 
+nnoremap <leader><leader> <Esc>
+vnoremap <leader><leader> <Esc>
 
 
 
 " Functions
 function! Compile()
     execute "w %"
-    execute "! pdflatex % && rm -f *.aux *.log *.out"
+    execute "! pdflatex %"
 endfunction
 
 function! ShowPDF()
