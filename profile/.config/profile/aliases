@@ -1,25 +1,14 @@
 #!/bin/sh
 
-alias g="git"
 alias gst="git status"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git push"
 
-
-alias sd="sudo shutdown now"
-alias rb="reboot"
-alias c="clear"
-
 alias commit="commit.sh"
 
 
-alias d="sudo docker"
-alias dckc="sudo docker-compose"
-alias dckcr="sudo docker-compose run --rm"
-alias dck="sudo docker"
-
-
-alias doome="doom run"
+alias sd="sudo shutdown now"
+alias rb="reboot"
 
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.config/nvim/init.lua" | so $MYVIMRC'

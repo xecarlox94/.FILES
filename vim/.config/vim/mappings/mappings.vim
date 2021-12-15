@@ -9,7 +9,7 @@ nnoremap <leader>lw :setlocal nowrap!<CR>
 nnoremap <leader>wh :split<CR>
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>wq <C-w>wq
-" nnoremap <leader>ww <C-w>w
+nnoremap <leader>ww <C-w>w
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
@@ -19,8 +19,9 @@ nnoremap <leader>7 <C-w>+
 nnoremap <leader>8 <C-w>-
 nnoremap <leader>9 <C-w>>
 
-nnoremap <leader><leader> <Esc>
-vnoremap <leader><leader> <Esc>
+nnoremap <silent> <leader><leader> <Esc>
+vnoremap <silent> <leader><leader> <Esc>
+cnoremap <silent> <leader><leader> <Esc>
 
 
 
@@ -42,13 +43,23 @@ nnoremap <leader>fw :w<CR>
 nnoremap <leader>fq :q<CR>
 nnoremap <leader>fx :x<CR>
 nnoremap <leader>fk :q!<CR>
+nnoremap <leader>fp :r !xclip -o<CR>
+
 
 " Open
 nnoremap <leader>of :e<Space>
 nnoremap <leader>os :shell<CR>
+nnoremap <leader>ot :vert ter<CR>
+nnoremap <leader>ob :buffers<CR>:b<Space>
+
+" Tab
+nnoremap <leader>tn :tabNext<CR>
+nnoremap <leader>to :tabnew<Space>
+nnoremap <leader>tp :tabprevious<CR>
 
 " Run
 nnoremap <leader>rp :<up><CR>
+nnoremap <leader>rs :!
 
 
 " snippet helper
@@ -57,12 +68,14 @@ nnoremap ,. /<++><Enter>"_c4l
 
 
 " insert snippets
-inoremap <leader><leader> <Esc>
+inoremap <silent> <leader><leader> <Esc>
 inoremap ,a <Esc>A
 inoremap ,e <Esc>ea
 inoremap ,w <Esc>wi
 inoremap ,O <Esc>O
 inoremap ,o <Esc>o
+inoremap ,; <Esc>A;
+
 
 
 " pairing operators
@@ -75,8 +88,6 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<Esc>o<++><Esc>?}<CR>O
 inoremap [ []<left>
 inoremap [<CR> [<CR>]<Esc>o<++><Esc>?]<CR>O
-
-inoremap ,; <Esc>A;
 
 
 source ~/.FILES/vim/.config/vim/mappings/c_cpp.vim

@@ -3,6 +3,6 @@ cd ~
 rm .bash_profile .bash_logout .bashrc .profile
 
 cd ~/.FILES/
-stow --adopt -vRt ~ *
+stow --adopt -Rt ~ *
 
 cd ~
