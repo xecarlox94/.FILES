@@ -59,6 +59,8 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.clangd.setup{}
 
 
+-- bash-language-server
+--
 -- require'lspconfig'.bashls.setup{
     -- cmd = { "bash-language-server", "start" },
     -- cmd_env = {
