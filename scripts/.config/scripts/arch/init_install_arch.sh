@@ -24,4 +24,3 @@ source ~/.FILES/scripts/.config/scripts/init_nodejs.sh
 source ~/.FILES/scripts/.config/scripts/arch/config_virtmanager.sh
 
 source ~/.FILES/scripts/.config/scripts/stow.sh
-source ~/.FILES/scripts/.config/scripts/config.sh
