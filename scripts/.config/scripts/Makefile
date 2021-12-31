@@ -2,29 +2,21 @@
 all: bootstrap
 
 bootstrap:
-	mkdir -p ~/.config/_home_backup
-	mv ~/.bash_profile	~/.config/_home_backup 2>/dev/null
-	mv ~/.bash_logout	~/.config/_home_backup 2>/dev/null
-	mv ~/.bashrc		~/.config/_home_backup 2>/dev/null
-	mv ~/.profile		~/.config/_home_backup 2>/dev/null
-	mv ~/.Xresources	~/.config/_home_backup 2>/dev/null
-	mv ~/.profile		~/.config/_home_backup 2>/dev/null
-	mv ~/.zprofile		~/.config/_home_backup 2>/dev/null
-	mv ~/.gitconfig		~/.config/_home_backup 2>/dev/null
-	mv ~/.xinitrc		~/.config/_home_backup 2>/dev/null
-	stow --adopt -Rt ~ ~/.FILES
+	mkdir -p ~/.config/_backup/home
+	./mv.sh ~/.bash_profile 	~/.config/_backup/home
+	./mv.sh ~/.bash_logout 		~/.config/_backup/home
+	./mv.sh ~/.bashrc 		~/.config/_backup/home
+	./mv.sh ~/.profile 		~/.config/_backup/home
+	./mv.sh ~/.Xresources 		~/.config/_backup/home
+	./mv.sh ~/.profile 		~/.config/_backup/home
+	./mv.sh ~/.zprofile 		~/.config/_backup/home
+	./mv.sh ~/.gitconfig 		~/.config/_backup/home
+	./mv.sh ~/.xinitrc 		~/.config/_backup/home
+	./stow.sh
 
 
 restore:
-	stow --adopt -Dt ~ ~/.FILES
-	mv ~/.config/_home_backup ~/.bash_profile	2>/dev/null
-	mv ~/.config/_home_backup ~/.bash_logout	2>/dev/null
-	mv ~/.config/_home_backup ~/.bashrc			2>/dev/null
-	mv ~/.config/_home_backup ~/.profile		2>/dev/null
-	mv ~/.config/_home_backup ~/.Xresources		2>/dev/null
-	mv ~/.config/_home_backup ~/.profile		2>/dev/null
-	mv ~/.config/_home_backup ~/.zprofile		2>/dev/null
-	mv ~/.config/_home_backup ~/.gitconfig		2>/dev/null
-	mv ~/.config/_home_backup ~/.xinitrc		2>/dev/null
-	rm -rf ~/.config/_home_backup/
+	./unstow.sh
+	mv ~/.config/_backup/home/* ~
+	rm -rf ~/.config/_backup
 
