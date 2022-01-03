@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd ~/.FILES/
 
-stow --adopt -Dt ~ *
+stow --ignore="\.steam.*" --adopt -Dt ~ *

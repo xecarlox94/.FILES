@@ -17,6 +17,4 @@ bootstrap:
 
 restore:
 	./unstow.sh
-	mv ~/.config/_backup/home/* ~
-	rm -rf ~/.config/_backup
-
+	./restore_backup_files.sh
