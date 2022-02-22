@@ -75,6 +75,7 @@ inoremap ,w <Esc>wi
 inoremap ,O <Esc>O
 inoremap ,o <Esc>o
 inoremap ,; <Esc>A;
+inoremap ,: <Esc>A:
 
 
 
