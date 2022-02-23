@@ -44,6 +44,7 @@ nnoremap <leader>fq :q<CR>
 nnoremap <leader>fx :x<CR>
 nnoremap <leader>fk :q!<CR>
 nnoremap <leader>fp :r !xclip -o<CR>
+vnoremap <leader>fy :w !xclip -sel clip<CR><CR>
 
 
 " Open
@@ -75,6 +76,7 @@ inoremap ,w <Esc>wi
 inoremap ,O <Esc>O
 inoremap ,o <Esc>o
 inoremap ,; <Esc>A;
+inoremap ,: <Esc>A:
 
 
 
