@@ -2,7 +2,7 @@
 set noerrorbells
 set clipboard+=unnamedplus
 set smartindent
-set scrolloff=3
+set scrolloff=1
 set guicursor=
 
 
