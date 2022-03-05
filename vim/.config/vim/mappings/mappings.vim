@@ -60,7 +60,8 @@ nnoremap <leader>tp :tabprevious<CR>
 
 " Run
 nnoremap <leader>rp :<up><CR>
-nnoremap <leader>rs :!
+nnoremap <leader>rs :!<Space>
+vnoremap <leader>rn :norm<Space>
 
 
 " snippet helper
@@ -73,6 +74,7 @@ inoremap <silent> <leader><leader> <Esc>
 inoremap ,a <Esc>A
 inoremap ,e <Esc>ea
 inoremap ,w <Esc>wi
+inoremap ,b <Esc>bi
 inoremap ,O <Esc>O
 inoremap ,o <Esc>o
 inoremap ,; <Esc>A;

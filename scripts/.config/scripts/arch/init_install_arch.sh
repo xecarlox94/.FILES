@@ -1,4 +1,4 @@
-source ~/.FILES/scripts/.config/scripts/packages.sh
+source ~/.FILES/scripts/.config/scripts/_scripts/packages.sh
 
 sudo pacman -Syu --noconfirm
 
@@ -18,9 +18,9 @@ do
 done
 
 
-source ~/.FILES/scripts/.config/scripts/init_python.sh
-source ~/.FILES/scripts/.config/scripts/init_nodejs.sh
+source ~/.FILES/scripts/.config/scripts/_scripts/init_python.sh
+source ~/.FILES/scripts/.config/scripts/_scripts/init_nodejs.sh
 
-source ~/.FILES/scripts/.config/scripts/arch/config_virtmanager.sh
+source ~/.FILES/scripts/.config/scripts/_scripts/arch/config_virtmanager.sh
 
-source ~/.FILES/scripts/.config/scripts/stow.sh
+source ~/.FILES/scripts/.config/scripts/_scripts/stow.sh

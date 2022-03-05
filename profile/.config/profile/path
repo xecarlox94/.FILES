@@ -1,3 +1,0 @@
-
-export PATH="$PATH:$HOME/.FILES/scripts/.config/scripts"
-export PATH="$PATH:$HOME/.local/bin"

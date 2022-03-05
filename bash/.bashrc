@@ -1,7 +1,7 @@
-PATHF=~/.config/profile/path
+PATHF=~/.config/profile/path.sh
 [ -f $PATHF ] && source $PATHF
 
-ALIASES=~/.config/profile/aliases
+ALIASES=~/.config/profile/aliases.sh
 [ -f $ALIASES ] && source $ALIASES
 
 HISTSIZE=1000
