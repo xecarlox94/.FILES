@@ -60,7 +60,7 @@ nnoremap <leader>tp :tabprevious<CR>
 
 " Run
 nnoremap <leader>rp :<up><CR>
-nnoremap <leader>rs :!<Space>
+nnoremap <leader>rs :!
 vnoremap <leader>rn :norm<Space>
 
 
