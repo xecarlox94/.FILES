@@ -1,8 +1,7 @@
-PATHF=~/.config/profile/path.sh
-[ -f $PATHF ] && source $PATHF
+ENVF=~/.config/profile/env.sh
+[ -f $ENVF ] && source $ENVF
 
-ALIASES=~/.config/profile/aliases.sh
-[ -f $ALIASES ] && source $ALIASES
+
 
 HISTSIZE=1000
 HISTFILESIZE=1000

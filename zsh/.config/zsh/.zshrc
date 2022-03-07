@@ -3,8 +3,10 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 
-ALIASES=~/.config/profile/aliases
-[ -f $ALIASES ] && source $ALIASES
+ENVF=~/.config/profile/env.sh
+[ -f $ENVF ] && source $ENVF
+
+
 
 
 bindkey -v
