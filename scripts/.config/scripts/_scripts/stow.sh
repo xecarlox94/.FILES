@@ -1,3 +1,3 @@
 cd ~/.FILES/
 
-stow --ignore="\.steam.*" --adopt -Rt ~ *
+stow --adopt -Rt ~ *
