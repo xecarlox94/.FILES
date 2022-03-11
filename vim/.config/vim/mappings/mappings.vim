@@ -19,9 +19,9 @@ nnoremap <leader>7 <C-w>+
 nnoremap <leader>8 <C-w>-
 nnoremap <leader>9 <C-w>>
 
-nnoremap <silent> <leader><leader> <Esc>
-vnoremap <silent> <leader><leader> <Esc>
-cnoremap <silent> <leader><leader> <Esc>
+" nnoremap <silent> <leader><leader> <Esc>
+" vnoremap <silent> <leader><leader> <Esc>
+" cnoremap <silent> <leader><leader> <Esc>
 
 
 
@@ -70,7 +70,7 @@ nnoremap ,. /<++><Enter>"_c4l
 
 
 " insert snippets
-inoremap <silent> <leader><leader> <Esc>
+" inoremap <silent> <leader><leader> <Esc>
 inoremap ,a <Esc>A
 inoremap ,e <Esc>ea
 inoremap ,w <Esc>wi
