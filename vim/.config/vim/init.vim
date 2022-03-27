@@ -6,7 +6,7 @@ source ~/.FILES/vim/.config/vim/settings.vim
 
 "-------------------- MAPPINGS
 
-source ~/.FILES/vim/.config/vim/mappings/mappings.vim
+source ~/.FILES/vim/.config/vim/mappings.vim
 
 
 
