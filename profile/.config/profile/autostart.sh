@@ -1,4 +1,4 @@
 #!/system/bin/sh
 
 
-exec dwm
+exec xmonad --recompile

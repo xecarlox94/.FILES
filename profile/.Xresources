@@ -1,15 +1,20 @@
+
 xterm*background: black
 xterm*foreground: white
 xterm*.background: black
 xterm*.foreground: white
-
 xterm*faceName: Monospace
 xterm*faceSize: 20
-
 xterm*savelines: 100
-
 xterm*selectToClipboard: true
-
 xterm*VT100.Translations: #override \
             Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
             Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+
+
+
+Rxvt*background: black
+Rxvt*foreground: white
+Rxvt*font: xft:Monospace:size=20:antialias=true
+Rxvt*scrollBar: false
+Rxvt*letterSpace: -1
