@@ -1,9 +1,11 @@
 import XMonad
+import XMonad.Util.Run
 
 main :: IO()
 
-main = xmonad def
-    {
+main = do
+    xmproc <- spawnPipe "picom"
+    xmonad def {
         terminal    = "urxvt",
         borderWidth = 1
     }
