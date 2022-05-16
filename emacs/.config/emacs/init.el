@@ -15,7 +15,8 @@
 
 
 (load-theme 'modus-vivendi t)
-
+(set-frame-parameter (selected-frame) 'alpha '(70 70))
+(add-to-list 'default-frame-alist '(alpha 70 70))
 
 ;;;;(menu-bar-mode -1)
 (tool-bar-mode -1)
