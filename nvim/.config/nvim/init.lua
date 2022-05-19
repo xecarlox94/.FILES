@@ -53,10 +53,26 @@ end
 
 
 
-require'lspconfig'.pyright.setup{}
 
 
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.dhall_lsp_server.setup{}
+--require'lspconfig'.clangd.setup{}
+
+
+
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+-- require'lspconfig'.pyright.setup{}
+-- local servers = { "pyright" }
+-- for _, lsp in ipairs(servers) do
+  -- nvim_lsp[lsp].setup {
+    -- on_attach = on_attach,
+    -- flags = {
+      -- debounce_text_changes = 150,
+    -- }
+  -- }
+-- end
 
 
 -- bash-language-server
@@ -70,22 +86,6 @@ require'lspconfig'.clangd.setup{}
     -- root_dir = util.find_git_ancestor,
     -- single_file_support = true
 -- }
-
-
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { "pyright" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
-
-
 
 
 
