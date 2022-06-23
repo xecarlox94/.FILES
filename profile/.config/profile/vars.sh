@@ -14,10 +14,6 @@ export XMONAD_DATA_HOME="$XDG_DATA_HOME/xmonad"
 export XMONAD_CACHE_HOME="$XDG_CACHE_HOME/xmonad"
 
 
-export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
-export CABAL_DIR="$XDG_CACHE_HOME/cabal"
-
-
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 
 

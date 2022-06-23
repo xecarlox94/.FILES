@@ -10,6 +10,9 @@ main = do
     xmproc <- spawnPipe "wal -R"
     xmproc <- spawnPipe "picom --experimental-backends"
     xmonad def {
-        terminal    = "urxvt",
+        terminal    = "alacritty",
         borderWidth = 1
-    }
+    } -- `removeKeys` [(mod1Mask .|. shiftMask, n) | n <- [xK_1 .. xK_9]]
+
+
+
