@@ -1,6 +1,11 @@
 import XMonad
+
 import XMonad.Util.Run
 
+import XMonad.EZConfig (additionalKeys)
+
+
+-- myKeys = [ ((mod4Mask, xK_f), spawn "firefox") ]
 
 main :: IO()
 
@@ -12,7 +17,4 @@ main = do
     xmonad def {
         terminal    = "alacritty",
         borderWidth = 1
-    } -- `removeKeys` [(mod1Mask .|. shiftMask, n) | n <- [xK_1 .. xK_9]]
-
-
-
+    } -- `additionalKeys` myKeys
