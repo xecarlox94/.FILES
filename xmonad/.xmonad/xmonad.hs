@@ -2,10 +2,6 @@ import XMonad
 
 import XMonad.Util.Run
 
-import XMonad.EZConfig (additionalKeys)
-
-
--- myKeys = [ ((mod4Mask, xK_f), spawn "firefox") ]
 
 main :: IO()
 
