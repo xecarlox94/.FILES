@@ -1,3 +1,12 @@
 #!/bin/sh
 
-[ $# -eq 1 ] && git status && git add . && git commit -m "$1" && git push --all origin || echo "ERROR"
+if [ $# -ge 1 ]
+then
+    git status
+    git add .
+    shift
+    git commit -m "$@"
+    git push --all origin
+else
+    echo "ERROR"
+fi
