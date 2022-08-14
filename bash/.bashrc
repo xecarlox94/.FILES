@@ -9,3 +9,11 @@ HISTFILESIZE=1000
 set -o vi
 
 PS1="[ \[\e[37m\]\h\[\e[m\]@\u ] \\$ "
+export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;40m\]\u\[\e[m\]\[\e[32m\]]\[\e[m\] \[\e[32m\]\\$\[\e[m\]  "
+
+
+
+
+
+export SPARK_HOME=/opt/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
