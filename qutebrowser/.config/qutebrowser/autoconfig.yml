@@ -6,6 +6,6 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://www.bestmp3converter.com: false
-    https://www.reddit.com: false
+  url.searchengines:
+    global:
+      DEFAULT: https://duckduckgo.com/?q={}
