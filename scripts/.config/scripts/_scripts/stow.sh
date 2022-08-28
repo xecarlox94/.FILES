@@ -1,3 +1,3 @@
 cd ~/.FILES/
 
-stow --adopt -Rt ~ *
+stow --adopt -Rt ~ */

@@ -6,7 +6,7 @@ then
     git add .
     shift
     git commit -m "$@"
-    git push --all origin
+    git push
 else
     echo "ERROR"
 fi
