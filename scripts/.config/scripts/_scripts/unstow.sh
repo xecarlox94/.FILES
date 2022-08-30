@@ -2,4 +2,4 @@
 
 cd ~/.FILES/
 
-stow --ignore="\.steam.*" --adopt -Dt ~ *
+stow --ignore="\.steam.*" --adopt -Dt ~ */
