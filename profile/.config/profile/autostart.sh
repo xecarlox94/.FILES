@@ -1,7 +1,9 @@
 #!/system/bin/sh
 
-exec set_wallpaper_theme.sh
-exec set_kb.sh
+
+
+#. ~/.config/scripts/_scripts/set_kb.sh
+#. ~/.config/scripts/_scripts/set_wallpaper_theme.sh
 
 
 exec xmonad

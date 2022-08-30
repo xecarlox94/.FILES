@@ -52,49 +52,6 @@ end
 
 
 
-
-
-
-require'lspconfig'.dhall_lsp_server.setup{}
---require'lspconfig'.clangd.setup{}
-
-
-
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
--- require'lspconfig'.pyright.setup{}
--- local servers = { "pyright" }
--- for _, lsp in ipairs(servers) do
-  -- nvim_lsp[lsp].setup {
-    -- on_attach = on_attach,
-    -- flags = {
-      -- debounce_text_changes = 150,
-    -- }
-  -- }
--- end
-
-
--- bash-language-server
---
--- require'lspconfig'.bashls.setup{
-    -- cmd = { "bash-language-server", "start" },
-    -- cmd_env = {
-      -- GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
-    -- },
-    -- filetypes = { "sh" },
-    -- root_dir = util.find_git_ancestor,
-    -- single_file_support = true
--- }
-
-
-
-
-
-
-
-
-
 -- NEOVIM COMPE CONFIG
 
 vim.o.completeopt = "menuone,noselect"
@@ -151,3 +108,6 @@ vim.cmd [[
     nnoremap <leader>tb <cmd>lua require('telescope.builtin').buffers()<cr>
     nnoremap <leader>th <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]]
+
+
+
