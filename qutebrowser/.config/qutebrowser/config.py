@@ -16,7 +16,8 @@ c.url.default_page=searx_instance
 
 config.bind(",c", "config-edit")
 config.bind(",r", "restart")
-config.bind(",s", "open -t")
+config.bind(",o", "open -t")
+config.bind(",v", "spawn mpv {url}")
 
 
 
