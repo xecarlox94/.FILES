@@ -1,4 +1,4 @@
-PYTHON_PACKGS=(pandas jupyterlab sklearn matplotlib isort pipenv nose pytest networkx)
+PYTHON_PACKGS=(pipenv pytest)
 
 for package in ${PYTHON_PACKGS[@]}
 do

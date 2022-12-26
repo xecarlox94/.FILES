@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/bin/sh
 
 
 
@@ -6,5 +6,5 @@
 #. ~/.config/scripts/_scripts/set_wallpaper_theme.sh
 
 
-exec xmonad
 #exec awesome
+exec dwm
