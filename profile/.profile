@@ -1,16 +1,18 @@
-export ZDOTDIR="$HOME/.config/zsh"
-
-
-export LESSHISTFILE="$HOME/.cache/less/lesshst"
-export HISTFILE="$HOME/.cache/terminal_history"
+#!/bin/sh
 
 
 [ "$(tty)" = "/dev/tty1" ] && echo "RUNNING TTY" || echo "ECHOOOOO"
 
 
-ENVF=~/.config/profile/env.sh
-[ -f $ENVF ] && source $ENVF
+check_source_file() {
+  if [ -f "$1" ];
+  then
+    . "$1";
+  fi
+}
 
 
-TMP_PROFILE=~/.config/tmp/tmp_profile.sh
-[ -f $TMP_PROFILE ] && source $TMP_PROFILE
+check_source_file ~/.config/profile/env.sh
+
+
+check_source_file ~/.config/tmp/tmp_profile.sh

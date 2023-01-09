@@ -1,4 +1,4 @@
-NODE_PACKGS=(marked pyright)
+NODE_PACKGS=()
 
 for package in ${NODE_PACKGS[@]}
 do

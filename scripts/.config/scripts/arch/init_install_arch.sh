@@ -8,7 +8,7 @@ sudo pacman -Syy && sudo pacman -Syu --noconfirm
 APPS+=(docker zsh docker-compose python-pip ripgrep fd shellcheck)
 
 # desktop
-APPS+=(zathura zathura-pdf-poppler texlive-most sxiv)
+APPS+=(zathura zathura-pdf-poppler texlive-most sxiv mpv yt-dlp)
 
 # virtual machine
 APPS+=(qemu ovmf vde2 ebtables dnsmasq bridge-utils openbsd-netcat qemu-arch-extra iptables-nft nftables libvirt)
