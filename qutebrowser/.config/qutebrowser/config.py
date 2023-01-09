@@ -26,6 +26,7 @@ c.url.searchengines = {
     "yt": invidious_instance + "/results?search_query={}",
     "wa": "https://wiki.archlinux.org/index.php?search={}",
     "gg": "https://google.com/search?q={}",
+    "gh": "https://github.com/search?q={}",
     "pypip": "https://pypi.org/search/?q={}",
 }
 
