@@ -5,8 +5,7 @@
 [[ $- != *i* ]] && return
 
 
-ENVF=~/.config/profile/env.sh
-
+ENVF=~/.profile
 [ -f $ENVF ] && source $ENVF
 
 
