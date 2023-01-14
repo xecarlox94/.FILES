@@ -48,5 +48,7 @@ export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
 export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
 export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
+#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"

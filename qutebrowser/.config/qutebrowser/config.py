@@ -1,5 +1,5 @@
 searx_instance="https://searx.fmac.xyz"
-invidious_instance="https://y.com.sb"
+invidious_instance="https://search.unlocked.link"
 
 
 config.load_autoconfig(False)
