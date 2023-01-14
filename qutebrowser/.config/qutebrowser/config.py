@@ -20,6 +20,7 @@ config.bind(",q", "q")
 config.bind(",v", "spawn mpv {url}")
 config.bind(",s", "session-save ")
 
+config.set('content.cookies.store', False)
 
 c.url.searchengines = {
     "DEFAULT": searx_instance + "/search?q={}",

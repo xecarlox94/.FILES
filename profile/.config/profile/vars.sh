@@ -20,6 +20,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/lesshst"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
 
@@ -39,9 +40,13 @@ export XMONAD_CACHE_HOME="$XDG_CACHE_HOME/xmonad"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 
 
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.config/nvim/init.lua" | so $MYVIMRC'
+
+
 export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
 export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
 export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
 export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+
 
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
