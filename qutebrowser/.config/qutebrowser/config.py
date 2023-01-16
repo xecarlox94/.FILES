@@ -1,5 +1,7 @@
 searx_instance="https://searx.fmac.xyz"
-invidious_instance="https://search.unlocked.link"
+invidious_instance="https://y.com.sb"
+
+
 
 
 config.load_autoconfig(False)
@@ -24,7 +26,7 @@ config.set('content.cookies.store', False)
 
 c.url.searchengines = {
     "DEFAULT": searx_instance + "/search?q={}",
-    "yt": invidious_instance + "/results?search_query={}",
+    "yt": invidious_instance + "/search?q={}",
     "wa": "https://wiki.archlinux.org/index.php?search={}",
     "gg": "https://google.com/search?q={}",
     "gh": "https://github.com/search?q={}",
