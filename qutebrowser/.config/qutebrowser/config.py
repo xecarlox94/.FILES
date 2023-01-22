@@ -8,7 +8,8 @@ config.load_autoconfig(False)
 
 
 c.url.start_pages = [
-    searx_instance
+    searx_instance,
+    "https://canvas.hw.ac.uk/"
 ]
 
 

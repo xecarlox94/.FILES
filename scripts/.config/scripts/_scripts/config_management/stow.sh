@@ -1,3 +1,3 @@
-cd ~/.FILES/
+cd ~/.config/.FILES/
 
 stow --adopt -Rt ~ */

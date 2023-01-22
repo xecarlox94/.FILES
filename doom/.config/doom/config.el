@@ -79,15 +79,16 @@
 (after! org
         (setq
                 org-todo-keywords '((sequence
-                                     "TODO(t)" "LECTURE(l)" "PROJECT(p)" "COURSEWORK(c)" "MEETING(m)"
+                                     "TASK(t)" "LECTURE(l)" "COURSEWORK(c)" "MEETING(m)" "WISH(w)" "HOLD(h)"
                                      "|"
                                      "ABORTED(a)" "DONE(d)"))
                 ;;org-todo-keyword-faces (quote (
-                                        ;;("TODO" :foreground "red" :weight bold)
+                                        ;;("TASK" :foreground "yellow" :weight bold)
                                         ;;("LECTURE" :foreground "orange" :weight bold)
-                                        ;;("PROJECT" :foreground "purple" :weight bold)
-                                        ;;("COURSEWORK" :foreground "yellow" :weight bold)
-                                        ;;("MEETING" :foreground "blue" :weight bold)
+                                        ;;("COURSEWORK" :foreground "red" :weight bold)
+                                        ;;("MEETING" :foreground "green" :weight bold)
+                                        ;;("WISH" :foreground "purple" :weight bold)
+                                        ;;("HOLD" :foreground "brown" :weight bold)
                                         ;;("ABORTED" :foreground "grey" :weight bold)
                                         ;;("DONE" :foreground "grey" :weight bold)))
         )
