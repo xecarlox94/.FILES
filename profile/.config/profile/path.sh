@@ -7,7 +7,7 @@ export_folder_subfolders_rec() {
 }
 
 
-export PATH="$PATH:$(find $HOME/.FILES/scripts/.config/scripts/_scripts -type d -printf ':%p')"
+export PATH="$PATH:$(find $HOME/.config/.FILES/scripts/.config/scripts/_scripts -type d -printf ':%p')"
 
 export PATH="$PATH:$HOME/.local/bin"
 

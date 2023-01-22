@@ -1,10 +1,6 @@
 [user]
 	email = jf94.uk@gmail.com
 	name = xecarlox94
-[alias]
-	ci = commit
-	st = status
-	a = add
 [init]
 	defaultBranch = master
 [core]
