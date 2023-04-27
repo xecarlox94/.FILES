@@ -8,7 +8,6 @@
 ENVF=~/.profile
 [ -f $ENVF ] && source $ENVF
 
-
 HISTCONTROL=ignoredups
 HISTSIZE=1000
 HISTFILESIZE=1000
