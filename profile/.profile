@@ -15,4 +15,4 @@ check_source_file() {
 check_source_file ~/.config/profile/env.sh
 
 
-check_source_file ~/.config/tmp/tmp_profile.sh
+check_source_file ~/.config/tmp_env.sh

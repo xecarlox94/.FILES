@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-DIRECTORY="$HOME/.FILES/scripts/.config/scripts/_scripts"
+DIRECTORY="$HOME/.config/.FILES/scripts/.config/scripts/_scripts"
 
 
 DIRECTORIES=$(find $DIRECTORY -type d -printf '%p\n')
@@ -20,7 +20,7 @@ do
 
     FILE_PATH="$D/$F_NAME";
 
-    alias $ALIAS_NAME="$FILE_PATH";
+    alias "$ALIAS_NAME"="$FILE_PATH";
 
     echo "EXPORTING: $FILE_PATH";
     echo "ALIAS NAME: $ALIAS_NAME";
