@@ -21,6 +21,8 @@ do
 done
 
 
+mkdir -p ~/.local/state/bash
+
 source ~/.FILES/scripts/.config/scripts/_scripts/init_python.sh
 source ~/.FILES/scripts/.config/scripts/_scripts/init_nodejs.sh
 
