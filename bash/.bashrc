@@ -1,12 +1,13 @@
-# FOR PROFILE FILES
-# [[ -f ~/.bashrc ]] && . ~/.bashrc
+#!/bin/sh
+
+
+PROF=~/.profile && [ -f $PROF ] && source $PROF
+
+
+
 
 
 [[ $- != *i* ]] && return
-
-
-ENVF=~/.profile
-[ -f $ENVF ] && source $ENVF
 
 HISTCONTROL=ignoredups
 HISTSIZE=1000

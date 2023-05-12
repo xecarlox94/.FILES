@@ -8,8 +8,14 @@
 
 
 
-export CURR_DIR=$(pwd)
+save_dir() {
+    export CURR_DIR=$(pwd)
+}
+export -f g_curr_dir
 
 
 
-cd $CURR_DIR
+go_saved_dir() {
+    cd $CURR_DIR
+}
+export -f go_saved_dir
