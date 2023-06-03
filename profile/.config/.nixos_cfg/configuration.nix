@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -140,14 +142,35 @@
         neovim
         nodePackages.npm
         nodejs
+        terraform
+        packer
+        vault
+        consul
+        boundary
+        nomad
+        waypoint
+        vagrant
+        ledger-live-desktop
+        monero-gui
+        monero-cli
+        keepassxc
+        kpcli
         chromium
         gnumake
         guile_3_0
         python310
+        python310Packages.python
         python310Packages.pip
         python310Packages.pygame
         python310Packages.coconut
     ];
+
+    virtualisation.docker.enable = true;
+
+    virtualisation.docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
