@@ -155,6 +155,7 @@
         monero-cli
         keepassxc
         kpcli
+        bisq-desktop
         chromium
         gnumake
         guile_3_0
