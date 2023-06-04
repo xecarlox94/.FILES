@@ -34,6 +34,7 @@ export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 
+export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 export XMONAD_CONFIG_HOME="$XDG_CONFIG_HOME/xmonad"
 export XMONAD_DATA_HOME="$XDG_DATA_HOME/xmonad"

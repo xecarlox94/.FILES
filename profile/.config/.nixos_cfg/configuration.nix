@@ -15,7 +15,6 @@
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -23,6 +22,12 @@
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # networking.firewall.enable = false;
 
     # Enable networking
     networking.networkmanager.enable = true;
@@ -51,19 +56,18 @@
         enable = true;
 
         displayManager = {
-            sddm.enable = true;
-            defaultSession = "xfce";
+            lightdm.enable = true;
         };
+
 
         desktopManager = {
             xterm.enable = false;
-            xfce.enable = true;
+            cinnamon.enable = true;
         };
 
         windowManager = {
             qtile.enable = true;
             bspwm.enable = true;
-            i3.enable = true;
             dwm.enable = true;
             awesome = {
                 enable = true;
@@ -79,6 +83,14 @@
         xkbVariant = "";
     };
 
+    virtualisation.docker = {
+        enable = true;
+
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
+    };
 
     # Configure console keymap
     console.keyMap = "uk";
@@ -97,7 +109,7 @@
         alsa.support32Bit = true;
         pulse.enable = true;
         # If you want to use JACK applications, uncomment this
-        #jack.enable = true;
+        jack.enable = true;
 
         # use the example session manager (no others are packaged yet so this is enabled by default,
         # no need to redefine it in your config for now)
@@ -107,41 +119,34 @@
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
 
-    nixpkgs.config = {
-        allowUnfree = true;
-
-        firefox = {
-          enableGoogleTalkPlugin = true;
-          enableAdobeFlash = true;
-        };
-    };
+	nixpkgs.config.allowUnfree = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-        users.users.xecarlox = {
+    users.users.xecarlox = {
         isNormalUser = true;
         description = "xecarlox";
         extraGroups = [ "networkmanager" "wheel" ];
-        packages = with pkgs; [
-            firefox
-            thunderbird
-        ];
     };
 
     environment.systemPackages = with pkgs; [
+        gnumake
+        guile_3_0
         vim
         wget
         git
         stow
+        clang
+        coreutils
+        unzip
+        gcc
         emacs
         ripgrep
         fd
-        clang
-        gcc
-        coreutils
-        unzip
+        tor-browser-bundle-bin
+        qutebrowser
+        librewolf
+        brave
         neovim
-        nodePackages.npm
-        nodejs
         terraform
         packer
         vault
@@ -150,47 +155,27 @@
         nomad
         waypoint
         vagrant
-        ledger-live-desktop
         monero-gui
-        monero-cli
         keepassxc
-        kpcli
-        bisq-desktop
-        chromium
-        gnumake
-        guile_3_0
         python310
-        python310Packages.python
         python310Packages.pip
-        python310Packages.pygame
-        python310Packages.coconut
+        nodejs
+        nodePackages.npm
     ];
 
-    virtualisation.docker.enable = true;
-
-    virtualisation.docker.rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
-    # programs.mtr.enable = true;
-    # programs.gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-
-    # List services that you want to enable:
+    programs.mtr.enable = true;
+    programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+    };
 
     # Enable the OpenSSH daemon.
-    # services.openssh.enable = true;
+    services.openssh.enable = true;
 
-    # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
+
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
@@ -199,5 +184,4 @@
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "22.11"; # Did you read the comment?
-
 }
