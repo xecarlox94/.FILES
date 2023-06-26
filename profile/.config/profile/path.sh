@@ -9,7 +9,12 @@ export_folder_subfolders_rec() {
 
 export PATH="$PATH:$(find $HOME/.config/.FILES/scripts/.config/scripts/_scripts -type d -printf ':%p')"
 
+
+
 export PATH="$PATH:$HOME/.local/bin"
 
 
 export PATH="$PATH:$HOME/.config/emacs/bin"
+
+
+export PATH="$PATH:$HOME/.config/tmp_env/bin"

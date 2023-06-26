@@ -8,8 +8,7 @@ config.load_autoconfig(False)
 
 
 c.url.start_pages = [
-    searx_instance,
-    "https://canvas.hw.ac.uk/"
+    searx_instance
 ]
 
 
@@ -36,4 +35,4 @@ c.url.searchengines = {
 
 
 
-c.editor.command = ["st", "-e", "vim", "{}"]
+c.editor.command = ["echo $TERM", "-e", "vim", "{}"]

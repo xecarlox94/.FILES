@@ -3,7 +3,13 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+    username = "xecarlox";
+    hostName = "nixos";
+    stateVersion = "22.11";
+    locale = "en_GB.UTF-8";
+    timeZone = "Europe/London";
+in
 {
     imports =
     [ # Include the results of the hardware scan.
@@ -12,11 +18,17 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 30d";
+    };
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = hostName; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -33,21 +45,21 @@
     networking.networkmanager.enable = true;
 
     # Set your time zone.
-    time.timeZone = "Europe/London";
+    time.timeZone = timeZone;
 
     # Select internationalisation properties.
-    i18n.defaultLocale = "en_GB.UTF-8";
+    i18n.defaultLocale = locale;
 
     i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_GB.UTF-8";
-        LC_IDENTIFICATION = "en_GB.UTF-8";
-        LC_MEASUREMENT = "en_GB.UTF-8";
-        LC_MONETARY = "en_GB.UTF-8";
-        LC_NAME = "en_GB.UTF-8";
-        LC_NUMERIC = "en_GB.UTF-8";
-        LC_PAPER = "en_GB.UTF-8";
-        LC_TELEPHONE = "en_GB.UTF-8";
-        LC_TIME = "en_GB.UTF-8";
+        LC_ADDRESS = locale;
+        LC_IDENTIFICATION = locale;
+        LC_MEASUREMENT = locale;
+        LC_MONETARY = locale;
+        LC_NAME = locale;
+        LC_NUMERIC = locale;
+        LC_PAPER = locale;
+        LC_TELEPHONE = locale;
+        LC_TIME = locale;
     };
 
     services.xserver = {
@@ -57,11 +69,12 @@
 
         displayManager = {
             lightdm.enable = true;
+            defaultSession = "none+xmonad";
         };
 
 
         desktopManager = {
-            xterm.enable = false;
+            xterm.enable = true;
             cinnamon.enable = true;
         };
 
@@ -69,6 +82,12 @@
             qtile.enable = true;
             bspwm.enable = true;
             dwm.enable = true;
+            xmonad = {
+                enable = true;
+                enableContribAndExtras = true;
+                config = /home/${username}/.config/xmonad/xmonad.hs;
+                enableConfiguredRecompile = true;
+            };
             awesome = {
                 enable = true;
                 luaModules = with pkgs.luaPackages; [
@@ -83,20 +102,24 @@
         xkbVariant = "";
     };
 
-    virtualisation.docker = {
-        enable = true;
-
-        rootless = {
+    virtualisation = {
+        docker = {
             enable = true;
-            setSocketVariable = true;
+
+            rootless = {
+                enable = true;
+                setSocketVariable = true;
+            };
         };
+
+        libvirtd.enable = true;
     };
 
     # Configure console keymap
     console.keyMap = "uk";
 
     # Enable CUPS to print documents.
-    services.printing.enable = true;
+    # services.printing.enable = true;
 
     # Enable sound with pipewire.
     sound.enable = true;
@@ -111,9 +134,6 @@
         # If you want to use JACK applications, uncomment this
         jack.enable = true;
 
-        # use the example session manager (no others are packaged yet so this is enabled by default,
-        # no need to redefine it in your config for now)
-        #media-session.enable = true;
     };
 
     # Enable touchpad support (enabled default in most desktopManager).
@@ -122,17 +142,19 @@
 	nixpkgs.config.allowUnfree = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.xecarlox = {
+    users.users.${username} = {
         isNormalUser = true;
-        description = "xecarlox";
-        extraGroups = [ "networkmanager" "wheel" ];
+        description = username;
+        extraGroups = [ "networkmanager" "wheel" "libvirtd" "audio" ];
     };
 
     environment.systemPackages = with pkgs; [
         gnumake
+        dmenu
         guile_3_0
         vim
         wget
+        alacritty
         git
         stow
         clang
@@ -142,6 +164,7 @@
         emacs
         ripgrep
         fd
+        jq
         tor-browser-bundle-bin
         qutebrowser
         librewolf
@@ -155,6 +178,7 @@
         nomad
         waypoint
         vagrant
+        virt-manager
         monero-gui
         keepassxc
         python310
@@ -166,10 +190,13 @@
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
-    programs.mtr.enable = true;
-    programs.gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
+    programs = {
+        dconf.enable = true;
+        mtr.enable = true;
+        gnupg.agent = {
+            enable = true;
+            enableSSHSupport = true;
+        };
     };
 
     # Enable the OpenSSH daemon.
@@ -183,5 +210,6 @@
     # this value at the release version of the first install of this system.
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "22.11"; # Did you read the comment?
+    system.stateVersion = stateVersion; # Did you read the comment?
+
 }

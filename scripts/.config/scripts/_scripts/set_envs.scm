@@ -1,8 +1,15 @@
+#!/usr/local/bin/guile
 
-MAIL
-WINDOW_MANAGER
-BROWSER=something
-SHELL=/run/current-system/sw/bin/bash
-EDITOR=nano
-TERM=xterm-256color
-PAGER=less
+!#
+
+
+(define MAIL "thunderbird")
+(define WINDOW_MANAGER "xmonad")
+(define BROWSER "something")
+(define SHELL "/bin/sh")
+(define EDITOR "vim")
+(define TERM "alacritty")
+(define PAGER "less")
+
+
+(display "\nHello World\n")
