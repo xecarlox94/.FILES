@@ -10,5 +10,6 @@ check_source_file ~/.config/profile/env.sh
 
 check_source_file ~/.config/tmp_env/profile.sh
 
-
 check_source_file ~/.config/profile/sandbox.sh
+
+check_source_file ~/.config/tmp_env.sh
