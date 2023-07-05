@@ -12,5 +12,4 @@ check_source_file ~/.config/profile/env.sh
 
 check_source_file ~/.config/profile/utils.sh
 
-
 check_source_file ~/.config/tmp_env.sh
