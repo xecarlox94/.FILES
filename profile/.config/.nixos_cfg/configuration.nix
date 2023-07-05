@@ -11,6 +11,7 @@ let
     timeZone = "Europe/London";
 in
 {
+
     imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -21,7 +22,7 @@ in
     nix.gc = {
         automatic = true;
         dates = "weekly";
-        options = "--delete-older-than 30d";
+        options = "--delete-older-than 10d";
     };
 
     # Bootloader.
@@ -31,25 +32,11 @@ in
     networking.hostName = hostName; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
-
-    # Enable networking
     networking.networkmanager.enable = true;
 
-    # Set your time zone.
     time.timeZone = timeZone;
 
-    # Select internationalisation properties.
     i18n.defaultLocale = locale;
-
     i18n.extraLocaleSettings = {
         LC_ADDRESS = locale;
         LC_IDENTIFICATION = locale;
@@ -62,44 +49,53 @@ in
         LC_TIME = locale;
     };
 
-    services.xserver = {
+    services = {
+        openssh.enable = true;
 
-        # Enable the X11 windowing system.
-        enable = true;
-
-        displayManager = {
-            lightdm.enable = true;
-            defaultSession = "none+xmonad";
-        };
-
-
-        desktopManager = {
-            xterm.enable = true;
-            cinnamon.enable = true;
-        };
-
-        windowManager = {
-            qtile.enable = true;
-            bspwm.enable = true;
-            dwm.enable = true;
-            xmonad = {
+        pipewire = {
+            enable = true;
+            audio.enable = true;
+            pulse.enable = true;
+            alsa = {
                 enable = true;
-                enableContribAndExtras = true;
-                config = /home/${username}/.config/xmonad/xmonad.hs;
-                enableConfiguredRecompile = true;
+                support32Bit = true;
             };
-            awesome = {
-                enable = true;
-                luaModules = with pkgs.luaPackages; [
-                    luarocks
-                    luadbi-mysql
-                ];
-            };
+            # If you want to use JACK applications, uncomment this
+            jack.enable = true;
         };
 
-        # Configure keymap in X11
-        layout = "gb";
-        xkbVariant = "";
+        xserver = {
+
+            enable = true;
+
+            displayManager = {
+                lightdm.enable = true;
+                defaultSession = "none+xmonad";
+            };
+
+            windowManager = {
+                #qtile.enable = true;
+                bspwm.enable = true;
+                #dwm.enable = true;
+                xmonad = {
+                    enable = true;
+                    enableContribAndExtras = true;
+                    config = /home/${username}/.config/xmonad/xmonad.hs;
+                    enableConfiguredRecompile = true;
+                };
+                #awesome = {
+                    #enable = true;
+                    #luaModules = with pkgs.luaPackages; [
+                        #luarocks
+                        #luadbi-mysql
+                    #];
+                #};
+            };
+
+            # Configure keymap in X11
+            layout = "gb";
+            xkbVariant = "";
+        };
     };
 
     virtualisation = {
@@ -118,26 +114,10 @@ in
     # Configure console keymap
     console.keyMap = "uk";
 
-    # Enable CUPS to print documents.
-    # services.printing.enable = true;
-
     # Enable sound with pipewire.
-    sound.enable = true;
-    hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;
 
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        jack.enable = true;
-
-    };
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
+    hardware.pulseaudio.enable = false;
 
 	nixpkgs.config.allowUnfree = true;
 
@@ -156,14 +136,13 @@ in
         wget
         alacritty
         git
+        pavucontrol
         stow
         clang
         coreutils
         unzip
         gcc
         emacs
-        ripgrep
-        fd
         jq
         tor-browser-bundle-bin
         qutebrowser
@@ -179,12 +158,9 @@ in
         waypoint
         vagrant
         virt-manager
-        monero-gui
         keepassxc
         python310
         python310Packages.pip
-        nodejs
-        nodePackages.npm
     ];
 
 
@@ -198,10 +174,6 @@ in
             enableSSHSupport = true;
         };
     };
-
-    # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
-
 
 
     # This value determines the NixOS release from which the default

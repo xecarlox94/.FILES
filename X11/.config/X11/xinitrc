@@ -5,4 +5,4 @@ ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 
-exec dwm
+exec xmonad
