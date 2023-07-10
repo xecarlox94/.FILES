@@ -73,10 +73,6 @@ in
                 defaultSession = "none+xmonad";
             };
 
-            desktopManager = {
-                cinnammon.enable = true;
-            };
-
             windowManager = {
                 #qtile.enable = true;
                 bspwm.enable = true;
