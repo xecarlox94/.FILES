@@ -79,24 +79,26 @@
 (after! org
         (setq
                 org-todo-keywords '((sequence
-                                     "TASK(t)" "LECTURE(l)" "COURSEWORK(c)" "MEETING(m)" "WISH(w)" "HOLD(h)"
-                                     "|"
-                                     "ABORTED(a)" "DONE(d)"))
-                ;;org-todo-keyword-faces (quote (
-                                        ;;("TASK" :foreground "yellow" :weight bold)
-                                        ;;("LECTURE" :foreground "orange" :weight bold)
-                                        ;;("COURSEWORK" :foreground "red" :weight bold)
-                                        ;;("MEETING" :foreground "green" :weight bold)
-                                        ;;("WISH" :foreground "purple" :weight bold)
-                                        ;;("HOLD" :foreground "brown" :weight bold)
-                                        ;;("ABORTED" :foreground "grey" :weight bold)
-                                        ;;("DONE" :foreground "grey" :weight bold)))
-        )
+                        "TODO(t)" "CONTRACT(c)" "ACTIVITY(a)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)" "WISH(w)" "HOLD(h)"
+                        "|"
+                        "SCRAPPED(s)" "FINISHED(f)"))
+                org-todo-keyword-faces (quote (
+                        ("TODO(t)" :foreground "orange" :weight bold)
+                        ("CONTRACT(c)" :foreground "red" :weight bold)
+                        ("ACTIVITY(a)" :foreground "yellow" :weight bold)
+                        ("PROJECT(p)" :foreground "green" :weight bold)
+                        ("LEARNING(l)" :foreground "green" :weight bold)
+                        ("DELIVERABLE(d)" :foreground "red" :weight bold)
+                        ("MEETING(m)" :foreground "orange" :weight bold)
+                        ("WISH(w)" :foreground "purple" :weight bold)
+                        ("HOLD(h)" :foreground "brown" :weight bold)
+                        ("SCRAPPED(s)" :foreground "grey" :weight bold)
+                        ("FINISHED(f)" :foreground "grey" :weight bold))))
         (setq org-agenda-custom-commands
                 '(
                 ("v" "A new agenda view"
                  ((tags "priority=\"a\""
-                        ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                        ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'finished))
                         (agenda "")
                         (alltodo "")))))
                 ("D" "Day agenda"
