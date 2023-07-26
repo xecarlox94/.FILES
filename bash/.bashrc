@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "add P2PRC env variable to profile"
+export P2PRC=$HOME/Sources/p2p-rendering-computation
 
 PROF=~/.profile \
     && [ -f $PROF ] \
@@ -19,7 +21,6 @@ shopt -s histappend
 export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;40m\]\u\[\e[m\]\[\e[32m\]]\[\e[m\] \[\e[32m\]\\$\[\e[m\]  "
 
 
-
 echo "add functionality to export functions with smart piping"
 echo "set environment variables properly"
 echo "fix bash history file issue"
@@ -29,3 +30,7 @@ echo "fix git commit script"
 echo "move todos to a separate txt file"
 echo "add script to initialise config on multiple distros"
 echo "configure xmonad on ubuntu work"
+echo "create shell script to check if program is installed"
+echo "add script to search in the web from the terminal"
+echo "fix path.txt location"
+echo "add declarative export env variables paths"
