@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
     username = "xecarlox";
     hostName = "nixos";
@@ -102,6 +102,8 @@ in
         docker = {
             enable = true;
 
+            enableNvidia = true;
+
             rootless = {
                 enable = true;
                 setSocketVariable = true;
@@ -119,7 +121,44 @@ in
 
     hardware.pulseaudio.enable = false;
 
+    hardware.opengl = {
+        enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
+        setLdLibraryPath = true;
+    };
+
+
 	nixpkgs.config.allowUnfree = true;
+
+    nixpkgs.config.allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+            "nvidia-x11"
+            "nvidia-settings"
+        ];
+
+    #### Tell Xorg to use the nvidia driver
+    #### services.xserver.videoDrivers = ["nvidia"];
+
+    hardware.nvidia = {
+
+        # Modesetting is needed for most wayland compositors
+        modesetting.enable = true;
+
+        # Use the open source version of the kernel module
+        # Only available on driver 515.43.04+
+        open = true;
+
+        powerManagement.enable = true;
+
+        # Enable the nvidia settings menu
+        nvidiaSettings = true;
+
+        # Optionally, you may need to select the appropriate driver version for your specific GPU.
+        package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+
+    systemd.enableUnifiedCgroupHierarchy = false; # otherwise nvidia-docker fails
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${username} = {
@@ -129,6 +168,7 @@ in
     };
 
     environment.systemPackages = with pkgs; [
+        firefox
         gnumake
         dmenu
         guile_3_0
@@ -142,6 +182,7 @@ in
         coreutils
         unzip
         gcc
+        discord
         emacs
         jq
         tor-browser-bundle-bin
@@ -161,6 +202,8 @@ in
         keepassxc
         python310
         python310Packages.pip
+        xorg.xhost
+        nvidia-docker
     ];
 
 
