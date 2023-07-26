@@ -20,4 +20,5 @@ export PATH="$PATH:$HOME/.local/share/python/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
 
 
-export PATH="$PATH:$HOME/.config/tmp_env/bin"
+export PATH="$PATH:$HOME/Sources/OpenSfM/bin"
+export PATH="$PATH:$HOME/Sources/OpenSfM"
