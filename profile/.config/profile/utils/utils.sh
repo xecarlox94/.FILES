@@ -31,3 +31,11 @@ mkdir_cd() {
         && cd $1
 }
 export -f mkdir_cd
+
+
+export_subfolder_rec() {
+  PATH_LIST=$(find "$1" -type d -printf ':%p');
+  export PATH="$PATH:$PATH_LIST"
+}
+
+export -f export_subfolder_rec
