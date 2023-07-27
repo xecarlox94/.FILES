@@ -8,6 +8,9 @@ let mapleader = " "
 " inoremap ( ()<left>
 
 
+
+
+
 " snippet helper
 imap ,. <Esc>,.
 nnoremap ,. /<++><Enter>"_c4l
@@ -82,6 +85,12 @@ inoremap ,o <Esc>o
 inoremap ,; <Esc>A;
 inoremap ,: <Esc>A:
 inoremap ,, <Esc>A,
+
+
+" autocmd FileType go
+
+autocmd FileType go inoremap if<space>err if err != nil {<CR>}<Esc><<<<Oreturn<Esc><<A err
+
 
 
 
