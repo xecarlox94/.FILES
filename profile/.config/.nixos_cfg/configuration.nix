@@ -151,8 +151,8 @@ in
         clang
         coreutils
         unzip
+        tree
         gcc
-        discord
         emacs
         jq
         tor-browser-bundle-bin
@@ -160,19 +160,21 @@ in
         librewolf
         brave
         neovim
-        terraform
-        packer
-        vault
-        consul
-        boundary
-        nomad
-        waypoint
-        vagrant
-        go
+        rpi-imager
+        #terraform
+        #packer
+        #vault
+        #consul
+        #boundary
+        #nomad
+        #waypoint
+        #vagrant
         virt-manager
         keepassxc
+        go
         python310
         python310Packages.pip
+        discord
     ];
 
 

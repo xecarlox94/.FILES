@@ -1,11 +1,9 @@
 #!/bin/sh
 
-echo "add P2PRC env variable to profile"
-export P2PRC=$HOME/Sources/p2p-rendering-computation
 
-PROF=~/.profile \
-    && [ -f $PROF ] \
-    && source $PROF
+#PROF=~/.profile \
+    #&& [ -f $PROF ] \
+    #&& source $PROF
 
 
 [[ $- != *i* ]] && return
@@ -26,12 +24,17 @@ export PATH="$PATH:$HOME/.local/share/python/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
 export PATH="$PATH:$HOME/.config/tmp_env/bin"
 export PATH="$PATH:$HOME/.config/.FILES/scripts/.config/scripts/_scripts"
-
 export PATH="$PATH:$HOME/Sources/p2prc"
 
+
 export P2PRC="$HOME/Sources/p2prc"
+export P2PRC="$HOME/Sources/p2p-rendering-computation"
 
 
+
+echo "add funtion to add to path list env variable"
+echo "add text file to list all paths folders to be added"
+echo "add P2PRC env variable to profile"
 echo "add functionality to export functions with smart piping"
 echo "set environment variables properly"
 echo "fix bash history file issue"
@@ -49,3 +52,4 @@ echo "finish exporting functions, profile/.config/profile/working/"
 echo "add funtion to add to path list env variable"
 echo "add text file to list all paths folders to be added"
 echo "fix set env script"
+echo "adding extract file function"

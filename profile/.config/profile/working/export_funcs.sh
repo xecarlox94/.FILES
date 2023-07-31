@@ -1,6 +1,6 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 
 cat utils.sh \
-    | sed '/^#+$/d'
+    | sed '/^#+$/p'
     #| sed '/^\s*$/d; /^[[:space:]]*.*/d;'
