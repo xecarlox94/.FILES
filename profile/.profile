@@ -11,8 +11,6 @@ UTILS=~/.config/profile/utils/utils.sh \
     || echo "ECHOOOOO"
 
 
-check_source_file ~/.config/profile/env.sh
-
 
 touch_if_not_exists $HISTFILE
 
@@ -30,3 +28,5 @@ export_subfolder_rec "$TMP_ENV/bin"
 
 check_source_file "$TMP_ENV/env.sh"
 
+
+check_source_file ~/.config/profile/env.sh

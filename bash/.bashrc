@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-#PROF=~/.profile \
-    #&& [ -f $PROF ] \
-    #&& source $PROF
+PROF=~/.profile \
+    && [ -f $PROF ] \
+    && source $PROF
 
 
 [[ $- != *i* ]] && return
