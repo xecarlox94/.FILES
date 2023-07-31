@@ -1,11 +1,9 @@
 #!/bin/sh
 
-echo "add P2PRC env variable to profile"
-export P2PRC=$HOME/Sources/p2p-rendering-computation
 
-PROF=~/.profile \
-    && [ -f $PROF ] \
-    && source $PROF
+#PROF=~/.profile \
+    #&& [ -f $PROF ] \
+    #&& source $PROF
 
 
 [[ $- != *i* ]] && return
@@ -21,6 +19,14 @@ shopt -s histappend
 export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;40m\]\u\[\e[m\]\[\e[32m\]]\[\e[m\] \[\e[32m\]\\$\[\e[m\]  "
 
 
+
+export P2PRC=$HOME/Sources/p2p-rendering-computation
+
+
+
+echo "add funtion to add to path list env variable"
+echo "add text file to list all paths folders to be added"
+echo "add P2PRC env variable to profile"
 echo "add functionality to export functions with smart piping"
 echo "set environment variables properly"
 echo "fix bash history file issue"
@@ -35,3 +41,4 @@ echo "add script to search in the web from the terminal"
 echo "fix path.txt location"
 echo "add declarative export env variables paths"
 echo "finish exporting functions, profile/.config/profile/working/"
+echo "adding extract file function"

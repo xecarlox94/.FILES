@@ -42,6 +42,11 @@ function! ShowPDF()
     execute "! zathura $(echo % \| sed 's/tex$/pdf/') & disown"
 endfunction
 
+function! BuildRunDocker()
+    execute "wa"
+    execute "! clear && docker run --rm -it $(docker build -q .)"
+endfunction
+
 
 " File
 nnoremap <leader>fc :call Compile()<CR><CR>
@@ -52,6 +57,9 @@ nnoremap <leader>fx :x<CR>
 nnoremap <leader>fk :q!<CR>
 nnoremap <leader>fp :r !xclip -o<CR>
 vnoremap <leader>fy :w !xclip -sel clip<CR><CR>
+
+" Docker
+nnoremap <leader>rd :call BuildRunDocker()<CR>
 
 
 " Open

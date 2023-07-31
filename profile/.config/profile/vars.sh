@@ -17,6 +17,12 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 export XDG_PUBLICSHARE_DIR="$HOME/Public"
 
 
+
+
+export PROFILE_ENV="$XDG_CONFIG_HOME/profile"
+export TMP_ENV="$XDG_CONFIG_HOME/tmp"
+
+
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/lesshst"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
@@ -40,6 +46,8 @@ export XMONAD_CONFIG_HOME="$XDG_CONFIG_HOME/xmonad"
 export XMONAD_DATA_HOME="$XDG_DATA_HOME/xmonad"
 export XMONAD_CACHE_HOME="$XDG_CACHE_HOME/xmonad"
 
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 
@@ -54,3 +62,4 @@ export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
+
