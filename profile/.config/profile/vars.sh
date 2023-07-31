@@ -3,9 +3,10 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+
 #export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 #export XDG_RUNTIME_DIR="$XDG_CACHE_HOME/runtime"
-# TMPDIR
+
 
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
@@ -63,3 +64,4 @@ export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
 
+export P2PRC="$HOME/Sources/p2prc"

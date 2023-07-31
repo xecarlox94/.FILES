@@ -155,6 +155,7 @@ in
         gcc
         emacs
         jq
+        lf
         tor-browser-bundle-bin
         qutebrowser
         librewolf

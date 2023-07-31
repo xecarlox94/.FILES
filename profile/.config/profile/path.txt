@@ -3,4 +3,3 @@ $HOME/.local/share/python/bin
 $HOME/.config/emacs/bin
 $HOME/.config/tmp_env/bin
 $HOME/Sources/p2p-rendering-computation
-$HOME/.config/.FILES/scripts/.config/scripts/_scripts

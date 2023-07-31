@@ -19,18 +19,6 @@ shopt -s histappend
 export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;40m\]\u\[\e[m\]\[\e[32m\]]\[\e[m\] \[\e[32m\]\\$\[\e[m\]  "
 
 
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/share/python/bin"
-export PATH="$PATH:$HOME/.config/emacs/bin"
-export PATH="$PATH:$HOME/.config/tmp_env/bin"
-export PATH="$PATH:$HOME/.config/.FILES/scripts/.config/scripts/_scripts"
-export PATH="$PATH:$HOME/Sources/p2prc"
-
-
-export P2PRC="$HOME/Sources/p2prc"
-export P2PRC="$HOME/Sources/p2p-rendering-computation"
-
-
 
 echo "add funtion to add to path list env variable"
 echo "add text file to list all paths folders to be added"
