@@ -47,7 +47,7 @@ endfunction
 
 function! BuildRunDocker()
     execute "wa"
-    execute "! clear && docker run --rm -it $(docker build -q .)"
+    execute "! clear && sudo docker run --rm -it $(sudo docker build -q .)"
 endfunction
 
 
