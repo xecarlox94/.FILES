@@ -1,12 +1,24 @@
 #!/bin/sh
 
 
-UTILS=~/.config/profile/utils/utils.sh \
-    && [ -f $UTILS ] \
-    && source $UTILS
+source_util_fns() {
+    UTILS=~/.config/profile/utils/utils.sh
+    if [ -f $UTILS ];
+    then
+        set -a
+        source $UTILS
+        set +a
+    fi
+}
+export -f source_util_fns
 
 
-[ "$(tty)" = "/dev/tty1" ] \
+echo "sourcing util fns"
+#source_util_fns a
+
+
+
+ ["$(tty)" = "/dev/tty1" ] \
     && echo "RUNNING TTY" \
     || echo "ECHOOOOO"
 
@@ -25,7 +37,7 @@ touch_if_not_exists "$TMP_ENV/path.txt"
 touch_if_not_exists "$TMP_ENV/sandbox.sh"
 touch_if_not_exists "$TMP_ENV/vars.sh"
 
+check_source_file "$TMP_ENV/env.sh"
 mkdir_if_not_exists "$TMP_ENV/bin"
 export_subfolder_rec "$TMP_ENV/bin"
 
-check_source_file "$TMP_ENV/env.sh"
