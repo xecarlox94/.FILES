@@ -52,3 +52,78 @@ get_paths_file() {
         | tr '\n' ':')
     TLIST="${TLIST::-1}"
 }
+
+
+set_path() {
+    sed '\
+        s/^/export PATH="$PATH:/; \
+        s/$/"/;' \
+    $HOME/.config/profile/path.txt
+}
+
+
+commit() {
+    if [ $# -ge 1 ]
+    then
+        git status \
+            && git add . \
+            && git commit -m "$1" \
+            && git push --all origin
+    else
+        echo "ERROR"
+    fi
+}
+
+
+add_todo() {
+    echo "echo \"$@\"" >> ~/.bashrc
+}
+
+
+preview_file() {
+    case $1 in
+        *.zip)
+            echo "do something about zip"
+            ;;
+
+        *)
+            echo "NOT FOUND!"
+            ;;
+    esac
+}
+
+open_file() {
+    case $1 in
+        *.zip)
+            echo "do something about zip"
+            ;;
+
+        *)
+            echo "NOT FOUND!"
+            ;;
+    esac
+}
+
+
+
+save_dir() {
+    export CURR_DIR=$(pwd)
+}
+
+go_saved_dir() {
+    cd $CURR_DIR
+}
+
+
+source_ros_humble() {
+    source /opt/ros/humble/setup.bash
+}
+
+
+update_nix() {
+    vim ~/.config/.FILES/profile/.config/.nixos_cfg/configuration.nix
+
+    sudo cp ~/.config/.FILES/profile/.config/.nixos_cfg/configuration.nix /etc/nixos/configuration.nix
+
+    sudo nixos-rebuild switch
+}

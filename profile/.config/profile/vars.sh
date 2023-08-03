@@ -64,4 +64,17 @@ export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
 
+
+
+
 export P2PRC="$HOME/Sources/p2prc"
+
+
+
+export MAIL="thunderbird"
+export WINDOW_MANAGER="xmonad"
+export BROWSER="something"
+export SHELL="/bin/sh"
+export EDITOR="vim"
+export TERM="alacritty"
+export PAGER="less"
