@@ -1,8 +1,8 @@
 #!/bin/sh
 
 
-source_util_fns() {
-    UTILS=~/.config/profile/utils/utils.sh
+exp_utils() {
+    UTILS=$1
     if [ -f $UTILS ];
     then
         set -a
@@ -10,18 +10,8 @@ source_util_fns() {
         set +a
     fi
 }
-export -f source_util_fns
-
-
-echo "sourcing util fns"
-#source_util_fns a
-
-
-
- ["$(tty)" = "/dev/tty1" ] \
-    && echo "RUNNING TTY" \
-    || echo "ECHOOOOO"
-
+export -f exp_utils
+exp_utils $HOME/.config/profile/utils/utils.sh
 
 
 check_source_file ~/.config/profile/env.sh
