@@ -6,7 +6,7 @@ PROF=~/.profile \
     && source $PROF
 
 
-[[ $- != *i* ]] && return
+#[[ $- != *i* ]] && return
 
 HISTCONTROL=ignoredups
 HISTSIZE=1000
