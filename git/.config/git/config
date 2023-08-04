@@ -5,5 +5,3 @@
 	defaultBranch = master
 [core]
     editor = "vim"
-[safe]
-	directory = /
