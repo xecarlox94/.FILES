@@ -8,26 +8,22 @@ check_source_file() {
         echo "Error $1";
     fi
 }
-export -f check_source_file
 
 touch_x() {
     touch $1 \
         && sudo chmod +x $1
 }
-export -f touch_x
 
 mkdir_cd() {
     mkdir -p $1 \
         && cd $1
 }
-export -f mkdir_cd
 
 
 mkdir_if_not_exists() {
     ! [ -d $1 ] \
         && mkdir -p $1
 }
-export -f mkdir_if_not_exists
 
 
 touch_if_not_exists() {
@@ -35,14 +31,11 @@ touch_if_not_exists() {
         && mkdir -p $(dirname $1) \
         && touch $1
 }
-export -f touch_if_not_exists
 
 
 add_path() {
-    echo $1
     export PATH="$PATH:$1"
 }
-export -f add_path
 
 
 export_subfolder_rec() {
@@ -51,7 +44,6 @@ export_subfolder_rec() {
 
   add_path "${PATH_LIST:1}"
 }
-export -f export_subfolder_rec
 
 
 get_paths_file() {
@@ -59,6 +51,79 @@ get_paths_file() {
         | sed 's/^/echo \"/g; s/$/\"/g' | bash \
         | tr '\n' ':')
     TLIST="${TLIST::-1}"
-    echo $TLIST
 }
-export -f get_paths_file
+
+
+set_path() {
+    sed '\
+        s/^/export PATH="$PATH:/; \
+        s/$/"/;' \
+    $HOME/.config/profile/path.txt
+}
+
+
+commit() {
+    if [ $# -ge 1 ]
+    then
+        git status \
+            && git add . \
+            && git commit -m "$1" \
+            && git push --all origin
+    else
+        echo "ERROR"
+    fi
+}
+
+
+add_todo() {
+    echo "echo \"$@\"" >> ~/.bashrc
+}
+
+
+preview_file() {
+    case $1 in
+        *.zip)
+            echo "do something about zip"
+            ;;
+
+        *)
+            echo "NOT FOUND!"
+            ;;
+    esac
+}
+
+open_file() {
+    case $1 in
+        *.zip)
+            echo "do something about zip"
+            ;;
+
+        *)
+            echo "NOT FOUND!"
+            ;;
+    esac
+}
+
+
+
+save_dir() {
+    export CURR_DIR=$(pwd)
+}
+
+go_saved_dir() {
+    cd $CURR_DIR
+}
+
+
+source_ros_humble() {
+    source /opt/ros/humble/setup.bash
+}
+
+
+update_nix() {
+    vim ~/.config/.FILES/profile/.config/.nixos_cfg/configuration.nix
+
+    sudo cp ~/.config/.FILES/profile/.config/.nixos_cfg/configuration.nix /etc/nixos/configuration.nix
+
+    sudo nixos-rebuild switch
+}
