@@ -70,11 +70,11 @@ export P2PRC="$HOME/Sources/p2prc"
 
 
 
-export MAIL="thunderbird"
-export WINDOW_MANAGER="xmonad"
-export BROWSER="something"
+#export MAIL="thunderbird"
+#export WINDOW_MANAGER="xmonad"
+#export BROWSER="something"
 export EDITOR="vim"
-export TERM="alacritty"
+#export TERM="alacritty"
 export PAGER="less"
 
 
