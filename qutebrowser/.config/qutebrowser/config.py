@@ -31,8 +31,9 @@ c.url.searchengines = {
     "gg": "https://google.com/search?q={}",
     "gh": "https://github.com/search?q={}",
     "pypip": "https://pypi.org/search/?q={}",
+    "hoggle": "https://hoogle.haskell.org/?hoogle={}"
 }
 
 
 
-c.editor.command = ["echo $TERM", "-e", "vim", "{}"]
+c.editor.command = ["alacritty", "-e", "vim", "{}"]

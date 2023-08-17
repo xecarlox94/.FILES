@@ -76,7 +76,7 @@ commit() {
 
 
 add_todo() {
-    echo "echo \"$@\"" >> ~/.bashrc
+    echo "echo \"$@\"" >> ~/.config/profile/todos.txt
 }
 
 
