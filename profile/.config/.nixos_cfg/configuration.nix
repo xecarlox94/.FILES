@@ -141,6 +141,7 @@ in
     environment.systemPackages = with pkgs; [
         gnumake
         dmenu
+        file
         guile_3_0
         vim
         wget

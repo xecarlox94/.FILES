@@ -43,6 +43,10 @@ export XMONAD_CACHE_HOME="$XDG_CACHE_HOME/xmonad/"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 
+export AZURE_CONFIG_DIR="$XDG_DATA_HOME/azure"
+
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
@@ -64,10 +68,10 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CACHE_HOME/X11/xserverrc"
 
 
-
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
+export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
 
 export P2PRC="$HOME/Sources/p2prc"
-
 
 
 #export MAIL="thunderbird"

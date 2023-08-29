@@ -1,0 +1,9 @@
+set hidden true
+
+map gh cd ~
+
+map o open_dir
+
+cmd open $nvim $fx
+
+cmd open_dir $nvim $PWD
