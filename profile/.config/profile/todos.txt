@@ -1,11 +1,7 @@
-add text file to list all paths folders to be added
-add functionality to export functions with smart piping
 set environment variables properly, for all utilities
 fix git commit script
 add script to initialise config on multiple distros
 create shell script to check if program is installed
 add script to search in the web from the terminal
-add declarative export env variables paths
 add text file to list all paths folders to be added
-fix set env script
 adding extract file function

@@ -17,6 +17,10 @@ in
       ./hardware-configuration.nix
     ];
 
+
+    # TO ENABLE!!!!!
+    # nix.settings.use-xdg-base-directories = true;
+
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     nix.gc = {
@@ -30,7 +34,6 @@ in
     boot.loader.efi.canTouchEfiVariables = true;
 
     networking.hostName = hostName; # Define your hostname.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     networking.networkmanager.enable = true;
 
@@ -83,13 +86,13 @@ in
                     config = /home/${username}/.config/xmonad/xmonad.hs;
                     enableConfiguredRecompile = true;
                 };
-                #awesome = {
-                    #enable = true;
-                    #luaModules = with pkgs.luaPackages; [
-                        #luarocks
-                        #luadbi-mysql
-                    #];
-                #};
+                awesome = {
+                    enable = true;
+                    luaModules = with pkgs.luaPackages; [
+                        luarocks
+                        luadbi-mysql
+                    ];
+                };
             };
 
             # Configure keymap in X11
@@ -112,6 +115,7 @@ in
 
         libvirtd.enable = true;
     };
+
 
     # Configure console keymap
     console.keyMap = "uk";
@@ -142,6 +146,7 @@ in
         gnumake
         dmenu
         file
+        tealdeer
         guile_3_0
         vim
         wget
@@ -173,10 +178,8 @@ in
         #vagrant
         virt-manager
         keepassxc
-        go
         python310
         python310Packages.pip
-        discord
     ];
 
 

@@ -9,3 +9,7 @@ alias source_utils="\
 
 alias sd="sudo shutdown now"
 alias rb="reboot"
+
+
+
+alias show_todos="cat $HOME/.config/profile/todos.txt"
