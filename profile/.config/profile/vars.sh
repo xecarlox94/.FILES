@@ -74,13 +74,12 @@ export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
 export P2PRC="$HOME/Sources/p2prc"
 
 
-
 #export MAIL="thunderbird"
 #export WINDOW_MANAGER="xmonad"
 #export BROWSER="something"
-#export EDITOR="vim"
+export EDITOR="vim"
 #export TERM="alacritty"
-#export PAGER="less"
+export PAGER="less"
 
 
 export PROFILE_ENV="$XDG_CONFIG_HOME/profile/"
