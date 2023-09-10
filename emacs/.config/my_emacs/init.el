@@ -140,8 +140,11 @@
       "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
       "e d" '(eval-defun :wk "Evaluate defun containing or after point")
       "e e" '(eval-expression :wk "Evaluate elisp expression")
+      "e h" '(counsel-esh-history :wk "Eshell history")
       "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-      "e r" '(eval-region :wk "Evaluate elisp in region"))
+      "e r" '(eval-region :wk "Evaluate elisp in region")
+      "e s" '(eshell :wk "Eshell")
+    )
 
     (xecarlox/leader-keys
       "h"   '(:ignore t :wk "Help")
@@ -151,7 +154,9 @@
     (xecarlox/leader-keys
 	"t" '(:ignore t :wk "Toggle")
 	"t l" '(display-line-numbers-mode :wk "Toggle line numbers")
-	"t t" '(visual-line-mode :wk "Toggle truncated lines"))
+	"t t" '(visual-line-mode :wk "Toggle truncated lines")
+	"t v" '(vterm-toggle :wk "Toggle VTerm")
+    )
 
     (xecarlox/leader-keys
 	"f" '(:ignore t :wk "Font")
@@ -169,7 +174,9 @@
 	"w l" '(evil-window-right :wk "Move to window right")
 	"w k" '(evil-window-up :wk "Move to window up")
 	"w j" '(evil-window-down :wk "Move to window down")
-	"w w" '(evil-window-next :wk "Move to next window")))
+	"w w" '(evil-window-next :wk "Move to next window"))
+
+)
 
 
 (use-package sudo-edit
@@ -203,10 +210,10 @@
 	  which-key-separator " → " ))
 
 
-;; rainbow package
-(use-package rainbow-mode
-  :hook
-  ((org-mode prog-mode) . rainbow-mode))
+;; ;; rainbow package
+;; (use-package rainbow-mode
+  ;; :hook
+  ;; ((org-mode prog-mode) . rainbow-mode))
 
 
 ;; Icons packages
@@ -270,26 +277,26 @@
 
 
 (use-package vterm
-:config
-(setq shell-file-name "/bin/sh"
-      vterm-max-scrollback 5000))
+    :config
+    (setq shell-file-name "/bin/sh"
+	vterm-max-scrollback 5000))
 
 
 (use-package vterm-toggle
   :after vterm
   :config
-  (setq vterm-toggle-fullscreen-p nil)
-  (setq vterm-toggle-scope 'project)
-  (add-to-list 'display-buffer-alist
-               '((lambda (buffer-or-name _)
-                     (let ((buffer (get-buffer buffer-or-name)))
-                       (with-current-buffer buffer
-                         (or (equal major-mode 'vterm-mode)
-                             (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
-                  (display-buffer-reuse-window display-buffer-at-bottom)
-                  ;;(disay-buffer-reuse-window display-buffer-in-direction)
-                  ;;display-buffer-in-direction/direction/dedicated is added in emacs27
-                  ;;(direction . bottom)
-                  ;;(dedicated . t) ;dedicated is supported in emacs27
-                  (reusable-frames . visible)
-                  (window-height . 0.3))))
+    (setq vterm-toggle-fullscreen-p nil)
+    (setq vterm-toggle-scope 'project)
+    (add-to-list 'display-buffer-alist
+		'((lambda (buffer-or-name _)
+			(let ((buffer (get-buffer buffer-or-name)))
+			(with-current-buffer buffer
+			    (or (equal major-mode 'vterm-mode)
+				(string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+		    (display-buffer-reuse-window display-buffer-at-bottom)
+		    ;;(disay-buffer-reuse-window display-buffer-in-direction)
+		    ;;display-buffer-in-direction/direction/dedicated is added in emacs27
+		    ;;(direction . bottom)
+		    ;;(dedicated . t) ;dedicated is supported in emacs27
+		    (reusable-frames . visible)
+		    (window-height . 0.3))))
