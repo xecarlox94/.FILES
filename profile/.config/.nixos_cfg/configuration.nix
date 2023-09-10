@@ -77,9 +77,8 @@ in
             };
 
             windowManager = {
-                #qtile.enable = true;
-                bspwm.enable = true;
-                #dwm.enable = true;
+                qtile.enable = true;
+                # bspwm.enable = true;
                 xmonad = {
                     enable = true;
                     enableContribAndExtras = true;
@@ -104,8 +103,6 @@ in
     virtualisation = {
         docker = {
             enable = true;
-
-            enableNvidia = true;
 
             rootless = {
                 enable = true;
@@ -148,6 +145,8 @@ in
         file
         tealdeer
         guile_3_0
+        cmake
+        libtool
         vim
         wget
         alacritty

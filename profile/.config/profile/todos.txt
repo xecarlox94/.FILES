@@ -5,3 +5,5 @@ create shell script to check if program is installed
 add script to search in the web from the terminal
 add text file to list all paths folders to be added
 adding extract file function
+echo "add move windows in vim and emacs"
+echo "convention vim, nvim and emacs keybidings"

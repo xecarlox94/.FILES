@@ -8,4 +8,4 @@ cmd open $nvim $fx
 
 cmd open_proj $nvim $PWD
 
-cmd open_dir $cd $PWD
+cmd open_dir !cd $PWD
