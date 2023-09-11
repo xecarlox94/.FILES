@@ -28,3 +28,8 @@ export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;
 
 
 cat ~/.config/profile/todos.txt
+
+
+
+
+add_path $HOME/.local/share/python/bin
