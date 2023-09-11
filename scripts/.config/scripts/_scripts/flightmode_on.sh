@@ -1,0 +1,3 @@
+
+
+nmcli r all off

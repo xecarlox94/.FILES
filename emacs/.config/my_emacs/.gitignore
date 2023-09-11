@@ -1,7 +1,3 @@
-auto-save-list/
-elpa/
-history
-init.el~
-recentf
-elpaca/
 eln-cache
+elpaca
+straight

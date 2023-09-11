@@ -14,3 +14,5 @@ exp_utils $HOME/.config/profile/utils/utils.sh
 
 check_source_file ~/.config/profile/env.sh
 
+
+# small edit
