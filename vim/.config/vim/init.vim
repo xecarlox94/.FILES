@@ -2,12 +2,15 @@
 
 " FIXES
 set noerrorbells
+set visualbell
 set t_vb=
 set tm=500
 set clipboard+=unnamedplus
 set smartindent
+"set autoindent
 set smartcase
 set ignorecase
+set nowrap
 set scrolloff=1
 set guicursor=
 
@@ -30,6 +33,7 @@ set encoding=utf-8
 set bg=dark
 set hid
 set ffs=unix,dos,mac
+set smarttab
 
 " Backspace
 set backspace=eol,start,indent
