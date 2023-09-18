@@ -16,7 +16,6 @@ set bg=dark
 
 " BUILT-IN PLUGINS
 filetype plugin indent on
-" filetype on
 " set path+=**
 
 
