@@ -3,7 +3,7 @@ xterm*foreground: white
 xterm*.background: black
 xterm*.foreground: white
 xterm*faceName: Monospace
-xterm*faceSize: 20
+xterm*faceSize: 25
 xterm*savelines: 100
 xterm*selectToClipboard: true
 xterm*VT100.Translations: #override \
