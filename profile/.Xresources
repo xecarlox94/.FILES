@@ -16,3 +16,30 @@ Rxvt*foreground: white
 Rxvt*font: xft:Monospace:size=20:antialias=true
 Rxvt*scrollBar: false
 Rxvt*letterSpace: -1
+
+
+
+
+! Window background color. You can use color names.
+xscreensaver-auth.default.Dialog.background: black
+
+! Main text color. You can also use HEX color codes.
+xscreensaver-auth.default.Dialog.foreground: #ffffff
+
+timeout: 1:00:00
+cycle:  0:05:00
+lock:  False
+lockTimeout: 0:00:00
+passwdTimeout: 0:00:30
+fade:  True
+unfade:  False
+fadeSeconds: 0:00:03
+fadeTicks: 20
+dpmsEnabled: True
+dpmsStandby: 2:00:00
+dpmsSuspend: 2:00:00
+dpmsOff: 4:00:00
+
+
+xscreensaver-auth.default.*.newLoginCommand: dm-tool switch-to-greeter
+
