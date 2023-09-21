@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-if [ $# -eq 0 ];
+if [ $# -lt 1 ];
 then
     echo "not enough args"
     exit 1
@@ -30,18 +30,23 @@ DOCKER_NAME="$DOCKER_NAME:latest"
 #     --device /dev/snd \
 # # ----------------------------
 
+
+
+
 CMD="\
     sudo docker run \
     $DOCKER_ARGS \
     --gpus all --privileged \
+    -it --rm \
     -e DISPLAY=$DISPLAY \
     -v /dev/bus/usb:/dev/bus/usb \
-    -v /tmp/.X11-unix:/tmp/.X11-unix:ro
-    -it --rm \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     $DOCKER_NAME \
     $RUN_CMD \
 "
 
+# https://vsupalov.com/docker-shared-permissions/
+    # --user \"$(id -u):$(id -g)\" \
 
 eval "$CMD"
 
