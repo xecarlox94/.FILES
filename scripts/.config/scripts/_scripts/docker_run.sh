@@ -31,16 +31,35 @@ DOCKER_NAME="$DOCKER_NAME:latest"
 # # ----------------------------
 
 
+# COPY --from=glvnd /usr/share/glvnd/egl_vendor.d/10_nvidia.json /usr/share/glvnd/egl_vendor.d/10_nvidia.json
+# ENV NVIDIA_VISIBLE_DEVICES ${NVIDIA_VISIBLE_DEVICES:-all}
+# ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES:-all}
 
 
-CMD="\
-    sudo docker run \
-    $DOCKER_ARGS \
-    --gpus all --privileged \
-    -it --rm \
-    -e DISPLAY=$DISPLAY \
+#-e TERM \
+    #-e QT_X11_NO_MITSHM=1 \
+    #-e XAUTHORITY=/tmp/.dockerw_b717qf.xauth \
+    #-v /tmp/.dockerw_b717qf.xauth:/tmp/.dockerw_b717qf.xauth \
+    #-v /tmp/.X11-unix:/tmp/.X11-unix \
+
+X11_NVIDIA="\
+    -e TERM \
+    -e DISPLAY \
+    -e NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-all} \
+    -e NVIDIA_DRIVER_CAPABILITIES=${NVIDIA_DRIVER_CAPABILITIES:-all} \
     -v /dev/bus/usb:/dev/bus/usb \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+    -v /etc/localtime:/etc/localtime:ro \
+"
+
+CMD="\
+    xhost +local:root &&\
+    sudo docker run \
+    $DOCKER_ARGS \
+    -it --rm \
+    --gpus all \
+    --privileged \
+    $X11_NVIDIA \
     $DOCKER_NAME \
     $RUN_CMD \
 "
