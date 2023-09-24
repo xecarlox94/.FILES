@@ -1,5 +1,19 @@
 #!/bin/env sh
 
+
+docker_container_name(){
+    DOCKER_NAME=$(\
+        echo $PWD |\
+            cut -c2- |\
+            tr '[:upper:]' '[:lower:]' |\
+            sed "s/-/_/g;s/\//_/g;s/\.//g"\
+    )
+            #xargs basename |\
+    DOCKER_NAME="$DOCKER_NAME:latest"
+    echo $DOCKER_NAME
+}
+
+
 check_source_file() {
     if [ -f "$1" ];
     then
