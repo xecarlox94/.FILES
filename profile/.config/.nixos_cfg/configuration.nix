@@ -144,7 +144,7 @@ in
         dmenu
         file
         tealdeer
-        guile_3_0
+        #guile_3_0
         cmake
         libtool
         vim
