@@ -13,8 +13,7 @@ RUN_CMD="$1"
 DOCKER_ARGS="$2"
 
 
-DOCKER_NAME=$(echo $PWD | xargs basename | tr '[:upper:]' '[:lower:]' | sed "s/-/_/g;s/\//_/g;s/\.//g")
-DOCKER_NAME="$DOCKER_NAME:latest"
+DOCKER_NAME=$(docker_container_name)
 
 
 # # --- Pulse Audio / Mic and Speakers - Too much to comment, but it's all needed... I think ----------------------
@@ -59,7 +58,6 @@ X11_NVIDIA="\
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     -v /etc/localtime:/etc/localtime:ro \
 "
-
 X11_NVIDIA=""
 
 XHOST="xhost +local:root && "
@@ -68,8 +66,6 @@ CMD="\
     sudo docker run \
     $DOCKER_ARGS \
     -it --rm \
-    --user \"$(id -u):$(id -g)\" \
-    --gpus all \
     --privileged \
     -v /dev/bus/usb:/dev/bus/usb \
     -v /dev/bus/usb:/dev/bus/usb \

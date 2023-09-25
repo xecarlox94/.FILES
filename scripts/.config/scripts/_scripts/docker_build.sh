@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOCKER_NAME=$(echo $PWD | xargs basename | tr '[:upper:]' '[:lower:]' | sed "s/-/_/g;s/\//_/g;s/\.//g")
-DOCKER_NAME="$DOCKER_NAME:latest"
+
+DOCKER_NAME=$(docker_container_name)
 
 sudo docker build . -t "$DOCKER_NAME"
