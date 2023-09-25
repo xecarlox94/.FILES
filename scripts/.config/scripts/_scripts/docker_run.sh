@@ -68,6 +68,7 @@ CMD="\
     sudo docker run \
     $DOCKER_ARGS \
     -it --rm \
+    --user \"$(id -u):$(id -g)\" \
     --gpus all \
     --privileged \
     -v /dev/bus/usb:/dev/bus/usb \
