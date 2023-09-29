@@ -61,7 +61,7 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.con
 export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
 export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
 export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
-export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export ERRFILE=/dev/null
 
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
@@ -70,8 +70,6 @@ export XSERVERRC="$XDG_CACHE_HOME/X11/xserverrc"
 
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
 export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
-
-export P2PRC="$HOME/Sources/p2prc"
 
 
 #export MAIL="thunderbird"
