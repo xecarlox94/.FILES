@@ -1,7 +1,11 @@
-[user]
-	email = jf94.uk@gmail.com
-	name = xecarlox94
+
+
+
+
 [init]
 	defaultBranch = master
 [core]
     editor = "vim"
+[user]
+	email = jf94.uk@gmail.com
+	name = xecarlox94

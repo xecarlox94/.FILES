@@ -54,8 +54,8 @@ X11_NVIDIA=""
 
 CMD="\
     sudo docker run \
-    $DOCKER_ARGS \
     -it --rm \
+    $DOCKER_ARGS \
     --privileged \
     $DOCKER_NAME \
     $RUN_CMD \
@@ -65,5 +65,4 @@ CMD="\
     # --user \"$(id -u):$(id -g)\" \
 
 eval "$CMD"
-
 

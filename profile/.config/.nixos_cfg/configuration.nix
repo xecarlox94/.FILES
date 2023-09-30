@@ -139,13 +139,14 @@ in
         description = username;
         extraGroups = [ "networkmanager" "wheel" "libvirtd" "audio" ];
     };
-
     environment.systemPackages = with pkgs; [
         gnumake
         dmenu
         file
         tealdeer
         #guile_3_0
+        lutris
+        steam
         cmake
         libtool
         vim

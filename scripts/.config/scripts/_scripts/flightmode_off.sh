@@ -1,3 +1,0 @@
-
-
-nmcli r all on

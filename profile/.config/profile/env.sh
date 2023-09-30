@@ -33,3 +33,4 @@ touch_if_not_exists "$TMP_ENV/path.sh"
 touch_if_not_exists "$TMP_ENV/path.txt"
 touch_if_not_exists "$TMP_ENV/sandbox.sh"
 touch_if_not_exists "$TMP_ENV/vars.sh"
+

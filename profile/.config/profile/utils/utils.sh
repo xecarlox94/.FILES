@@ -1,5 +1,16 @@
 #!/bin/env sh
 
+exp_file_contents() {
+    FILE=$1
+    if [ -f $FILE ];
+    then
+        set -a
+        source $FILE
+        set +a
+    else
+        echo "error sourcing files from $FILE"
+    fi
+}
 
 docker_container_name(){
     DOCKER_NAME=$(\
@@ -8,7 +19,6 @@ docker_container_name(){
             tr '[:upper:]' '[:lower:]' |\
             sed "s/-/_/g;s/\//_/g;s/\.//g"\
     )
-            #xargs basename |\
     DOCKER_NAME="$DOCKER_NAME:latest"
     echo $DOCKER_NAME
 }
