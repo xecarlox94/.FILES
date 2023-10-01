@@ -1,6 +1,8 @@
 #!/bin/sh
 
 
-DOCKER_NAME=$(docker_container_name)
+
+
+DOCKER_NAME=$(get_container_name.sh)
 
 sudo docker build . -t "$DOCKER_NAME"

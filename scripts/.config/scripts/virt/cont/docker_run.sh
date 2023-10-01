@@ -13,7 +13,7 @@ RUN_CMD="$1"
 DOCKER_ARGS="$2"
 
 
-DOCKER_NAME=$(docker_container_name)
+DOCKER_NAME=$(get_container_name.sh)
 
 
 # # --- Pulse Audio / Mic and Speakers - Too much to comment, but it's all needed... I think ----------------------

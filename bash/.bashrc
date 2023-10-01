@@ -6,12 +6,14 @@ PROF=~/.profile \
     && source $PROF
 
 
+[ -z "$PS1" ] && return
+
 [[ $- != *i* ]] && return
 
 
-HISTCONTROL=ignoredups
-HISTSIZE=1000
-HISTFILESIZE=1000
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=
+HISTFILESIZE=
 
 #export HISTIGNORE="ls:cd:cd -:pwd:exit:date:reboot"
 
