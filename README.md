@@ -29,7 +29,15 @@ $HOME/.config/.FILES/scripts/.config/scripts/conf/minimal_install.sh
 ## Full environment install
 
 
-This installation steo requires the GNU Stow program. In order to install it on a debian/ubuntu based linux distribution, run:
+This installation requires the GNU Stow program. In order to install it on a debian/ubuntu based linux distribution, run:
+
+```bash
+
+sudo apt install stow
+
+```
+
+To install the full environment, run:
 
 ```bash
 
@@ -46,7 +54,7 @@ This exemplifies how to use the installed environment to setup a development env
 ## Building docker container
 
 
-go to the folder that holds the Dockerfile and run:
+Navigate to the folder that holds the Dockerfile and run:
 
 ```bash
 
@@ -54,11 +62,22 @@ docker_build.sh
 
 ```
 
+That is it!
+
 
 ## Running docker containers
 
 
-Please make sure you are in the same folder as . Folder just requires the Dockerfile and a "run.sh" executable file. An example of a "run.sh" shell script is the following:
+Please make sure you are in the same folder that you built the previous docker container.
+
+
+### Define the interactive execution environment
+
+
+Create a "run.sh" executable file that defines what program to run interactively and what additional docker running arguments you require.
+
+
+An example of a "run.sh" shell script is the following:
 
 ```bash
 
@@ -69,6 +88,15 @@ docker_run.sh \
     "
 ```
 
+This shell script instantiates a docker container that runs bash interactively and it mounts a folder from the host to the container.
+
+
+Feel free to modify the executing command and to add additional arguments to docker container execution.
+
+
+### Run it!
+
+
 After this setup you just need to run the following command:
 
 ```bash
@@ -76,3 +104,9 @@ After this setup you just need to run the following command:
 ./run.sh
 
 ```
+
+
+That's it!
+
+
+Done.
