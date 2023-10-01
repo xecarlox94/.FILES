@@ -50,7 +50,7 @@ go to the folder that holds the Dockerfile and run:
 
 ```bash
 
-docker\_build.sh
+docker_build.sh
 
 ```
 
