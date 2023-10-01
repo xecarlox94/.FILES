@@ -30,10 +30,18 @@ DOCKER_NAME=$(get_container_name.sh)
 # # ----------------------------
 
 
+# USER PERMISSION
+# https://vsupalov.com/docker-shared-permissions/
+    # --user \"$(id -u):$(id -g)\" \
+
+
+
 # COPY --from=glvnd /usr/share/glvnd/egl_vendor.d/10_nvidia.json /usr/share/glvnd/egl_vendor.d/10_nvidia.json
 # ENV NVIDIA_VISIBLE_DEVICES ${NVIDIA_VISIBLE_DEVICES:-all}
 # ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES:-all}
 
+#VIM CONFIG
+#-v .config/vim/init.vim:~/.vimrc \
 
 #-e TERM \
     #-e QT_X11_NO_MITSHM=1 \
@@ -41,16 +49,18 @@ DOCKER_NAME=$(get_container_name.sh)
     #-v /tmp/.dockerw_b717qf.xauth:/tmp/.dockerw_b717qf.xauth \
     #-v /tmp/.X11-unix:/tmp/.X11-unix \
 
+
 X11_NVIDIA="\
     -e TERM \
     -e DISPLAY \
     -e NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-all} \
     -e NVIDIA_DRIVER_CAPABILITIES=${NVIDIA_DRIVER_CAPABILITIES:-all} \
-    -v /dev/bus/usb:/dev/bus/usb \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     -v /etc/localtime:/etc/localtime:ro \
 "
 X11_NVIDIA=""
+
+XHOST="xhost +local:root && "
 
 CMD="\
     sudo docker run \
@@ -58,12 +68,14 @@ CMD="\
     -v $HOME/.config/.FILES:/root/.config/.FILES \
     $DOCKER_ARGS \
     --privileged \
+    -v /dev/bus/usb:/dev/bus/usb \
+    -v /dev/bus/usb:/dev/bus/usb \
+    $X11_NVIDIA \
     $DOCKER_NAME \
     $RUN_CMD \
 "
 
-# https://vsupalov.com/docker-shared-permissions/
-    # --user \"$(id -u):$(id -g)\" \
+#CMD="$XHOST && $CMD"
 
 eval "$CMD"
 
