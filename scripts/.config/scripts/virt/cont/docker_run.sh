@@ -55,6 +55,7 @@ X11_NVIDIA=""
 CMD="\
     sudo docker run \
     -it --rm \
+    -v $HOME/.config/.FILES:/root/.config/.FILES \
     $DOCKER_ARGS \
     --privileged \
     $DOCKER_NAME \
