@@ -64,11 +64,9 @@ XHOST="xhost +local:root && "
 
 CMD="\
     sudo docker run \
-    -it --rm \
+    -it \
     -v $HOME/.config/.FILES:/root/.config/.FILES \
     $DOCKER_ARGS \
-    --privileged \
-    -v /dev/bus/usb:/dev/bus/usb \
     -v /dev/bus/usb:/dev/bus/usb \
     $X11_NVIDIA \
     $DOCKER_NAME \
@@ -76,6 +74,8 @@ CMD="\
 "
 
 #CMD="$XHOST && $CMD"
+
+echo $DOCKER_NAME
 
 eval "$CMD"
 
