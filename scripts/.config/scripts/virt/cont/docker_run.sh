@@ -55,8 +55,7 @@ X11_NVIDIA="\
     -e DISPLAY=unix$DISPLAY \
     -e NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-all} \
     -e NVIDIA_DRIVER_CAPABILITIES=${NVIDIA_DRIVER_CAPABILITIES:-all} \
-    -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-    -v /etc/localtime:/etc/localtime:ro \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
     --runtime=nvidia \
     --gpus all \
 "
@@ -66,7 +65,7 @@ XHOST="xhost +local:root && "
 
 CMD="\
     sudo docker run \
-    -it --privileged \
+    -it  \
     -v $HOME/.config/.FILES:/root/.config/.FILES \
     $DOCKER_ARGS \
     -v /dev/bus/usb:/dev/bus/usb \
