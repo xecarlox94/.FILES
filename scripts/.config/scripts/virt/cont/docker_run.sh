@@ -52,11 +52,13 @@ DOCKER_NAME=$(get_container_name.sh)
 
 X11_NVIDIA="\
     -e TERM \
-    -e DISPLAY \
+    -e DISPLAY=unix$DISPLAY \
     -e NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-all} \
     -e NVIDIA_DRIVER_CAPABILITIES=${NVIDIA_DRIVER_CAPABILITIES:-all} \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     -v /etc/localtime:/etc/localtime:ro \
+    --runtime=nvidia \
+    --gpus all \
 "
 
 
@@ -64,7 +66,7 @@ XHOST="xhost +local:root && "
 
 CMD="\
     sudo docker run \
-    -it \
+    -it --privileged \
     -v $HOME/.config/.FILES:/root/.config/.FILES \
     $DOCKER_ARGS \
     -v /dev/bus/usb:/dev/bus/usb \
@@ -77,5 +79,5 @@ CMD="\
 
 echo $DOCKER_NAME
 
-eval "$CMD"
+eval "$XHOST $CMD"
 
