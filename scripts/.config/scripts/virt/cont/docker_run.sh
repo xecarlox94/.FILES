@@ -58,7 +58,7 @@ X11_NVIDIA="\
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     -v /etc/localtime:/etc/localtime:ro \
 "
-X11_NVIDIA=""
+
 
 XHOST="xhost +local:root && "
 
