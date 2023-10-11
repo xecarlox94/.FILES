@@ -66,7 +66,7 @@ XHOST="xhost +local:root && "
 
 CMD="\
     sudo docker run \
-    -it --privileged \
+    -it \
     -v $HOME/.config/.FILES:/root/.config/.FILES \
     $DOCKER_ARGS \
     -v /dev/bus/usb:/dev/bus/usb \
@@ -77,7 +77,7 @@ CMD="\
 
 #CMD="$XHOST && $CMD"
 
-echo $DOCKER_NAME
+echo "__DOCKER_CONTAINER_NAME__: $DOCKER_NAME"
 
 eval "$XHOST $CMD"
 
