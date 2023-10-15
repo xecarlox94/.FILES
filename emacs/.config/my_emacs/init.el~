@@ -447,12 +447,12 @@
           (org-agenda-prefix-format "%t %s")
           (org-agenda-fontify-priorities nil)
           (org-agenda-remove-tags t))
-         ("agenda.txt"))
+         ("agenda.txt")))
+
 	("v" "A new agenda view"
 	    ((tags "+PRIORITY=\"A\""
 	    ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'finished))
 	    (agenda "")
 	    (alltodo "")))))
-	)
+	))
 )
-
