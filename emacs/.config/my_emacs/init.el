@@ -456,3 +456,13 @@
 	)
 )
 
+
+
+(use-package elfeed)
+
+
+(setq elfeed-feeds 
+      '(("https://yewtu.be/feed/channel/UChNN7VBxPTiNrqjUaQd9bxA" lifestyle)
+      ("https://yewtu.be/feed/channel/UCPsCJ1j0G45FnRGqJhCHLiA" finance economy bitcoin)
+      ))
+
