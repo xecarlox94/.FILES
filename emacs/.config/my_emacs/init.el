@@ -5,8 +5,9 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
-(global-display-line-numbers-mode 1)
-(global-visual-line-mode t)
+(setq scroll-step 1)
+
+(global-display-line-numbers-mode 1) (global-visual-line-mode t)
 (global-auto-revert-mode t)
 
 
@@ -26,7 +27,7 @@
 
 (load-theme 'modus-vivendi t)
 
-(setq vc-follow-symlinks t)
+(setq vc-follow-symlinks nil)
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
@@ -44,10 +45,9 @@
                      gcs-done)))
 
 
-;; cleaning emacs config folder
-
+;; CLEANING EMACS CONFIG FOLDER
 ;; (setq user-emacs-config (expand-file-name "~/.config/emacs/"))
-
+;;
 ;;(setq user-emacs-directory (expand-file-name "~/.cache/emacs/")
       ;;url-history-file (expand-file-name "url/history" user-emacs-directory))
 ;;
@@ -85,6 +85,23 @@
 (setq straight-use-package-by-default t)
 
 
+;; (straight-use-package '(setup :type git :host nil :repo "https://git.sr.ht/~pkal/setup"))
+;; (require 'setup)
+;; 
+;; (defun dw/filter-straight-recipe (recipe)
+  ;; (let* ((plist (cdr recipe))
+         ;; (name (plist-get plist :straight)))
+    ;; (cons (if (and name (not (equal name t)))
+              ;; name
+            ;; (car recipe))
+          ;; (plist-put plist :straight nil))))
+;; 
+;; (setup-define :pkg
+  ;; (lambda (&rest recipe) `(straight-use-package ',(dw/filter-straight-recipe recipe)))
+  ;; :documentation "Install RECIPE straight.el"
+  ;; :shorthand #'cadr)
+
+
 
 ;; Evil Mode
 (use-package evil
@@ -104,7 +121,6 @@
     (evil-collection-init))
 
 (use-package evil-tutor)
-
 
 
 ;; General Keybindings
@@ -300,3 +316,29 @@
 		    ;;(dedicated . t) ;dedicated is supported in emacs27
 		    (reusable-frames . visible)
 		    (window-height . 0.3))))
+
+
+
+
+(use-package org
+  :straight (:type built-in)
+  :init 
+  (setq org-directory "~/org")
+  (setq org-agenda-files (list org-directory))
+  :custom
+  (org-startup-indented t)
+  (org-startup-folded 'content)
+  (org-agenda-start-on-weekday nil)
+)
+
+
+(use-package evil-org
+  :after org
+  :hook ((org-mode . evil-org-mode)
+	 (org-agenda-mode . evil-org-mode))
+  :config
+  (evil-org-mode)
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
+
