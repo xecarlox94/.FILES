@@ -1,2 +1,4 @@
 
-(("default" . ((user-emacs-directory . "~/.config/my_emacs"))))
+(("default" . ((
+        user-emacs-directory
+        . "~/.config/my_emacs"))))
