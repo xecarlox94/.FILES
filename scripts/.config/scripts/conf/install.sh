@@ -14,6 +14,3 @@ mv $HOME/.profile       $BACKUP_DIR
 
 
 $HOME/.config/.FILES/scripts/.config/scripts/conf/stow.sh
-
-
-bash

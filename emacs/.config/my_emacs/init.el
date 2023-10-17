@@ -87,7 +87,7 @@
 
 ;; (straight-use-package '(setup :type git :host nil :repo "https://git.sr.ht/~pkal/setup"))
 ;; (require 'setup)
-;; 
+;;
 ;; (defun dw/filter-straight-recipe (recipe)
   ;; (let* ((plist (cdr recipe))
          ;; (name (plist-get plist :straight)))
@@ -95,7 +95,7 @@
               ;; name
             ;; (car recipe))
           ;; (plist-put plist :straight nil))))
-;; 
+;;
 ;; (setup-define :pkg
   ;; (lambda (&rest recipe) `(straight-use-package ',(dw/filter-straight-recipe recipe)))
   ;; :documentation "Install RECIPE straight.el"
@@ -322,7 +322,7 @@
 
 (use-package org
     :straight (:type built-in)
-    :init 
+    :init
 	(setq org-directory "~/org")
 	(setq org-agenda-files (list org-directory))
     :custom
@@ -370,7 +370,7 @@
     '(
 	("z" "Week" ((agenda "")))
 			    ;; (org-agenda-skip-function '(org-agenda-skip-entry-if 'deadline 'scheduled))))))
- 
+
 	("p" . "Priorities")
 	("pa" "A items" tags-todo "+PRIORITY=\"A\"")
 	("pb" "B items" tags-todo "+PRIORITY=\"B\"")
@@ -390,7 +390,7 @@
 
 
 
-(setq org-todo-keywords 
+(setq org-todo-keywords
     '((sequence
 	"TODO(t)" "CONTRACT(c)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)"
 	"|"
@@ -399,11 +399,7 @@
 
 (use-package elfeed
   :config
-    (setq elfeed-feeds 
+    (setq elfeed-feeds
 	'(("https://yewtu.be/feed/channel/UChNN7VBxPTiNrqjUaQd9bxA" lifestyle)
 	("https://yewtu.be/feed/channel/UCPsCJ1j0G45FnRGqJhCHLiA" finance economy bitcoin)
 	)))
-
-
-
-;; https://codeberg.org/flowfx/doom.d
