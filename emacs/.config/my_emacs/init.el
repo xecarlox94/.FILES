@@ -343,6 +343,45 @@
     (require 'evil-org-agenda)
     (evil-org-agenda-set-keys))
 
+
+;; (use-package org-super-agenda
+  ;; :after evil-org
+  ;; :init
+  ;; :config
+  ;; (org-super-agenda-mode))
+
+
+(setq org-agenda-time-grid
+      '((daily today)
+        (800 830 900 930 1000 1030 1100 1130 1200 1230 1300 1330 1400 1430 1500 1530 1600 1630 1700 1730 1800)
+        "......" "----------------"))
+
+(setq org-agenda-include-deadlines t
+    org-agenda-compact-blocks t
+    org-agenda-skip-scheduled-if-done t
+    org-agenda-skip-deadline-if-done t
+    org-agenda-skip-deadline-prewarning-if-scheduled t
+    org-agenda-block-separator #x2501
+    org-agenda-start-day nil
+    org-agenda-overriding-header ""
+    org-agenda-start-on-weekday nil)
+
+(setq org-agenda-custom-commands
+    '(
+	("z" "Week" ((agenda "")))
+			    ;; (org-agenda-skip-function '(org-agenda-skip-entry-if 'deadline 'scheduled))))))
+ 
+	("p" . "Priorities")
+	("pa" "A items" tags-todo "+PRIORITY=\"A\"")
+	("pb" "B items" tags-todo "+PRIORITY=\"B\"")
+	("pc" "C items" tags-todo "+PRIORITY=\"C\"")
+))
+
+
+
+(setq-default org-enforce-todo-dependencies t)
+
+
 (use-package rainbow-mode)
 
 (use-package rainbow-delimiters
@@ -358,60 +397,12 @@
 	"HOLD(h)" "SCRAPPED(s)" "FINISHED(f)" )))
 
 
-(use-package org-super-agenda)
-
-
-(use-package elfeed)
-
-
-(setq elfeed-feeds 
-      '(("https://yewtu.be/feed/channel/UChNN7VBxPTiNrqjUaQd9bxA" lifestyle)
-      ("https://yewtu.be/feed/channel/UCPsCJ1j0G45FnRGqJhCHLiA" finance economy bitcoin)
-      ))
-
-
-(let ((org-super-agenda-groups
-       '(;; Each group has an implicit boolean OR operator between its selectors.
-         (:name "Today"  ; Optionally specify section name
-                :time-grid t  ; Items that appear on the time grid
-                :todo "TODO")  ; Items that have this TODO keyword
-         (:name "Important"
-                ;; Single arguments given alone
-                ;; :tag "bills"
-                :priority "A")
-         ;; Set order of multiple groups at once
-         (:order-multi (2 (:name "Shopping in town"
-                                 ;; Boolean AND group matches items that match all subgroups
-                                 :and (:tag "shopping" :tag "@town"))
-                          (:name "Food-related"
-                                 ;; Multiple args given in list with implicit OR
-                                 :tag ("food" "dinner"))
-                          (:name "Personal"
-                                 :habit t
-                                 :tag "personal")
-                          (:name "Space-related (non-moon-or-planet-related)"
-                                 ;; Regexps match case-insensitively on the entire entry
-                                 :and (:regexp ("space" "NASA")
-                                               ;; Boolean NOT also has implicit OR between selectors
-                                               :not (:regexp "moon" :tag "planet")))))
-         ;; Groups supply their own section names when none are given
-         (:todo "WAITING" :order 8)  ; Set order of this section
-         (:todo ("SOMEDAY" "TO-READ" "CHECK" "TO-WATCH" "WATCHING")
-                ;; Show this group at the end of the agenda (since it has the
-                ;; highest number). If you specified this group last, items
-                ;; with these todo keywords that e.g. have priority A would be
-                ;; displayed in that group instead, because items are grouped
-                ;; out in the order the groups are listed.
-                :order 9)
-         (:priority<= "B"
-                      ;; Show this section after "Today" and "Important", because
-                      ;; their order is unspecified, defaulting to 0. Sections
-                      ;; are displayed lowest-number-first.
-                      :order 1)
-         ;; After the last group, the agenda will display items that didn't
-         ;; match any of these groups, with the default order position of 99
-         )))
-  (org-agenda nil "a"))
+(use-package elfeed
+  :config
+    (setq elfeed-feeds 
+	'(("https://yewtu.be/feed/channel/UChNN7VBxPTiNrqjUaQd9bxA" lifestyle)
+	("https://yewtu.be/feed/channel/UCPsCJ1j0G45FnRGqJhCHLiA" finance economy bitcoin)
+	)))
 
 
 
