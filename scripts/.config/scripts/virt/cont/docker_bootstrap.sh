@@ -63,6 +63,7 @@ docker_run.sh \\
     \"\\
     \"\\
         -v \${PWD}/src:/src \\
+        --rm \\
     \"\\
     $ADD_OPTS" > run.sh
 
