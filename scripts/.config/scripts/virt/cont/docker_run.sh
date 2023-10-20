@@ -24,11 +24,9 @@ while getopts 'xn' OPTION;
 do
     case "$OPTION" in
         x)
-            echo "X11 is true"
             X11=true
             ;;
         n)
-            echo "NVIDIA is true"
             NVIDIA=true
             ;;
         *)

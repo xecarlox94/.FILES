@@ -6,6 +6,6 @@ map o open_dir
 
 cmd open $nvim $fx
 
-cmd open_proj $nvim $PWD
+cmd open_proj $vim $PWD
 
 cmd open_dir !cd $PWD

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+echo "what is your git username?"
+read GIT_USER_NAME
+
+echo "what is your email?"
+read GIT_USER_EMAIL
 
 BACKUP_DIR=$HOME/.config/backup
 mkdir -p $BACKUP_DIR
