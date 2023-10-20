@@ -19,3 +19,10 @@ mv $HOME/.profile       $BACKUP_DIR
 
 
 $HOME/.config/.FILES/scripts/.config/scripts/conf/stow.sh
+
+echo "\
+export GIT_AUTHOR_NAME=\"$GIT_USER_NAME\"\
+export GIT_AUTHOR_EMAIL=\"$GIT_USER_EMAIL\"\
+export GIT_COMMITTER_NAME=\"$GIT_USER_NAME\"\
+export GIT_COMMITTER_EMAIL=\"$GIT_USER_EMAIL\"\
+" >> $HOME/.config/tmp
