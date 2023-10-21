@@ -89,10 +89,10 @@ set_path() {
 commit() {
     if [ $# -ge 1 ]
     then
-        git status \
-            && git add . \
-            && git commit -m "$@" \
-            && git push --all origin
+        git status &&\
+            git add . &&\
+            git commit -m "$1" &&\
+            git push --all origin
     else
         echo "ERROR"
     fi
@@ -128,6 +128,13 @@ open_file() {
     esac
 }
 
+extract_file() {
+    echo "extracting file"
+}
+
+mounting_file() {
+    echo "mounting file"
+}
 
 
 save_dir() {

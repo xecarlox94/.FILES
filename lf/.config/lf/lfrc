@@ -9,3 +9,12 @@ cmd open $nvim $fx
 cmd open_proj $vim $PWD
 
 cmd open_dir !cd $PWD
+
+
+cmd preview_file $fx
+
+cmd open_file $fx
+
+cmd extract_file $fx
+
+cmd mounting_file $fx
