@@ -195,16 +195,6 @@
 )
 
 
-(use-package sudo-edit
-  :config
-  (xecarlox/leader-keys
-    "s" '(:ignore t :wk "Sudo")
-    "s f" '(sudo-edit-find-file :wk "Sudo find file")
-    "s e" '(sudo-edit-find-file :wk "Sudo edit file")
-    )
-)
-
-
 
 ;; which-key package
 (use-package which-key
@@ -226,10 +216,15 @@
 	  which-key-separator " → " ))
 
 
-;; ;; rainbow package
-;; (use-package rainbow-mode
-  ;; :hook
-  ;; ((org-mode prog-mode) . rainbow-mode))
+;; rainbow package
+(use-package rainbow-mode
+  :hook
+  ((org-mode prog-mode) . rainbow-mode))
+
+
+(use-package rainbow-delimiters
+  :config
+    (rainbow-delimiters-mode))
 
 
 ;; Icons packages
@@ -344,13 +339,6 @@
     (evil-org-agenda-set-keys))
 
 
-;; (use-package org-super-agenda
-  ;; :after evil-org
-  ;; :init
-  ;; :config
-  ;; (org-super-agenda-mode))
-
-
 (setq org-agenda-time-grid
       '((daily today)
         (800 830 900 930 1000 1030 1100 1130 1200 1230 1300 1330 1400 1430 1500 1530 1600 1630 1700 1730 1800)
@@ -380,13 +368,6 @@
 
 
 (setq-default org-enforce-todo-dependencies t)
-
-
-(use-package rainbow-mode)
-
-(use-package rainbow-delimiters
-  :init
-    (rainbow-delimiters-mode))
 
 
 
