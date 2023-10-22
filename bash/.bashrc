@@ -1,10 +1,11 @@
 #!/bin/sh
 
 
+
+
 PROF=~/.profile \
     && [ -f $PROF ] \
     && source $PROF
-
 
 [ -z "$PS1" ] && return
 
