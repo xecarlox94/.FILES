@@ -25,8 +25,8 @@ mv_file() {
 
 
 mv_file $HOME/.bashrc
-mv_file $HOME/.bashrc_logout
-mv_file $HOME/.bashrc_profile
+mv_file $HOME/.bash_logout
+mv_file $HOME/.bash_profile
 mv_file $HOME/.profile
 
 

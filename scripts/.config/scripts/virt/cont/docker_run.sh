@@ -91,9 +91,6 @@ XHOST=""
 ADD_OPTS=""
 
 
-echo "X11: $X11"
-echo "NVIDIA: $NVIDIA"
-
 if $X11;
 then
     XHOST="xhost +local:root && "
