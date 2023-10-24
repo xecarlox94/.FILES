@@ -91,9 +91,6 @@ XHOST=""
 ADD_OPTS=""
 
 
-echo "X11: $X11"
-echo "NVIDIA: $NVIDIA"
-
 if $X11;
 then
     XHOST="xhost +local:root && "
@@ -117,6 +114,6 @@ $DOCKER_NAME \
 $RUN_CMD \
 "
 
-#echo "$CMD"
+echo "$CMD" > .command_executed.sh
 
 eval "$CMD"
