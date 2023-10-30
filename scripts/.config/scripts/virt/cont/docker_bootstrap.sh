@@ -45,13 +45,18 @@ fi
 
 mkdir_cd $PROJECT_FOLDER
 
+
+#
+# We need to add these env variables to the docker container
+#
+#
+# ARG BUILD_ENV=prod\n\
+# ENV RUN_ENV=$BUILD_ENV\n\
+# RUN export BUILD_ENV=$BUILD_ENV\n\
+
+
 echo -e "\
 FROM $DOCKER_IMAGE_NAME \n\
-\n\
-\n\
-ARG BUILD_ENV=prod\n\
-ENV RUN_ENV=$BUILD_ENV\n\
-RUN export BUILD_ENV=$BUILD_ENV\n\
 \n\
 \n\
 WORKDIR /src \

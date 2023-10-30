@@ -32,9 +32,17 @@ mv_file $HOME/.profile
 
 $HOME/.config/.FILES/scripts/.config/scripts/conf/stow.sh
 
+$TMP_FILE=$HOME/.config/tmp/env.sh
+
+if ![ -f $1 ];
+then
+	mkdir -p $(dirname $TMP_FILE)
+	touch $TMP_FILE
+fi
+
 printf "\
 export GIT_AUTHOR_NAME=\"$GIT_USER_NAME\"\n\
 export GIT_AUTHOR_EMAIL=\"$GIT_USER_EMAIL\"\n\
 export GIT_COMMITTER_NAME=\"$GIT_USER_NAME\"\n\
 export GIT_COMMITTER_EMAIL=\"$GIT_USER_EMAIL\"\n\
-" >> $HOME/.config/tmp/env.sh
+" >> $TMP_FILE
