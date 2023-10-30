@@ -70,8 +70,7 @@ touch_x run.sh
 mkdir src
 
 
-echo -e "\\
-clear &&\\
+echo -e "clear &&\\
     docker_build.sh &&\\
     docker_run.sh \\
         \"\\
