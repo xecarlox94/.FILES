@@ -86,4 +86,4 @@ clear &&\\
         $ADD_OPTS" > run.sh
 
 
-run.sh
+./run.sh
