@@ -57,6 +57,7 @@ export DISCORD_USER_DATA_DIR="${XDG_DATA_HOME}"
 
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.config/nvim/init.lua" | so $MYVIMRC'
 
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 
 export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
 export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
@@ -71,8 +72,9 @@ export XSERVERRC="$XDG_CACHE_HOME/X11/xserverrc"
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
 export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
 
+export KERAS_HOME="$XDG_CONFIG_HOME/keras"
 
-#export MAIL="thunderbird"
+export MAIL="thunderbird"
 #export WINDOW_MANAGER="xmonad"
 #export BROWSER="something"
 export EDITOR="vim"
