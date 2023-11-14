@@ -1,3 +1,1 @@
-set -o allexport
-source .env set
-set +o allexport
+export $(cat .env | xargs)
