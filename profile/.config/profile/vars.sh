@@ -51,6 +51,8 @@ export HISTFILE="$XDG_STATE_HOME/bash/history"
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 
 export DISCORD_USER_DATA_DIR="${XDG_DATA_HOME}"
