@@ -48,5 +48,3 @@ set colored-stats on
 
 # bindkey -v # Enable vi-mode.
 
-
-
