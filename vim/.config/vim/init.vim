@@ -97,7 +97,9 @@ set exrc
 " Netrw plugin
 set autochdir
 let g:netrw_banner = 0
-
+let g:netrw_list_hide= '^\.\./$,^\./$'
+let g:netrw_hide = 1
+let g:netrw_sizestyle= "h"
 
 "-------------------- MAPPINGS
 
@@ -129,17 +131,23 @@ nnoremap <leader>9 <C-w>+
 nnoremap <leader>0 <C-w>>
 
 
-
-" nnoremap <leader>wq <C-w>wq
-
 " File
 nnoremap <leader>fw :w<CR>
-nnoremap <leader>fq :q<CR>
 nnoremap <leader>fx :x<CR>
+nnoremap <leader>fq :q<CR>
 nnoremap <leader>fk :q!<CR>
 nnoremap <leader>fp :r !xclip -o<CR>
 " vnoremap <leader>fy :w !xclip -sel clip<CR><CR>
 
+
+" Explore - navigation
+nnoremap <leader>n :Ex<CR>
+
+
+" Tab
+nnoremap <leader>tn :tabNext<CR>
+nnoremap <leader>to :tabnew<Space>
+nnoremap <leader>tp :tabprevious<CR>
 
 " Open
 nnoremap <leader>of :e<Space>
@@ -147,14 +155,10 @@ nnoremap <leader>os :shell<CR>
 nnoremap <leader>ot :vert ter<CR>
 nnoremap <leader>ob :buffers<CR>:b<Space>
 
-" Tab
-nnoremap <leader>tn :tabNext<CR>
-nnoremap <leader>to :tabnew<Space>
-nnoremap <leader>tp :tabprevious<CR>
-
-" Run
-nnoremap <leader>rp :<up><CR>
-nnoremap <leader>rs :!
+" Console
+nnoremap <leader>cl :<C-f>
+nnoremap <leader>cp :<up><CR>
+nnoremap <leader>cs :!
 vnoremap <leader>rn :norm<Space>
 
 
@@ -168,6 +172,13 @@ inoremap ,o <Esc>o
 inoremap ,; <Esc>A;
 inoremap ,: <Esc>A:
 inoremap ,, <Esc>A,
+
+
+augroup netrw_setup | au!
+    au FileType netrw nmap <buffer> l <CR>
+    au FileType netrw nmap <buffer> h -
+    au FileType netrw nmap <buffer> f %
+augroup END
 
 
 " pairing operators
@@ -214,12 +225,6 @@ endif
 
 
 "-------------------- Autocommands
-
-
-augroup netrw_setup | au!
-    au FileType netrw nmap <buffer> l <CR>
-    au FileType netrw nmap <buffer> h -
-augroup END
 
 
 " autocmd FileType go

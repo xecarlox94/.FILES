@@ -2,6 +2,7 @@
 -- Loading vimrc config
 vim.cmd 'source ~/.config/vim/init.vim'
 
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
 
 -- Aliasing vim environment variables
 local o = vim.o -- global
