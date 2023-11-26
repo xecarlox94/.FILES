@@ -3,6 +3,9 @@ fn = vim.fn
 execute = vim.api.nvim_command
 
 
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
+
+
 -- Loading vimrc config
 vim.cmd 'source ~/.config/vim/init.vim'
 

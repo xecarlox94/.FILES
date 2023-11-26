@@ -1,5 +1,6 @@
 "-------------------- SETTINGS
 
+
 " FIXES
 set noerrorbells
 set visualbell
@@ -93,6 +94,10 @@ set hidden
 set exrc
 " set signcolumn=yes
 
+" Netrw plugin
+set autochdir
+let g:netrw_banner = 0
+
 
 "-------------------- MAPPINGS
 
@@ -152,25 +157,26 @@ nnoremap <leader>rp :<up><CR>
 nnoremap <leader>rs :!
 vnoremap <leader>rn :norm<Space>
 
+
+" insert snippets
+inoremap ,a <Esc>A
+inoremap ,e <Esc>ea
+inoremap ,w <Esc>wi
+inoremap ,b <Esc>bi
+inoremap ,O <Esc>O
+inoremap ,o <Esc>o
+inoremap ,; <Esc>A;
+inoremap ,: <Esc>A:
+inoremap ,, <Esc>A,
+
+
 " pairing operators
-iabb " ""<left>
-iabb ' ''<left>
-iabb ( ()<left>
-iabb { {}<left>
-iabb [ []<left>
+" iabb \" \""<left>
+" iabb ' ''<left>
+" iabb ( ()<left>
+" iabb { {}<left>
+" iabb [ []<left>
 
-
-" Deprecated
-" " insert snippets
-" inoremap ,a <Esc>A
-" inoremap ,e <Esc>ea
-" inoremap ,w <Esc>wi
-" inoremap ,b <Esc>bi
-" inoremap ,O <Esc>O
-" inoremap ,o <Esc>o
-" inoremap ,; <Esc>A;
-" inoremap ,: <Esc>A:
-" inoremap ,, <Esc>A,
 
 
 "-------------------- AUTO COMMANDS
@@ -197,15 +203,23 @@ autocmd BufWritePost ~/.bashrc !source %
 " work on colorscheme solution for vim and neovim
 
 
-colorscheme desert
-" colorscheme ron
-" colorscheme torte
-" colorscheme elflord
-" colorscheme industry
+if !has('nvim')
+    colorscheme desert
+    " colorscheme ron
+    " colorscheme torte
+    " colorscheme elflord
+    " colorscheme industry
+endif
 
 
 
-"-------------------- Programming Languages
+"-------------------- Autocommands
+
+
+augroup netrw_setup | au!
+    au FileType netrw nmap <buffer> l <CR>
+    au FileType netrw nmap <buffer> h -
+augroup END
 
 
 " autocmd FileType go

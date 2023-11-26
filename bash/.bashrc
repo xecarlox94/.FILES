@@ -46,5 +46,5 @@ set show-all-if-ambiguous on
 set mark-symlinked-directories on
 set colored-stats on
 
-# bindkey -v # Enable vi-mode.
+bindkey -v # Enable vi-mode.
 
