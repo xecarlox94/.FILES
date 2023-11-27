@@ -35,7 +35,7 @@ check_source_file() {
 
 touch_x() {
     touch $1 \
-        && sudo chmod +x $1
+        && sudo chmod u+x $1
 }
 
 mkdir_cd() {
