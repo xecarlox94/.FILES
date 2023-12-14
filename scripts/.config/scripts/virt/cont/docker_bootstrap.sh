@@ -58,8 +58,8 @@ then
 fi
 
 
-mkdir_cd $PROJECT_FOLDER
-
+mkdir $PROJECT_FOLDER
+cd $PROJECT_FOLDER
 
 #
 # We need to add these env variables to the docker container
@@ -103,7 +103,7 @@ echo -e "clear &&\\
             bash \\
         \"\\
         \"\\
-            -v \${PWD}/src:/src \\
+            -v '\${PWD}/src':/src \\
             --rm \\
             --privileged \\
             --name $PROJECT_FOLDER \\
