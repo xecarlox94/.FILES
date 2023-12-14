@@ -25,7 +25,7 @@
 
 (set-face-attribute 'default nil :height 100)
 
-;; (load-theme 'modus-vivendi t)
+(load-theme 'modus-vivendi t)
 
 ;; (setq vc-follow-symlinks nil)
 
