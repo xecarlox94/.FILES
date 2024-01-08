@@ -32,7 +32,8 @@ mv_file $HOME/.profile
 
 $HOME/.config/.FILES/scripts/.config/scripts/conf/stow.sh
 
-$TMP_FILE=$HOME/.config/tmp/env.sh
+$TMP_FOLDER=$HOME/.config/tmp/
+$TMP_FILE=$TMP_FOLDER/env.sh
 
 if ![ -f $1 ];
 then
