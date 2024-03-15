@@ -1,12 +1,10 @@
 #!/bin/sh
 
-
 if [ $# -lt 2 ];
 then
     echo "not enough args"
     exit 1
 fi
-
 
 
 RUN_CMD="$1"
@@ -19,8 +17,9 @@ shift 2
 
 X11=false
 NVIDIA=false
+TAG=false
 
-while getopts 'xn' OPTION;
+while getopts 'xn:t:' OPTION;
 do
     case "$OPTION" in
         x)
@@ -29,6 +28,11 @@ do
         n)
             NVIDIA=true
             ;;
+        t)
+            TAG=true
+            TAG_VALUE=${OPTARG}
+            echo "OPTARG: $OPTARG"
+            ;;
         *)
             echo "NOTHING"
             ;;
@@ -36,8 +40,11 @@ do
 done
 
 
-
-DOCKER_NAME=$(get_container_name.sh)
+if $TAG; then
+    DOCKER_NAME="$TAG_VALUE:latest"
+else
+    DOCKER_NAME=$(get_container_name.sh)
+fi
 
 
 #echo "__DOCKER_CONTAINER_NAME__: $DOCKER_NAME"

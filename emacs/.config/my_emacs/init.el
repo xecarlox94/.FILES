@@ -33,7 +33,7 @@
 )
 
 
-
+(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
 
 (global-set-key [escape] 'keyboard-escape-quit)
 
