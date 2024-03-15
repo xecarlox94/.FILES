@@ -5,6 +5,21 @@ read PROJECT_FOLDER
 echo "please insert the base docker image name: "
 read DOCKER_IMAGE_NAME
 
+
+DEBIAN=false
+while true;
+do
+    echo -e "Is this docker image based on Debian and/or Ubuntu? (y/n)"
+    read yn
+    case $yn in
+        [Yy]* ) DEBIAN=true; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no."
+    esac
+done
+
+
+
 X11=false
 while true;
 do
@@ -43,8 +58,8 @@ then
 fi
 
 
-mkdir_cd $PROJECT_FOLDER
-
+mkdir $PROJECT_FOLDER
+cd $PROJECT_FOLDER
 
 #
 # We need to add these env variables to the docker container
@@ -54,9 +69,20 @@ mkdir_cd $PROJECT_FOLDER
 # ENV RUN_ENV=$BUILD_ENV\n\
 # RUN export BUILD_ENV=$BUILD_ENV\n\
 
+PRE_OPTIONS=""
+
+
+if $DEBIAN
+then
+    PRE_OPTIONS="ARG DEBIAN_FRONTEND=noninteractive"
+fi
+
+
 
 echo -e "\
 FROM $DOCKER_IMAGE_NAME \n\
+\n\
+$PRE_OPTIONS\
 \n\
 \n\
 WORKDIR /src \
@@ -77,7 +103,7 @@ echo -e "clear &&\\
             bash \\
         \"\\
         \"\\
-            -v \${PWD}/src:/src \\
+            -v '\${PWD}/src':/src \\
             --rm \\
             --privileged \\
             --name $PROJECT_FOLDER \\

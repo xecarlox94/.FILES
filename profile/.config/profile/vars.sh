@@ -86,3 +86,9 @@ export PAGER="less"
 
 export PROFILE_ENV="$XDG_CONFIG_HOME/profile"
 export TMP_ENV="$XDG_CONFIG_HOME/tmp"
+
+
+
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+
