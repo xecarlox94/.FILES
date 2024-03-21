@@ -129,7 +129,15 @@ open_file() {
 }
 
 extract_file() {
-    echo "extracting file"
+    case $1 in
+        *.zip)
+            unzip $1
+            ;;
+
+        *.tar.gz)
+            tar -xf $1
+            ;;
+    esac
 }
 
 mounting_file() {

@@ -1,4 +1,8 @@
 
+
+(use-package no-littering)
+
+
 (setq inhibit-startup-message t)
 (setq visible-bell t)
 (tool-bar-mode -1)
@@ -16,6 +20,21 @@
 ;; add a if statement to fix error
 
 
+;; Backup files config
+
+;;(setq make-backup-files nil)
+(setq
+    backup-directory-alist '(("." . "~/.cache/emacs/backup"))
+    backup-by-copying t    ; Don't delink hardlinks
+    version-control t      ; Use version numbers on backups
+    delete-old-versions t  ; Automatically delete excess backups
+    kept-new-versions 20   ; how many of the newest versions to keep
+    kept-old-versions 5    ; and how many of the old
+)
+
+
+(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
+
 (global-set-key [escape] 'keyboard-escape-quit)
 
 
@@ -25,7 +44,7 @@
 
 (set-face-attribute 'default nil :height 100)
 
-;; (load-theme 'modus-vivendi t)
+(load-theme 'modus-vivendi t)
 
 ;; (setq vc-follow-symlinks nil)
 
@@ -383,4 +402,6 @@
     (setq elfeed-feeds
 	'(("https://yewtu.be/feed/channel/UChNN7VBxPTiNrqjUaQd9bxA" lifestyle)
 	("https://yewtu.be/feed/channel/UCPsCJ1j0G45FnRGqJhCHLiA" finance economy bitcoin)
-	)))
+	)
+    )
+)
