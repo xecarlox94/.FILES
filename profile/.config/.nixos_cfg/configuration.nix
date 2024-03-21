@@ -156,6 +156,7 @@ in
         tree
         gcc
         emacs
+        mu
         jq
         lf
         tor-browser-bundle-bin
