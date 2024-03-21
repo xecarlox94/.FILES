@@ -1,5 +1,5 @@
 searx_instance="https://search.demoniak.ch"
-invidious_instance="https://y.com.sb"
+invidious_instance="http://217.76.63.222:38957"
 #proxy_url="socks://localhost:9050/"
 
 leader_key = ','
