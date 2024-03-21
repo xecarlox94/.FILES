@@ -14,8 +14,26 @@ sudo docker volume rm $(sudo docker volume ls -q -f dangling=true)
 
 clear
 
+TAG=false
 
-DOCKER_NAME=$(get_container_name.sh)
+while getopts ':t:' OPTION;
+do
+    case "$OPTION" in
+        t)
+            TAG=true
+            TAG_VALUE=${OPTARG}
+            echo "OPTARG: $OPTARG"
+            ;;
+    esac
+done
+
+
+if $TAG; then
+    DOCKER_NAME="$TAG_VALUE:latest"
+else
+    DOCKER_NAME=$(get_container_name.sh)
+fi
+
 
 sudo \
     \

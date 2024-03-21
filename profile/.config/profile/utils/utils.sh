@@ -131,11 +131,10 @@ open_file() {
 extract_file() {
     case $1 in
         *.zip)
-            echo "do something about zip"
+            unzip $1
             ;;
 
         *.tar.gz)
-            echo "extracting tar gz"
             tar -xf $1
             ;;
     esac

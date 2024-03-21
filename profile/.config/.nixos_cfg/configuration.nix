@@ -69,8 +69,9 @@ in
         };
 
         xserver = {
-
             enable = true;
+
+            desktopManager.gnome.enable = true;
 
             displayManager = {
                 lightdm.enable = true;
@@ -78,20 +79,11 @@ in
             };
 
             windowManager = {
-                qtile.enable = true;
-                # bspwm.enable = true;
                 xmonad = {
                     enable = true;
                     enableContribAndExtras = true;
                     config = /home/${username}/.config/xmonad/xmonad.hs;
                     enableConfiguredRecompile = true;
-                };
-                awesome = {
-                    enable = true;
-                    luaModules = with pkgs.luaPackages; [
-                        luarocks
-                        luadbi-mysql
-                    ];
                 };
             };
 
@@ -133,24 +125,27 @@ in
 
 	nixpkgs.config.allowUnfree = true;
 
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${username} = {
         isNormalUser = true;
         description = username;
         extraGroups = [ "networkmanager" "wheel" "libvirtd" "audio" ];
     };
+
+
     environment.systemPackages = with pkgs; [
         gnumake
         dmenu
         file
         tealdeer
-        #guile_3_0
-        lutris
-        steam
+        guile_3_0
         cmake
         libtool
         vim
+        texliveFull
         wget
+        tmux
         alacritty
         git
         pavucontrol
@@ -169,18 +164,11 @@ in
         brave
         neovim
         rpi-imager
-        #terraform
-        #packer
-        #vault
-        #consul
-        #boundary
-        #nomad
-        #waypoint
-        #vagrant
         virt-manager
         keepassxc
-        python310
-        python310Packages.pip
+        nitrogen
+        python311
+        python311Packages.pip
     ];
 
 

@@ -106,6 +106,24 @@ let g:netrw_sizestyle= "h"
 let mapleader = " "
 
 
+" Functions
+function! Compile()
+    execute "w %"
+    execute "! pdflatex %"
+endfunction
+
+function! ShowPDF()
+    execute "! zathura $(echo % \| sed 's/tex$/pdf/') & disown"
+endfunction
+
+" Run
+nnoremap <leader>rp :<up><CR>
+
+
+" File
+nnoremap <leader>fc :call Compile()<CR><CR>
+nnoremap <leader>fl :call ShowPDF()<CR><CR>
+
 " Sudo edit
 cnoremap W w !sudo tee > /dev/null %<CR>
 
@@ -136,7 +154,7 @@ nnoremap <leader>fw :w<CR>
 nnoremap <leader>fx :x<CR>
 nnoremap <leader>fq :q<CR>
 nnoremap <leader>fk :q!<CR>
-nnoremap <leader>fp :r !xclip -o<CR>
+" nnoremap <leader>fp :r !xclip -o<CR>
 " vnoremap <leader>fy :w !xclip -sel clip<CR><CR>
 
 

@@ -43,3 +43,4 @@ dpmsOff: 4:00:00
 
 xscreensaver-auth.default.*.newLoginCommand: dm-tool switch-to-greeter
 
+echo "*background: #ffffff" >> ~/.Xresources
