@@ -10,5 +10,6 @@ alias rb="reboot"
 
 alias tf="terraform"
 
+alias py="python3"
 
 alias new_shell="clear && $SHELL && exit"

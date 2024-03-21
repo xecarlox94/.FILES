@@ -15,6 +15,14 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 export XDG_PUBLICSHARE_DIR="$HOME/Public"
 
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
+export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
+
+# https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/
+export ERRFILE=/dev/null
+
+
+export NIX_STATE_HOME_DIR="$XDG_STATE_HOME/nix"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/lesshst"
@@ -62,10 +70,9 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "~/.config/vim/init.vim" : "~/.con
 
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 
-export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
-export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
-export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
-export ERRFILE=/dev/null
+#export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+#export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+#export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
 
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"

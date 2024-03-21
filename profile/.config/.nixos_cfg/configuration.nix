@@ -20,7 +20,7 @@ in
 
     # TO ENABLE!!!!!
     # not supported yet!!!
-    # nix.settings.use-xdg-base-directories = true;
+    nix.settings.use-xdg-base-directories = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
