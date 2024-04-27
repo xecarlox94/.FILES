@@ -138,13 +138,9 @@ in
         gnumake
         dmenu
         file
-        tealdeer
-        guile_3_0
         cmake
         libtool
         vim
-        texliveFull
-        wget
         tmux
         alacritty
         git
@@ -156,20 +152,15 @@ in
         tree
         gcc
         emacs
-        mu
         jq
-        lf
-        tor-browser-bundle-bin
         qutebrowser
         librewolf
         brave
         neovim
-        rpi-imager
         virt-manager
-        keepassxc
-        nitrogen
-        python311
-        python311Packages.pip
+        p7zip
+        discord
+        steam
     ];
 
 
