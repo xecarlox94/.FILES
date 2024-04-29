@@ -4,6 +4,7 @@
 alias gst="git status"
 alias gp="git push"
 
+alias siu="sudo"
 
 alias sd="sudo shutdown now"
 alias rb="reboot"
