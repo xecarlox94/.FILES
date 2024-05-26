@@ -158,11 +158,8 @@ in
         brave
         neovim
         virt-manager
-        p7zip
-        discord
-        steam
+        libreoffice
     ];
-
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

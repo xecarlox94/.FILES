@@ -1,6 +1,6 @@
 
 
-(use-package no-littering)
+;; (use-package no-littering)
 
 
 (setq inhibit-startup-message t)
