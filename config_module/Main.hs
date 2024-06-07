@@ -22,14 +22,41 @@ main = do
 -- Desktop and shell Keybindings
 
 
--- window spliting
--- window movement
--- window focus
--- window resizing
 
--- file find, new, open, edit, save, close
+class WindowSplit a where
+    splitUp     :: Text -> Text
+    splitDown   :: Text -> Text
+
+class WindowMovement a where
+    moveUp      :: Text -> Text
+    moveDown    :: Text -> Text
+    moveLeft    :: Text -> Text
+    moveRight   :: Text -> Text
+
+class WindowFocus a where
+    focusUp     :: Text -> Text
+    focusDown   :: Text -> Text
+    focusLeft   :: Text -> Text
+    focusRight  :: Text -> Text
+
+class WindowResize a where
+    increaseVertically      :: Text -> Text
+    increaseHorizontally    :: Text -> Text
+    decreaseVertically      :: Text -> Text
+    decreaseHorizontally    :: Text -> Text
+
+
+
+class Buffer a where
+    new
+    switch
+    open
+    edit
+
 -- buffers new, switch, open, edit, save, close
+    -- file find, new, open, edit, save, close
 -- tab new, switch, open, edit, save, close
+
 -- plugins telescope ...
 -- open terminal, console
 
