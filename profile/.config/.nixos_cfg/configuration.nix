@@ -158,7 +158,8 @@ in
         brave
         neovim
         virt-manager
-        libreoffice
+        ghc
+        haskell-language-server
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
