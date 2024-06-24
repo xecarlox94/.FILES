@@ -12,4 +12,6 @@ alias tf="terraform"
 
 alias py="python3"
 
+alias :q="exit"
+
 alias new_shell="clear && $SHELL && exit"

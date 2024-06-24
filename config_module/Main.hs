@@ -72,9 +72,16 @@ class FileSystemNav a where
     goParent    :: Text -> Text
     goInDir     :: Text -> Text
 
+
 -- buffers new, switch, open, edit, save, close
 -- file find, new, open, edit, save, close
 -- tab new, switch, open, edit, save, close
+
+
+-- buffer movement
+-- vim keybindings
+
+
 
 -- plugins telescope ...
 -- open terminal, console

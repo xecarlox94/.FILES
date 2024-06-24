@@ -6,7 +6,7 @@
 let
     username = "xecarlox";
     hostName = "nixos";
-    stateVersion = "22.11";
+    stateVersion = "24.05";
     locale = "en_GB.UTF-8";
     timeZone = "Europe/London";
 in
@@ -68,14 +68,16 @@ in
             jack.enable = true;
         };
 
+
         xserver = {
             enable = true;
 
-            desktopManager.gnome.enable = true;
+            # desktopManager.gnome.enable = true;
+
 
             displayManager = {
-                lightdm.enable = true;
-                defaultSession = "none+xmonad";
+              lightdm.enable = true;
+              defaultSession = "none+xmonad";
             };
 
             windowManager = {
@@ -88,8 +90,8 @@ in
             };
 
             # Configure keymap in X11
-            layout = "gb";
-            xkbVariant = "";
+            xkb.layout = "gb";
+            xkb.variant = "";
         };
     };
 
@@ -136,30 +138,33 @@ in
 
     environment.systemPackages = with pkgs; [
         gnumake
-        dmenu
-        file
-        cmake
-        libtool
-        vim
-        tmux
-        alacritty
-        git
-        pavucontrol
-        stow
         clang
         coreutils
-        unzip
-        tree
+        cmake
         gcc
+
+        dmenu
+
+        stow
+        unzip
+
+        vim
+        tmux
         emacs
-        jq
+        neovim
+        haskell-language-server
+
+        alacritty
+        ranger
+
+        git
+        pavucontrol
+
         qutebrowser
         librewolf
         brave
-        neovim
+
         virt-manager
-        ghc
-        haskell-language-server
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

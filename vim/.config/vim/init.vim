@@ -85,9 +85,9 @@ set relativenumber
 
 
 " TABS
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 set hidden
@@ -95,7 +95,10 @@ set exrc
 " set signcolumn=yes
 
 " Netrw plugin
-set autochdir
+if !has('nvim')
+    set autochdir
+endif
+
 let g:netrw_banner = 0
 let g:netrw_list_hide= '^\.\./$,^\./$'
 let g:netrw_hide = 1
