@@ -19,7 +19,6 @@ in
 
 
     # TO ENABLE!!!!!
-    # not supported yet!!!
     nix.settings.use-xdg-base-directories = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -68,6 +67,7 @@ in
             jack.enable = true;
         };
 
+        displayManager.defaultSession = "none+xmonad";
 
         xserver = {
             enable = true;
@@ -77,7 +77,6 @@ in
 
             displayManager = {
               lightdm.enable = true;
-              defaultSession = "none+xmonad";
             };
 
             windowManager = {
