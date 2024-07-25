@@ -9,3 +9,6 @@ local o = vim.o -- global
 local w = vim.w -- window-local
 local b = vim.b -- buffer-local
 local t = vim.t -- tab_page-local
+
+
+vim.diagnostic.open_float()

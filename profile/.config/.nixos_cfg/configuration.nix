@@ -29,6 +29,9 @@ in
         options = "--delete-older-than 10d";
     };
 
+    # Configure console keymap
+    console.keyMap = "uk";
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -36,6 +39,8 @@ in
     networking.hostName = hostName; # Define your hostname.
 
     networking.networkmanager.enable = true;
+
+    programs.nm-applet.enable = true;
 
     time.timeZone = timeZone;
 
@@ -72,13 +77,6 @@ in
         xserver = {
             enable = true;
 
-            # desktopManager.gnome.enable = true;
-
-
-            displayManager = {
-              lightdm.enable = true;
-            };
-
             windowManager = {
                 xmonad = {
                     enable = true;
@@ -108,9 +106,6 @@ in
     };
 
 
-    # Configure console keymap
-    console.keyMap = "uk";
-
     # Enable sound with pipewire.
     security.rtkit.enable = true;
 
@@ -124,7 +119,7 @@ in
     };
 
 
-	nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -147,14 +142,20 @@ in
         stow
         unzip
 
-        vim
-        tmux
-        emacs
         neovim
+        vim
+
+        emacs
+        emacsPackages.vterm
+
+        tmux
+
         haskell-language-server
 
         alacritty
         ranger
+
+        zathura
 
         git
         pavucontrol

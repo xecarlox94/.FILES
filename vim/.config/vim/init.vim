@@ -127,9 +127,6 @@ nnoremap <leader>rp :<up><CR>
 nnoremap <leader>fc :call Compile()<CR><CR>
 nnoremap <leader>fl :call ShowPDF()<CR><CR>
 
-" Sudo edit
-cnoremap W w !sudo tee > /dev/null %<CR>
-
 " Escape mapping
 inoremap ,. <Esc>
 

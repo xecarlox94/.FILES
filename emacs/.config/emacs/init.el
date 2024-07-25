@@ -20,8 +20,6 @@
 ;; add a if statement to fix error
 
 
-;; Backup files config
-
 ;;(setq make-backup-files nil)
 (setq
     backup-directory-alist '(("." . "~/.cache/emacs/backup"))
@@ -64,33 +62,15 @@
                      gcs-done)))
 
 
-;; CLEANING EMACS CONFIG FOLDER
-;; (setq user-emacs-config (expand-file-name "~/.config/emacs/"))
-;;
-;;(setq user-emacs-directory (expand-file-name "~/.cache/emacs/")
-      ;;url-history-file (expand-file-name "url/history" user-emacs-directory))
-;;
-;;(setq custom-file
-      ;;(if (boundp 'server-socket-dir)
-          ;;(expand-file-name "custom.el" server-socket-dir)
-        ;;(expand-file-name (format "emacs-custom-%s.el" (user-uid)) temporary-file-directory)))
-;;(load custom-file t)
-;;
-;; (setq no-littering-etc-directory
-      ;; (expand-file-name user-emacs-config))
-;; (setq no-littering-var-directory
-      ;; (expand-file-name "data/" user-emacs-directory))
-;;
-;; (use-package no-litering)
-
-
-
-
 ;; Straight - Package Manager
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 6))
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
@@ -100,26 +80,11 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-
-;; (straight-use-package '(setup :type git :host nil :repo "https://git.sr.ht/~pkal/setup"))
-;; (require 'setup)
-;;
-;; (defun dw/filter-straight-recipe (recipe)
-  ;; (let* ((plist (cdr recipe))
-         ;; (name (plist-get plist :straight)))
-    ;; (cons (if (and name (not (equal name t)))
-              ;; name
-            ;; (car recipe))
-          ;; (plist-put plist :straight nil))))
-;;
-;; (setup-define :pkg
-  ;; (lambda (&rest recipe) `(straight-use-package ',(dw/filter-straight-recipe recipe)))
-  ;; :documentation "Install RECIPE straight.el"
-  ;; :shorthand #'cadr)
-
+(setq package-enable-at-startup nil)
 
 
 ;; Evil Mode
@@ -139,80 +104,74 @@
     (setq evil-collection-mode-list '(dashboard dired ibuffer))
     (evil-collection-init))
 
-(use-package evil-tutor)
-
 
 ;; General Keybindings
 
 (use-package general
-    :config
+  :config
     (general-evil-setup)
-
     (general-create-definer xecarlox/leader-keys
-        :states '(normal insert visual emacs)
-        :keymaps 'override
-        :prefix "SPC"
-        :global-prefix "M-SPC")
+  :states '(normal insert visual emacs)
+  :keymaps 'override
+  :prefix "SPC"
+  :global-prefix "M-SPC")
 
-    (xecarlox/leader-keys
-      "."       '(find-file :wk "Find file")
-      "c e"     '((lambda () (interactive) (find-file "~/.config/my_emacs/init.el")) :wk "Edit emacs config")
-      "c l"     '((lambda () (interactive) (load-file user-init-file)) :wk "Reload emacs config")
-      "f r"     '(counsel-recentf :wk "find recent files")
-      "TAB TAB" '(comment-line :wk "Comment lines"))
+  (xecarlox/leader-keys
+    "."       '(find-file :wk "Find file")
+    "c e"     '((lambda () (interactive) (find-file "~/.config/my_emacs/init.el")) :wk "Edit emacs config")
+    "c l"     '((lambda () (interactive) (load-file user-init-file)) :wk "Reload emacs config")
+    "f r"     '(counsel-recentf :wk "find recent files")
+    "TAB TAB" '(comment-line :wk "Comment lines"))
 
-    (xecarlox/leader-keys
-      "b"   '(:ignore t          :wk "buffer")
-      "b b"  '(switch-to-buffer  :wk "Switch buffer")
-      "b i"  '(ibuffer           :wk "Ibuffer")
-      "b k"  '(kill-this-buffer  :wk "Kill this buffer")
-      "b n"  '(next-buffer       :wk "Next buffer")
-      "b p"  '(previous-buffer   :wk "Previous buffer")
-      "b r"  '(revert-buffer     :wk "Reload buffer"))
+  (xecarlox/leader-keys
+    "b"   '(:ignore t          :wk "buffer")
+    "b b"  '(switch-to-buffer  :wk "Switch buffer")
+    "b i"  '(ibuffer           :wk "Ibuffer")
+    "b k"  '(kill-this-buffer  :wk "Kill this buffer")
+    "b n"  '(next-buffer       :wk "Next buffer")
+    "b p"  '(previous-buffer   :wk "Previous buffer")
+    "b r"  '(revert-buffer     :wk "Reload buffer"))
 
-    (xecarlox/leader-keys
-      "e" '(:ignore t :wk "Evaluate")
-      "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
-      "e d" '(eval-defun :wk "Evaluate defun containing or after point")
-      "e e" '(eval-expression :wk "Evaluate elisp expression")
-      "e h" '(counsel-esh-history :wk "Eshell history")
-      "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-      "e r" '(eval-region :wk "Evaluate elisp in region")
-      "e s" '(eshell :wk "Eshell")
-    )
+  (xecarlox/leader-keys
+    "e" '(:ignore t :wk "Evaluate")
+    "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
+    "e d" '(eval-defun :wk "Evaluate defun containing or after point")
+    "e e" '(eval-expression :wk "Evaluate elisp expression")
+    "e h" '(counsel-esh-history :wk "Eshell history")
+    "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
+    "e r" '(eval-region :wk "Evaluate elisp in region")
+    "e s" '(eshell :wk "Eshell"))
 
-    (xecarlox/leader-keys
-      "h"   '(:ignore t :wk "Help")
-      "h v" '(describe-variable :wk "Describe variable")
-      "h f" '(describe-function :wk "Describe function"))
+  (xecarlox/leader-keys
+    "h"   '(:ignore t :wk "Help")
+    "h v" '(describe-variable :wk "Describe variable")
+    "h f" '(describe-function :wk "Describe function"))
 
-    (xecarlox/leader-keys
-	"t" '(:ignore t :wk "Toggle")
-	"t l" '(display-line-numbers-mode :wk "Toggle line numbers")
-	"t t" '(visual-line-mode :wk "Toggle truncated lines")
-	"t v" '(vterm-toggle :wk "Toggle VTerm")
-    )
+  (xecarlox/leader-keys
+    "t" '(:ignore t :wk "Toggle")
+    "t l" '(display-line-numbers-mode :wk "Toggle line numbers")
+    "t t" '(visual-line-mode :wk "Toggle truncated lines")
+    "t v" '(vterm-toggle :wk "Toggle VTerm"))
 
-    (xecarlox/leader-keys
-	"f" '(:ignore t :wk "Font")
-	"f +" '(text-scale-increase :wk "text scale increase")
-	"f -" '(text-scale-decrease :wk "text scale decrease"))
+  (xecarlox/leader-keys
+    "f" '(:ignore t :wk "Font")
+    "f +" '(text-scale-increase :wk "text scale increase")
+    "f -" '(text-scale-decrease :wk "text scale decrease"))
 
-    (xecarlox/leader-keys
-	"w"   '(:ignore t :wk "Window")
-	"w c" '(evil-window-delete :wk "Close window")
-	"w n" '(evil-window-new :wk "New window")
-	"w H" '(evil-window-split :wk "Horizontal window split")
-	"w V" '(evil-window-vsplit :wk "Vertical window split")
+  (xecarlox/leader-keys
+    "w"   '(:ignore t :wk "Window")
+    "w c" '(evil-window-delete :wk "Close window")
+    "w n" '(evil-window-new :wk "New window")
+    "w H" '(evil-window-split :wk "Horizontal window split")
+    "w V" '(evil-window-vsplit :wk "Vertical window split")
 
-	"w h" '(evil-window-left :wk "Move to window left")
-	"w l" '(evil-window-right :wk "Move to window right")
-	"w k" '(evil-window-up :wk "Move to window up")
-	"w j" '(evil-window-down :wk "Move to window down")
-	"w w" '(evil-window-next :wk "Move to next window"))
+    "w h" '(evil-window-left :wk "Move to window left")
+    "w l" '(evil-window-right :wk "Move to window right")
+    "w k" '(evil-window-up :wk "Move to window up")
+    "w j" '(evil-window-down :wk "Move to window down")
+    "w w" '(evil-window-next :wk "Move to next window"))
 
 )
-
 
 
 ;; which-key package
@@ -220,40 +179,29 @@
   :init
     (which-key-mode 1)
   :config
-  (setq
-          which-key-side-window-location 'bottom
-	  which-key-sort-order #'which-key-key-order-alpha
-	  which-key-sort-uppercase-first nil
-	  which-key-add-column-padding 1
-	  which-key-max-display-columns nil
-	  which-key-min-display-lines 6
-	  which-key-side-window-slot -10
-	  which-key-side-window-max-height 0.25
-	  which-key-idle-delay 0.8
-	  which-key-max-description-length 25
-	  which-key-allow-imprecise-window-fit t
-	  which-key-separator " → " ))
+    (setq
+      which-key-side-window-location 'bottom
+      which-key-sort-order #'which-key-key-order-alpha
+      which-key-sort-uppercase-first nil
+      which-key-add-column-padding 1
+      which-key-max-display-columns nil
+      which-key-min-display-lines 6
+      which-key-side-window-slot -10
+      which-key-side-window-max-height 0.25
+      which-key-idle-delay 0.8
+      which-key-max-description-length 25
+      which-key-allow-imprecise-window-fit t
+      which-key-separator " → " ))
 
 
-;; rainbow package
-(use-package rainbow-mode
-  :hook
-  ((org-mode prog-mode) . rainbow-mode))
+;; install rainbow package
+;; install rainbow-delimiters
+;; install ivy-rich
+;; install all-the-icons
+;; install elfeed
 
-
-(use-package rainbow-delimiters
-  :config
-    (rainbow-delimiters-mode))
-
-
-;; Icons packages
-(use-package all-the-icons
-  :ensure t
-  :if (display-graphic-p))
-
-
-(use-package all-the-icons-dired
-  :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
+;; install org-mail
+;; install org-elfeed
 
 
 ;; Ivy package
@@ -272,24 +220,12 @@
   (ivy-mode))
 
 
-(use-package all-the-icons-ivy-rich
-  :ensure t
-  :init
-  (all-the-icons-ivy-rich-mode 1))
-
-
-
-(use-package ivy-rich
-  :init
-  (ivy-rich-mode 1)
-  :after counsel
-  :config
-  (setq ivy-format-function #'ivy-format-function-line))
-
 
 
 
 ;; terminals
+
+
 (use-package eshell-syntax-highlighting
   :after esh-mode
   :config
@@ -333,6 +269,9 @@
 
 
 
+
+
+;; configure ORG mode
 
 (use-package org
     :straight (:type built-in)
@@ -395,13 +334,3 @@
 	"TODO(t)" "CONTRACT(c)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)"
 	"|"
 	"HOLD(h)" "SCRAPPED(s)" "FINISHED(f)" )))
-
-
-(use-package elfeed
-  :config
-    (setq elfeed-feeds
-	'(("https://yewtu.be/feed/channel/UChNN7VBxPTiNrqjUaQd9bxA" lifestyle)
-	("https://yewtu.be/feed/channel/UCPsCJ1j0G45FnRGqJhCHLiA" finance economy bitcoin)
-	)
-    )
-)
