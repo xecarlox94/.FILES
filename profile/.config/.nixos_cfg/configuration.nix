@@ -6,7 +6,7 @@
 let
     username = "xecarlox";
     hostName = "nixos";
-    stateVersion = "22.11";
+    stateVersion = "24.05";
     locale = "en_GB.UTF-8";
     timeZone = "Europe/London";
 in
@@ -19,7 +19,6 @@ in
 
 
     # TO ENABLE!!!!!
-    # not supported yet!!!
     nix.settings.use-xdg-base-directories = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -30,6 +29,9 @@ in
         options = "--delete-older-than 10d";
     };
 
+    # Configure console keymap
+    console.keyMap = "uk";
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -37,6 +39,8 @@ in
     networking.hostName = hostName; # Define your hostname.
 
     networking.networkmanager.enable = true;
+
+    programs.nm-applet.enable = true;
 
     time.timeZone = timeZone;
 
@@ -68,15 +72,10 @@ in
             jack.enable = true;
         };
 
+        displayManager.defaultSession = "none+xmonad";
+
         xserver = {
             enable = true;
-
-            desktopManager.gnome.enable = true;
-
-            displayManager = {
-                lightdm.enable = true;
-                defaultSession = "none+xmonad";
-            };
 
             windowManager = {
                 xmonad = {
@@ -88,8 +87,8 @@ in
             };
 
             # Configure keymap in X11
-            layout = "gb";
-            xkbVariant = "";
+            xkb.layout = "gb";
+            xkb.variant = "";
         };
     };
 
@@ -107,9 +106,6 @@ in
     };
 
 
-    # Configure console keymap
-    console.keyMap = "uk";
-
     # Enable sound with pipewire.
     security.rtkit.enable = true;
 
@@ -123,7 +119,7 @@ in
     };
 
 
-	nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -136,33 +132,40 @@ in
 
     environment.systemPackages = with pkgs; [
         gnumake
-        dmenu
-        file
-        cmake
-        libtool
-        vim
-        tmux
-        alacritty
-        git
-        pavucontrol
-        stow
         clang
         coreutils
-        unzip
-        tree
+        cmake
         gcc
+
+        dmenu
+
+        stow
+        unzip
+
+        neovim
+        vim
+
         emacs
-        jq
+        emacsPackages.vterm
+
+        tmux
+
+        haskell-language-server
+
+        alacritty
+        ranger
+
+        zathura
+
+        git
+        pavucontrol
+
         qutebrowser
         librewolf
         brave
-        neovim
-        virt-manager
-        p7zip
-        discord
-        steam
-    ];
 
+        virt-manager
+    ];
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

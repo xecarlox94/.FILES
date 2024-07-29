@@ -52,6 +52,10 @@ require("lazy").setup({
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip'},
+    {
+        'mrcjkb/haskell-tools.nvim',
+        ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' }
+    }
 })
 
 -- TODO: watch until the end -> https://www.youtube.com/watch?v=w7i4amO_zaE
@@ -76,3 +80,7 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
   },
 })
+
+
+
+
