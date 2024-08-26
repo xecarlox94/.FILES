@@ -1,11 +1,9 @@
 [init]
 	defaultBranch = master
 [core]
-    editor = "$EDITOR"
+  editor = "$EDITOR"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	email = jf94.uk@gmail.com

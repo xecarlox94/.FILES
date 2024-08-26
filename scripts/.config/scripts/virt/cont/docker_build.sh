@@ -12,8 +12,6 @@ sudo docker rmi $(docker images -f dangling=true)
 sudo docker volume rm $(sudo docker volume ls -q -f dangling=true)
 
 
-clear
-
 TAG=false
 
 while getopts ':t:' OPTION;
