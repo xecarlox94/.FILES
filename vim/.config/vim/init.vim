@@ -1,6 +1,5 @@
 "-------------------- SETTINGS
 
-
 " FIXES
 set noerrorbells
 set visualbell
@@ -14,7 +13,7 @@ set ignorecase
 set nowrap
 set scrolloff=1
 set guicursor=
-
+set timeoutlen=10
 
 " macros
 set lazyredraw
@@ -109,26 +108,8 @@ let g:netrw_sizestyle= "h"
 let mapleader = " "
 
 
-" Functions
-function! Compile()
-    execute "w %"
-    execute "! pdflatex %"
-endfunction
-
-function! ShowPDF()
-    execute "! zathura $(echo % \| sed 's/tex$/pdf/') & disown"
-endfunction
-
 " Run
 nnoremap <leader>rp :<up><CR>
-
-
-" File
-nnoremap <leader>fc :call Compile()<CR><CR>
-nnoremap <leader>fl :call ShowPDF()<CR><CR>
-
-" Escape mapping
-inoremap ,. <Esc>
 
 
 " change local settings
@@ -161,7 +142,6 @@ nnoremap <leader>fk :q!<CR>
 " Explore - navigation
 nnoremap <leader>n :Ex<CR>
 
-
 " Tab
 nnoremap <leader>tn :tabNext<CR>
 nnoremap <leader>to :tabnew<Space>
@@ -173,39 +153,12 @@ nnoremap <leader>os :shell<CR>
 nnoremap <leader>ot :vert ter<CR>
 nnoremap <leader>ob :buffers<CR>:b<Space>
 
-" Console
-nnoremap <leader>cl :<C-f>
-nnoremap <leader>cp :<up><CR>
-nnoremap <leader>cs :!
-vnoremap <leader>rn :norm<Space>
-
-
-" insert snippets
-inoremap ,a <Esc>A
-inoremap ,e <Esc>ea
-inoremap ,w <Esc>wi
-inoremap ,b <Esc>bi
-inoremap ,O <Esc>O
-inoremap ,o <Esc>o
-inoremap ,; <Esc>A;
-inoremap ,: <Esc>A:
-inoremap ,, <Esc>A,
-
 
 augroup netrw_setup | au!
     au FileType netrw nmap <buffer> l <CR>
     au FileType netrw nmap <buffer> h -
     au FileType netrw nmap <buffer> f %
 augroup END
-
-
-" pairing operators
-" iabb \" \""<left>
-" iabb ' ''<left>
-" iabb ( ()<left>
-" iabb { {}<left>
-" iabb [ []<left>
-
 
 
 "-------------------- AUTO COMMANDS
@@ -216,13 +169,11 @@ augroup END
 autocmd BufWritePre * %s/\s\+$//e
 
 
-
 " updating X11 configs
-autocmd BufWritePost ~/.config/vim/init.vim,~/.config/.FILES/vim/.config/vim/init.vim so %
+autocmd BufWritePost ~/.config/.FILES/vim/.config/vim/init.vim so %
 autocmd BufWritePost ~/.Xresources,~/Xdefaults !xrdb %
 
 autocmd BufWritePost ~/.bashrc !source %
-
 
 
 
@@ -239,25 +190,4 @@ if !has('nvim')
     " colorscheme elflord
     " colorscheme industry
 endif
-
-
-
-"-------------------- Autocommands
-
-
-" autocmd FileType go
-autocmd FileType go inoremap if<space>err if err != nil {<CR>}<Esc><<<<Oreturn<Esc><<A err
-
-
-" C/C++ snippets
-autocmd FileType cpp,hpp,c,h inoremap std std::
-autocmd FileType cpp,hpp,c,h inoremap cv cv::
-
-
-"-------------------- Deprecated
-
-
-" " snippet helper
-" imap ,. <Esc>,.
-" nnoremap ,. /<++><Enter>"_c4l
 

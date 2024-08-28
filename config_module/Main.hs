@@ -15,7 +15,7 @@ import Turtle
 main = do
     dir <- pwd
     echo "Siuu"
-    touch "file.txt"
+    touch "dfile.txt"
 
 
 -- Text editors (vim/nvim and emacs), tmux, window managers, browsers, terminal file managers
