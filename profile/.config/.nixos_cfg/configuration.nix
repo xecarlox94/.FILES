@@ -134,6 +134,7 @@ in
         gnumake
         clang
         coreutils
+        wget
         cmake
         gcc
 
@@ -142,14 +143,21 @@ in
         stow
         unzip
 
-        neovim
+        # neovim
+        lunarvim
         vim
+        nerdfonts
 
         emacs
         emacsPackages.vterm
 
         tmux
 
+        cabal-install
+        ghc
+        stack
+
+        # haskellPackages.ghcup
         haskell-language-server
 
         alacritty
@@ -164,7 +172,19 @@ in
         librewolf
         brave
 
+        ripgrep
+        fd
+
         virt-manager
+
+        python3
+        python311Packages.pip
+
+        nodejs_20
+
+        lua
+        luajit
+        luarocks-nix
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

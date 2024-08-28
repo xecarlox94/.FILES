@@ -21,7 +21,7 @@ HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=
 HISTFILESIZE=
 
-#export HISTIGNORE="ls:cd:cd -:pwd:exit:date:reboot"
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:reboot"
 
 
 shopt -s histappend
@@ -29,10 +29,6 @@ shopt -s dotglob
 shopt -s nocaseglob
 shopt -s cdspell
 shopt -s checkwinsize
-
-## Do not autocomplete hidden files
-## unless the pattern explicitly begins with a dot
-#set match-hidden-files off
 
 set completion-ignore-case on
 set -o vi
