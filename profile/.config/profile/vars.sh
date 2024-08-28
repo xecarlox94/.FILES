@@ -18,11 +18,9 @@ export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
 export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
 
-# https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/
-export ERRFILE=/dev/null
-
 
 export NIX_STATE_HOME_DIR="$XDG_STATE_HOME/nix"
+export NIX_CONFIG="experimental-features = nix-command flakes"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/lesshst"
