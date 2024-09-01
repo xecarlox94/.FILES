@@ -14,10 +14,13 @@
 (global-visual-line-mode t)
 (global-auto-revert-mode t)
 
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 2)
 
-(setq xx/text-scale 5)
-(text-scale-set xx/text-scale)
-;; (set-face-attribute 'default nil :height 100)
+(setq make-backup-files nil)
+(setq backup-inhibited nil)
+(setq create-lockfiles nil)
 
 ;; cut startup time
 ;; (server-start)
@@ -188,13 +191,10 @@
 
 ;; install rainbow package
 ;; install rainbow-delimiters
-;; install ivy-rich
+
+
 ;; install all-the-icons
 
-;; install elfeed
-
-;; install org-mail
-;; install org-elfeed
 
 
 ;; Ivy package
@@ -202,6 +202,7 @@
   :after ivy
   :config (counsel-mode))
 
+;; install ivy-rich
 
 
 (use-package ivy
@@ -261,7 +262,19 @@
 		    (window-height . 0.3))))
 
 
+(use-package dashboard
+  :ensure t
+  :config
+    (dashboard-setup-startup-hook))
 
+(setq 
+  dashboard-banner-logo-title "Welcome, Sir"
+  dashboard-center-content t
+  dashboard-vertically-center-content t
+  ;; dashboard-show-shortcuts nil
+)
+
+(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
 
 
 ;; configure ORG mode
@@ -279,6 +292,7 @@
 	(setq org-lowest-priority ?C)
 	(setq org-highest-priority ?A)
 )
+
 
 (use-package evil-org
   :after org
@@ -326,16 +340,7 @@
 	"HOLD(h)" "SCRAPPED(s)" "FINISHED(f)" )))
 
 
-(use-package dashboard
-  :ensure t
-  :config
-    (dashboard-setup-startup-hook))
+(text-scale-set 3)
 
-(setq 
-  dashboard-banner-logo-title "Welcome to Emacs Dashboard"
-  dashboard-center-content t
-  dashboard-vertically-center-content t
-  ;; dashboard-show-shortcuts nil
-)
 
-(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
+(require 'agda2)

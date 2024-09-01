@@ -150,18 +150,20 @@ in
 
         emacs
         emacsPackages.vterm
+        emacsPackages.agda2-mode
 
         tmux
 
         cabal-install
         ghc
         stack
-
-        # haskellPackages.ghcup
         haskell-language-server
 
+        agda
+        agda-pkg
+        agdaPackages.standard-library
+
         alacritty
-        ranger
 
         zathura
 
@@ -179,12 +181,6 @@ in
 
         python3
         python311Packages.pip
-
-        nodejs_20
-
-        lua
-        luajit
-        luarocks-nix
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
