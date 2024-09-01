@@ -1,5 +1,4 @@
 
-
 ;; (use-package no-littering)
 
 
@@ -11,16 +10,21 @@
 
 (setq scroll-step 1)
 
-(global-display-line-numbers-mode 1) (global-visual-line-mode t)
+(global-display-line-numbers-mode 1)
+(global-visual-line-mode t)
 (global-auto-revert-mode t)
 
+
+(setq xx/text-scale 5)
+(text-scale-set xx/text-scale)
+;; (set-face-attribute 'default nil :height 100)
 
 ;; cut startup time
 ;; (server-start)
 ;; add a if statement to fix error
 
 
-;;(setq make-backup-files nil)
+
 (setq
     backup-directory-alist '(("." . "~/.cache/emacs/backup"))
     backup-by-copying t    ; Don't delink hardlinks
@@ -90,10 +94,10 @@
 ;; Evil Mode
 (use-package evil
     :init
-    (setq evil-want-integration t)
-    (setq evil-want-keybinding nil)
-    (setq evil-vsplit-window-right nil)
-    (setq evil-split-window-below nil)
+    (setq evil-want-integration t
+          evil-want-keybinding nil
+          evil-vsplit-window-right nil
+          evil-split-window-below nil)
     (evil-mode))
 
 
@@ -117,11 +121,15 @@
   :global-prefix "M-SPC")
 
   (xecarlox/leader-keys
-    "."       '(find-file :wk "Find file")
-    "c e"     '((lambda () (interactive) (find-file "~/.config/my_emacs/init.el")) :wk "Edit emacs config")
-    "c l"     '((lambda () (interactive) (load-file user-init-file)) :wk "Reload emacs config")
-    "f r"     '(counsel-recentf :wk "find recent files")
-    "TAB TAB" '(comment-line :wk "Comment lines"))
+    ". f"       '(find-file :wk "Find file")
+    ". r"     '(counsel-recentf :wk "find recent files")
+    )
+
+  (xecarlox/leader-keys
+    "c"     '(:ignore t :wk "config")
+    "c e"   '((lambda () (interactive) (find-file "~/.config/emacs/init.el")) :wk "Edit emacs config")
+    "c l"   '((lambda () (interactive) (load-file user-init-file)) :wk "Reload emacs config")
+    )
 
   (xecarlox/leader-keys
     "b"   '(:ignore t          :wk "buffer")
@@ -132,15 +140,6 @@
     "b p"  '(previous-buffer   :wk "Previous buffer")
     "b r"  '(revert-buffer     :wk "Reload buffer"))
 
-  (xecarlox/leader-keys
-    "e" '(:ignore t :wk "Evaluate")
-    "e b" '(eval-buffer :wk "Evaluate elisp in buffer")
-    "e d" '(eval-defun :wk "Evaluate defun containing or after point")
-    "e e" '(eval-expression :wk "Evaluate elisp expression")
-    "e h" '(counsel-esh-history :wk "Eshell history")
-    "e l" '(eval-last-sexp :wk "Evaluate elisp expression before point")
-    "e r" '(eval-region :wk "Evaluate elisp in region")
-    "e s" '(eshell :wk "Eshell"))
 
   (xecarlox/leader-keys
     "h"   '(:ignore t :wk "Help")
@@ -148,15 +147,9 @@
     "h f" '(describe-function :wk "Describe function"))
 
   (xecarlox/leader-keys
-    "t" '(:ignore t :wk "Toggle")
-    "t l" '(display-line-numbers-mode :wk "Toggle line numbers")
-    "t t" '(visual-line-mode :wk "Toggle truncated lines")
+    "t" '(:ignore t :wk "terminal")
+    "t e" '(eshell :wk "Eshell")
     "t v" '(vterm-toggle :wk "Toggle VTerm"))
-
-  (xecarlox/leader-keys
-    "f" '(:ignore t :wk "Font")
-    "f +" '(text-scale-increase :wk "text scale increase")
-    "f -" '(text-scale-decrease :wk "text scale decrease"))
 
   (xecarlox/leader-keys
     "w"   '(:ignore t :wk "Window")
@@ -170,7 +163,6 @@
     "w k" '(evil-window-up :wk "Move to window up")
     "w j" '(evil-window-down :wk "Move to window down")
     "w w" '(evil-window-next :wk "Move to next window"))
-
 )
 
 
@@ -185,7 +177,7 @@
       which-key-sort-uppercase-first nil
       which-key-add-column-padding 1
       which-key-max-display-columns nil
-      which-key-min-display-lines 6
+      which-key-min-display-lines 3
       which-key-side-window-slot -10
       which-key-side-window-max-height 0.25
       which-key-idle-delay 0.8
@@ -198,6 +190,7 @@
 ;; install rainbow-delimiters
 ;; install ivy-rich
 ;; install all-the-icons
+
 ;; install elfeed
 
 ;; install org-mail
@@ -312,6 +305,8 @@
     org-agenda-overriding-header ""
     org-agenda-start-on-weekday nil)
 
+(setq-default org-enforce-todo-dependencies t)
+
 (setq org-agenda-custom-commands
     '(
 	("z" "Week" ((agenda "")))
@@ -324,13 +319,23 @@
 ))
 
 
-
-(setq-default org-enforce-todo-dependencies t)
-
-
-
 (setq org-todo-keywords
     '((sequence
-	"TODO(t)" "CONTRACT(c)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)"
+	"TODO(t)" "PROJECT(p)" "LEARNING(l)"
 	"|"
 	"HOLD(h)" "SCRAPPED(s)" "FINISHED(f)" )))
+
+
+(use-package dashboard
+  :ensure t
+  :config
+    (dashboard-setup-startup-hook))
+
+(setq 
+  dashboard-banner-logo-title "Welcome to Emacs Dashboard"
+  dashboard-center-content t
+  dashboard-vertically-center-content t
+  ;; dashboard-show-shortcuts nil
+)
+
+(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))

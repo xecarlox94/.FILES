@@ -14,6 +14,7 @@ set nowrap
 set scrolloff=1
 set guicursor=
 set timeoutlen=10
+set fileencoding=utf8
 
 " macros
 set lazyredraw
@@ -105,53 +106,54 @@ let g:netrw_sizestyle= "h"
 
 "-------------------- MAPPINGS
 
-let mapleader = " "
+let mapleader=','
+let g:mapleader=','
 
 
 " Run
-nnoremap <leader>rp :<up><CR>
+nnoremap <Leader>rp :<up><CR>
 
 
 " change local settings
-nnoremap <leader>ls :setlocal spell!<CR>
-nnoremap <leader>lw :setlocal nowrap!<CR>
+nnoremap <Leader>ls :setlocal spell!<CR>
+nnoremap <Leader>lw :setlocal nowrap!<CR>
 
 " Window
-nnoremap <leader>w- :split<CR>
-nnoremap <leader>wi :vsplit<CR>
-nnoremap <leader>ww <C-w>w
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
-nnoremap <leader>7 <C-w><
-nnoremap <leader>8 <C-w>-
-nnoremap <leader>9 <C-w>+
-nnoremap <leader>0 <C-w>>
+nnoremap <Leader>w- :split<CR>
+nnoremap <Leader>wi :vsplit<CR>
+nnoremap <Leader>ww <C-w>w
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>7 <C-w><
+nnoremap <Leader>8 <C-w>-
+nnoremap <Leader>9 <C-w>+
+nnoremap <Leader>0 <C-w>>
 
 
 " File
-nnoremap <leader>fw :w<CR>
-nnoremap <leader>fx :x<CR>
-nnoremap <leader>fq :q<CR>
-nnoremap <leader>fk :q!<CR>
-" nnoremap <leader>fp :r !xclip -o<CR>
-" vnoremap <leader>fy :w !xclip -sel clip<CR><CR>
+nnoremap <Leader>fw :w<CR>
+nnoremap <Leader>fx :x<CR>
+nnoremap <Leader>fq :q<CR>
+nnoremap <Leader>fk :q!<CR>
+" nnoremap <Leader>fp :r !xclip -o<CR>
+" vnoremap <Leader>fy :w !xclip -sel clip<CR><CR>
 
 
 " Explore - navigation
-nnoremap <leader>n :Ex<CR>
+nnoremap <Leader>n :Ex<CR>
 
 " Tab
-nnoremap <leader>tn :tabNext<CR>
-nnoremap <leader>to :tabnew<Space>
-nnoremap <leader>tp :tabprevious<CR>
+nnoremap <Leader>tn :tabNext<CR>
+nnoremap <Leader>to :tabnew<Space>
+nnoremap <Leader>tp :tabprevious<CR>
 
 " Open
-nnoremap <leader>of :e<Space>
-nnoremap <leader>os :shell<CR>
-nnoremap <leader>ot :vert ter<CR>
-nnoremap <leader>ob :buffers<CR>:b<Space>
+nnoremap <Leader>of :e<Space>
+nnoremap <Leader>os :shell<CR>
+nnoremap <Leader>ot :vert ter<CR>
+nnoremap <Leader>ob :buffers<CR>:b<Space>
 
 
 augroup netrw_setup | au!
