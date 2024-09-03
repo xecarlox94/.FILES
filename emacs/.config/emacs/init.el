@@ -267,7 +267,7 @@
   :config
     (dashboard-setup-startup-hook))
 
-(setq 
+(setq
   dashboard-banner-logo-title "Welcome, Sir"
   dashboard-center-content t
   dashboard-vertically-center-content t
@@ -282,7 +282,7 @@
 (use-package org
     :straight (:type built-in)
     :init
-	(setq org-directory "~/org")
+	(setq org-directory "~/Documents/org")
 	(setq org-agenda-files (list org-directory))
     :custom
 	(org-startup-indented t)
@@ -340,7 +340,34 @@
 	"HOLD(h)" "SCRAPPED(s)" "FINISHED(f)" )))
 
 
-(text-scale-set 3)
-
-
 (require 'agda2)
+
+
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/Documents/roam"))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture)
+         ("C-c n j" . org-roam-dailies-capture-today))
+  :config
+  (setq
+    org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag))
+    find-file-visit-truename t
+    )
+
+  (org-roam-db-autosync-mode)
+)
+
+(use-package emacsql)
+(use-package emacsql-sqlite)
+(use-package f)
+(use-package s)
+(use-package magit-section)
+(use-package dash)
+;; (use-package magit-section)
+
+

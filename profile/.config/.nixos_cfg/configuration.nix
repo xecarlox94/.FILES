@@ -146,7 +146,11 @@ in
         # neovim
         lunarvim
         vim
-        nerdfonts
+        #nerdfonts
+
+        mpop
+        isync
+        mu
 
         emacs
         emacsPackages.vterm
@@ -176,6 +180,12 @@ in
 
         ripgrep
         fd
+
+        texliveFull
+
+        sqlite
+
+        graphviz
 
         virt-manager
 
