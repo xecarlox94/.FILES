@@ -74,6 +74,10 @@ in
 
         displayManager.defaultSession = "none+xmonad";
 
+
+        # xserver.displayManager.lightdm.enable = true;
+        # xserver.desktopManager.cinnamon.enable = true;
+
         xserver = {
             enable = true;
 
@@ -154,7 +158,9 @@ in
 
         emacs
         emacsPackages.vterm
+
         emacsPackages.agda2-mode
+        emacsPackages.proof-general
 
         tmux
 
@@ -162,6 +168,9 @@ in
         ghc
         stack
         haskell-language-server
+
+        coq
+        coqPackages.coqide
 
         agda
         agda-pkg
@@ -184,6 +193,8 @@ in
         texliveFull
 
         sqlite
+
+        file
 
         graphviz
 
