@@ -29,6 +29,7 @@
     git
     stow
 
+    firefox
 
     lunarvim
     ripgrep
@@ -48,7 +49,11 @@
     # ghc
     # haskell-language-server
 
-
+    # archives
+    zip
+    xz
+    unzip
+    p7zip
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -98,6 +103,13 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  programs.kitty.enable = true; # required for the default Hyprland config
+  wayland.windowManager.hyprland.enable = true; # enable Hyprland
+
+  # Optional, hint Electron apps to use Wayland:
+  # home.sessionVariables.NIXOS_OZONE_WL = "1";
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
