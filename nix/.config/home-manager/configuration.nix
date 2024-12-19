@@ -88,7 +88,6 @@
     packages = with pkgs; [
       vim
       git
-      stow
     ];
   };
 
