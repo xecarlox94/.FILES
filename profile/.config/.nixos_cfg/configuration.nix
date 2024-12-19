@@ -74,6 +74,10 @@ in
 
         displayManager.defaultSession = "none+xmonad";
 
+
+        # xserver.displayManager.lightdm.enable = true;
+        # xserver.desktopManager.cinnamon.enable = true;
+
         xserver = {
             enable = true;
 
@@ -146,22 +150,33 @@ in
         # neovim
         lunarvim
         vim
-        nerdfonts
+        #nerdfonts
+
+        mpop
+        isync
+        mu
 
         emacs
         emacsPackages.vterm
+
+        emacsPackages.agda2-mode
+        emacsPackages.proof-general
 
         tmux
 
         cabal-install
         ghc
         stack
-
-        # haskellPackages.ghcup
         haskell-language-server
 
+        coq
+        coqPackages.coqide
+
+        agda
+        agda-pkg
+        agdaPackages.standard-library
+
         alacritty
-        ranger
 
         zathura
 
@@ -175,16 +190,18 @@ in
         ripgrep
         fd
 
+        texliveFull
+
+        sqlite
+
+        file
+
+        graphviz
+
         virt-manager
 
         python3
         python311Packages.pip
-
-        nodejs_20
-
-        lua
-        luajit
-        luarocks-nix
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
