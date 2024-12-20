@@ -42,17 +42,27 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+
+  programs.hyprland.enable = true; # enable Hyprland
+
+  environment.systemPackages = [
+    # ... other packages
+    pkgs.kitty # required for the default Hyprland config
+  ];
+
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
 
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+     # Desktop Environment.
+    displayManager.lightdm.enable = true;
+    desktopManager.xfce.enable = true;
+    # p in X11
+    xkb = {
+      layout = "gb";
+      variant = "";
+    };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
   };
 
   # Configure console keymap
