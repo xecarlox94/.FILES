@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
-
+let
+  username="xecarlox";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -46,7 +48,6 @@
   programs.hyprland.enable = true; # enable Hyprland
 
   environment.systemPackages = [
-    # ... other packages
     pkgs.kitty # required for the default Hyprland config
   ];
 
@@ -56,8 +57,15 @@
 
      # Desktop Environment.
     displayManager.lightdm.enable = true;
-    desktopManager.xfce.enable = true;
-    # p in X11
+    windowManager = {
+        xmonad = {
+            enable = true;
+            enableContribAndExtras = true;
+            config = ../../../xmonad/.config/xmonad/xmonad.hs;
+            enableConfiguredRecompile = true;
+        };
+    };
+
     xkb = {
       layout = "gb";
       variant = "";
@@ -68,12 +76,13 @@
   # Configure console keymap
   console.keyMap = "uk";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
