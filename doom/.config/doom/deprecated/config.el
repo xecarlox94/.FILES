@@ -77,11 +77,10 @@
 
 
 (after! org
-        (setq
-                org-todo-keywords '((sequence
-                        "TODO(t)" "CONTRACT(c)" "ACTIVITY(a)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)" "WISH(w)" "HOLD(h)"
-                        "|"
-                        "SCRAPPED(s)" "FINISHED(f)"))
+        (setq org-todo-keywords '((sequence
+		    "TODO(t)" "CONTRACT(c)" "ACTIVITY(a)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)" "WISH(w)" "HOLD(h)"
+		    "|"
+		    "SCRAPPED(s)" "FINISHED(f)"))
                 org-todo-keyword-faces (quote (
                         ("TODO(t)" :foreground "orange" :weight bold)
                         ("CONTRACT(c)" :foreground "red" :weight bold)

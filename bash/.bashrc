@@ -39,3 +39,9 @@ set show-all-if-ambiguous on
 set mark-symlinked-directories on
 set colored-stats on
 
+
+# . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+export PATH=$HOME/.config/emacs/bin:$PATH
+
+
