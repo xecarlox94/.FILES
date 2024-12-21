@@ -55,8 +55,17 @@ in
   services.xserver = {
     enable = true;
 
-     # Desktop Environment.
-    displayManager.lightdm.enable = true;
+    # Desktop Environment.
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "none+xmonad";
+    }
+    desktopManager = {
+      cinnamon.enable = true;
+    };
+
+    libinput.enable = true;
+
     windowManager = {
         xmonad = {
             enable = true;
