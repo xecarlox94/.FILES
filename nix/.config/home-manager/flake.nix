@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
-    helix.url =  "github:helix-editor/helix/master";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {

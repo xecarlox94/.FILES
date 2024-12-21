@@ -60,10 +60,10 @@ in
       lightdm.enable = true;
       defaultSession = "none+xmonad";
     };
-    libinput.enable = true;
-    desktopManager = {
-      cinnamon.enable = true;
-    };
+    # libinput.enable = true;
+    # desktopManager = {
+      # cinnamon.enable = true;
+    # };
 
     windowManager = {
         xmonad = {

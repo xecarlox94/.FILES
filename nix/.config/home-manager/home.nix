@@ -41,6 +41,10 @@
 
     emacs
     emacsPackages.vterm
+    # emacsPackages.org-roam
+    # emacsPackages.agda2-mode
+    # emacsPackages.proof-general
+
 
     tmux
     alacritty
