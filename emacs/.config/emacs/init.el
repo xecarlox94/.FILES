@@ -361,17 +361,3 @@
   (org-roam-db-autosync-mode)
 )
 
-(use-package emacsql)
-(use-package emacsql-sqlite)
-(use-package f)
-(use-package s)
-(use-package magit-section)
-(use-package dash)
-;; (use-package magit-section)
-
-
-
-(require 'agda2)
-
-
-;; (use-package proof-general)
