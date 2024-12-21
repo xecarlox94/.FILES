@@ -25,6 +25,7 @@
     # # "Hello, world!" when run.
     hello
 
+    zathura
     dmenu
     vim
     git
@@ -52,8 +53,9 @@
 
     # HASKELL
     # cabal-install
-    # ghc
-    # haskell-language-server
+    ghc
+    haskell-language-server
+    # haskellPackages.ghcup
 
     # archives
     zip

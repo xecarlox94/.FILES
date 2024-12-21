@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+;; (setq user-full-name "John Doe"
+;;       user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -15,7 +15,7 @@
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
 ;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-;; - `doom-unicode-font' -- for unicode glyphs
+;; - `doom-symbol-font' -- for symbols
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
@@ -33,6 +33,8 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
+
+(setq doom-font (font-spec :size 20 ))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -74,46 +76,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-
-(after! org
-        (setq org-todo-keywords '((sequence
-		    "TODO(t)" "CONTRACT(c)" "ACTIVITY(a)" "PROJECT(p)" "LEARNING(l)" "DELIVERABLE(d)" "MEETING(m)" "WISH(w)" "HOLD(h)"
-		    "|"
-		    "SCRAPPED(s)" "FINISHED(f)"))
-                org-todo-keyword-faces (quote (
-                        ("TODO(t)" :foreground "orange" :weight bold)
-                        ("CONTRACT(c)" :foreground "red" :weight bold)
-                        ("ACTIVITY(a)" :foreground "yellow" :weight bold)
-                        ("PROJECT(p)" :foreground "green" :weight bold)
-                        ("LEARNING(l)" :foreground "green" :weight bold)
-                        ("DELIVERABLE(d)" :foreground "red" :weight bold)
-                        ("MEETING(m)" :foreground "orange" :weight bold)
-                        ("WISH(w)" :foreground "purple" :weight bold)
-                        ("HOLD(h)" :foreground "brown" :weight bold)
-                        ("SCRAPPED(s)" :foreground "grey" :weight bold)
-                        ("FINISHED(f)" :foreground "grey" :weight bold))))
-        (setq org-agenda-custom-commands
-                '(
-                ("v" "A new agenda view"
-                 ((tags "priority=\"a\""
-                        ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'finished))
-                        (agenda "")
-                        (alltodo "")))))
-                ("D" "Day agenda"
-                   ((agenda "" ((org-agenda-span 1)))
-                   ;;(tags-todo "+PRIORITY=\"A\"")
-                   (org-agenda-compact-blocks t)))
-                ("P" "Printed agenda"
-                 (
-                  (agenda "" ((org-agenda-span 'day)
-                              (org-agenda-start-day nil)
-                              (org-deadline-warning-days 0)))
-                  (agenda "" ((org-agenda-span 7)
-                              (org-agenda-start-on-weekday nil)
-                              ;;(org-agenda-start-day t)
-                              (org-deadline-warning-days 0)))
-                  )
-                )
-        ))
-)
