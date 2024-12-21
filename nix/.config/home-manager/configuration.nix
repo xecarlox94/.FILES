@@ -59,12 +59,11 @@ in
     displayManager = {
       lightdm.enable = true;
       defaultSession = "none+xmonad";
-    }
+    };
+    libinput.enable = true;
     desktopManager = {
       cinnamon.enable = true;
     };
-
-    libinput.enable = true;
 
     windowManager = {
         xmonad = {
