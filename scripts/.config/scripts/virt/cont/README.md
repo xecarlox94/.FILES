@@ -54,13 +54,21 @@ This exemplifies how to use the installed environment to setup a development env
 ## Building docker container
 
 
-Navigate to the folder that holds the Dockerfile and run:
+Navigate to a folder where you want to create a new project. The next command will generate a project folder, a Dockerfile and a "src" folder that is mounted automatically to "/src" location in your docker container.
 
 ```bash
 
-docker_build.sh
+docker_bootstrap.sh
 
 ```
+
+
+Select:
+- Name of your project;
+- If you are running Debian/Ubuntu to generate "noninteractive" mode in the dockerfile;
+- add Docker Nvidia Runtime support;
+- add X11 Desktop application support;
+
 
 That is it!
 
@@ -81,12 +89,26 @@ An example of a "run.sh" shell script is the following:
 
 ```bash
 
-docker_run.sh \
-    bash \
-    "\
-        -v $PWD/src:$HOME/src \
-    "
+clear &&\
+    docker_build.sh &&\
+    docker_run.sh \
+        bash \
+        "\
+            -v $PWD/src:$HOME/src \
+            --rm \
+            --privileged \
+            --name $PROJECT_FOLDER \
+        "
+        -x -n
 ```
+
+> [!TIP]
+> You can (should) add more docker container options inside the second string argument of "docker_run.sh" command.
+
+
+> [!TIP]
+> You can add and remove Nvidia and X11 support by just adding/removing the "x" and "n" flags "docker_run.sh" command.
+
 
 This shell script instantiates a docker container that runs bash interactively and it mounts a folder from the host to the container.
 
