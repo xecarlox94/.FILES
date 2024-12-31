@@ -46,6 +46,7 @@
     # emacsPackages.agda2-mode
     # emacsPackages.proof-general
 
+    texliveFull
 
     tmux
     alacritty

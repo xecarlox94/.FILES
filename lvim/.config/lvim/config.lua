@@ -5,4 +5,6 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 
+lvim.colorscheme = "desert"
+
 vim.cmd 'source ~/.config/vim/init.vim'
