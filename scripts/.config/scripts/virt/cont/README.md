@@ -48,10 +48,10 @@ $HOME/.config/.FILES/scripts/.config/scripts/conf/install.sh
 # Docker environment
 
 
-This exemplifies how to use the installed environment to setup a development enviroment for docker containers.
+This exemplifies how to use the installed environment to setup a development environment for docker containers.
 
 
-## Building docker container
+## Bootstrapping Docker Container Project
 
 
 Navigate to a folder where you want to create a new project. The next command will generate a project folder, a Dockerfile and a "src" folder that is mounted automatically to "/src" location in your docker container.
