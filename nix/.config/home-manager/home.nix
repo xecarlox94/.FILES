@@ -27,7 +27,6 @@
 
     zathura
     dmenu
-    vim
     git
     stow
 
