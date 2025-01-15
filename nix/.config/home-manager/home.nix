@@ -21,9 +21,10 @@
   # environment.
   home.packages = with pkgs; [
 
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    hello
+    git
+
+    yazi
+    vim
 
     zathura
     dmenu
@@ -37,7 +38,6 @@
     fd
 
     coreutils
-    wget
 
     emacs
     emacsPackages.vterm
@@ -55,7 +55,6 @@
     # cabal-install
     ghc
     haskell-language-server
-    # haskellPackages.ghcup
 
     # archives
     zip
