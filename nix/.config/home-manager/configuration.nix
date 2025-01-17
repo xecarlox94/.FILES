@@ -66,6 +66,11 @@ let
     environment.systemPackages = [
     ];
 
+    services.postgresql = {
+      enable = true;
+      package = pkgs.postgresql_15;
+    };
+
     # Enable the X11 windowing system.
     services.xserver = {
       enable = true;
