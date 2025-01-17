@@ -64,6 +64,7 @@ let
     programs.hyprland.enable = true; # enable Hyprland
 
     environment.systemPackages = [
+
     ];
 
     services.postgresql = {
