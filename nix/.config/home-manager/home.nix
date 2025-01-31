@@ -32,6 +32,7 @@
     stow
 
     firefox
+    brave
 
     lunarvim
     ripgrep

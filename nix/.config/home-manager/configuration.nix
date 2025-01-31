@@ -78,13 +78,18 @@ let
 
       # Desktop Environment.
       displayManager = {
-        lightdm.enable = true;
-        defaultSession = "none+xmonad";
+        # lightdm.enable = true;
+        # defaultSession = "none+xmonad";
+        gdm.enable = true;
       };
+
+      # Cinnammon
       # libinput.enable = true;
       # desktopManager = {
         # cinnamon.enable = true;
       # };
+
+      desktopManager.gnome.enable = true;
 
       windowManager = {
           xmonad = {
