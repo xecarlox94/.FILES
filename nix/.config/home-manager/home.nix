@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
-
 {
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "xecarlox";
@@ -22,12 +22,12 @@
   home.packages = with pkgs; [
 
     git
+    coreutils
 
     yazi
     vim
 
     zathura
-    dmenu
     git
     stow
 
@@ -38,8 +38,6 @@
     ripgrep
     fd
 
-    coreutils
-
     emacs
     emacsPackages.vterm
     # emacsPackages.org-roam
@@ -47,6 +45,9 @@
     # emacsPackages.proof-general
 
     texliveFull
+
+    dmenu
+    rofi
 
     tmux
     alacritty
@@ -59,7 +60,6 @@
 
     # archives
     zip
-    xz
     unzip
     p7zip
 
@@ -67,14 +67,12 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
     (pkgs.writeShellScriptBin "my-hello" ''
       echo "Hello, ${config.home.username}!"
     '')
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -115,5 +113,14 @@
 
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager = {
+      enable = true;
+    };
+
+    # nixvim = {
+      # enable = true;
+    # };
+
+  };
 }
