@@ -1,3 +1,6 @@
+
+# https://nixos-and-flakes.thiscute.world/nixos-with-flakes/modularize-the-configuration
+
 {
   description = "A very basic flake";
 
