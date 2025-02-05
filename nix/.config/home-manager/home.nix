@@ -25,6 +25,7 @@
     coreutils
 
     yazi
+
     vim
 
     zathura
@@ -47,7 +48,9 @@
     texliveFull
 
     dmenu
-    rofi
+
+    pavucontrol
+    # rofi
 
     tmux
     alacritty

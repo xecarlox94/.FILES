@@ -89,7 +89,6 @@ let
         # cinnamon.enable = true;
       # };
 
-      desktopManager.gnome.enable = true;
 
       windowManager = {
           xmonad = {
