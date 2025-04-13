@@ -158,7 +158,6 @@
             installCargo = true;
             installRustc = true;
             settings = {
-              # checkOnSave.command = "clippy";
               lens.enable = true;
               inlayHints.enable = true;
             };
@@ -204,6 +203,105 @@
           marksman.enable = true;
         };
 
+      };
+
+
+      dap-virtual-text.enable = true;
+      dap-ui.enable = true;
+
+      dap = {
+        enable = true;
+        adapters = {
+          executables = {
+            # Rust debugging
+            # codelldb = {
+              # command = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+              # name = "codelldb";
+            # };
+            # Haskell debugging
+            # haskell-debug-adapter = {
+              # command = "${pkgs.haskellPackages.haskell-debug-adapter}/bin/haskell-debug-adapter";
+              # name = "haskell";
+            # };
+            # Python debugging
+            # debugpy = {
+              # command = "${pkgs.python3Packages.debugpy}/bin/python";
+              # args = [
+                # "-m"
+                # "debugpy.adapter"
+              # ];
+              # name = "debugpy";
+            # };
+            # JS/TS debugging
+            # node-debug2 = {
+              # command = "${pkgs.nodePackages.node-debug2-adapter}/bin/node-debug2-adapter";
+              # name = "node2";
+            # };
+          };
+        };
+
+        # configurations = {
+        # rust = [
+        # {
+        # name = "Launch Rust";
+        # type = "codelldb";
+        # request = "launch";
+        # program = "''${workspaceFolder}/target/debug/''${fileBasenameNoExtension}";
+        # cwd = "''${workspaceFolder}";
+        # stopOnEntry = false;
+        # args = [];
+        # initCommands = [];
+        # }
+        # ];
+        # haskell = [
+        # {
+        # name = "Launch Haskell";
+        # type = "haskell";
+        # request = "launch";
+        # program = "''${workspaceFolder}/app/Main.hs";
+        # workspace = "''${workspaceFolder}";
+        # startup = "''${workspaceFolder}/test/Spec.hs";
+        # stopOnEntry = true;
+        # logFile = "''${workspaceFolder}/logs/debug.log";
+        # }
+        # ];
+        # python = [
+        # {
+        # name = "Launch Python";
+        # type = "debugpy";
+        # request = "launch";
+        # program = "''${file}";
+        # pythonPath = "''${command:python.interpreterPath}";
+        # console = "integratedTerminal";
+        # justMyCode = false;
+        # }
+        # ];
+        # javascript = [
+        # {
+        # name = "Launch Node.js";
+        # type = "node2";
+        # request = "launch";
+        # program = "''${file}";
+        # cwd = "''${workspaceFolder}";
+        # sourceMaps = true;
+        # protocol = "inspector";
+        # console = "integratedTerminal";
+        # }
+        # ];
+        # typescript = [
+        # {
+        # name = "Launch TypeScript";
+        # type = "node2";
+        # request = "launch";
+        # program = "''${workspaceFolder}/node_modules/.bin/ts-node";
+        # args = ["''${file}"];
+        # cwd = "''${workspaceFolder}";
+        # sourceMaps = true;
+        # protocol = "inspector";
+        # console = "integratedTerminal";
+        # }
+        # ];
+        # };
       };
 
     };
