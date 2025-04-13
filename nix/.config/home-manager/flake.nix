@@ -7,12 +7,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
-    # TODO: yet to install properly
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
@@ -28,7 +31,9 @@
 
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
         specialArgs = { inherit inputs; };
+
         modules = [
 
           ./configuration.nix
@@ -43,7 +48,12 @@
               # inputs.nixvim.homeManagerModules.nixvim
             # ];
 
-            home-manager.users.xecarlox = import ./home.nix;
+            home-manager.users.xecarlox = {
+              imports = [
+                inputs.nixvim.homeManagerModules.nixvim
+                ./home.nix
+              ];
+            };
           }
         ];
       };

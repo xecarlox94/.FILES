@@ -7,7 +7,6 @@
 
 lvim.colorscheme = "desert"
 
-vim.cmd 'source ~/.config/vim/init.vim'
 lvim.plugins = {
   {
     "okuuva/auto-save.nvim",
@@ -20,3 +19,5 @@ lvim.plugins = {
     },
   },
 }
+
+vim.cmd 'source ~/.config/vim/init.vim'

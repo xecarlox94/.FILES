@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -16,6 +16,10 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.enableNixpkgsReleaseCheck = false;
+
+  imports = [
+    ./nixvim.nix
+  ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -56,10 +60,12 @@
     alacritty
     kitty
 
+    flameshot
+
     # HASKELL
     # cabal-install
-    ghc
-    haskell-language-server
+    # ghc
+    # haskell-language-server
 
     # archives
     zip
