@@ -1,9 +1,8 @@
 { pkgs, ... }:
-
 {
   programs.nixvim = {
     enable = true;
-    colorschemes.gruvbox.enable = true;
+    colorschemes.dracula.enable = true;
 
     globals = {
       mapleader = " ";
@@ -18,16 +17,13 @@
           incrementalSelection.enable = true;
           indent = true;
 
-          ensureInstalled = [
+          ensure_installed = [
             "rust"
             "haskell"
             "nix"
-            "ocaml"
             "typescript"
             "javascript"
-            "lua"
             "python"
-            "go"
             "markdown"
             "vim"
             "vimdoc"
@@ -73,63 +69,64 @@
       cmp = {
         enable = true;
 
-        settings.sources = [
-          { name = "nvim_lsp"; }
-          { name = "path"; }
-          { name = "buffer"; }
-        ];
+        autoEnableSources = false;
 
-        # mapping = {
-        # "<C-p>" = "cmp.mapping.select_prev_item()";
-        # "<C-n>" = "cmp.mapping.select_next_item()";
-        # "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-        # "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        # "<C-Space>" = "cmp.mapping.complete()";
-        # "<C-e>" = "cmp.mapping.close()";
-        # "<CR>" = "cmp.mapping.confirm({ select = true })";
+        settings = {
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "luasnip"; }
+            { name = "buffer"; }
+            { name = "path"; }
+          ];
 
-          # "<Tab>" = {
-          # action = ''
-          # function(fallback)
-          # if cmp.visible() then
-          # cmp.select_next_item()
-          # elseif luasnip.expandable() then
-          # luasnip.expand()
-          # elseif luasnip.expand_or_jumpable() then
-          # luasnip.expand_or_jump()
-          # else
-          # fallback()
-          # end
-          # end
-          # '';
-          # modes = [ "i" "s" ];
-          # };
-          # "<S-Tab>" = {
-          # action = ''
-          # function(fallback)
-          # if cmp.visible() then
-          # cmp.select_prev_item()
-          # elseif luasnip.jumpable(-1) then
-          # luasnip.jump(-1)
-          # else
-          # fallback()
-          # end
-          # end
-          # '';
-          # modes = [ "i" "s" ];
-          # };
-          # };
+          mapping = {
+            "<C-p>" = "cmp.mapping.select_prev_item()";
+            "<C-n>" = "cmp.mapping.select_next_item()";
+            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-f>" = "cmp.mapping.scroll_docs(4)";
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-e>" = "cmp.mapping.close()";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
 
-        # sources = [
-        # { name = "nvim_lsp"; }
-        # { name = "luasnip"; }
-        # { name = "buffer"; }
-        # { name = "path"; }
-        # ];
-      };
+            # "<Tab>" = {
+            # action = ''
+            # function(fallback)
+            # if cmp.visible() then
+            # cmp.select_next_item()
+            # elseif luasnip.expandable() then
+            # luasnip.expand()
+            # elseif luasnip.expand_or_jumpable() then
+            # luasnip.expand_or_jump()
+            # else
+            # fallback()
+            # end
+            # end
+            # '';
+            # modes = [
+            # "i"
+            # "s"
+            # ];
+            # };
+            # "<S-Tab>" = {
+            # action = ''
+            # function(fallback)
+            # if cmp.visible() then
+            # cmp.select_prev_item()
+            # elseif luasnip.jumpable(-1) then
+            # luasnip.jump(-1)
+            # else
+            # fallback()
+            # end
+            # end
+            # '';
+            # modes = [
+            # "i"
+            # "s"
+            # ];
+            # };
+          };
+        };
 
-      luasnip = {
-        enable = true;
       };
 
       # LSP Configuration
@@ -184,22 +181,9 @@
           nil_ls.enable = true;
           nixd.enable = true;
 
-          # OCaml
-          # ocamllsp.enable = true;
-
           # TypeScript/JavaScript
           ts_ls.enable = true;
           eslint.enable = true;
-
-          # Lua
-          lua_ls = {
-            enable = true;
-            settings = {
-              completion = { callSnippet = "Replace"; };
-              telemetry = { enable = false; };
-              diagnostics = { globals = [ "vim" ]; };
-            };
-          };
 
           # Python
           pyright = {
@@ -210,20 +194,6 @@
                 autoSearchPaths = true;
                 useLibraryCodeForTypes = true;
                 diagnosticMode = "workspace";
-              };
-            };
-          };
-
-          # Go
-          gopls = {
-            enable = true;
-            settings = {
-              usePlaceholders = true;
-              completeUnimported = true;
-              staticcheck = true;
-              analyses = {
-                unusedparams = true;
-                shadow = true;
               };
             };
           };
@@ -310,6 +280,7 @@
   };
 
   home.packages = with pkgs; [
+
     # Rust tools
     rustc
     cargo
@@ -331,24 +302,13 @@
     nixd
     nixfmt-rfc-style
 
-    # OCaml tools
-    ocaml
-    opam
-    ocamlPackages.merlin
-    ocamlPackages.ocaml-lsp
-    # ocamlPackages.dune
-
     # TypeScript/JavaScript tools
     nodejs
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.ts-node
     nodePackages.eslint
-    # nodePackages.node-debug2-adapter
-
-    # Lua tools
-    sumneko-lua-language-server
-    stylua
+    # nodePackages.node-debug2-adapter                    # Fix debug
 
     # Python tools
     python3
@@ -356,17 +316,8 @@
     python3Packages.black
     python3Packages.flake8
     python3Packages.isort
-    # python3Packages.pyright
+    # python3Packages.pyright                             # Fix debug
     python3Packages.debugpy
 
-    # Go tools
-    go
-    gopls
-    golangci-lint
-    delve
-    gotools # For goimports, etc.
-
-    # General dev tools
-    fzf
   ];
 }
