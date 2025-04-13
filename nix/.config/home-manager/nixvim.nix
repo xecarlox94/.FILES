@@ -13,24 +13,28 @@
     plugins = {
 
       treesitter = {
-        enable = true;
-        incrementalSelection.enable = true;
-        indent = true;
-        ensureInstalled = [
-          "rust"
-          "haskell"
-          "nix"
-          "ocaml"
-          "typescript"
-          "javascript"
-          "lua"
-          "python"
-          "go"
-          "markdown"
-          "vim"
-          "vimdoc"
-          "query"
-        ];
+        settings = {
+          enable = true;
+          incrementalSelection.enable = true;
+          indent = true;
+
+          ensureInstalled = [
+            "rust"
+            "haskell"
+            "nix"
+            "ocaml"
+            "typescript"
+            "javascript"
+            "lua"
+            "python"
+            "go"
+            "markdown"
+            "vim"
+            "vimdoc"
+            "query"
+          ];
+        };
+
       };
 
       telescope = {
@@ -60,17 +64,29 @@
       indent-blankline.enable = true;
       illuminate.enable = true;
 
+      cmp-nvim-lsp.enable = true;
+      cmp-path.enable = true;
+      cmp-buffer.enable = true;
+      web-devicons.enable = true;
+
       # Completion
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        mapping = {
-          "<C-p>" = "cmp.mapping.select_prev_item()";
-          "<C-n>" = "cmp.mapping.select_next_item()";
-          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.close()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+
+        settings.sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+        ];
+
+        # mapping = {
+        # "<C-p>" = "cmp.mapping.select_prev_item()";
+        # "<C-n>" = "cmp.mapping.select_next_item()";
+        # "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+        # "<C-f>" = "cmp.mapping.scroll_docs(4)";
+        # "<C-Space>" = "cmp.mapping.complete()";
+        # "<C-e>" = "cmp.mapping.close()";
+        # "<CR>" = "cmp.mapping.confirm({ select = true })";
 
           # "<Tab>" = {
           # action = ''
@@ -102,8 +118,8 @@
           # '';
           # modes = [ "i" "s" ];
           # };
+          # };
 
-        };
         # sources = [
         # { name = "nvim_lsp"; }
         # { name = "luasnip"; }
@@ -114,7 +130,6 @@
 
       luasnip = {
         enable = true;
-        # fromVscode = true;
       };
 
       # LSP Configuration
@@ -141,7 +156,7 @@
         servers = {
 
           # Rust
-          rust-analyzer = {
+          rust_analyzer = {
             enable = true;
             installCargo = true;
             installRustc = true;
@@ -173,11 +188,11 @@
           # ocamllsp.enable = true;
 
           # TypeScript/JavaScript
-          tsserver.enable = true;
+          ts_ls.enable = true;
           eslint.enable = true;
 
           # Lua
-          lua-ls = {
+          lua_ls = {
             enable = true;
             settings = {
               completion = { callSnippet = "Replace"; };
@@ -238,7 +253,7 @@
       vim.opt.updatetime = 300
       vim.opt.colorcolumn = "80"
       vim.opt.cursorline = true
-      vim.opt.wrap = false
+      vim.opt.wrap = true
 
       -- DAP keybindings
       vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
@@ -314,7 +329,7 @@
     # Nix tools
     nil
     nixd
-    nixfmt
+    nixfmt-rfc-style
 
     # OCaml tools
     ocaml
