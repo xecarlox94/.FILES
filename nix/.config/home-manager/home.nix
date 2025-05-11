@@ -19,6 +19,7 @@
 
   imports = [
     ./nixvim.nix
+    ./tmux.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -39,9 +40,9 @@
     firefox
     brave
 
-    lunarvim
     ripgrep
     fd
+    # fz
 
     emacs
     emacsPackages.vterm
@@ -56,16 +57,10 @@
     pavucontrol
     # rofi
 
-    tmux
     alacritty
     kitty
 
     flameshot
-
-    # HASKELL
-    # cabal-install
-    # ghc
-    # haskell-language-server
 
     # archives
     zip
@@ -126,10 +121,6 @@
     home-manager = {
       enable = true;
     };
-
-    # nixvim = {
-      # enable = true;
-    # };
 
   };
 }

@@ -2,7 +2,8 @@
 {
   programs.nixvim = {
     enable = true;
-    colorschemes.dracula.enable = true;
+
+    colorscheme = "desert";
 
     globals = {
       mapleader = " ";
@@ -206,7 +207,7 @@
       };
 
 
-      dap-virtual-text.enable = true;
+      dap-virtual-text.enable = false;
       dap-ui.enable = true;
 
       dap = {
@@ -323,6 +324,7 @@
       vim.opt.cursorline = true
       vim.opt.wrap = true
 
+
       -- DAP keybindings
       vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
       vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
@@ -346,17 +348,6 @@
         vim.lsp.buf.format({ async = true })
       end)
 
-      -- Language specific keybindings
-      -- Go
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "go",
-        callback = function()
-          vim.keymap.set('n', '<leader>gt', function() vim.cmd('GoTest') end, { buffer = true })
-          vim.keymap.set('n', '<leader>gi', function() vim.cmd('GoImport') end, { buffer = true })
-          vim.keymap.set('n', '<leader>gI', function() vim.cmd('GoImpl') end, { buffer = true })
-          vim.keymap.set('n', '<leader>gfs', function() vim.cmd('GoFillStruct') end, { buffer = true })
-        end
-      })
 
       -- Python
       vim.api.nvim_create_autocmd("FileType", {
