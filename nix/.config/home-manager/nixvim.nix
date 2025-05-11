@@ -3,7 +3,9 @@
   programs.nixvim = {
     enable = true;
 
-    colorschemes.gruvbox.enable = true;
+    colorscheme = "desert";
+    # colorschemes.nightfox.enable = true;
+    # colorschemes.catppuccin.enable = true;
 
     globals = {
       mapleader = " ";
