@@ -8,7 +8,21 @@
     globals = {
       mapleader = " ";
       maplocalleader = " ";
+      tabstop = 2;
+      shiftwidth = 4;
+      swapfile = false;
     };
+
+    keymaps = [
+      {
+        mode = [ "n" ];
+        key = "<leader>cn";
+        action = "<cmd>e ~/.config/home-manager/nixvim.nix<CR>";
+        options = {
+          desc = "edit nixvim configuration";
+        };
+      }
+    ];
 
     plugins = {
 
@@ -349,24 +363,6 @@
       vim.keymap.set('n', '<leader>fm', function()
         vim.lsp.buf.format({ async = true })
       end)
-
-
-      -- Python
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "python",
-        callback = function()
-          vim.keymap.set('n', '<leader>py', function() vim.cmd('!python3 %') end, { buffer = true })
-        end
-      })
-
-      -- Rust
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "rust",
-        callback = function()
-          vim.keymap.set('n', '<leader>rr', function() vim.cmd('RustRun') end, { buffer = true })
-          vim.keymap.set('n', '<leader>rt', function() vim.cmd('RustTest') end, { buffer = true })
-        end
-      })
     '';
   };
 
@@ -383,10 +379,10 @@
     ghc
     cabal-install
     stack
-    haskellPackages.haskell-language-server
     haskellPackages.hlint
-    haskellPackages.ormolu
+    haskellPackages.haskell-language-server
     haskellPackages.haskell-debug-adapter
+
 
     # Nix tools
     nil
