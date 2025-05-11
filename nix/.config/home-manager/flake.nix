@@ -27,12 +27,12 @@
   let
 
     
-    mkMachine = systemArch: machineConfiguration: 
+    mkMachine = hostName: systemArch: machineConfiguration: 
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
 
-        specialArgs = { inherit inputs; };
+        specialArgs = inputs // { inherit hostName; };
 
         modules = [
           
@@ -57,8 +57,7 @@
 
     nixosConfigurations = {
 
-      nixos = mkMachine "x86_64-linux" ./configuration.nix;
-
+      nixos = mkMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 
     };
 

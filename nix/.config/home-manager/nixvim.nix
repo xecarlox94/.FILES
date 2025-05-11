@@ -3,7 +3,7 @@
   programs.nixvim = {
     enable = true;
 
-    colorscheme = "desert";
+    colorschemes.gruvbox.enable = true;
 
     globals = {
       mapleader = " ";
@@ -27,10 +27,34 @@
     plugins = {
 
       treesitter = {
+
+        enable = true;
+
         settings = {
           enable = true;
+
           incrementalSelection.enable = true;
-          indent = true;
+          indent.enable = true;
+
+          highlight.enable = true;
+
+          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+            bash
+            haskell
+            json
+            lua
+            make
+            markdown
+            typescript
+            javascript
+            nix
+            regex
+            toml
+            vim
+            vimdoc
+            xml
+            yaml
+          ];
 
           ensure_installed = [
             "rust"
