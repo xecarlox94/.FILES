@@ -2,7 +2,7 @@
 # https://nixos-and-flakes.thiscute.world/nixos-with-flakes/modularize-the-configuration
 
 {
-  description = "A very basic flake";
+  description = "Local machine configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -23,30 +23,25 @@
 
   # make host like this
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  let
 
-    nixosConfigurations = {
+    
+    mkMachine = systemArch: machineConfiguration: 
+      nixpkgs.lib.nixosSystem {
 
-      # https://github.com/r6t/nixos-r6t/blob/095660382e3596ecff6555f6b8f77d4272ea4b27/flake.nix#L66
-
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = systemArch;
 
         specialArgs = { inherit inputs; };
 
         modules = [
           
-          ./configuration.nix
+          machineConfiguration
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
-            # https://github.com/r6t/nixos-r6t/blob/main/modules/home/home-manager/default.nix
-            # sharedModules = [
-              # inputs.nixvim.homeManagerModules.nixvim
-            # ];
 
             home-manager.users.xecarlox = {
               imports = [
@@ -57,6 +52,13 @@
           }
         ];
       };
+
+  in {
+
+    nixosConfigurations = {
+
+      nixos = mkMachine "x86_64-linux" ./configuration.nix;
+
 
     };
 

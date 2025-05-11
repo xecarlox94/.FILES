@@ -170,8 +170,10 @@
             installGhc = true;
             settings = {
               haskell = {
-                plugin.stan.globalOn = true;
-                # formattingProvider = "ormolu";
+                plugin = {
+                  stan.globalOn = true;
+                };
+                formattingProvider = "none";
                 checkProject = true;
               };
             };
