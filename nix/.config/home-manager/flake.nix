@@ -36,7 +36,7 @@
 
         modules = [
           
-          ./machines/laptop-hp/configuration.nix
+          ./configuration.nix
 
           home-manager.nixosModules.home-manager
           {
