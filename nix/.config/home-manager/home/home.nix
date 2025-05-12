@@ -77,10 +77,10 @@
       unzip
       p7zip
 
-      # # It is sometimes useful to fine-tune packages, for example, by applying
-      # # overrides. You can do that directly here, just don't forget the
-      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-      # # fonts?
+      # It is sometimes useful to fine-tune packages, for example, by applying
+      # overrides. You can do that directly here, just don't forget the
+      # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+      # fonts?
       (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
       (pkgs.writeShellScriptBin "my-hello" ''
@@ -131,7 +131,7 @@
       xmonad = {
         enable = true;
         enableContribAndExtras = true;
-        config = ../../../xmonad/.config/xmonad/xmonad.hs;
+        config = ../../../../xmonad/.config/xmonad/xmonad.hs;
       };
     };
   };

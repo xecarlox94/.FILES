@@ -45,7 +45,7 @@
 
             home-manager.users.xecarlox = {
               imports = [
-                ./home.nix
+                ./home/home.nix
                 inputs.nixvim.homeManagerModules.nixvim
               ];
             };
