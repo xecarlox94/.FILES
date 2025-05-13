@@ -1,17 +1,16 @@
 { pkgs, ... }:
 {
   programs.nixvim = {
+
     enable = true;
 
     colorscheme = "desert";
-    # colorschemes.nightfox.enable = true;
-    # colorschemes.catppuccin.enable = true;
 
     globals = {
       mapleader = " ";
       maplocalleader = " ";
       tabstop = 2;
-      shiftwidth = 4;
+      shiftwidth = 2;
       swapfile = false;
     };
 
@@ -19,7 +18,7 @@
       {
         mode = [ "n" ];
         key = "<leader>cn";
-        action = "<cmd>e ~/.config/home-manager/nixvim.nix<CR>";
+        action = "<cmd>e ~/.config/home-manager/home/nixvim.nix<CR>";
         options = {
           desc = "edit nixvim configuration";
         };
@@ -68,7 +67,6 @@
             "markdown"
             "vim"
             "vimdoc"
-            "query"
           ];
         };
 
@@ -88,10 +86,8 @@
         };
       };
 
-      # Git integration
       gitsigns.enable = true;
 
-      # Utils
       lualine.enable = true;
       nvim-tree.enable = true;
       which-key.enable = true;
@@ -101,12 +97,12 @@
       indent-blankline.enable = true;
       illuminate.enable = true;
 
+      web-devicons.enable = true;
+
       cmp-nvim-lsp.enable = true;
       cmp-path.enable = true;
       cmp-buffer.enable = true;
-      web-devicons.enable = true;
 
-      # Completion
       cmp = {
         enable = true;
 
@@ -170,7 +166,6 @@
 
       };
 
-      # LSP Configuration
       lsp = {
         enable = true;
         keymaps = {
@@ -193,7 +188,6 @@
 
         servers = {
 
-          # Rust
           rust_analyzer = {
             enable = true;
             installCargo = true;
@@ -204,7 +198,6 @@
             };
           };
 
-          # Haskell
           hls = {
             enable = true;
             installGhc = true;
@@ -219,15 +212,12 @@
             };
           };
 
-          # Nix
           nil_ls.enable = true;
           nixd.enable = true;
 
-          # TypeScript/JavaScript
           ts_ls.enable = true;
           eslint.enable = true;
 
-          # Python
           pyright = {
             enable = true;
             settings = {
@@ -240,7 +230,6 @@
             };
           };
 
-          # General purpose
           html.enable = true;
           jsonls.enable = true;
           marksman.enable = true;
@@ -248,109 +237,9 @@
 
       };
 
-
-      dap-virtual-text.enable = false;
-      dap-ui.enable = true;
-
-      dap = {
-        enable = true;
-        adapters = {
-          executables = {
-            # Rust debugging
-            # codelldb = {
-              # command = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
-              # name = "codelldb";
-            # };
-            # Haskell debugging
-            # haskell-debug-adapter = {
-              # command = "${pkgs.haskellPackages.haskell-debug-adapter}/bin/haskell-debug-adapter";
-              # name = "haskell";
-            # };
-            # Python debugging
-            # debugpy = {
-              # command = "${pkgs.python3Packages.debugpy}/bin/python";
-              # args = [
-                # "-m"
-                # "debugpy.adapter"
-              # ];
-              # name = "debugpy";
-            # };
-            # JS/TS debugging
-            # node-debug2 = {
-              # command = "${pkgs.nodePackages.node-debug2-adapter}/bin/node-debug2-adapter";
-              # name = "node2";
-            # };
-          };
-        };
-
-        # configurations = {
-        # rust = [
-        # {
-        # name = "Launch Rust";
-        # type = "codelldb";
-        # request = "launch";
-        # program = "''${workspaceFolder}/target/debug/''${fileBasenameNoExtension}";
-        # cwd = "''${workspaceFolder}";
-        # stopOnEntry = false;
-        # args = [];
-        # initCommands = [];
-        # }
-        # ];
-        # haskell = [
-        # {
-        # name = "Launch Haskell";
-        # type = "haskell";
-        # request = "launch";
-        # program = "''${workspaceFolder}/app/Main.hs";
-        # workspace = "''${workspaceFolder}";
-        # startup = "''${workspaceFolder}/test/Spec.hs";
-        # stopOnEntry = true;
-        # logFile = "''${workspaceFolder}/logs/debug.log";
-        # }
-        # ];
-        # python = [
-        # {
-        # name = "Launch Python";
-        # type = "debugpy";
-        # request = "launch";
-        # program = "''${file}";
-        # pythonPath = "''${command:python.interpreterPath}";
-        # console = "integratedTerminal";
-        # justMyCode = false;
-        # }
-        # ];
-        # javascript = [
-        # {
-        # name = "Launch Node.js";
-        # type = "node2";
-        # request = "launch";
-        # program = "''${file}";
-        # cwd = "''${workspaceFolder}";
-        # sourceMaps = true;
-        # protocol = "inspector";
-        # console = "integratedTerminal";
-        # }
-        # ];
-        # typescript = [
-        # {
-        # name = "Launch TypeScript";
-        # type = "node2";
-        # request = "launch";
-        # program = "''${workspaceFolder}/node_modules/.bin/ts-node";
-        # args = ["''${file}"];
-        # cwd = "''${workspaceFolder}";
-        # sourceMaps = true;
-        # protocol = "inspector";
-        # console = "integratedTerminal";
-        # }
-        # ];
-        # };
-      };
-
     };
 
     extraConfigLua = ''
-      -- Basic settings
       vim.opt.number = true
       vim.opt.relativenumber = true
       vim.opt.tabstop = 2
@@ -367,25 +256,10 @@
       vim.opt.wrap = true
 
 
-      -- DAP keybindings
-      vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
-      vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
-      vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
-      vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
-      vim.keymap.set('n', '<leader>b', function() require('dap').toggle_breakpoint() end)
-      vim.keymap.set('n', '<leader>B', function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
-      vim.keymap.set('n', '<leader>dr', function() require('dap').repl.open() end)
-      vim.keymap.set('n', '<leader>dl', function() require('dap').run_last() end)
-
-      -- Debugging UI
-      vim.keymap.set('n', '<leader>du', function() require('dapui').toggle() end)
-
-      -- LSP hover documentation in a floating window
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover()
       end)
 
-      -- Format document
       vim.keymap.set('n', '<leader>fm', function()
         vim.lsp.buf.format({ async = true })
       end)
@@ -409,21 +283,17 @@
     haskellPackages.haskell-language-server
     haskellPackages.haskell-debug-adapter
 
-
-    # Nix tools
     nil
     nixd
     nixfmt-rfc-style
 
-    # TypeScript/JavaScript tools
+    pnpm
     nodejs
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.ts-node
     nodePackages.eslint
-    # nodePackages.node-debug2-adapter                    # Fix debug
 
-    # Python tools
     python3
     python3Packages.pip
     python3Packages.black
