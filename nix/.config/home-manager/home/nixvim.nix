@@ -2,6 +2,7 @@
 {
   programs.nixvim = {
 
+
     enable = true;
 
     colorscheme = "desert";
@@ -86,23 +87,45 @@
         };
       };
 
-      gitsigns.enable = true;
+      # TODO: configure keybiding; set layout defaults
+      neo-tree = {
+        enable = true;
+      };
 
-      lualine.enable = true;
-      nvim-tree.enable = true;
-      which-key.enable = true;
-      trouble.enable = true;
+
+      # TODO: check why I need these plugins; configure them
       todo-comments.enable = true;
       comment.enable = true;
       indent-blankline.enable = true;
+      gitsigns.enable = true;
+      lualine.enable = true;
+      which-key.enable = true;
       illuminate.enable = true;
 
+      # TODO: add keybinding to toggle trouble
+      trouble.enable = true;
+
       web-devicons.enable = true;
+
+      # TODO: Add keybinding to toggle terminal
+      toggleterm = {
+        enable = true;
+        settings = {
+          direction = "float";
+          float_opts = {
+            border = "curved";
+            heigth = 30;
+            width = 130;
+            open_maping = "[[<c->]]";
+          };
+        };
+      };
 
       cmp-nvim-lsp.enable = true;
       cmp-path.enable = true;
       cmp-buffer.enable = true;
 
+      # TODO: add completion for menu options (currently selecting numbers)
       cmp = {
         enable = true;
 
@@ -124,43 +147,6 @@
             "<C-Space>" = "cmp.mapping.complete()";
             "<C-e>" = "cmp.mapping.close()";
             "<CR>" = "cmp.mapping.confirm({ select = true })";
-
-            # "<Tab>" = {
-            # action = ''
-            # function(fallback)
-            # if cmp.visible() then
-            # cmp.select_next_item()
-            # elseif luasnip.expandable() then
-            # luasnip.expand()
-            # elseif luasnip.expand_or_jumpable() then
-            # luasnip.expand_or_jump()
-            # else
-            # fallback()
-            # end
-            # end
-            # '';
-            # modes = [
-            # "i"
-            # "s"
-            # ];
-            # };
-            # "<S-Tab>" = {
-            # action = ''
-            # function(fallback)
-            # if cmp.visible() then
-            # cmp.select_prev_item()
-            # elseif luasnip.jumpable(-1) then
-            # luasnip.jump(-1)
-            # else
-            # fallback()
-            # end
-            # end
-            # '';
-            # modes = [
-            # "i"
-            # "s"
-            # ];
-            # };
           };
         };
 
@@ -267,6 +253,8 @@
   };
 
   home.packages = with pkgs; [
+
+    fzf
 
     # Rust tools
     rustc

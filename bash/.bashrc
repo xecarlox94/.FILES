@@ -88,41 +88,24 @@ export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
 
 export KERAS_HOME="$XDG_CONFIG_HOME/keras"
 
-
-alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
-alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
-
-
-export MAIL="thunderbird"
-#export WINDOW_MANAGER="xmonad"
-#export BROWSER="something"
 export EDITOR="vim"
 #export TERM="alacritty"
 export PAGER="less"
 
 
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
-exp_file_contents() {
-    FILE=$1
-    if [ -f $FILE ];
-    then
-        set -a
-        source $FILE
-        set +a
-    else
-        echo "error sourcing files from $FILE"
-    fi
-}
+alias gst="git status"
+alias gp="git push"
+alias siu="sudo"
+alias sd="sudo shutdown now"
+alias rb="reboot"
+alias v="nvim"
+alias py="python3"
+alias :q="exit"
+alias new_shell="clear && $SHELL && exit"
 
-
-check_source_file() {
-    if [ -f "$1" ];
-    then
-        . "$1";
-    else
-        echo "Error $1";
-    fi
-}
 
 touch_x() {
     touch $1 \
@@ -132,32 +115,6 @@ touch_x() {
 mkdir_cd() {
     mkdir -p $1 \
         && cd $1
-}
-
-
-mkdir_if_not_exists() {
-    ! [ -d $1 ] \
-        && mkdir -p $1
-}
-
-
-touch_if_not_exists() {
-    ! [ -f "$1" ] \
-        && mkdir -p $(dirname $1) \
-        && touch $1
-}
-
-
-add_path() {
-    export PATH="$PATH:$1"
-}
-
-
-export_subfolder_rec() {
-
-  PATH_LIST=$(find "$1" -type d -printf ':%p')
-
-  add_path "${PATH_LIST:1}"
 }
 
 
@@ -174,26 +131,40 @@ commit() {
 }
 
 
-add_path $HOME/.local/bin
-add_path $HOME/.local/share/python/bin
+add_path() {
+    export PATH="$PATH:$1"
+}
 
-add_path $HOME/.config/emacs/bin
-export PATH=$HOME/.config/emacs/bin:$PATH
+check_source_file() {
+    if [ -f "$1" ];
+    then
+        . "$1";
+    else
+        echo "Error $1";
+    fi
+}
+
+export_subfolder_rec() {
+
+  PATH_LIST=$(find "$1" -type d -printf ':%p')
+
+  add_path "${PATH_LIST:1}"
+}
 
 
 export_subfolder_rec $HOME/.config/.FILES/scripts/.config/scripts/
 
+mkdir_if_not_exists() {
+    ! [ -d $1 ] \
+        && mkdir -p $1
+}
 
-alias gst="git status"
-alias gp="git push"
-alias siu="sudo"
-alias sd="sudo shutdown now"
-alias rb="reboot"
-alias v="nvim"
-alias py="python3"
-alias :q="exit"
-alias new_shell="clear && $SHELL && exit"
 
+touch_if_not_exists() {
+    ! [ -f "$1" ] \
+        && mkdir -p $(dirname $1) \
+        && touch $1
+}
 
 touch_if_not_exists $HISTFILE
 # touch_if_not_exists $XSERVERRC
@@ -207,17 +178,17 @@ mkdir_if_not_exists $XDG_VIDEOS_DIR
 mkdir_if_not_exists $XDG_PUBLICSHARE_DIR
 
 
-
 touch_if_not_exists   $HOME/.config/tmp_env.sh
 check_source_file     $HOME/.config/tmp_env.sh
 
 
+add_path $HOME/.local/bin
+add_path $HOME/.local/share/python/bin
+add_path $HOME/.config/emacs/bin
 
 
-[ -z "$PS1" ] && return
 
-[[ $- != *i* ]] && return
-
+export PATH=$HOME/.config/emacs/bin:$PATH
 
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=
@@ -240,20 +211,6 @@ set keymap vi
 set show-all-if-ambiguous on
 set mark-symlinked-directories on
 set colored-stats on
-
-
-
-
-# set environment variables properly, for all utilities
-# fix git commit script
-# add script to initialise config on multiple distros
-# create shell script to check if program is installed
-# add script to search in the web from the terminal
-# add text file to list all paths folders to be added
-# adding extract file function
-# echo "add move windows in vim and emacs"
-# echo "convention vim, nvim and emacs keybidings"
-
 
 
 export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;40m\]\u\[\e[m\]\[\e[32m\]]\[\e[m\] \[\e[32m\]\n\\$\[\e[m\] "
