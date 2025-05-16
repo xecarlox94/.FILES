@@ -32,8 +32,19 @@
 
         system = systemArch;
 
-        specialArgs = inputs // hostName; 
+        specialArgs = 
+          let 
+            vimLeaderKey = " ";
+            myUtils = {
+                nvim = {
+                  mkCommand = cmd: "<cmd>"++cmd++"<cr>";
+                  leader = vimLeaderKey;
+                  mkLeaderKeyBind = keys: "<leader"++keys;
+                };
 
+            };
+          in 
+            inputs // { inherit hostName; } // myUtils;
 
         modules = [
           

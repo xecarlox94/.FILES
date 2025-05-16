@@ -27,14 +27,14 @@
         };
       }
 
-      {
-        mode = "n";
-        key = "<C-t>";
-        action = "<cmd>ToggleTerm<cr>";
-        options = {
-          desc = "Toggle Terminal Window";
-        };
-      }
+      # {
+      #   mode = "n";
+      #   key = "<C-t>";
+      #   action = "<cmd>ToggleTerm<cr>";
+      #   options = {
+      #     desc = "Toggle Terminal Window";
+      #   };
+      # }
 
     ];
 
@@ -127,9 +127,11 @@
           float_opts = {
             border = "curved";
             heigth = 30;
-            width = 130;
-            open_maping = "[[<c->]]";
+            width = 90;
           };
+          open_mapping = "[[<C-t>]]";
+          persist_mode = true;
+          persist_size = true;
         };
       };
 
