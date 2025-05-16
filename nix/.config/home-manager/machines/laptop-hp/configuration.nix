@@ -49,6 +49,8 @@
 
     };
 
+    libinput.enable = true;
+
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
@@ -59,7 +61,6 @@
       };
 
       # Cinnammon
-      libinput.enable = true;
       desktopManager = {
         cinnamon.enable = true;
       };

@@ -1,7 +1,9 @@
-{ pkgs, ... }:
+{ pkgs
+  , ... 
+}:
+# let f = myUtils.nvim.mkCommand; in
 {
   programs.nixvim = {
-
 
     enable = true;
 
@@ -19,11 +21,21 @@
       {
         mode = [ "n" ];
         key = "<leader>cn";
-        action = "<cmd>e ~/.config/home-manager/home/nixvim.nix<CR>";
+        action = "<cmd>e ~/.config/home-manager/home/nixvim.nix<cr>";
         options = {
           desc = "edit nixvim configuration";
         };
       }
+
+      {
+        mode = "n";
+        key = "<C-t>";
+        action = "<cmd>ToggleTerm<cr>";
+        options = {
+          desc = "Toggle Terminal Window";
+        };
+      }
+
     ];
 
     plugins = {

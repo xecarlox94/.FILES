@@ -32,7 +32,8 @@
 
         system = systemArch;
 
-        specialArgs = inputs // { inherit hostName; };
+        specialArgs = inputs // hostName; 
+
 
         modules = [
           
@@ -42,6 +43,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
 
             home-manager.users.xecarlox = {
               imports = [

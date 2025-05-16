@@ -107,63 +107,53 @@ alias :q="exit"
 alias new_shell="clear && $SHELL && exit"
 
 
-touch_x() {
-    touch $1 \
-        && sudo chmod u+x $1
-}
-
-mkdir_cd() {
-    mkdir -p $1 \
-        && cd $1
-}
-
 
 commit() {
-    if [ $# -ge 1 ]
-    then
-        git status &&\
-            git add . &&\
-            git commit -m "$1" &&\
-            git push --all origin
-    else
-        echo "ERROR"
-    fi
+  if [ $# -ge 1 ]
+  then
+      git status &&\
+          git add . &&\
+          git commit -m "$1" &&\
+          git push --all origin
+  else
+      echo "ERROR"
+  fi
 }
 
 
 add_path() {
-    export PATH="$PATH:$1"
+  export PATH="$PATH:$1"
 }
 
 check_source_file() {
-    if [ -f "$1" ];
-    then
-        . "$1";
-    else
-        echo "Error $1";
-    fi
+  if [ -f "$1" ];
+  then
+      . "$1";
+  else
+      echo "Error $1";
+  fi
 }
 
 export_subfolder_rec() {
 
-  PATH_LIST=$(find "$1" -type d -printf ':%p')
+PATH_LIST=$(find "$1" -type d -printf ':%p')
 
-  add_path "${PATH_LIST:1}"
+add_path "${PATH_LIST:1}"
 }
 
 
 export_subfolder_rec $HOME/.config/.FILES/scripts/.config/scripts/
 
 mkdir_if_not_exists() {
-    ! [ -d $1 ] \
-        && mkdir -p $1
+  ! [ -d $1 ] \
+      && mkdir -p $1
 }
 
 
 touch_if_not_exists() {
-    ! [ -f "$1" ] \
-        && mkdir -p $(dirname $1) \
-        && touch $1
+  ! [ -f "$1" ] \
+      && mkdir -p $(dirname $1) \
+      && touch $1
 }
 
 touch_if_not_exists $HISTFILE
@@ -203,14 +193,6 @@ shopt -s nocaseglob
 shopt -s cdspell
 shopt -s checkwinsize
 
-set completion-ignore-case on
-set -o vi
-set editing-mode vi
-set keymap vi
-
-set show-all-if-ambiguous on
-set mark-symlinked-directories on
-set colored-stats on
 
 
 export PS1="\[\e[32m\][\[\e[m\]\[\e[37m\]\h\[\e[m\] \[\e[37m\]:\[\e[m\] \[\e[33;40m\]\u\[\e[m\]\[\e[32m\]]\[\e[m\] \[\e[32m\]\n\\$\[\e[m\] "
