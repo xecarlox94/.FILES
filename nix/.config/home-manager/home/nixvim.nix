@@ -1,5 +1,6 @@
-{ pkgs
-  , ... 
+{
+  pkgs,
+  ...
 }:
 # let f = myUtils.nvim.mkCommand; in
 {
@@ -26,15 +27,14 @@
           desc = "edit nixvim configuration";
         };
       }
-
-      # {
-      #   mode = "n";
-      #   key = "<C-t>";
-      #   action = "<cmd>ToggleTerm<cr>";
-      #   options = {
-      #     desc = "Toggle Terminal Window";
-      #   };
-      # }
+      {
+        mode = [ "n" ];
+        key = "<leader>tl";
+        action = "<cmd>TodoTrouble<cr>";
+        options = {
+          desc = "List project todos";
+        };
+      }
 
     ];
 
@@ -99,11 +99,10 @@
         };
       };
 
-      # TODO: configure keybiding; set layout defaults
+      # TODO: configure keybiding, add default keybinding
       neo-tree = {
         enable = true;
       };
-
 
       # TODO: check why I need these plugins; configure them
       todo-comments.enable = true;
@@ -114,12 +113,10 @@
       which-key.enable = true;
       illuminate.enable = true;
 
-      # TODO: add keybinding to toggle trouble
       trouble.enable = true;
 
       web-devicons.enable = true;
 
-      # TODO: Add keybinding to toggle terminal
       toggleterm = {
         enable = true;
         settings = {
@@ -188,6 +185,7 @@
 
         servers = {
 
+          # TODO: make sure rust environment is currently set up
           rust_analyzer = {
             enable = true;
             installCargo = true;
@@ -198,6 +196,7 @@
             };
           };
 
+          # TODO: make sure haskell environment is currently set up
           hls = {
             enable = true;
             installGhc = true;
@@ -206,6 +205,7 @@
                 plugin = {
                   stan.globalOn = true;
                 };
+                # TODO: configure formatter for Haskell
                 formattingProvider = "none";
                 checkProject = true;
               };
@@ -254,15 +254,6 @@
       vim.opt.colorcolumn = "80"
       vim.opt.cursorline = true
       vim.opt.wrap = true
-
-
-      vim.keymap.set('n', 'K', function()
-        vim.lsp.buf.hover()
-      end)
-
-      vim.keymap.set('n', '<leader>fm', function()
-        vim.lsp.buf.format({ async = true })
-      end)
     '';
   };
 
@@ -271,13 +262,16 @@
     fzf
 
     # Rust tools
+    # TODO: verify if they are required, make lsp define required packages
     rustc
     cargo
     clippy
     rustfmt
     rust-analyzer
 
+
     # Haskell tools
+    # TODO: verify if they are required, make lsp define required packages
     ghc
     cabal-install
     stack
@@ -289,6 +283,8 @@
     nixd
     nixfmt-rfc-style
 
+
+    # TODO: verify if they are required, make lsp define required packages
     pnpm
     nodejs
     nodePackages.typescript
@@ -296,6 +292,7 @@
     nodePackages.ts-node
     nodePackages.eslint
 
+    # TODO: verify if they are required, make lsp define required packages
     python3
     python3Packages.pip
     python3Packages.black

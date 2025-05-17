@@ -18,33 +18,44 @@
     };
   };
 
+  
+  # TODO: use flake utils to create configuration for multiple hosts
+  #   
+  #   MacOs module should only install tooling, no desktop environment
 
-  # https://github.com/r6t/nixos-r6t/blob/main/hosts/saguaro/configuration.nix
-
-  # make host like this
 
   outputs = { nixpkgs, home-manager, ... }@inputs: 
   let
 
+    # TODO: modularise keybindings for IDEs
+    # TODO: modularise environment variables
+    # TODO: modularise environment aliases
+    # TODO: modularise environment functions
     
     mkMachine = hostName: systemArch: machineConfiguration: 
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
 
-        specialArgs = 
-          let 
-            vimLeaderKey = " ";
-            myUtils = {
-                nvim = {
-                  mkCommand = cmd: "<cmd>"++cmd++"<cr>";
-                  leader = vimLeaderKey;
-                  mkLeaderKeyBind = keys: "<leader"++keys;
-                };
+        # TODO: pass input configuration to all other modules
 
-            };
-          in 
-            inputs // { inherit hostName; } // myUtils;
+        specialArgs = inputs // { inherit hostName; }; 
+
+          # TODO: create small nix library to help write functionality
+
+
+          # // myUtils;
+          # let 
+          #
+          #   myUtils = {
+          #       nvim = {
+          #         mkCommand = cmd: "<cmd>"++cmd++"<cr>";
+          #         leader = " ";
+          #         mkLeaderKeyBind = keys: "<leader"++keys;
+          #       };
+          #
+          #   };
+          # in 
 
         modules = [
           
@@ -55,6 +66,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
+
+            # TODO: add special arguments to all home manager modules
 
             home-manager.users.xecarlox = {
               imports = [
@@ -69,6 +82,8 @@
   in {
 
     nixosConfigurations = {
+
+      # TODO: prepare MacOs configuration adapter
 
       nixos = mkMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 

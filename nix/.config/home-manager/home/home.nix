@@ -1,7 +1,6 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 {
 
-  # Let Home Manager install and manage itself.
   programs = {
     home-manager = {
       enable = true;
@@ -27,21 +26,19 @@
   
   home = {
 
-    # Home Manager needs a bit of information about you and the paths it should
-    # manage.
     username = "xecarlox";
     homeDirectory = "/home/xecarlox";
 
 
     enableNixpkgsReleaseCheck = false;
 
-    # The home.packages option allows you to install Nix packages into your
-    # environment.
     packages = with pkgs; [
 
-      git
       coreutils
 
+      git
+
+      # TODO: configure this module separately
       yazi
 
       vim
@@ -50,7 +47,9 @@
       git
       stow
 
+      # TODO: configure this module separately
       firefox
+      # TODO: configure this module separately
       brave
 
       ripgrep
@@ -70,6 +69,7 @@
       pavucontrol
       # rofi
 
+      # TODO: configure this module separately
       alacritty
       kitty
 
@@ -93,7 +93,7 @@
     ];
 
 
-    # TODO: output config files to a specific folder to be managed by nix
+    # TODO: output config toml/json to be input for Nix configuration
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
@@ -111,33 +111,15 @@
     };
 
 
-    # TODO: Move environment variables to nix
-
-
-    # Home Manager can also manage your environment variables through
-    # 'home.sessionVariables'. These will be explicitly sourced when using a
-    # shell provided by Home Manager. If you don't want to manage your shell
-    # through Home Manager then you have to manually source 'hm-session-vars.sh'
-    # located at either
-    #
-    #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-    #
-    # or
-    #
-    #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-    #
-    # or
-    #
-    #  /etc/profiles/per-user/xecarlox/etc/profile.d/hm-session-vars.sh
-    #
     sessionVariables = {
-      # EDITOR = "emacs";
+      EDITOR = "nvim";
     };
 
 
     stateVersion = "24.11"; # Dont change
   };
 
+  # TODO: make this optional for non-desktop configurations
   xsession = {
     enable = true;
     windowManager = {
