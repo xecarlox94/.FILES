@@ -125,8 +125,11 @@ in
         };
       };
 
-      # TODO: check why I need these plugins; configure them
+      # TODO: extend keywords
+      # TODO: add keywords
       todo-comments.enable = true;
+
+      # TODO: check why I need these plugins; configure them
       comment.enable = true;
       indent-blankline.enable = true;
       gitsigns.enable = true;
