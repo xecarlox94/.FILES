@@ -1,8 +1,11 @@
 {
   pkgs,
+  utils,
   ...
 }:
-# let f = myUtils.nvim.mkCommand; in
+let 
+  vimUtils = utils.vim;
+in
 {
   programs.nixvim = {
 
@@ -19,18 +22,19 @@
     };
 
     keymaps = [
+      # TODO: IMPORTANT remake old keybindings to VIM and Neovim
       {
         mode = [ "n" ];
-        key = "<leader>cn";
-        action = "<cmd>e ~/.config/home-manager/home/nixvim.nix<cr>";
+        key = vimUtils.mkLKeyBind "cn";
+        action = vimUtils.mkCmdAction "e ~/.config/home-manager/home/nixvim.nix";
         options = {
           desc = "edit nixvim configuration";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>tl";
-        action = "<cmd>TodoTrouble<cr>";
+        key = vimUtils.mkLKeyBind "tl";
+        action = vimUtils.mkCmdAction "TodoTrouble";
         options = {
           desc = "List project todos";
         };
@@ -87,12 +91,22 @@
 
       telescope = {
         enable = true;
-        keymaps = {
-          "<leader>ff" = "find_files";
-          "<leader>fg" = "live_grep";
-          "<leader>fb" = "buffers";
-          "<leader>fh" = "help_tags";
-        };
+        keymaps = 
+          let
+            listPairs = [
+              { k= "ff"; v="find_files"; }
+              { k= "fg"; v="live_grep"; }
+              { k= "fb"; v="buffers"; }
+              { k= "fh"; v="help_tags"; }
+            ];
+          in
+            builtins.listToAttrs 
+              ( map 
+                ( v: { name = vimUtils.mkLKeyBind v.k; value = v.v; } 
+                ) 
+                listPairs 
+              );
+
         extensions = {
           fzf-native.enable = true;
           file-browser.enable = true;
@@ -102,6 +116,13 @@
       # TODO: configure keybiding, add default keybinding
       neo-tree = {
         enable = true;
+        enableDiagnostics = true;
+        enableModifiedMarkers = true;
+
+        window = {
+          position = "right";
+          width = 30;
+        };
       };
 
       # TODO: check why I need these plugins; configure them

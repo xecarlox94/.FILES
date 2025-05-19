@@ -10,6 +10,7 @@
     # TODO: move configuration from bash to zsh
     zsh = {
       enable = true;
+
     };
 
     # TODO: configure tmux to work with zsh

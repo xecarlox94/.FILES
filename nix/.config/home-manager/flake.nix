@@ -69,6 +69,11 @@
 
             # TODO: add special arguments to all home manager modules
 
+            home-manager.extraSpecialArgs = {
+              inherit hostName;
+              utils = import ./lib;
+            };
+
             home-manager.users.xecarlox = {
               imports = [
                 ./home/home.nix
