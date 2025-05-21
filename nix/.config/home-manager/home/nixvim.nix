@@ -141,6 +141,8 @@ in
 
       web-devicons.enable = true;
 
+      # TODO: add tui keybinding strategy
+      # TODO: add gitui keybinding
       toggleterm = {
         enable = true;
         settings = {
@@ -190,7 +192,7 @@ in
       lsp = {
         enable = true;
 
-        inlayHints.enable = true;
+        # inlayHints.enable = true;
 
         keymaps = {
           diagnostic = {

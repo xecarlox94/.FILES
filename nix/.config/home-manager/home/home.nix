@@ -18,6 +18,10 @@
       enable = true;
     };
 
+    gitui = {
+      enable = true;
+    };
+
   };
 
   imports = [

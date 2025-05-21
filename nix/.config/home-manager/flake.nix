@@ -32,8 +32,6 @@
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
 
-    # TODO: add GitUi to neovim terminal
-    
     mkMachine = hostName: systemArch: machineConfiguration: 
       nixpkgs.lib.nixosSystem {
 
