@@ -31,6 +31,8 @@
     # TODO: modularise environment variables
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
+
+    # TODO: add GitUi to neovim terminal
     
     mkMachine = hostName: systemArch: machineConfiguration: 
       nixpkgs.lib.nixosSystem {
@@ -42,20 +44,6 @@
         specialArgs = inputs // { inherit hostName; }; 
 
           # TODO: create small nix library to help write functionality
-
-
-          # // myUtils;
-          # let 
-          #
-          #   myUtils = {
-          #       nvim = {
-          #         mkCommand = cmd: "<cmd>"++cmd++"<cr>";
-          #         leader = " ";
-          #         mkLeaderKeyBind = keys: "<leader"++keys;
-          #       };
-          #
-          #   };
-          # in 
 
         modules = [
           
