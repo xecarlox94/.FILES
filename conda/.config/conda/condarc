@@ -1,8 +1,0 @@
-auto_activate_base: false
-
-conda-build:
-  root-dir: /home/user/.local/share/conda/conda-bld
-envs_dirs:
-  - ${XDG_DATA_HOME}/conda/envs
-pkgs_dirs:
-  - ${XDG_CACHE_HOME}/conda/pkgs
