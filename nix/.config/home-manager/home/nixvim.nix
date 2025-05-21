@@ -189,6 +189,9 @@ in
 
       lsp = {
         enable = true;
+
+        inlayHints.enable = true;
+
         keymaps = {
           diagnostic = {
             "<leader>j" = "goto_next";
