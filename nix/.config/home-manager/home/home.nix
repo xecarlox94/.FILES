@@ -13,15 +13,15 @@
 
       coreutils
 
-      # TODO: configure this module separately
+      # FIX: configure this module separately
       yazi
 
       zathura
       stow
 
-      # TODO: configure this module separately
+      # FIX: configure this module separately
       firefox
-      # TODO: configure this module separately
+      # FIX: configure this module separately
       brave
 
       ripgrep
@@ -41,7 +41,7 @@
       pavucontrol
       # rofi
 
-      # TODO: configure this module separately
+      # FIX: configure this module separately
       alacritty
       kitty
 
@@ -65,7 +65,7 @@
     ];
 
 
-    # TODO: output config toml/json to be input for Nix configuration
+    # TODO: output config factory to be input for Nix configuration
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
@@ -102,15 +102,63 @@
       enable = true;
     };
 
+    bash = {
+      enable = true;
+    };
 
     # TODO: move configuration from bash to zsh
     zsh = {
       enable = true;
     };
 
+    # FIX: adding this to npmrc
+    #
+    # npm = {
+    #   npmrc = ''
+    #     prefix=$\{XDG_DATA_HOME}/npm
+    #     cache=$\{XDG_CACHE_HOME}/npm
+    #     init-module=$\{XDG_CONFIG_HOME}/npm/config/npm-init.js
+    #   '';
+    # };
+
     # TODO: configure tmux to work with zsh
     tmux = {
       enable = true;
+      extraConfig = ''
+        set-option -g history-limit 10000
+
+        set -g mouse on
+
+        set -g base-index 1
+        setw -g pane-base-index 1
+
+        setw -g renumber-windows on
+
+        set -g default-shell $SHELL
+
+        set -g default-terminal "tmux-256color"
+
+
+        unbind C-b
+        set-option -g prefix C-Space
+        bind C-Space send-prefix
+
+
+        bind i split-window -hc "#{pane_current_path}"
+        unbind '"'
+
+        bind - split-window -vc "#{pane_current_path}"
+        unbind %
+
+        bind c new-window -c "#{pane_current_path}"
+
+        bind r source $XDG_CONFIG_HOME/tmux/tmux.conf
+
+        bind Space last-window
+
+
+        setw -g mode-keys vi
+      '';
     };
 
     gitui = {
@@ -121,6 +169,8 @@
       enable = true;
       userEmail = "jf94.uk@gmail.com";
       userName = "xecarlox94";
+      # FIX: adding settings to config
+      #
       # config = {
       #   init = {
       #     defaultBranch = "master";
