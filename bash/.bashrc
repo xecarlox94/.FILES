@@ -1,7 +1,6 @@
 #!/bin/sh
 
 
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -158,9 +157,8 @@ mkdir_if_not_exists $XDG_TEMPLATES_DIR
 mkdir_if_not_exists $XDG_VIDEOS_DIR
 mkdir_if_not_exists $XDG_PUBLICSHARE_DIR
 
-add_path $HOME/.config/emacs/bin
-
-export PATH=$HOME/.config/emacs/bin:$PATH
+# add_path $HOME/.config/emacs/bin
+# export PATH=$HOME/.config/emacs/bin:$PATH
 
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=
