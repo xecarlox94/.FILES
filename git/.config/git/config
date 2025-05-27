@@ -1,9 +1,0 @@
-[user]
-    name = xecarlox94
-    email = jf94.uk@gmail.com
-
-[init]
-	defaultBranch = master
-
-[core]
-  editor = "$EDITOR"
