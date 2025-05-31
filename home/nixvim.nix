@@ -3,7 +3,7 @@
   utils,
   ...
 }:
-let 
+let
   vimUtils = utils.vim;
 in
 {
@@ -20,7 +20,7 @@ in
       shiftwidth = 2;
       swapfile = false;
     };
-    
+
 
     keymaps = [
       # TODO: IMPORTANT remake old keybindings to VIM and Neovim
@@ -92,7 +92,7 @@ in
 
       telescope = {
         enable = true;
-        keymaps = 
+        keymaps =
           let
             listPairs = [
               { k= "ff"; v="find_files"; }
@@ -101,11 +101,11 @@ in
               { k= "fh"; v="help_tags"; }
             ];
           in
-            builtins.listToAttrs 
-              ( map 
-                ( v: { name = vimUtils.mkLKeyBind v.k; value = v.v; } 
-                ) 
-                listPairs 
+            builtins.listToAttrs
+              ( map
+                ( v: { name = vimUtils.mkLKeyBind v.k; value = v.v; }
+                )
+                listPairs
               );
 
         extensions = {
@@ -218,8 +218,8 @@ in
           # TODO: make sure rust environment is currently set up
           rust_analyzer = {
             enable = true;
-            installCargo = true;
-            installRustc = true;
+            # installCargo = true;
+            # installRustc = true;
             settings = {
               lens.enable = true;
               inlayHints.enable = true;
@@ -229,7 +229,7 @@ in
           # TODO: make sure haskell environment is currently set up
           hls = {
             enable = true;
-            installGhc = true;
+            # installGhc = true;
             settings = {
               haskell = {
                 plugin = {
@@ -401,8 +401,6 @@ in
 
     # Rust tools
     # TODO: verify if they are required, make lsp define required packages
-    rustc
-    cargo
     clippy
     rustfmt
     rust-analyzer
@@ -410,9 +408,6 @@ in
 
     # Haskell tools
     # TODO: verify if they are required, make lsp define required packages
-    ghc
-    cabal-install
-    stack
     haskellPackages.hlint
     haskellPackages.haskell-language-server
     haskellPackages.haskell-debug-adapter
