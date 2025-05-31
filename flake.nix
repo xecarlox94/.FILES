@@ -5,7 +5,7 @@
   description = "Local machine configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     nixvim = {
       url = "github:nix-community/nixvim";

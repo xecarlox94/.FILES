@@ -4,7 +4,6 @@
 
 {
   pkgs,
-  lib,
   ...
 }:
 {
@@ -53,6 +52,8 @@
 
   services = {
 
+    pulseaudio.enable = false;
+
     emacs = {
       enable = true;
       package = pkgs.emacs;
@@ -71,14 +72,14 @@
 
     libinput.enable = true;
 
+    # Desktop Environment.
+    displayManager = {
+      gdm.enable = true;
+    };
+
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
-
-      # Desktop Environment.
-      displayManager = {
-        gdm.enable = true;
-      };
 
       # Cinnammon
       desktopManager = {
@@ -115,8 +116,7 @@
   # Configure console keymap
   console.keyMap = "uk";
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  # evaluation warning: The option `services.xserver.displayManager.gdm.enable' defined in `/nix/store/62qfbm4j1cy213rmfx8x740imvrf7mk7-source/machines/laptop-hp/configuration.nix' has been renamed to `services.displayManager.gdm.enable'.
 
   # Set your time zone.
   time.timeZone = "Europe/London";

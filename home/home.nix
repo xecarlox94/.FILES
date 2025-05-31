@@ -40,8 +40,10 @@
       unzip
       p7zip
 
+      # FIX: fix font import
+      #
       # It is sometimes useful to fine-tune packages, for example, by applying overrides. You can do that directly here
-      (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
 
       (pkgs.writeShellScriptBin "commit" ''
@@ -100,6 +102,8 @@
     file = {
       # Building this configuration will create a copy of 'dotfiles/screenrc' in the Nix store. Activating the configuration will then make '~/.screenrc' a symlink to the Nix store copy.
       # ".screenrc".source = dotfiles/screenrc;
+
+
     };
 
     stateVersion = "24.11"; # Dont change
