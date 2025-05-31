@@ -3,6 +3,8 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
+  pkgs,
+  lib,
   ...
 }:
 {
@@ -21,8 +23,15 @@
     options = "--delete-older-than 7d";
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (import (builtins.fetchTarball {
+        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+        sha256 = "sha256:17av9vaiwi1jxvv8qjmv272i6pchmhnjm1pn4m89l8i1qy1m8hf5";
+      }))
+    ];
+  };
 
   virtualisation.docker = {
     enable = true;
@@ -43,6 +52,11 @@
   };
 
   services = {
+
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
 
     # Enable CUPS to print documents.
     pipewire = {
@@ -97,7 +111,6 @@
       "docker"
     ];
   };
-
 
   # Configure console keymap
   console.keyMap = "uk";

@@ -18,13 +18,13 @@
     };
   };
 
-  
+
   # TODO: use flake utils to create configuration for multiple hosts
-  #   
+  #
   #   MacOs module should only install tooling, no desktop environment
 
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let
 
     # TODO: modularise keybindings for IDEs
@@ -32,19 +32,19 @@
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
 
-    mkMachine = hostName: systemArch: machineConfiguration: 
+    mkMachine = hostName: systemArch: machineConfiguration:
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
 
         # TODO: pass input configuration to all other modules
 
-        specialArgs = inputs // { inherit hostName; }; 
+        specialArgs = inputs // { inherit hostName; };
 
           # TODO: create small nix library to help write functionality
 
         modules = [
-          
+
           machineConfiguration
 
           home-manager.nixosModules.home-manager
