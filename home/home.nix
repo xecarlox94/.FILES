@@ -16,22 +16,18 @@
       coreutils
 
       # FIX: configure this module separately
-      firefox
-      # FIX: configure this module separately
       brave
 
+
+      # TODO: include these tools in workflow
       ripgrep
       fd
       fzf
 
-      dmenu
-
       pavucontrol
-      # rofi
 
       # FIX: configure this module separately
       alacritty
-      kitty
 
       flameshot
 
@@ -121,6 +117,70 @@
     };
 
     nushell = {
+      enable = true;
+    };
+
+    # FIX: configure this module separately
+    firefox = {
+      enable = true;
+      profiles.default = {  # Define a default profile
+        # TODO: check this configuration
+        #
+        # https://github.com/TLATER/dotfiles/blob/b39af91fbd13d338559a05d69f56c5a97f8c905d/home-config/config/graphical-applications/firefox.nix
+        # extensions = with pkgs; [
+        #   nur.repos.rycee.firefox-addons.ublock-origin  # Example: UBlock Origin
+        #   nur.repos.rycee.firefox-addons.privacy-badger  # Example: Privacy Badger
+        # ];
+        extensions = with pkgs; [
+          nur.repos.rycee.firefox-addons.floccus
+          nur.repos.rycee.firefox-addons.kagi-search
+          nur.repos.rycee.firefox-addons.keepassxc-browser
+          nur.repos.rycee.firefox-addons.multi-account-containers
+          nur.repos.rycee.firefox-addons.ublacklist
+        ];
+        settings = {
+          "browser.startup.homepage" = "https://google.com";
+          "network.cookie.httpsOnly" = true;
+
+          "dom.security.https_only_mode" = true;
+          "dom.security.https_only_mode_ever_enabled" = true;
+
+          "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+          "browser.newtabpage.activity-stream.telemetry" = false;
+          "browser.ping-centre.telemetry" = false;
+          "toolkit.telemetry.archive.enabled" = false;
+          "toolkit.telemetry.bhrPing.enabled" = false;
+          "toolkit.telemetry.enabled" = false;
+          "toolkit.telemetry.firstShutdownPing.enabled" = false;
+          "toolkit.telemetry.hybridContent.enabled" = false;
+          "toolkit.telemetry.newProfilePing.enabled" = false;
+          "toolkit.telemetry.reportingpolicy.firstRun" = false;
+          "toolkit.telemetry.shutdownPingSender.enabled" = false;
+          "toolkit.telemetry.unified" = false;
+          "toolkit.telemetry.updatePing.enabled" = false;
+
+          "experiments.activeExperiment" = false;
+          "experiments.enabled" = false;
+          "experiments.supported" = false;
+          "network.allow-experiments" = false;
+
+          "privacy.donottrackheader.enabled" = true;
+          "privacy.trackingprotection.enabled" = true;
+          "privacy.trackingprotection.socialtracking.enabled" = true;
+          "privacy.partition.network_state.ocsp_cache" = true;
+
+          "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+          "extensions.pocket.enabled" = false;
+          "extensions.pocket.api" = "";
+          "extensions.pocket.oAuthConsumerKey" = "";
+          "extensions.pocket.showHome" = false;
+          "extensions.pocket.site" = "";
+        };
+      };
+    };
+
+
+    rofi = {
       enable = true;
     };
 
