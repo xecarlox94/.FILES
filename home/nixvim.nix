@@ -90,6 +90,10 @@ in
 
       };
 
+      orgmode = {
+        enable = true;
+      };
+
       telescope = {
         enable = true;
         keymaps =

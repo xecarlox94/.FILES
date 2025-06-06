@@ -25,10 +25,11 @@
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
-      (import (builtins.fetchTarball {
-        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        sha256 = "sha256:1g6m472kcha514xql53pny43fxdlmn68v9ymc12mkmima4prlk0c";
-      }))
+      # (import (builtins.fetchTarball {
+      #   url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      #   sha256 = "sha256:1yfqnw34l5pv17k4hhj1hmsra3nckysxsapi5qi5xbfard32igqj";
+      #
+      # }))
     ];
   };
 

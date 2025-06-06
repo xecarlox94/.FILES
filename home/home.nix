@@ -130,14 +130,12 @@
         # extensions = with pkgs; [
         #   nur.repos.rycee.firefox-addons.ublock-origin  # Example: UBlock Origin
         #   nur.repos.rycee.firefox-addons.privacy-badger  # Example: Privacy Badger
+          # nur.repos.rycee.firefox-addons.floccus
+          # nur.repos.rycee.firefox-addons.kagi-search
+          # nur.repos.rycee.firefox-addons.keepassxc-browser
+          # nur.repos.rycee.firefox-addons.multi-account-containers
+          # nur.repos.rycee.firefox-addons.ublacklist
         # ];
-        extensions = with pkgs; [
-          nur.repos.rycee.firefox-addons.floccus
-          nur.repos.rycee.firefox-addons.kagi-search
-          nur.repos.rycee.firefox-addons.keepassxc-browser
-          nur.repos.rycee.firefox-addons.multi-account-containers
-          nur.repos.rycee.firefox-addons.ublacklist
-        ];
         settings = {
           "browser.startup.homepage" = "https://google.com";
           "network.cookie.httpsOnly" = true;
@@ -258,6 +256,20 @@
       #     defaultBranch = "master";
       #   };
       # };
+    };
+
+    zellij = {
+      enable = true;
+      settings	= {
+        defaul_mode = "locked";
+      };
+
+      # attachExistingSession	= "";
+      # enableBashIntegration	= "";
+      # enableFishIntegration	= "";
+      # enableZshIntegration	= "";
+      # exitShellOnExit	= "";
+      # themes= "";
     };
 
     vim = {
