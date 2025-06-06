@@ -192,6 +192,12 @@
     };
 
 
+    doom-emacs = {
+      enable = true;
+      doomDir = ../doom/;
+    };
+
+
     # TODO: configure tmux to work with zsh
     tmux = {
       enable = true;
@@ -260,8 +266,8 @@
 
     zellij = {
       enable = true;
-      settings	= {
-        defaul_mode = "locked";
+      settings = {
+        default_mode = "locked"; # FIX:
       };
 
       # attachExistingSession	= "";

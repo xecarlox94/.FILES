@@ -16,6 +16,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+    nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
   };
 
 
@@ -64,6 +67,7 @@
               imports = [
                 ./home/home.nix
                 inputs.nixvim.homeManagerModules.nixvim
+                inputs.nix-doom-emacs-unstraightened.homeModule
               ];
             };
           }
