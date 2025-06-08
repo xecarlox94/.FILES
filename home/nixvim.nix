@@ -415,8 +415,6 @@ in
     haskellPackages.hlint
     haskellPackages.haskell-language-server
     haskellPackages.haskell-debug-adapter
-    haskellPackages.zlib
-    zlib
     cabal-install
     ghc
 

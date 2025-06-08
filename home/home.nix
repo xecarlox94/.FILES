@@ -13,6 +13,10 @@
 
     packages = with pkgs; [
 
+      pkgs.haskellPackages.zlib
+      zlib
+      zlib.dev
+
       coreutils
 
       # FIX: configure this module separately

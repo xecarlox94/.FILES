@@ -16,6 +16,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  environment.systemPackages = [
+    pkgs.zlib
+  ];
 
   nix.gc = {
     automatic = true;
