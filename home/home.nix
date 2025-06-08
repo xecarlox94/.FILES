@@ -192,10 +192,12 @@
     };
 
 
-    doom-emacs = {
-      enable = true;
-      doomDir = ../doom/;
-    };
+    # FIX: doom emacs instalation
+
+    # doom-emacs = {
+    #   enable = true;
+    #   doomDir = ../doom;
+    # };
 
 
     # TODO: configure tmux to work with zsh

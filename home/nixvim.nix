@@ -222,8 +222,8 @@ in
           # TODO: make sure rust environment is currently set up
           rust_analyzer = {
             enable = true;
-            # installCargo = true;
-            # installRustc = true;
+            installCargo = true;
+            installRustc = true;
             settings = {
               lens.enable = true;
               inlayHints.enable = true;
@@ -233,7 +233,7 @@ in
           # TODO: make sure haskell environment is currently set up
           hls = {
             enable = true;
-            # installGhc = true;
+            installGhc = true;
             settings = {
               haskell = {
                 plugin = {
@@ -415,6 +415,7 @@ in
     haskellPackages.hlint
     haskellPackages.haskell-language-server
     haskellPackages.haskell-debug-adapter
+    cabal-install
 
     nil
     nixd
