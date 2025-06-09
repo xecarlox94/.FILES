@@ -403,7 +403,13 @@
   # TODO: make this optional for non-desktop configurations
   xsession = {
     enable = true;
-    windowManager = {
+    windowManager =
+      let
+        # TODO: use environment shell cmds and variables
+        # FIX: move spawn launcher outside of config
+        exec_program_launcher = "rofi -show run";
+
+      in {
       xmonad = {
         enable = true;
         enableContribAndExtras = true;
@@ -416,13 +422,9 @@
               { terminal  = "alacritty"
               }
               `additionalKeys`
-              [ ((mod1Mask,               xK_p     ), spawn "rofi -show run")
+              [ ((mod1Mask,               xK_p     ), spawn "${exec_program_launcher}")
               ]
         '';
-
-        # TODO: use environment shell cmds and variables
-        # FIX: move spawn launcher outside of config
-
       };
     };
   };
