@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   environment.systemPackages = [
-    pkgs.zlib
+    # pkgs.emacs-git # pkgs.emacsGcc
   ];
 
   nix.gc = {
@@ -28,13 +28,25 @@
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
-      # (import (builtins.fetchTarball {
-      #   url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      #   sha256 = "sha256:1yfqnw34l5pv17k4hhj1hmsra3nckysxsapi5qi5xbfard32igqj";
-      #
-      # }))
+      (import (builtins.fetchTarball {
+        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+        sha256 = "sha256:0j0wc80mvqaavkbqb2ipnnmvxcpjy7lx7f9ck0g97hkk2gf5cr8j";
+
+      }))
     ];
   };
+
+  # dconf.settings = {
+  #   "org/virt-manager/virt-manager/connections" = {
+  #     autoconnect = ["qemu:///system"];
+  #     uris = ["qemu:///system"];
+  #   };
+  # };
+
+  programs.virt-manager.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  # virtualisation.spiceUSBRedirection.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -107,14 +119,18 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.xecarlox = {
-    isNormalUser = true;
-    description = "xecarlox";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
+  users = {
+    users.xecarlox = {
+      isNormalUser = true;
+      description = "xecarlox";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "libvirt"
+      ];
+    };
+    # groups.libvirtd.members = ["xecarlox"];
   };
 
   # Configure console keymap

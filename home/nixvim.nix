@@ -45,6 +45,8 @@ in
 
     plugins = {
 
+      rustaceanvim.enable = true;
+
       treesitter = {
 
         enable = true;
@@ -219,16 +221,6 @@ in
 
         servers = {
 
-          # TODO: make sure rust environment is currently set up
-          rust_analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-            settings = {
-              lens.enable = true;
-              inlayHints.enable = true;
-            };
-          };
 
           # TODO: make sure haskell environment is currently set up
           hls = {
@@ -238,6 +230,26 @@ in
               haskell = {
                 plugin = {
                   stan.globalOn = true;
+                  eval.globalOn = true;
+                  hlint.globalOn = true;
+                  gadt.globalOn = true;
+                  class.globalOn = true;
+                  rename.globalOn = true;
+                  cabal.globalOn = true;
+                  cabal-fmt.globalOn = true;
+                  module-name.globalOn = true;
+                  code-range.globalOn = true;
+                  selection-range.globalOn = true;
+                  refine-imports.globalOn = true;
+                  explicit-fixity.globalOn = true;
+                  call-hierarchy.globalOn = true;
+                  haddock-comments.globalOn = true;
+                  explicit-imports.globalOn = true;
+                  overloaded-record.globalOn = true;
+                  qualify-imported-names.globalOn = true;
+                  tactics.globalOn = true;
+                  pragmas.globalOn = true;
+                  refactor.globalOn = true;
                 };
                 # TODO: configure formatter for Haskell
                 formattingProvider = "none";

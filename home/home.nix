@@ -13,9 +13,8 @@
 
     packages = with pkgs; [
 
-      pkgs.haskellPackages.zlib
-      zlib
-      zlib.dev
+
+      texliveBasic
 
       coreutils
 
@@ -64,6 +63,10 @@
 
     # TODO: output config factory to be input for Nix configuration
 
+
+    sessionPath = [
+      "$HOME/.config/emacs/bin"
+    ];
 
     sessionVariables = {
       XDG_CONFIG_HOME="$HOME/.config";
@@ -406,13 +409,19 @@
         enableContribAndExtras = true;
         config = pkgs.writeText "xmonad.hs" ''
           import XMonad
+          import XMonad.Util.EZConfig
 
           main :: IO()
-          main = xmonad (def
+          main = xmonad $ def
               { terminal  = "alacritty"
-              })
+              }
+              `additionalKeys`
+              [ ((mod1Mask,               xK_p     ), spawn "rofi -show run")
+              ]
         '';
 
+        # TODO: use environment shell cmds and variables
+        # FIX: move spawn launcher outside of config
 
       };
     };
