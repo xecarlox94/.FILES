@@ -130,20 +130,10 @@
     # FIX: configure this module separately
     firefox = {
       enable = true;
+
       profiles.default = {  # Define a default profile
-        # TODO: check this configuration
-        #
-        # https://github.com/TLATER/dotfiles/blob/b39af91fbd13d338559a05d69f56c5a97f8c905d/home-config/config/graphical-applications/firefox.nix
-        # extensions = with pkgs; [
-        #   nur.repos.rycee.firefox-addons.ublock-origin  # Example: UBlock Origin
-        #   nur.repos.rycee.firefox-addons.privacy-badger  # Example: Privacy Badger
-          # nur.repos.rycee.firefox-addons.floccus
-          # nur.repos.rycee.firefox-addons.kagi-search
-          # nur.repos.rycee.firefox-addons.keepassxc-browser
-          # nur.repos.rycee.firefox-addons.multi-account-containers
-          # nur.repos.rycee.firefox-addons.ublacklist
-        # ];
         settings = {
+          "browser.tabs.tabmanager.enabled" = false;
           "browser.startup.homepage" = "https://google.com";
           "network.cookie.httpsOnly" = true;
 
@@ -180,6 +170,22 @@
           "extensions.pocket.oAuthConsumerKey" = "";
           "extensions.pocket.showHome" = false;
           "extensions.pocket.site" = "";
+        };
+
+
+        # TODO: check this configuration
+        #
+        # https://github.com/TLATER/dotfiles/blob/b39af91fbd13d338559a05d69f56c5a97f8c905d/home-config/config/graphical-applications/firefox.nix
+        # extensions = with pkgs; [
+        #   nur.repos.rycee.firefox-addons.ublock-origin  # Example: UBlock Origin
+        #   nur.repos.rycee.firefox-addons.privacy-badger  # Example: Privacy Badger
+          # nur.repos.rycee.firefox-addons.floccus
+          # nur.repos.rycee.firefox-addons.kagi-search
+          # nur.repos.rycee.firefox-addons.keepassxc-browser
+          # nur.repos.rycee.firefox-addons.multi-account-containers
+          # nur.repos.rycee.firefox-addons.ublacklist
+        # ];
+        settings = {
         };
       };
     };

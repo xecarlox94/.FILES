@@ -45,7 +45,37 @@ in
 
     plugins = {
 
-      rustaceanvim.enable = true;
+      # rust-tools = {
+      #   enable = true;
+      # };
+      #
+      # rustaceanvim = {
+      #   enable = true;
+      #   # settings =
+      #   #   {
+      #   #     server = {
+      #   #       cmd = [
+      #   #         "rustup"
+      #   #         "run"
+      #   #         "nightly"
+      #   #         "rust-analyzer"
+      #   #       ];
+      #   #       default_settings = {
+      #   #         rust-analyzer = {
+      #   #           check = {
+      #   #             command = "clippy";
+      #   #           };
+      #   #           inlayHints = {
+      #   #             lifetimeElisionHints = {
+      #   #               enable = "always";
+      #   #             };
+      #   #           };
+      #   #         };
+      #   #       };
+      #   #       standalone = false;
+      #   #     };
+      #     };
+      # };
 
       treesitter = {
 
@@ -221,6 +251,12 @@ in
 
         servers = {
 
+          # TODO: make sure rust environment is currently set up
+          rust_analyzer = {
+            enable = true;
+            installCargo = true;
+            installRustc = true;
+          };
 
           # TODO: make sure haskell environment is currently set up
           hls = {
@@ -419,7 +455,6 @@ in
     # TODO: verify if they are required, make lsp define required packages
     clippy
     rustfmt
-    rust-analyzer
 
 
     # Haskell tools
