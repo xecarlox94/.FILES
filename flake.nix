@@ -84,7 +84,7 @@
 
       nixos = mkMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 
-      # thinkcenter = mkMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
+      thinkcenter = mkMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
 
     };
 
