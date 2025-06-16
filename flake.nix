@@ -5,7 +5,7 @@
   description = "Local machine configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -16,15 +16,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+    # nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
+
   };
 
-  
+
   # TODO: use flake utils to create configuration for multiple hosts
-  #   
+  #
   #   MacOs module should only install tooling, no desktop environment
 
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let
 
     # TODO: modularise keybindings for IDEs
@@ -32,19 +36,19 @@
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
 
-    mkMachine = hostName: systemArch: machineConfiguration: 
+    mkMachine = hostName: systemArch: machineConfiguration:
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
 
         # TODO: pass input configuration to all other modules
 
-        specialArgs = inputs // { inherit hostName; }; 
+        specialArgs = inputs // { inherit hostName; };
 
           # TODO: create small nix library to help write functionality
 
         modules = [
-          
+
           machineConfiguration
 
           home-manager.nixosModules.home-manager
@@ -64,6 +68,7 @@
               imports = [
                 ./home/home.nix
                 inputs.nixvim.homeManagerModules.nixvim
+                  # inputs.nix-doom-emacs-unstraightened.homeModule
               ];
             };
           }

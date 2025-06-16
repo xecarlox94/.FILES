@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
+  pkgs,
   ...
 }:
 {
@@ -15,14 +16,37 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  environment.systemPackages = [
+    # pkgs.emacs-git # pkgs.emacsGcc
+  ];
 
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (import (builtins.fetchTarball {
+        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+        sha256 = "sha256:05d30jg5zgkb9lcp4xmifk4iwav0nxv5kynnf5ws8y16dlfd1ja4";
+
+      }))
+    ];
+  };
+
+  # dconf.settings = {
+  #   "org/virt-manager/virt-manager/connections" = {
+  #     autoconnect = ["qemu:///system"];
+  #     uris = ["qemu:///system"];
+  #   };
+  # };
+
+  programs.virt-manager.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  # virtualisation.spiceUSBRedirection.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -44,6 +68,13 @@
 
   services = {
 
+    pulseaudio.enable = false;
+
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
+
     # Enable CUPS to print documents.
     pipewire = {
       enable = true;
@@ -57,14 +88,14 @@
 
     libinput.enable = true;
 
+    # Desktop Environment.
+    displayManager = {
+      gdm.enable = true;
+    };
+
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
-
-      # Desktop Environment.
-      displayManager = {
-        gdm.enable = true;
-      };
 
       # Cinnammon
       desktopManager = {
@@ -88,22 +119,24 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.xecarlox = {
-    isNormalUser = true;
-    description = "xecarlox";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
+  users = {
+    users.xecarlox = {
+      isNormalUser = true;
+      description = "xecarlox";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "libvirt"
+      ];
+    };
+    # groups.libvirtd.members = ["xecarlox"];
   };
-
 
   # Configure console keymap
   console.keyMap = "uk";
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  # evaluation warning: The option `services.xserver.displayManager.gdm.enable' defined in `/nix/store/62qfbm4j1cy213rmfx8x740imvrf7mk7-source/machines/laptop-hp/configuration.nix' has been renamed to `services.displayManager.gdm.enable'.
 
   # Set your time zone.
   time.timeZone = "Europe/London";
