@@ -84,11 +84,20 @@
   users.users.xecarlox = {
     isNormalUser = true;
     description = "xecarlox";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "docker" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -99,9 +108,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     git
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    ledger-udev-rules
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

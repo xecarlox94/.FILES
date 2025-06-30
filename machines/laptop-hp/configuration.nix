@@ -16,8 +16,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # pkgs.emacs-git # pkgs.emacsGcc
+
+    ledger-udev-rules
   ];
 
   nix.gc = {

@@ -13,7 +13,6 @@
 
     packages = with pkgs; [
 
-      ledger-udev-rules
       ledger-live-desktop
 
       texliveBasic
