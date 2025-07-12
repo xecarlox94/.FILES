@@ -45,6 +45,7 @@
       # It is sometimes useful to fine-tune packages, for example, by applying overrides. You can do that directly here
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
+      arandr
 
       (pkgs.writeShellScriptBin "commit" ''
           if [ $# -ge 1 ]
