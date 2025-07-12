@@ -98,7 +98,6 @@
     shellAliases = {
       gst="git status";
       gp="git push";
-      siu="sudo";
       sd="sudo shutdown now";
       rb="reboot";
       v="nvim";
@@ -141,12 +140,10 @@
           "git-extras"
           "vi-mode"
           "history"
-          "you-should-use" # NOTE: to review
           "sudo"
           "web-search" # NOTE: to review
           "extract" # NOTE: to review
           "colored-man-pages"
-          "fzf"
         ];
       };
     };
