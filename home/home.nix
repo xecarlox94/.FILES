@@ -83,7 +83,7 @@
       NIX_CONFIG="experimental-features = nix-command flakes";
 
       EDITOR = "nvim";
-      SHELL="nu";
+      SHELL="zsh";
       TERM="alacritty";
       PAGER="less";
     };
@@ -115,12 +115,42 @@
 
   programs = {
 
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion = {
+        enable = true;
+      };
+      autocd = true;
+      syntaxHighlighting = {
+        enable = true;
+      };
+      oh-my-zsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "git-auto-fetch"
+          "git-commit" # NOTE: to review
+          "git-extras"
+          "vi-mode"
+          "history"
+          "zsh-you-should-use"
+          "sudo"
+          "web-search" # NOTE: to review
+          "extract" # NOTE: to review
+          "colored-man-pages"
+          "fzf"
+        ];
+      };
+    };
+
     home-manager = {
       enable = true;
     };
 
     nushell = {
       enable = true;
+      # FIX: need to configure it as the shell scripting platform of choice
     };
 
     # FIX: configure this module separately
