@@ -24,6 +24,12 @@
       ripgrep
       fd
       fzf
+      silver-searcher
+
+      gurk-rs
+
+      # TODO: Email client
+      # https://github.com/pimalaya/himalaya
 
       pavucontrol
 
@@ -45,6 +51,7 @@
       (pkgs.writeShellScriptBin "commit" ''
           if [ $# -ge 1 ]
           then
+              git fetch --all &&\
               git status &&\
               git add . &&\
               git commit -m "$1" &&\
@@ -134,7 +141,7 @@
           "git-extras"
           "vi-mode"
           "history"
-          "zsh-you-should-use"
+          "you-should-use" # NOTE: to review
           "sudo"
           "web-search" # NOTE: to review
           "extract" # NOTE: to review
