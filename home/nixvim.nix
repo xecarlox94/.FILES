@@ -36,7 +36,7 @@ in
         key = vimUtils.mkLKeyBind "tl";
         action = vimUtils.mkCmdAction "TodoTrouble";
         options = {
-          desc = "List project todos";
+          desc = "List Project Issues";
         };
       }
 
@@ -84,10 +84,7 @@ in
             haskell
             json
             lua
-            make
             markdown
-            typescript
-            javascript
             nix
             regex
             toml
@@ -101,19 +98,12 @@ in
             "rust"
             "haskell"
             "nix"
-            "typescript"
-            "javascript"
-            "python"
             "markdown"
             "vim"
             "vimdoc"
           ];
         };
 
-      };
-
-      orgmode = {
-        enable = true;
       };
 
       telescope = {
@@ -167,13 +157,13 @@ in
       # TODO: extend keywords
       # TODO: add keywords
       todo-comments.enable = true;
+      comment.enable = true;
+      which-key.enable = true;
 
       # TODO: check why I need these plugins; configure them
-      comment.enable = true;
       indent-blankline.enable = true;
       gitsigns.enable = true;
       lualine.enable = true;
-      which-key.enable = true;
       illuminate.enable = true;
 
       trouble.enable = true;
@@ -254,14 +244,6 @@ in
 
         servers = {
 
-          # TODO: make sure rust environment is currently set up
-          # rust_analyzer = {
-          #   enable = true;
-          #   installCargo = true;
-          #   installRustc = true;
-          # };
-
-          # TODO: make sure haskell environment is currently set up
           hls = {
             enable = true;
             installGhc = true;
@@ -299,21 +281,6 @@ in
 
           nil_ls.enable = true;
           nixd.enable = true;
-
-          ts_ls.enable = true;
-          eslint.enable = true;
-
-          pyright = {
-            enable = true;
-            settings = {
-              analysis = {
-                typeCheckingMode = "basic";
-                autoSearchPaths = true;
-                useLibraryCodeForTypes = true;
-                diagnosticMode = "workspace";
-              };
-            };
-          };
 
           html.enable = true;
           jsonls.enable = true;
@@ -448,45 +415,10 @@ in
 
       autocmd BufWritePre * %s/\s\+$//e
     '';
+
   };
 
   home.packages = with pkgs; [
-
     fzf
-
-    # Rust tools
-    # TODO: verify if they are required, make lsp define required packages
-    # clippy
-    # rustfmt
-
-    # Haskell tools
-    # TODO: verify if they are required, make lsp define required packages
-    haskellPackages.hlint
-    haskellPackages.haskell-language-server
-    haskellPackages.haskell-debug-adapter
-    cabal-install
-    ghc
-
-    nil
-    nixd
-    nixfmt-rfc-style
-
-    # TODO: verify if they are required, make lsp define required packages
-    pnpm
-    nodejs
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.ts-node
-    nodePackages.eslint
-
-    # TODO: verify if they are required, make lsp define required packages
-    python3
-    python3Packages.pip
-    python3Packages.black
-    python3Packages.flake8
-    python3Packages.isort
-    # python3Packages.pyright                             # Fix debug
-    python3Packages.debugpy
-
   ];
 }

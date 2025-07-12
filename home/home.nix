@@ -19,9 +19,6 @@
 
       coreutils
 
-      # FIX: configure this module separately
-      brave
-
 
       # TODO: include these tools in workflow
       ripgrep
@@ -32,8 +29,6 @@
 
       # FIX: configure this module separately
       alacritty
-
-      flameshot
 
       # archives
       zip
@@ -116,7 +111,6 @@
 
   imports = [
     ./nixvim.nix
-    ./tmux.nix
   ];
 
   programs = {
@@ -215,44 +209,6 @@
     # };
 
 
-    # TODO: configure tmux to work with zsh
-    tmux = {
-      enable = true;
-      extraConfig = ''
-
-        set-option -g history-limit 10000
-
-        set -g mouse on
-
-        set -g base-index 1
-        setw -g pane-base-index 1
-
-        setw -g renumber-windows on
-
-        set -g default-shell $SHELL
-
-        set -g default-terminal "tmux-256color"
-
-        unbind C-b
-        set-option -g prefix C-Space
-        bind C-Space send-prefix
-
-        bind i split-window -hc "#{pane_current_path}"
-        unbind '"'
-
-        bind - split-window -vc "#{pane_current_path}"
-        unbind %
-
-        bind c new-window -c "#{pane_current_path}"
-
-        # bind r source $XDG_CONFIG_HOME/tmux/tmux.conf
-
-        bind Space last-window
-
-        setw -g mode-keys vi
-      '';
-    };
-
     gitui = {
       enable = true;
     };
@@ -261,7 +217,7 @@
     yazi = {
       enable = true;
       settings = {
-        manager = {
+        mgr = {
           show_hidden = true;
           sort_dir_first = true;
         };
@@ -307,7 +263,7 @@
         set tm=500
         set clipboard+=unnamedplus
         set smartindent
-        "set autoindent
+        set autoindent
         set smartcase
         set ignorecase
         set nowrap
