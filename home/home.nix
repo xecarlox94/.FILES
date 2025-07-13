@@ -163,6 +163,9 @@
       enable = true;
 
       profiles.default = {  # Define a default profile
+        id=0;
+        name="default";
+        isDefault=true;
         settings = {
           "browser.tabs.tabmanager.enabled" = false;
           "browser.startup.homepage" = "https://google.com";
