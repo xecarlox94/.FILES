@@ -144,6 +144,7 @@
           "web-search" # NOTE: to review
           "extract" # NOTE: to review
           "colored-man-pages"
+          # "zsh-you-should-use"
         ];
       };
     };
