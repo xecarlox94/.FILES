@@ -41,10 +41,13 @@
       unzip
       p7zip
 
+      # pdf viewer
+      zathura
+
       # matrix, irc, rss
       element-desktop
       halloy
-      feedr
+      russ
 
       qbittorrent
 
