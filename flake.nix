@@ -36,7 +36,7 @@
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
 
-    mkMachine = hostName: systemArch: machineConfiguration:
+    mkLinuxMachine = hostName: systemArch: machineConfiguration:
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
@@ -82,9 +82,9 @@
       # TODO: prepare MacOs configuration adapter
 
 
-      nixos = mkMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
+      nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 
-      thinkcenter = mkMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
+      thinkcenter = mkLinuxMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
 
     };
 
