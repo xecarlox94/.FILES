@@ -17,11 +17,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nur = {
     #   url = "github:nix-community/NUR";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    # FIX: try doom emacs nix-doom-emacs-unstraightened
     # nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     # nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
 
@@ -33,7 +39,7 @@
   #   MacOs module should only install tooling, no desktop environment
 
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
   let
 
     # TODO: modularise keybindings for IDEs
@@ -66,9 +72,13 @@
 
             home-manager.users.xecarlox = {
               imports = [
+                nixvim.homeManagerModules.nixvim
+                stylix.homeModules.stylix
+
+                # FIX: try doom emacs nix-doom-emacs-unstraightened
+                # inputs.nix-doom-emacs-unstraightened.homeModule
+
                 ./home/home.nix
-                inputs.nixvim.homeManagerModules.nixvim
-                  # inputs.nix-doom-emacs-unstraightened.homeModule
               ];
             };
           }
@@ -76,6 +86,9 @@
       };
 
   in {
+
+    # TODO: study this confiduration
+    # https://github.com/dbeley/nixos-config/blob/main/flake.nix
 
     nixosConfigurations = {
 

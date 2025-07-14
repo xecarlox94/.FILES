@@ -1,6 +1,37 @@
 { config, pkgs, ... }:
 {
 
+  stylix = {
+    enable = true;
+    image = pkgs.fetchurl {
+      url = "https://c4.wallpaperflare.com/wallpaper/971/171/781/windows-10-simple-microsoft-windows-black-background-wallpaper-preview.jpg";
+      hash = "sha256-to+6H9bYUBZnMFdy6uQy7iQfpYWZA7CO84zWxdhoxK4=";
+    };
+    polarity = "dark";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      # "application/pdf" = "org.gnome.Evince.desktop";
+      # "application/zip" = "org.gnome.FileRoller.desktop";
+      # "image/png" = "org.gnome.eog.desktop";
+      # "image/bmp" = "org.gnome.eog.desktop";
+      # "image/jpeg" = "org.gnome.eog.desktop";
+      # "image/svg+xml" = "org.gnome.eog.desktop";
+      "video/mp4" = "mpv.desktop";
+      "video/quicktime" = "mpv.desktop";
+    };
+  };
+
+  xdg.desktopEntries.thunderbird = {
+    name = "Thunderbird";
+    exec = "thunderbird %U";
+    terminal = false;
+    categories = [ "Application" "Network" "Chat" "Email" ];
+    mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
+  };
+
   home = {
 
     username = "xecarlox";
@@ -185,6 +216,70 @@
     nushell = {
       enable = true;
       # FIX: need to configure it as the shell scripting platform of choice
+    };
+
+    rofi = {
+      enable = true;
+    };
+
+    bash = {
+      enable = true;
+    };
+
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
+
+
+    # FIX: doom emacs instalation
+
+    # doom-emacs = {
+    #   enable = true;
+    #   doomDir = ../doom;
+    # };
+
+
+    gitui = {
+      enable = true;
+    };
+
+    # FIX: add editor automatic opening
+    yazi = {
+      enable = true;
+      settings = {
+        mgr = {
+          show_hidden = true;
+          sort_dir_first = true;
+        };
+      };
+    };
+
+    git = {
+      enable = true;
+      userEmail = "jf94.uk@gmail.com";
+      userName = "xecarlox94";
+      # FIX: adding settings to config
+      #
+      # config = {
+      #   init = {
+      #     defaultBranch = "master";
+      #   };
+      # };
+    };
+
+    zellij = {
+      enable = true;
+      settings = {
+        default_mode = "locked"; # FIX:
+      };
+
+      # attachExistingSession	= "";
+      # enableBashIntegration	= "";
+      # enableFishIntegration	= "";
+      # enableZshIntegration	= "";
+      # exitShellOnExit	= "";
+      # themes= "";
     };
 
     qutebrowser = {
@@ -433,7 +528,6 @@
           "privacy.trackingprotection.enabled" = true;
           "privacy.trackingprotection.socialtracking.enabled" = true;
           "privacy.userContext.enabled" = true;
-          "privacy.userContext.extension" = "@testpilot-containers";
           "privacy.userContext.ui.enabled" = true;
           "privacy.window.maxInnerHeigth" = 900;
           "privacy.window.maxInnerWidth" = 1600;
@@ -469,70 +563,6 @@
       };
     };
 
-
-    rofi = {
-      enable = true;
-    };
-
-    bash = {
-      enable = true;
-    };
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
-
-
-    # FIX: doom emacs instalation
-
-    # doom-emacs = {
-    #   enable = true;
-    #   doomDir = ../doom;
-    # };
-
-
-    gitui = {
-      enable = true;
-    };
-
-    # FIX: add editor automatic opening
-    yazi = {
-      enable = true;
-      settings = {
-        mgr = {
-          show_hidden = true;
-          sort_dir_first = true;
-        };
-      };
-    };
-
-    git = {
-      enable = true;
-      userEmail = "jf94.uk@gmail.com";
-      userName = "xecarlox94";
-      # FIX: adding settings to config
-      #
-      # config = {
-      #   init = {
-      #     defaultBranch = "master";
-      #   };
-      # };
-    };
-
-    zellij = {
-      enable = true;
-      settings = {
-        default_mode = "locked"; # FIX:
-      };
-
-      # attachExistingSession	= "";
-      # enableBashIntegration	= "";
-      # enableFishIntegration	= "";
-      # enableZshIntegration	= "";
-      # exitShellOnExit	= "";
-      # themes= "";
-    };
 
     vim = {
       enable = true;
@@ -645,28 +675,6 @@
       '';
     };
 
-  };
-
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      # "application/pdf" = "org.gnome.Evince.desktop";
-      # "application/zip" = "org.gnome.FileRoller.desktop";
-      # "image/png" = "org.gnome.eog.desktop";
-      # "image/bmp" = "org.gnome.eog.desktop";
-      # "image/jpeg" = "org.gnome.eog.desktop";
-      # "image/svg+xml" = "org.gnome.eog.desktop";
-      "video/mp4" = "mpv.desktop";
-      "video/quicktime" = "mpv.desktop";
-    };
-  };
-
-  xdg.desktopEntries.thunderbird = {
-    name = "Thunderbird";
-    exec = "thunderbird %U";
-    terminal = false;
-    categories = [ "Application" "Network" "Chat" "Email" ];
-    mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
   };
 
   # TODO: make this optional for non-desktop configurations
