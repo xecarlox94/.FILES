@@ -4,11 +4,41 @@
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
-      url = "https://c4.wallpaperflare.com/wallpaper/971/171/781/windows-10-simple-microsoft-windows-black-background-wallpaper-preview.jpg";
-      hash = "sha256-to+6H9bYUBZnMFdy6uQy7iQfpYWZA7CO84zWxdhoxK4=";
+      url = "https://images.unsplash.com/photo-1552083375-1447ce886485?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww";
+      hash = "sha256-JzsFGj/nP5J4zddbRI74O2+lHbeDStRYH+15U/sSW3Y=";
     };
+    imageScalingMode = "tile";
     polarity = "dark";
+    fonts = {
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+
+      monospace = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+    opacity = {
+      applications = 0.9;
+      desktop = 0.9;
+      popups = 0.9;
+      terminal = 0.9;
+    };
+    targets.nixvim.enable = false;
   };
+
 
   xdg.mimeApps = {
     enable = true;
@@ -146,7 +176,7 @@
       NIX_STATE_HOME_DIR="$XDG_STATE_HOME/nix";
       NIX_CONFIG="experimental-features = nix-command flakes";
 
-      EDITOR = "nvim";
+      EDITOR = "vim";
       SHELL="zsh";
       TERM="alacritty";
       PAGER="less";
@@ -273,13 +303,11 @@
       settings = {
         default_mode = "locked"; # FIX:
       };
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+      attachExistingSession = true;
 
-      # attachExistingSession	= "";
-      # enableBashIntegration	= "";
-      # enableFishIntegration	= "";
-      # enableZshIntegration	= "";
-      # exitShellOnExit	= "";
-      # themes= "";
+      exitShellOnExit	= true;
     };
 
     qutebrowser = {
