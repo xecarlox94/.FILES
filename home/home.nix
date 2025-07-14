@@ -26,7 +26,6 @@
       fzf
       silver-searcher
 
-      gurk-rs
 
       # TODO: Email client
       # https://github.com/pimalaya/himalaya
@@ -42,8 +41,20 @@
       unzip
       p7zip
 
+      # matrix, irc, rss
       element-desktop
       halloy
+      feedr
+
+      qbittorrent
+
+      # Signal, choose the best one
+      signal-desktop
+      gurk-rs
+
+      libreoffice
+      mpv
+      vlc
 
       # FIX: fix font import
       #
@@ -201,6 +212,7 @@
           "toolkit.telemetry.shutdownPingSender.enabled" = false;
           "toolkit.telemetry.unified" = false;
           "toolkit.telemetry.updatePing.enabled" = false;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "privacy.donottrackheader.enabled" = true;
           "privacy.trackingprotection.enabled" = true;
           "privacy.trackingprotection.socialtracking.enabled" = true;
@@ -403,6 +415,28 @@
       '';
     };
 
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      # "application/pdf" = "org.gnome.Evince.desktop";
+      # "application/zip" = "org.gnome.FileRoller.desktop";
+      # "image/png" = "org.gnome.eog.desktop";
+      # "image/bmp" = "org.gnome.eog.desktop";
+      # "image/jpeg" = "org.gnome.eog.desktop";
+      # "image/svg+xml" = "org.gnome.eog.desktop";
+      "video/mp4" = "mpv.desktop";
+      "video/quicktime" = "mpv.desktop";
+    };
+  };
+
+  xdg.desktopEntries.thunderbird = {
+    name = "Thunderbird";
+    exec = "thunderbird %U";
+    terminal = false;
+    categories = [ "Application" "Network" "Chat" "Email" ];
+    mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
   };
 
   # TODO: make this optional for non-desktop configurations
