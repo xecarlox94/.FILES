@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # nur = {
+    #   url = "github:nix-community/NUR";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     # nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
 
@@ -35,17 +40,14 @@
     # TODO: modularise environment variables
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
+    utils = import ./lib;
 
     mkLinuxMachine = hostName: systemArch: machineConfiguration:
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
 
-        # TODO: pass input configuration to all other modules
-
         specialArgs = inputs // { inherit hostName; };
-
-          # TODO: create small nix library to help write functionality
 
         modules = [
 
@@ -57,11 +59,9 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
 
-            # TODO: add special arguments to all home manager modules
-
             home-manager.extraSpecialArgs = {
               inherit hostName;
-              utils = import ./lib;
+              inherit utils;
             };
 
             home-manager.users.xecarlox = {
@@ -81,11 +81,9 @@
 
       # TODO: prepare MacOs configuration adapter
 
-
       nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 
       thinkcenter = mkLinuxMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
-
     };
 
   };
