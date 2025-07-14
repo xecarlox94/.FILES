@@ -175,6 +175,9 @@
       };
     };
 
+    # TODO: to setup something like this
+    # https://github.com/mitchellh/nixos-config/blob/main/pkgs/1password.nix
+
     home-manager = {
       enable = true;
     };
@@ -182,6 +185,76 @@
     nushell = {
       enable = true;
       # FIX: need to configure it as the shell scripting platform of choice
+    };
+
+    qutebrowser = {
+      enable = true;
+
+      settings = {
+            url.default_page = "https://startpage.com";
+            content = {
+              headers.do_not_track = true;
+              default_encoding = "utf-8";
+              blocking.adblock.lists = [
+                "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2024.txt"
+                "https://easylist.to/easylist/easylist.txt"
+                "https://secure.fanboy.co.nz/fanboy-annoyance.txt"
+                "https://easylist.to/easylist/easyprivacy.txt"
+                "https://easylist-downloads.adblockplus.org/liste_fr.txt"
+                "https://easylist-downloads.adblockplus.org/ruadlist.txt"
+                "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+              ];
+            };
+            editor = {
+              command = [
+                "$SHELL"
+                "-e"
+                "nvim"
+                "{}"
+              ];
+            };
+            downloads = {
+              position = "bottom";
+              location.directory = "$HOME/Downloads";
+            };
+            scrolling.smooth = false;
+            statusbar = {
+              show = "in-mode";
+              position = "bottom";
+              widgets = [
+                "keypress"
+                "search_match"
+                "url"
+                "scroll"
+                "history"
+                "tabs"
+                "progress"
+                "clock:%H:%M"
+              ];
+            };
+            tabs = {
+              show = "multiple";
+              position = "top";
+              new_position.related = "next";
+              new_position.unrelated = "next";
+            };
+          };
+          keyBindings = {
+            normal = {
+              # ",M" = "spawn ~/scripts/umpv.py {url}";
+              # ",m" = "hint links spawn ~/scripts/umpv.py {hint-url}";
+              # ";m" = "hint --rapid links spawn ~/scripts/umpv.py {hint-url}";
+            };
+          };
+          searchEngines = {
+            "DEFAULT" = "https://www.startpage.com/do/search?query={}";
+            "s" = "https://www.startpage.com/do/search?query={}";
+            "yt" = "https://youtube.com/results?search_query={}";
+            "g" = "https://www.google.com/search?q={}";
+            "qw" = "https://qwant.com/?q={}&t=web";
+            "qwi" = "https://qwant.com/?q={}&t=images";
+            "gi" = "https://www.google.com/search?q={}&tbm=isch";
+          };
     };
 
     # FIX: configure this module separately
