@@ -182,9 +182,9 @@
           "network.cookie.httpsOnly" = true;
 
           "browser.tabs.tabmanager.enabled" = false;
-          "browser.startup.homepage" = "https://google.com";
-          "extensions.pocket.enabled" = false;
+          "browser.startup.homepage" = "https://www.startpage.com/";
 
+          "extensions.pocket.enabled" = false;
 
           "experiments.activeExperiment" = false;
           "experiments.enabled" = false;
