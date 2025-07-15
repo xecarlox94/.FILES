@@ -16,10 +16,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.udev.packages = [
-    pkgs.ledger-udev-rules
-  ];
-
   environment.systemPackages = with pkgs; [
     # pkgs.emacs-git # pkgs.emacsGcc
   ];
@@ -27,6 +23,29 @@
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
+  };
+
+  # Configure console keymap
+  console.keyMap = "uk";
+
+  # Set your time zone.
+  time.timeZone = "Europe/London";
+
+  # Select internationalisation properties.
+  i18n = {
+    defaultLocale = "en_GB.UTF-8";
+
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_GB.UTF-8";
+      LC_IDENTIFICATION = "en_GB.UTF-8";
+      LC_MEASUREMENT = "en_GB.UTF-8";
+      LC_MONETARY = "en_GB.UTF-8";
+      LC_NAME = "en_GB.UTF-8";
+      LC_NUMERIC = "en_GB.UTF-8";
+      LC_PAPER = "en_GB.UTF-8";
+      LC_TELEPHONE = "en_GB.UTF-8";
+      LC_TIME = "en_GB.UTF-8";
+    };
   };
 
   nixpkgs = {
@@ -64,7 +83,7 @@
   networking = {
 
     hostName = "nixos"; # Define your hostname.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Enable networking
     networkmanager.enable = true;
@@ -72,6 +91,11 @@
   };
 
   services = {
+
+    udev.packages = [
+      pkgs.ledger-udev-rules
+    ];
+
 
     pulseaudio.enable = false;
 
@@ -128,37 +152,9 @@
     users.xecarlox = {
       isNormalUser = true;
       description = "xecarlox";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-        "docker"
-        "libvirt"
-      ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" ];
     };
     # groups.libvirtd.members = ["xecarlox"];
-  };
-
-  # Configure console keymap
-  console.keyMap = "uk";
-
-  # evaluation warning: The option `services.xserver.displayManager.gdm.enable' defined in `/nix/store/62qfbm4j1cy213rmfx8x740imvrf7mk7-source/machines/laptop-hp/configuration.nix' has been renamed to `services.displayManager.gdm.enable'.
-
-  # Set your time zone.
-  time.timeZone = "Europe/London";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_GB.UTF-8";
-    LC_IDENTIFICATION = "en_GB.UTF-8";
-    LC_MEASUREMENT = "en_GB.UTF-8";
-    LC_MONETARY = "en_GB.UTF-8";
-    LC_NAME = "en_GB.UTF-8";
-    LC_NUMERIC = "en_GB.UTF-8";
-    LC_PAPER = "en_GB.UTF-8";
-    LC_TELEPHONE = "en_GB.UTF-8";
-    LC_TIME = "en_GB.UTF-8";
   };
 
   system.stateVersion = "24.11"; # Did you read the comment?
