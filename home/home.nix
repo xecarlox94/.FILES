@@ -7,7 +7,8 @@
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
-      url = "https://images.unsplash.com/photo-1552083375-1447ce886485?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww";
+      url = "https://images.pexels.com/photos/409696/pexels-photo-409696.jpeg";
+
       hash = "sha256-JzsFGj/nP5J4zddbRI74O2+lHbeDStRYH+15U/sSW3Y=";
     };
     polarity = "dark";
