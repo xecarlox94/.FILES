@@ -9,7 +9,7 @@
     image = pkgs.fetchurl {
       url = "https://images.pexels.com/photos/409696/pexels-photo-409696.jpeg";
 
-      hash = "sha256-JzsFGj/nP5J4zddbRI74O2+lHbeDStRYH+15U/sSW3Y=";
+      hash = "sha256-PUUIl3NyWxdUlgA7RW308fS/aPimZkLZo/qPheDzGKg=";
     };
     polarity = "dark";
     # imageScalingMode = "tile";
