@@ -3,7 +3,17 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
+let
 
+  # setup_cmd = xrandr_cmd: ''
+  #   ${xrandr_cmd} \
+  #     --output DP-1 --off --output HDMI-1 --off \
+  #     --output DP-2 --off --output HDMI-2 --mode 1920x1080 --pos 1200x0 --rotate normal \
+  #     --output DP-3 --off --output HDMI-3 --mode 1920x1200 --pos 0x0 --rotate right
+  #   '';
+  #
+  # setup_displays = pkgs.writeShellScriptBin "thinkcenter_set_displays" (setup_cmd "xrandr");
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -90,6 +100,9 @@
     # Desktop Environment.
     displayManager = {
       gdm.enable = true;
+
+      # FIX: xrandr setup
+      # setupCommands = setup_cmd pkgs.xorg.xrandr;
     };
 
 

@@ -141,7 +141,7 @@
         ''
       )
 
-      (pkgs.writeShellScriptBin "thinkcenter_set_displays" ''
+      (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
         xrandr \
           --output DP-1 --off --output HDMI-1 --off \
           --output DP-2 --off --output HDMI-2 --mode 1920x1080 --pos 1200x0 --rotate normal \
