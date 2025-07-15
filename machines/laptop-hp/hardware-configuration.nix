@@ -24,6 +24,8 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  hardware.ledger.enable = true;
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/296475e3-8614-4e2f-b638-723b52d2e7d9"; }
     ];

@@ -92,6 +92,7 @@
 
   services = {
 
+    # https://github.com/NixOS/nixpkgs/issues/71201
     udev.packages = [
       pkgs.ledger-udev-rules
     ];
