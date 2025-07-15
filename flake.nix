@@ -17,7 +17,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # TODO: investigate if this is safe
+    # nur = {
+    #   url = "github:nix-community/NUR";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # FIX: install doom emacs (OR EMACS)
+    # FIX: try doom emacs nix-doom-emacs-unstraightened
     # nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     # nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
 
@@ -29,24 +41,21 @@
   #   MacOs module should only install tooling, no desktop environment
 
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
   let
 
     # TODO: modularise keybindings for IDEs
     # TODO: modularise environment variables
     # TODO: modularise environment aliases
     # TODO: modularise environment functions
+    utils = import ./lib;
 
-    mkMachine = hostName: systemArch: machineConfiguration:
+    mkLinuxMachine = hostName: systemArch: machineConfiguration:
       nixpkgs.lib.nixosSystem {
 
         system = systemArch;
 
-        # TODO: pass input configuration to all other modules
-
         specialArgs = inputs // { inherit hostName; };
-
-          # TODO: create small nix library to help write functionality
 
         modules = [
 
@@ -58,20 +67,23 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
 
-            # TODO: add special arguments to all home manager modules
-
             home-manager.extraSpecialArgs = {
               inherit hostName;
-              utils = import ./lib;
+              inherit utils;
             };
 
             home-manager.users.xecarlox = {
               imports = [
-                ./home/home.nix
 
                 # FIX: install nixvim as a standalone
-                inputs.nixvim.homeManagerModules.nixvim
-                  # inputs.nix-doom-emacs-unstraightened.homeModule
+                nixvim.homeManagerModules.nixvim
+                stylix.homeModules.stylix
+
+                # FIX: try doom emacs nix-doom-emacs-unstraightened
+                # inputs.nix-doom-emacs-unstraightened.homeModule
+                # inputs.nix-doom-emacs-unstraightened.homeModule
+
+                ./home/home.nix
               ];
             };
           }
@@ -80,15 +92,16 @@
 
   in {
 
+    # TODO: study this confiduration
+    # https://github.com/dbeley/nixos-config/blob/main/flake.nix
+
     nixosConfigurations = {
 
       # TODO: prepare MacOs configuration adapter
 
+      nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 
-      nixos = mkMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
-
-      thinkcenter = mkMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
-
+      thinkcenter = mkLinuxMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
     };
 
   };
