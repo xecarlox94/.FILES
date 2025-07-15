@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
 
   # FIX: how to setup monitors
@@ -10,8 +10,8 @@
       url = "https://images.unsplash.com/photo-1552083375-1447ce886485?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww";
       hash = "sha256-JzsFGj/nP5J4zddbRI74O2+lHbeDStRYH+15U/sSW3Y=";
     };
-    # imageScalingMode = "tile";
     polarity = "dark";
+    # imageScalingMode = "tile";
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
@@ -40,6 +40,9 @@
       terminal = 0.9;
     };
     targets.nixvim.enable = false;
+
+    # FIX: firefox is not correctly installed
+    # targets.firefox.profileNames = [ "default" ];
   };
 
 
@@ -84,7 +87,7 @@
       coreutils
 
 
-      # TODO: include these tools in workflow
+      # TODO: include these tools in workflow; add shell tooling integrations
       ripgrep
       fd
       fzf

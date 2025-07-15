@@ -36,18 +36,10 @@
   };
 
 
-  # TODO: use flake utils to create configuration for multiple hosts
-  #
-  #   MacOs module should only install tooling, no desktop environment
-
-
   outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
   let
 
-    # TODO: modularise keybindings for IDEs
-    # TODO: modularise environment variables
-    # TODO: modularise environment aliases
-    # TODO: modularise environment functions
+    # TODO: modularise keybindings for IDEs, variables, aliases, functions
     utils = import ./lib;
 
     mkLinuxMachine = hostName: systemArch: machineConfiguration:
@@ -97,7 +89,10 @@
 
     nixosConfigurations = {
 
-      # TODO: prepare MacOs configuration adapter
+      # TODO: Create MACOS config; prepare MacOs configuration adapter
+      #
+      #   MacOs module should only install tooling, no desktop environment
+
 
       nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 

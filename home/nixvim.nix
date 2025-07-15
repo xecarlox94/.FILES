@@ -274,7 +274,6 @@ in
                   pragmas.globalOn = true;
                   refactor.globalOn = true;
                 };
-                # TODO: configure formatter for Haskell
                 formattingProvider = "none";
                 checkProject = true;
               };
