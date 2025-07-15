@@ -36,6 +36,9 @@
   };
 
 
+  # FIX: add password management to this environment
+
+
   outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
   let
 

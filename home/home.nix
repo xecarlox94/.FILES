@@ -41,8 +41,7 @@
     };
     targets.nixvim.enable = false;
 
-    # FIX: firefox is not correctly installed
-    # targets.firefox.profileNames = [ "default" ];
+    targets.firefox.profileNames = [ "default" ];
   };
 
 
@@ -125,11 +124,6 @@
       libreoffice
       mpv
       vlc
-
-      # FIX: fix font import
-      #
-      # It is sometimes useful to fine-tune packages, for example, by applying overrides. You can do that directly here
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
       arandr
 
@@ -511,10 +505,6 @@
           # "extensions.pocket.enabled" = false;
           "findbar.highlightAll" = true;
           "fission.autostart" = true;
-          "font.default.x-western" = "serif";
-          # "font.name.monospace.x-western" = "IosevkaTerm Nerd Font Mono";
-          "font.name.sans-serif.x-western" = "Overpass";
-          "font.name.serif.x-western" = "EB Garamond";
           "full-screen-api.transition-duration.enter" = "0 0";
           "full-screen-api.transition-duration.leave" = "0 0";
           "full-screen-api.warning.delay" = -1;
