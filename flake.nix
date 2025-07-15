@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # FIX: install doom emacs (OR EMACS)
     # nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     # nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
 
@@ -67,6 +68,8 @@
             home-manager.users.xecarlox = {
               imports = [
                 ./home/home.nix
+
+                # FIX: install nixvim as a standalone
                 inputs.nixvim.homeManagerModules.nixvim
                   # inputs.nix-doom-emacs-unstraightened.homeModule
               ];
