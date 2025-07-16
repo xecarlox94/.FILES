@@ -101,6 +101,59 @@
 
       thinkcenter = mkLinuxMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
     };
-
   };
 }
+
+
+/*
+
+Nice refactoring wishes
+
+
+Add following programs:
+  Glance
+  Nix-icons
+  sxiv
+  Regreet
+  Discord
+
+Add desktop capabilities:
+  I want to be able to get a menu of most used applications
+  perhaps sort them in categories
+
+Configuration:
+  Fix floating terminal in Neovim
+  configure nushell
+  Add transparency
+     to alacritty
+     To neovim
+     To zellij
+  check stylix configs for:
+    Firefox
+    Neovim
+    Grub
+    add UseWalpaper option to DisplayManager
+  Check if there are issues with NUR
+    Need to install a few extensions
+
+Modularisation
+    Modularise big configs into their own files
+    Organise modules by
+         <System>/<DesktopEnv>
+    Modularise OS/Hardware configuration
+
+I want a system wide notification system (Working in X11 or Wayland):
+  I have heard of Dunst
+  I want something with a great interface
+
+Move to wayland:
+  Walyland
+  Waybar
+  Waylock
+  Hyperland
+
+Explore insteresting Browsers (I am happy with firefox and qutebrowser, but I am curious):
+  Zen browser
+  Lady Bird
+
+*/
