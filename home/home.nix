@@ -85,6 +85,7 @@
       texliveBasic
 
       coreutils
+      gcc
 
 
       # TODO: include these tools in workflow; add shell tooling integrations
@@ -224,16 +225,25 @@
         plugins = [
           "git"
           "git-auto-fetch"
-          "git-commit" # NOTE: to review
+          # "git-commit" # NOTE: to review
           "git-extras"
-          "vi-mode"
-          "history"
           "sudo"
-          "web-search" # NOTE: to review
-          "extract" # NOTE: to review
-          "colored-man-pages"
+          # "web-search" # NOTE: to review
+          # "extract" # NOTE: to review
           # "zsh-you-should-use"
+          "colored-man-pages"
+          "vi-mode"
         ];
+      };
+    };
+
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      enableBashIntegration = true;
+      settings = {
+        add_newline = true;
       };
     };
 

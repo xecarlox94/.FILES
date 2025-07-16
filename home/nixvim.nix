@@ -84,6 +84,8 @@ in
           grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
             bash
             haskell
+            rust
+            ocaml
             json
             lua
             markdown
@@ -99,6 +101,7 @@ in
           ensure_installed = [
             "rust"
             "haskell"
+            "ocaml"
             "nix"
             "markdown"
             "vim"
@@ -278,6 +281,10 @@ in
                 checkProject = true;
               };
             };
+          };
+
+          ocamllsp = {
+            enable = true;
           };
 
           nil_ls.enable = true;
