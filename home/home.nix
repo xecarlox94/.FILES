@@ -109,9 +109,6 @@
       unzip
       p7zip
 
-      # pdf viewer
-      zathura
-
       # matrix, irc, rss
       element-desktop
       halloy
@@ -267,18 +264,16 @@
       enable = true;
     };
 
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
-
-
     # FIX: doom emacs instalation
-
+    #
     # doom-emacs = {
     #   enable = true;
     #   doomDir = ../doom;
     # };
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
 
 
     gitui = {
@@ -319,6 +314,10 @@
       attachExistingSession = true;
 
       exitShellOnExit	= true;
+    };
+
+    sioyek = {
+      enable = true;
     };
 
     qutebrowser = {
