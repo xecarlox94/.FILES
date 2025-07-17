@@ -45,7 +45,6 @@
     targets.firefox.profileNames = [ "default" ];
   };
 
-
   # xdg.mimeApps = {
   #   enable = true;
   #   defaultApplications = {
@@ -73,7 +72,6 @@
     username = "xecarlox";
     homeDirectory = "/home/xecarlox";
 
-
     enableNixpkgsReleaseCheck = false;
 
     shell.enableNushellIntegration = true;
@@ -87,13 +85,11 @@
       coreutils
       gcc
 
-
       # TODO: include these tools in workflow; add shell tooling integrations
       ripgrep
       fd
       fzf
       silver-searcher
-
 
       # TODO: Email client
       # https://github.com/pimalaya/himalaya
@@ -127,74 +123,69 @@
       arandr
 
       (pkgs.writeShellScriptBin "commit" ''
-      if [ $# -ge 1 ]
-      then
-          git fetch --all &&\
-          git status &&\
-          git add . &&\
-          git commit -m "$1" &&\
-          git push --all origin
-        else
-          echo "ERROR"
-      fi
-        ''
-      )
+        if [ $# -ge 1 ]
+        then
+            git fetch --all &&\
+            git status &&\
+            git add . &&\
+            git commit -m "$1" &&\
+            git push --all origin
+          else
+            echo "ERROR"
+        fi
+      '')
 
       (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
         xrandr \
           --output DP-1 --off --output HDMI-1 --off \
           --output DP-2 --off --output HDMI-2 --mode 1920x1080 --pos 1200x0 --rotate normal \
           --output DP-3 --off --output HDMI-3 --mode 1920x1200 --pos 0x0 --rotate right
-        ''
-      )
+      '')
 
     ];
 
-
     # TODO: output config factory to be input for Nix configuration
-
 
     sessionPath = [
       "$HOME/.config/emacs/bin"
     ];
 
     sessionVariables = {
-      XDG_CONFIG_HOME="$HOME/.config";
-      XDG_CACHE_HOME="$HOME/.cache";
-      XDG_DATA_HOME="$HOME/.local/share";
-      XDG_STATE_HOME="$HOME/.local/state";
-      XDG_DESKTOP_DIR="$HOME/Desktop";
-      XDG_DOCUMENTS_DIR="$HOME/Documents";
-      XDG_DOWNLOAD_DIR="$HOME/Downloads";
-      XDG_MUSIC_DIR="$HOME/Music";
-      XDG_PICTURES_DIR="$HOME/Pictures";
-      XDG_TEMPLATES_DIR="$HOME/Templates";
-      XDG_VIDEOS_DIR="$HOME/Videos";
-      XDG_PUBLICSHARE_DIR="$HOME/Public";
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_DATA_HOME = "$HOME/.local/share";
+      XDG_STATE_HOME = "$HOME/.local/state";
+      XDG_DESKTOP_DIR = "$HOME/Desktop";
+      XDG_DOCUMENTS_DIR = "$HOME/Documents";
+      XDG_DOWNLOAD_DIR = "$HOME/Downloads";
+      XDG_MUSIC_DIR = "$HOME/Music";
+      XDG_PICTURES_DIR = "$HOME/Pictures";
+      XDG_TEMPLATES_DIR = "$HOME/Templates";
+      XDG_VIDEOS_DIR = "$HOME/Videos";
+      XDG_PUBLICSHARE_DIR = "$HOME/Public";
 
-      NIX_STATE_HOME_DIR="$XDG_STATE_HOME/nix";
-      NIX_CONFIG="experimental-features = nix-command flakes";
+      NIX_STATE_HOME_DIR = "$XDG_STATE_HOME/nix";
+      NIX_CONFIG = "experimental-features = nix-command flakes";
 
       EDITOR = "vim";
-      SHELL="zsh";
-      TERM="alacritty";
-      PAGER="less";
+      SHELL = "zsh";
+      TERM = "alacritty";
+      PAGER = "less";
     };
 
     shellAliases = {
-      gst="git status";
-      gp="git push";
-      sd="sudo shutdown now";
-      rb="reboot";
-      v="nvim";
-      py="python3";
-      ":q"="exit";
+      gst = "git status";
+      gp = "git push";
+      sd = "sudo shutdown now";
+      rb = "reboot";
+      v = "nvim";
+      py = "python3";
+      ":q" = "exit";
     };
 
     file = {
       # Building this configuration will create a copy of 'dotfiles/screenrc' in the Nix store. Activating the configuration will then make '~/.screenrc' a symlink to the Nix store copy.
       # ".screenrc".source = dotfiles/screenrc;
-
 
     };
 
@@ -205,12 +196,12 @@
     ./nixvim.nix
   ];
 
-  programs = {
+  services.glance = {
+    enable = true;
+    # settings = {};
+  };
 
-    glance = {
-      enable = true;
-      # settings = {};
-    };
+  programs = {
 
     zsh = {
       enable = true;
@@ -280,7 +271,6 @@
       package = pkgs.emacs;
     };
 
-
     gitui = {
       enable = true;
     };
@@ -318,7 +308,7 @@
       enableBashIntegration = true;
       attachExistingSession = true;
 
-      exitShellOnExit	= true;
+      exitShellOnExit = true;
     };
 
     sioyek = {
@@ -329,70 +319,70 @@
       enable = true;
 
       settings = {
-            url.default_page = "https://startpage.com";
-            content = {
-              headers.do_not_track = true;
-              default_encoding = "utf-8";
-              blocking.adblock.lists = [
-                "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2024.txt"
-                "https://easylist.to/easylist/easylist.txt"
-                "https://secure.fanboy.co.nz/fanboy-annoyance.txt"
-                "https://easylist.to/easylist/easyprivacy.txt"
-                "https://easylist-downloads.adblockplus.org/liste_fr.txt"
-                "https://easylist-downloads.adblockplus.org/ruadlist.txt"
-                "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
-              ];
-            };
-            editor = {
-              command = [
-                "$SHELL"
-                "-e"
-                "nvim"
-                "{}"
-              ];
-            };
-            downloads = {
-              position = "bottom";
-              location.directory = "$HOME/Downloads";
-            };
-            scrolling.smooth = false;
-            statusbar = {
-              show = "in-mode";
-              position = "bottom";
-              widgets = [
-                "keypress"
-                "search_match"
-                "url"
-                "scroll"
-                "history"
-                "tabs"
-                "progress"
-                "clock:%H:%M"
-              ];
-            };
-            tabs = {
-              show = "multiple";
-              position = "top";
-              new_position.related = "next";
-              new_position.unrelated = "next";
-            };
-          };
-          keyBindings = {
-            normal = {
-              # ",M" = "spawn ~/scripts/umpv.py {url}";
-              # ",m" = "hint links spawn ~/scripts/umpv.py {hint-url}";
-              # ";m" = "hint --rapid links spawn ~/scripts/umpv.py {hint-url}";
-            };
-          };
-          searchEngines = {
-            "DEFAULT" = "https://www.startpage.com/do/search?query={}";
-            "s" = "https://www.startpage.com/do/search?query={}";
-            "yt" = "https://youtube.com/results?search_query={}";
-            "g" = "https://www.google.com/search?q={}";
-            "qw" = "https://qwant.com/?q={}&t=web";
-            "qwi" = "https://qwant.com/?q={}&t=images";
-            "gi" = "https://www.google.com/search?q={}&tbm=isch";
-          };
+        url.default_page = "https://startpage.com";
+        content = {
+          headers.do_not_track = true;
+          default_encoding = "utf-8";
+          blocking.adblock.lists = [
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2024.txt"
+            "https://easylist.to/easylist/easylist.txt"
+            "https://secure.fanboy.co.nz/fanboy-annoyance.txt"
+            "https://easylist.to/easylist/easyprivacy.txt"
+            "https://easylist-downloads.adblockplus.org/liste_fr.txt"
+            "https://easylist-downloads.adblockplus.org/ruadlist.txt"
+            "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+          ];
+        };
+        editor = {
+          command = [
+            "$SHELL"
+            "-e"
+            "nvim"
+            "{}"
+          ];
+        };
+        downloads = {
+          position = "bottom";
+          location.directory = "$HOME/Downloads";
+        };
+        scrolling.smooth = false;
+        statusbar = {
+          show = "in-mode";
+          position = "bottom";
+          widgets = [
+            "keypress"
+            "search_match"
+            "url"
+            "scroll"
+            "history"
+            "tabs"
+            "progress"
+            "clock:%H:%M"
+          ];
+        };
+        tabs = {
+          show = "multiple";
+          position = "top";
+          new_position.related = "next";
+          new_position.unrelated = "next";
+        };
+      };
+      keyBindings = {
+        normal = {
+          # ",M" = "spawn ~/scripts/umpv.py {url}";
+          # ",m" = "hint links spawn ~/scripts/umpv.py {hint-url}";
+          # ";m" = "hint --rapid links spawn ~/scripts/umpv.py {hint-url}";
+        };
+      };
+      searchEngines = {
+        "DEFAULT" = "https://www.startpage.com/do/search?query={}";
+        "s" = "https://www.startpage.com/do/search?query={}";
+        "yt" = "https://youtube.com/results?search_query={}";
+        "g" = "https://www.google.com/search?q={}";
+        "qw" = "https://qwant.com/?q={}&t=web";
+        "qwi" = "https://qwant.com/?q={}&t=images";
+        "gi" = "https://www.google.com/search?q={}&tbm=isch";
+      };
     };
 
     # FIX: configure this module separately
@@ -416,10 +406,11 @@
         ShowHomeButton = true;
       };
 
-      profiles.default = {  # Define a default profile
-        id=0;
-        name="default";
-        isDefault=true;
+      profiles.default = {
+        # Define a default profile
+        id = 0;
+        name = "default";
+        isDefault = true;
         settings = {
           "network.cookie.httpsOnly" = true;
 
@@ -448,7 +439,7 @@
           "browser.newtabpage.activity-stream.feeds.telemetry" = false;
           "browser.newtabpage.activity-stream.telemetry" = false;
           "browser.ping-centre.telemetry" = false;
-"accessibility.force_disabled" = 1;
+          "accessibility.force_disabled" = 1;
 
           "apz.overscroll.enabled" = true;
           "beacon.enabled" = false;
@@ -586,22 +577,20 @@
           "widget.use-xdg-desktop-portal.file-picker" = 0;
         };
 
-
         # TODO: check this configuration
         #
         # https://github.com/TLATER/dotfiles/blob/b39af91fbd13d338559a05d69f56c5a97f8c905d/home-config/config/graphical-applications/firefox.nix
         # extensions = with pkgs; [
         #   nur.repos.rycee.firefox-addons.ublock-origin  # Example: UBlock Origin
         #   nur.repos.rycee.firefox-addons.privacy-badger  # Example: Privacy Badger
-          # nur.repos.rycee.firefox-addons.floccus
-          # nur.repos.rycee.firefox-addons.kagi-search
-          # nur.repos.rycee.firefox-addons.keepassxc-browser
-          # nur.repos.rycee.firefox-addons.multi-account-containers
-          # nur.repos.rycee.firefox-addons.ublacklist
+        # nur.repos.rycee.firefox-addons.floccus
+        # nur.repos.rycee.firefox-addons.kagi-search
+        # nur.repos.rycee.firefox-addons.keepassxc-browser
+        # nur.repos.rycee.firefox-addons.multi-account-containers
+        # nur.repos.rycee.firefox-addons.ublacklist
         # ];
       };
     };
-
 
     vim = {
       enable = true;
@@ -725,24 +714,25 @@
         # FIX: move spawn launcher outside of config
         exec_program_launcher = "rofi -show run";
 
-      in {
-      xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
-        config = pkgs.writeText "xmonad.hs" ''
-          import XMonad
-          import XMonad.Util.EZConfig
+      in
+      {
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+          config = pkgs.writeText "xmonad.hs" ''
+            import XMonad
+            import XMonad.Util.EZConfig
 
-          main :: IO()
-          main = xmonad $ def
-              { terminal  = "alacritty"
-              }
-              `additionalKeys`
-              [ ((mod1Mask,               xK_p     ), spawn "${exec_program_launcher}")
-              ]
-        '';
+            main :: IO()
+            main = xmonad $ def
+                { terminal  = "alacritty"
+                }
+                `additionalKeys`
+                [ ((mod1Mask,               xK_p     ), spawn "${exec_program_launcher}")
+                ]
+          '';
+        };
       };
-    };
   };
 
 }
