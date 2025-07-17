@@ -46,27 +46,27 @@
   };
 
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      # "application/pdf" = "org.gnome.Evince.desktop";
-      # "application/zip" = "org.gnome.FileRoller.desktop";
-      # "image/png" = "org.gnome.eog.desktop";
-      # "image/bmp" = "org.gnome.eog.desktop";
-      # "image/jpeg" = "org.gnome.eog.desktop";
-      # "image/svg+xml" = "org.gnome.eog.desktop";
-      "video/mp4" = "mpv.desktop";
-      "video/quicktime" = "mpv.desktop";
-    };
-  };
-
-  xdg.desktopEntries.thunderbird = {
-    name = "Thunderbird";
-    exec = "thunderbird %U";
-    terminal = false;
-    categories = [ "Application" "Network" "Chat" "Email" ];
-    mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
-  };
+  # xdg.mimeApps = {
+  #   enable = true;
+  #   defaultApplications = {
+  #     # "application/pdf" = "org.gnome.Evince.desktop";
+  #     # "application/zip" = "org.gnome.FileRoller.desktop";
+  #     # "image/png" = "org.gnome.eog.desktop";
+  #     # "image/bmp" = "org.gnome.eog.desktop";
+  #     # "image/jpeg" = "org.gnome.eog.desktop";
+  #     # "image/svg+xml" = "org.gnome.eog.desktop";
+  #     "video/mp4" = "mpv.desktop";
+  #     "video/quicktime" = "mpv.desktop";
+  #   };
+  # };
+  #
+  # xdg.desktopEntries.thunderbird = {
+  #   name = "Thunderbird";
+  #   exec = "thunderbird %U";
+  #   terminal = false;
+  #   categories = [ "Application" "Network" "Chat" "Email" ];
+  #   mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
+  # };
 
   home = {
 
@@ -206,6 +206,11 @@
   ];
 
   programs = {
+
+    glance = {
+      enable = true;
+      # settings = {};
+    };
 
     zsh = {
       enable = true;
