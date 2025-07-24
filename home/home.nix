@@ -89,8 +89,6 @@
       gcc
 
 
-      vscode
-
       flameshot
 
       # TODO: include these tools in workflow; add shell tooling integrations
