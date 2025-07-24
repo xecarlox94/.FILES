@@ -4,6 +4,9 @@
   # FIX: how to setup monitors
   # https://mynixos.com/nixpkgs/option/services.xserver.xrandrHeads
 
+
+  # FIX: ADD NERD FONTS
+
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
@@ -84,6 +87,8 @@
 
       coreutils
       gcc
+
+      flameshot
 
       # TODO: include these tools in workflow; add shell tooling integrations
       ripgrep
