@@ -80,6 +80,8 @@
 
       ledger-live-desktop
 
+      brave
+
       texliveBasic
 
       coreutils
