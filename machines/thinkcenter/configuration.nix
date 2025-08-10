@@ -3,17 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-let
-
-  # setup_cmd = xrandr_cmd: ''
-  #   ${xrandr_cmd} \
-  #     --output DP-1 --off --output HDMI-1 --off \
-  #     --output DP-2 --off --output HDMI-2 --mode 1920x1080 --pos 1200x0 --rotate normal \
-  #     --output DP-3 --off --output HDMI-3 --mode 1920x1200 --pos 0x0 --rotate right
-  #   '';
-  #
-  # setup_displays = pkgs.writeShellScriptBin "thinkcenter_set_displays" (setup_cmd "xrandr");
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -135,18 +124,18 @@ in
     extraGroups = [ "networkmanager" "docker" "wheel" ];
   };
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
+  # virtualisation.docker = {
+  #   enable = true;
+  #   rootless = {
+  #     enable = true;
+  #     setSocketVariable = true;
+  #   };
+  # };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     git
   ];
@@ -162,6 +151,8 @@ in
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs.hyprland.enable = true;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 
