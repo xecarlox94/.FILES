@@ -50,14 +50,14 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-
-      # FIX: correct EMACS instalation
-      # (import (builtins.fetchTarball { url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      #   sha256 = "sha256:1fpxrkzry23f9rssar1bm8464x0d7w7xmfjxx58gssi3m35xm2zy";
-      #
-      # }))
-    ];
+    # overlays = [
+    #
+    #   # FIX: correct EMACS instalation
+    #   # (import (builtins.fetchTarball { url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+    #   #   sha256 = "sha256:1fpxrkzry23f9rssar1bm8464x0d7w7xmfjxx58gssi3m35xm2zy";
+    #   #
+    #   # }))
+    # ];
   };
 
   # dconf.settings = {

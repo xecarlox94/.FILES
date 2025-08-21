@@ -91,6 +91,8 @@
 
       flameshot
 
+      brave
+
       # TODO: include these tools in workflow; add shell tooling integrations
       ripgrep
       fd
@@ -122,7 +124,7 @@
       signal-desktop
       gurk-rs
 
-      libreoffice
+      # libreoffice -- FIX: add this again
       mpv
       vlc
 
