@@ -297,6 +297,8 @@
       enable = true;
     };
 
+    btop.enable = true;
+
     # FIX: add editor automatic opening
     yazi = {
       enable = true;
