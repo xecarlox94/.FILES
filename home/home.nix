@@ -104,6 +104,8 @@
 
       texliveBasic
 
+      discord
+
       coreutils
       gcc
 
