@@ -71,7 +71,7 @@
               imports = [
 
                 # FIX: install nixvim as a standalone
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
                 stylix.homeModules.stylix
 
                 # FIX: try doom emacs nix-doom-emacs-unstraightened

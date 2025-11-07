@@ -30,7 +30,7 @@
       };
 
       emoji = {
-        package = pkgs.noto-fonts-emoji;
+        package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
     };
@@ -314,8 +314,11 @@
 
     git = {
       enable = true;
-      userEmail = "jf94.uk@gmail.com";
-      userName = "xecarlox94";
+
+      settings = {
+        user.email = "jf94.uk@gmail.com";
+        user.name = "xecarlox94";
+      };
       # FIX: adding settings to config
       #
       # config = {

@@ -150,12 +150,14 @@ in
       # TODO: configure keybiding, add default keybinding
       neo-tree = {
         enable = true;
-        enableDiagnostics = true;
-        enableModifiedMarkers = true;
 
-        window = {
-          position = "right";
-          width = 30;
+        settings = {
+          window = {
+            position = "right";
+            width = 30;
+          };
+          enableDiagnostics = true;
+          enableModifiedMarkers = true;
         };
       };
 
