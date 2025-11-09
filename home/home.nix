@@ -192,7 +192,7 @@
       NIX_CONFIG = "experimental-features = nix-command flakes";
 
       EDITOR = "vim";
-      SHELL = "zsh";
+      SHELL = "nu";
       TERM = "alacritty";
       PAGER = "less";
     };
@@ -203,7 +203,6 @@
       sd = "sudo shutdown now";
       rb = "reboot";
       v = "nvim";
-      py = "python3";
       ":q" = "exit";
     };
 
@@ -227,38 +226,9 @@
 
   programs = {
 
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion = {
-        enable = true;
-      };
-      autocd = true;
-      syntaxHighlighting = {
-        enable = true;
-      };
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "git-auto-fetch"
-          # "git-commit" # NOTE: to review
-          "git-extras"
-          "sudo"
-          # "web-search" # NOTE: to review
-          # "extract" # NOTE: to review
-          # "zsh-you-should-use"
-          "colored-man-pages"
-          "vi-mode"
-        ];
-      };
-    };
-
     starship = {
       enable = true;
-      enableZshIntegration = true;
       enableNushellIntegration = true;
-      enableBashIntegration = true;
       settings = {
         add_newline = true;
       };
@@ -333,8 +303,6 @@
       settings = {
         default_mode = "locked"; # FIX:
       };
-      enableZshIntegration = true;
-      enableBashIntegration = true;
       attachExistingSession = true;
 
       exitShellOnExit = true;
