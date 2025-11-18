@@ -69,6 +69,11 @@ in
         };
       };
 
+      haskell-tools = {
+        enable = true;
+        enableTelescope = true;
+      };
+
       treesitter = {
 
         enable = true;
@@ -251,39 +256,39 @@ in
 
         servers = {
 
-          hls = {
-            enable = true;
-            installGhc = true;
-            settings = {
-              haskell = {
-                plugin = {
-                  stan.globalOn = true;
-                  eval.globalOn = true;
-                  hlint.globalOn = true;
-                  gadt.globalOn = true;
-                  class.globalOn = true;
-                  rename.globalOn = true;
-                  cabal.globalOn = true;
-                  cabal-fmt.globalOn = true;
-                  module-name.globalOn = true;
-                  code-range.globalOn = true;
-                  selection-range.globalOn = true;
-                  refine-imports.globalOn = true;
-                  explicit-fixity.globalOn = true;
-                  call-hierarchy.globalOn = true;
-                  haddock-comments.globalOn = true;
-                  explicit-imports.globalOn = true;
-                  overloaded-record.globalOn = true;
-                  qualify-imported-names.globalOn = true;
-                  tactics.globalOn = true;
-                  pragmas.globalOn = true;
-                  refactor.globalOn = true;
-                };
-                formattingProvider = "none";
-                checkProject = true;
-              };
-            };
-          };
+           # hls = {
+             # enable = true;
+             # installGhc = true;
+             # settings = {
+               # haskell = {
+                 # plugin = {
+                   # stan.globalOn = true;
+                   # eval.globalOn = true;
+                   # hlint.globalOn = true;
+                   # gadt.globalOn = true;
+                   # class.globalOn = true;
+                   # rename.globalOn = true;
+                   # cabal.globalOn = true;
+                   # cabal-fmt.globalOn = true;
+                   # module-name.globalOn = true;
+                   # code-range.globalOn = true;
+                   # selection-range.globalOn = true;
+                   # refine-imports.globalOn = true;
+                   # explicit-fixity.globalOn = true;
+                   # call-hierarchy.globalOn = true;
+                   # haddock-comments.globalOn = true;
+                   # explicit-imports.globalOn = true;
+                   # overloaded-record.globalOn = true;
+                   # qualify-imported-names.globalOn = true;
+                   # tactics.globalOn = true;
+                   # pragmas.globalOn = true;
+                   # refactor.globalOn = true;
+                 # };
+                 # formattingProvider = "none";
+                 # checkProject = true;
+               # };
+             # };
+           # };
 
           ocamllsp = {
             enable = true;
