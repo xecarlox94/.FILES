@@ -156,4 +156,7 @@ Explore insteresting Browsers (I am happy with firefox and qutebrowser, but I am
   Zen browser
   Lady Bird
 
+https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=97d31fc1b6b58dbd99c01752868b95d5
+
+
 */
