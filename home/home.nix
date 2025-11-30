@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
   # FIX: how to setup monitors
@@ -33,7 +33,7 @@
       };
 
       emoji = {
-        package = pkgs.noto-fonts-emoji;
+        package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
     };
@@ -70,6 +70,26 @@
   #   mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
   # };
 
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    settings = {
+      decoration = {
+        shadow_offset = "0 5";
+        "col.shadow" = "rgba(00000099)";
+      };
+
+      "$mod" = "SUPER";
+
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+        "$mod ALT, mouse:272, resizewindow"
+      ];
+    };
+  };
+
   home = {
 
     username = "xecarlox";
@@ -83,7 +103,11 @@
 
       ledger-live-desktop
 
+      brave
+
       texliveBasic
+
+      discord
 
       coreutils
       gcc
@@ -176,7 +200,7 @@
       NIX_CONFIG = "experimental-features = nix-command flakes";
 
       EDITOR = "vim";
-      SHELL = "zsh";
+      SHELL = "nu";
       TERM = "alacritty";
       PAGER = "less";
     };
@@ -187,7 +211,6 @@
       sd = "sudo shutdown now";
       rb = "reboot";
       v = "nvim";
-      py = "python3";
       ":q" = "exit";
     };
 
@@ -211,38 +234,9 @@
 
   programs = {
 
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion = {
-        enable = true;
-      };
-      autocd = true;
-      syntaxHighlighting = {
-        enable = true;
-      };
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "git-auto-fetch"
-          # "git-commit" # NOTE: to review
-          "git-extras"
-          "sudo"
-          # "web-search" # NOTE: to review
-          # "extract" # NOTE: to review
-          # "zsh-you-should-use"
-          "colored-man-pages"
-          "vi-mode"
-        ];
-      };
-    };
-
     starship = {
       enable = true;
-      enableZshIntegration = true;
       enableNushellIntegration = true;
-      enableBashIntegration = true;
       settings = {
         add_newline = true;
       };
@@ -283,6 +277,8 @@
       enable = true;
     };
 
+    btop.enable = true;
+
     # FIX: add editor automatic opening
     yazi = {
       enable = true;
@@ -296,8 +292,11 @@
 
     git = {
       enable = true;
-      userEmail = "jf94.uk@gmail.com";
-      userName = "xecarlox94";
+
+      settings = {
+        user.email = "jf94.uk@gmail.com";
+        user.name = "xecarlox94";
+      };
       # FIX: adding settings to config
       #
       # config = {
@@ -312,8 +311,6 @@
       settings = {
         default_mode = "locked"; # FIX:
       };
-      enableZshIntegration = true;
-      enableBashIntegration = true;
       attachExistingSession = true;
 
       exitShellOnExit = true;
