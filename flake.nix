@@ -104,6 +104,8 @@
   };
 }
 
+# FIX: zellij integration with nushell
+
 
 /*
 

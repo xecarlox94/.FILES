@@ -98,10 +98,15 @@
     enableNixpkgsReleaseCheck = false;
 
     shell.enableNushellIntegration = true;
+    shell.enableZshIntegration = true;
 
     packages = with pkgs; [
 
       ledger-live-desktop
+
+      kdePackages.dolphin
+
+      teams-for-linux
 
       brave
 
@@ -112,6 +117,7 @@
       coreutils
       gcc
 
+      qbittorrent
 
       flameshot
 
@@ -141,8 +147,6 @@
       element-desktop
       halloy
       russ
-
-      qbittorrent
 
       # Signal, choose the best one
       signal-desktop
@@ -200,7 +204,7 @@
       NIX_CONFIG = "experimental-features = nix-command flakes";
 
       EDITOR = "vim";
-      SHELL = "nu";
+      SHELL = "zsh";
       TERM = "alacritty";
       PAGER = "less";
     };
@@ -237,6 +241,7 @@
     starship = {
       enable = true;
       enableNushellIntegration = true;
+      enableZshIntegration = true;
       settings = {
         add_newline = true;
       };
@@ -246,6 +251,10 @@
     # https://github.com/mitchellh/nixos-config/blob/main/pkgs/1password.nix
 
     home-manager = {
+      enable = true;
+    };
+
+    zsh = {
       enable = true;
     };
 
@@ -311,8 +320,6 @@
       settings = {
         default_mode = "locked"; # FIX:
       };
-      attachExistingSession = true;
-
       exitShellOnExit = true;
     };
 
