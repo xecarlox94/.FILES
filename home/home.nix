@@ -320,6 +320,7 @@
       settings = {
         default_mode = "locked"; # FIX:
       };
+      enableZshIntegration = true;
       exitShellOnExit = true;
     };
 
