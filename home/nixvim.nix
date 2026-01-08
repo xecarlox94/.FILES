@@ -39,8 +39,9 @@ in
           desc = "List Project Issues";
         };
       }
-
     ];
+
+    clipboard.providers.xclip.enable = true;
 
     plugins = {
 
@@ -256,40 +257,6 @@ in
 
         servers = {
 
-           # hls = {
-             # enable = true;
-             # installGhc = true;
-             # settings = {
-               # haskell = {
-                 # plugin = {
-                   # stan.globalOn = true;
-                   # eval.globalOn = true;
-                   # hlint.globalOn = true;
-                   # gadt.globalOn = true;
-                   # class.globalOn = true;
-                   # rename.globalOn = true;
-                   # cabal.globalOn = true;
-                   # cabal-fmt.globalOn = true;
-                   # module-name.globalOn = true;
-                   # code-range.globalOn = true;
-                   # selection-range.globalOn = true;
-                   # refine-imports.globalOn = true;
-                   # explicit-fixity.globalOn = true;
-                   # call-hierarchy.globalOn = true;
-                   # haddock-comments.globalOn = true;
-                   # explicit-imports.globalOn = true;
-                   # overloaded-record.globalOn = true;
-                   # qualify-imported-names.globalOn = true;
-                   # tactics.globalOn = true;
-                   # pragmas.globalOn = true;
-                   # refactor.globalOn = true;
-                 # };
-                 # formattingProvider = "none";
-                 # checkProject = true;
-               # };
-             # };
-           # };
-
           ocamllsp = {
             enable = true;
           };
@@ -321,7 +288,15 @@ in
       vim.opt.colorcolumn = "80"
       vim.opt.cursorline = true
       vim.opt.wrap = true
+
+
+      if vim.env.IN_NIX_SHELL then
+        vim.opt.shell = "bash"
+        vim.opt.shellcmdflag = "-i"
+      end
+
     '';
+
 
     extraConfigVim = ''
       "-------------------- SETTINGS
@@ -331,7 +306,6 @@ in
       set visualbell
       set t_vb=
       set tm=500
-      set clipboard+=unnamedplus
       set smartindent
       "set autoindent
       set smartcase
@@ -340,14 +314,13 @@ in
       set scrolloff=1
       set guicursor=
       set timeoutlen=10
-      set fileencoding=utf8
 
       " macros
       set lazyredraw
 
       " search
-      set regexpengine=0
-      set magic
+      "set regexpengine=0
+      "set magic
 
       " brackets
       set showmatch
@@ -355,21 +328,21 @@ in
 
       " GENERAL
       set nocompatible
-      set spelllang=en_gb
-      set encoding=utf-8
-      set bg=dark
-      set hid
-      set ffs=unix,dos,mac
+      "set spelllang=en_gb
+      "set encoding=utf-8
+      "set bg=dark
+      "set hid
+      "set ffs=unix,dos,mac
       set smarttab
 
       " Backspace
-      set backspace=eol,start,indent
-      set whichwrap+=<,>,h,l
+      " set backspace=eol,start,indent
+      " set whichwrap+=<,>,h,l
 
 
       " BUILT-IN PLUGINS
-      filetype plugin indent on
-      syntax on
+      " filetype plugin indent on
+      " syntax on
       " set path+=**
 
 
@@ -391,8 +364,8 @@ in
 
 
       " WILD MENU
-      set wildmenu
-      set wildmode=list:longest
+      " set wildmenu
+      " set wildmode=list:longest
 
 
       " WINDOW SPLITS
