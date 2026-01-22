@@ -173,11 +173,11 @@
 
       (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
         xrandr \
-          --output DP-1 --off --output HDMI-1 --off \
-          --output DP-2 --off --output HDMI-2 --mode 1920x1080 --pos 1200x0 --rotate normal \
-          --output DP-3 --off --output HDMI-3 --mode 1920x1200 --pos 0x0 --rotate right
+          --output DP-1 --off \
+          --output HDMI-1 --mode 1920x1200 --pos 0x0 --rotate right \
+          --output DP-2 --off --output HDMI-2 --off --output DP-3 --off \
+          --output HDMI-3 --primary --mode 1920x1080 --pos 1200x0 --rotate normal
       '')
-
     ];
 
     # TODO: output config factory to be input for Nix configuration
