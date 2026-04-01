@@ -73,6 +73,16 @@ in
       haskell-tools = {
         enable = true;
         enableTelescope = true;
+        settings = {
+          hls = {
+            default_settings = {
+              haskell = {
+                formattingProvider = "fourmolu";
+              };
+            };
+          };
+        };
+
       };
 
       treesitter = {
