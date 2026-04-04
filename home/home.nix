@@ -5,7 +5,6 @@
   # https://mynixos.com/nixpkgs/option/services.xserver.xrandrHeads
 
 
-  # FIX: ADD NERD FONTS
 
   stylix = {
     enable = true;
@@ -15,7 +14,8 @@
       hash = "sha256-PUUIl3NyWxdUlgA7RW308fS/aPimZkLZo/qPheDzGKg=";
     };
     polarity = "dark";
-    # imageScalingMode = "tile";
+
+    # FIX: ADD NERD FONTS
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
@@ -48,48 +48,6 @@
     targets.firefox.profileNames = [ "default" ];
   };
 
-  # xdg.mimeApps = {
-  #   enable = true;
-  #   defaultApplications = {
-  #     # "application/pdf" = "org.gnome.Evince.desktop";
-  #     # "application/zip" = "org.gnome.FileRoller.desktop";
-  #     # "image/png" = "org.gnome.eog.desktop";
-  #     # "image/bmp" = "org.gnome.eog.desktop";
-  #     # "image/jpeg" = "org.gnome.eog.desktop";
-  #     # "image/svg+xml" = "org.gnome.eog.desktop";
-  #     "video/mp4" = "mpv.desktop";
-  #     "video/quicktime" = "mpv.desktop";
-  #   };
-  # };
-  #
-  # xdg.desktopEntries.thunderbird = {
-  #   name = "Thunderbird";
-  #   exec = "thunderbird %U";
-  #   terminal = false;
-  #   categories = [ "Application" "Network" "Chat" "Email" ];
-  #   mimeType = [ "message/rfc822" "x-scheme-handler/mailto" "text/calendar" "text/x-vcard" ];
-  # };
-
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-
-    settings = {
-      decoration = {
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000099)";
-      };
-
-      "$mod" = "SUPER";
-
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-        "$mod ALT, mouse:272, resizewindow"
-      ];
-    };
-  };
-
   home = {
 
     username = "xecarlox";
@@ -104,22 +62,16 @@
 
       ledger-live-desktop
 
-      kdePackages.dolphin
-
       teams-for-linux
 
       brave
 
       texliveBasic
 
-      discord
-
       coreutils
       gcc
 
       qbittorrent
-
-      flameshot
 
       brave
 
@@ -127,36 +79,24 @@
       ripgrep
       fd
       fzf
-      silver-searcher
 
       # TODO: Email client
       # https://github.com/pimalaya/himalaya
-      thunderbird
+      # thunderbird
 
       pavucontrol
-
-      # FIX: configure this module separately
-      alacritty
 
       # archives
       zip
       unzip
-      p7zip
 
       # matrix, irc, rss
-      element-desktop
-      halloy
-      russ
-
+      # element-desktop
+      # halloy
+      # russ
       # Signal, choose the best one
-      signal-desktop
-      gurk-rs
-
-      # libreoffice -- FIX: add this again
-      mpv
-      vlc
-
-      arandr
+      # signal-desktop
+      # gurk-rs
 
       (pkgs.writeShellScriptBin "commit" ''
         if [ $# -ge 1 ]
@@ -256,6 +196,16 @@
       enable = true;
     };
 
+
+    # FIX: configure this module separately
+    alacritty = {
+      enable = true;
+      settings = {
+        # FIX: add opacity to terminal
+        # window.opacity = lib.mkFo 0.8;
+      };
+    };
+
     zsh = {
       enable = true;
     };
@@ -273,12 +223,6 @@
       enable = true;
     };
 
-    # FIX: doom emacs instalation
-    #
-    # doom-emacs = {
-    #   enable = true;
-    #   doomDir = ../doom;
-    # };
     emacs = {
       enable = true;
       package = pkgs.emacs;
@@ -610,7 +554,6 @@
     vim = {
       enable = true;
       extraConfig = ''
-        "-------------------- SETTINGS
 
         " FIXES
         set noerrorbells
@@ -738,7 +681,7 @@
             import XMonad
             import XMonad.Util.EZConfig
 
-            main :: IO()
+            main :: IO ()
             main = xmonad $ def
                 { terminal  = "alacritty"
                 }
