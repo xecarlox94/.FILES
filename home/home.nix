@@ -1,11 +1,5 @@
 { pkgs, lib, ... }:
 {
-
-  # FIX: how to setup monitors
-  # https://mynixos.com/nixpkgs/option/services.xserver.xrandrHeads
-
-
-
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
@@ -75,14 +69,9 @@
 
       brave
 
-      # TODO: include these tools in workflow; add shell tooling integrations
       ripgrep
       fd
       fzf
-
-      # TODO: Email client
-      # https://github.com/pimalaya/himalaya
-      # thunderbird
 
       pavucontrol
 
@@ -90,6 +79,7 @@
       zip
       unzip
 
+      # TODO: Email client
       # matrix, irc, rss
       # element-desktop
       # halloy
@@ -121,8 +111,6 @@
           --output HDMI-3 --mode 1920x1080 --pos 1200x0 --rotate normal \
       '')
     ];
-
-    # TODO: output config factory to be input for Nix configuration
 
     sessionPath = [
       "$HOME/.config/emacs/bin"
@@ -175,7 +163,6 @@
 
   services.glance = {
     enable = true;
-    # settings = {};
   };
 
   programs = {
@@ -535,19 +522,6 @@
           "webgl.disabled" = false;
           "widget.use-xdg-desktop-portal.file-picker" = 0;
         };
-
-        # TODO: check this configuration
-        #
-        # https://github.com/TLATER/dotfiles/blob/b39af91fbd13d338559a05d69f56c5a97f8c905d/home-config/config/graphical-applications/firefox.nix
-        # extensions = with pkgs; [
-        #   nur.repos.rycee.firefox-addons.ublock-origin  # Example: UBlock Origin
-        #   nur.repos.rycee.firefox-addons.privacy-badger  # Example: Privacy Badger
-        # nur.repos.rycee.firefox-addons.floccus
-        # nur.repos.rycee.firefox-addons.kagi-search
-        # nur.repos.rycee.firefox-addons.keepassxc-browser
-        # nur.repos.rycee.firefox-addons.multi-account-containers
-        # nur.repos.rycee.firefox-addons.ublacklist
-        # ];
       };
     };
 

@@ -165,7 +165,6 @@ in
         };
       };
 
-      # TODO: configure keybiding, add default keybinding
       neo-tree = {
         enable = true;
 
@@ -180,7 +179,6 @@ in
       };
 
       # TODO: extend keywords
-      # TODO: add keywords
       todo-comments.enable = true;
       comment.enable = true;
       which-key.enable = true;
@@ -195,7 +193,6 @@ in
 
       web-devicons.enable = true;
 
-      # TODO: add tui keybinding strategy
       # TODO: add gitui keybinding
       toggleterm = {
         enable = true;
@@ -269,9 +266,7 @@ in
 
         servers = {
 
-          ocamllsp = {
-            enable = true;
-          };
+          ocamllsp.enable = true;
 
           nil_ls.enable = true;
           nixd.enable = true;

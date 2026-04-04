@@ -1,37 +1,24 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   pkgs,
   ...
 }:
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  environment.systemPackages = with pkgs; [
-    # pkgs.emacs-git # pkgs.emacsGcc
-  ];
 
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
   };
 
-  # Configure console keymap
   console.keyMap = "uk";
 
-  # Set your time zone.
   time.timeZone = "Europe/London";
 
-  # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_GB.UTF-8";
 
@@ -60,7 +47,6 @@
   programs.virt-manager.enable = true;
 
   virtualisation.libvirtd.enable = true;
-  # virtualisation.spiceUSBRedirection.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -72,12 +58,10 @@
 
   networking = {
 
-    hostName = "nixos"; # Define your hostname.
+    hostName = "nixos";
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-    # Enable networking
     networkmanager.enable = true;
-
   };
 
   services = {
@@ -94,29 +78,21 @@
       package = pkgs.emacs;
     };
 
-    # Enable CUPS to print documents.
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
     };
 
     libinput.enable = true;
 
-    # Desktop Environment.
     displayManager = {
       gdm.enable = true;
     };
 
-    # Enable the X11 windowing system.
     xserver = {
       enable = true;
-
-      # Cinnammon
       desktopManager = {
         cinnamon.enable = true;
       };
@@ -137,7 +113,6 @@
   };
 
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     users.xecarlox = {
       isNormalUser = true;

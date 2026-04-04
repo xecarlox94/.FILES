@@ -65,40 +65,32 @@ Move to wayland:
   Waylock
   Hyperland
 
-Add following programs:
-  Glance
-  Nix-icons
-  sxiv
-  Regreet
-
-Add desktop capabilities:
-  I want to be able to get a menu of most used applications
-  perhaps sort them in categories
-
-Configuration:
-  Fix floating terminal in Neovim
-  configure nushell
-  Add transparency
-     to alacritty
-     To neovim
-     To zellij
-  check stylix configs for:
-    Firefox
-    Neovim
-    Grub
-    add UseWalpaper option to DisplayManager
-  Check if there are issues with NUR
-    Need to install a few extensions
-
 Modularisation
     Modularise big configs into their own files
     Organise modules by
          <System>/<DesktopEnv>
     Modularise OS/Hardware configuration
 
+Add desktop capabilities:
+  I want to be able to get a menu of most used applications
+  perhaps sort them in categories
+
+Configuration todos:
+  Fix floating terminal in Neovim
+  configure nushell
+  Add transparency
+     to alacritty
+     To neovim
+     To zellij
+
+Add following programs:
+  Glance
+  Nix-icons
+  sxiv
+  Regreet
+
 I want a system wide notification system (Working in X11 or Wayland):
   I have heard of Dunst
-  I want something with a great interface
 
 */
 
@@ -149,8 +141,6 @@ I want a system wide notification system (Working in X11 or Wayland):
 
           home-manager.nixosModules.home-manager
           {
-            # I think it was included by a previous stylix instalation instruction
-            # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
 
@@ -158,9 +148,6 @@ I want a system wide notification system (Working in X11 or Wayland):
               inherit hostName;
               inherit utils;
             };
-
-
-            # allowUnfree = { nixpkgs.config.allowUnfree = true; };
 
 
             home-manager.users.xecarlox = {
@@ -181,11 +168,6 @@ I want a system wide notification system (Working in X11 or Wayland):
   in {
 
     nixosConfigurations = {
-
-      # TODO: Create MACOS config; prepare MacOs configuration adapter
-      #
-      #   MacOs module should only install tooling, no desktop environment
-
 
       nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
 
