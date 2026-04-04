@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 {
   imports =
@@ -24,45 +20,29 @@
   # Configure console keymap
   console.keyMap = "uk";
 
-  i18n ={
+  i18n = rec {
     # Select internationalisation properties.
     defaultLocale = "en_GB.UTF-8";
 
     extraLocaleSettings = {
-      LC_ADDRESS = "en_GB.UTF-8";
-      LC_IDENTIFICATION = "en_GB.UTF-8";
-      LC_MEASUREMENT = "en_GB.UTF-8";
-      LC_MONETARY = "en_GB.UTF-8";
-      LC_NAME = "en_GB.UTF-8";
-      LC_NUMERIC = "en_GB.UTF-8";
-      LC_PAPER = "en_GB.UTF-8";
-      LC_TELEPHONE = "en_GB.UTF-8";
-      LC_TIME = "en_GB.UTF-8";
+      LC_ADDRESS = defaultLocale;
+      LC_IDENTIFICATION = defaultLocale;
+      LC_MEASUREMENT = defaultLocale;
+      LC_MONETARY = defaultLocale;
+      LC_NAME = defaultLocale;
+      LC_NUMERIC = defaultLocale;
+      LC_PAPER = defaultLocale;
+      LC_TELEPHONE = defaultLocale;
+      LC_TIME = defaultLocale;
     };
   };
 
   networking = {
-    hostName = "thinkcenter"; # Define your hostname.
-
-    # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
-    # firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # firewall.enable = false;
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-    # Configure network proxy if necessary
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Enable networking
+    hostName = "thinkcenter";
     networkmanager.enable = true;
   };
 
   services = {
-
-    # Enable the OpenSSH daemon.
-    # openssh.enable = true;
 
     udev.packages = [
       pkgs.ledger-udev-rules
@@ -75,23 +55,12 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      # jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
     };
 
-    # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
 
-    # Desktop Environment.
     displayManager = {
       gdm.enable = true;
-
-      # FIX: xrandr setup
-      # setupCommands = setup_cmd pkgs.xorg.xrandr;
     };
 
 
@@ -124,14 +93,6 @@
     extraGroups = [ "networkmanager" "docker" "wheel" ];
   };
 
-  # virtualisation.docker = {
-  #   enable = true;
-  #   rootless = {
-  #     enable = true;
-  #     setSocketVariable = true;
-  #   };
-  # };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -140,17 +101,7 @@
     git
   ];
 
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   programs.hyprland.enable = true;
 
