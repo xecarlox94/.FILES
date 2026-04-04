@@ -2,6 +2,12 @@
 # great start
 # https://github.com/jackdbd/nix-config
 
+# modularisation question
+# https://discourse.nixos.org/t/how-do-you-structure-your-nixos-configs/65851/2
+# Dendentric pattern in nix
+# https://github.com/mightyiam/dendritic
+# https://github.com/vic/dendrix
+
 # Wayland riced config
 # https://gitlab.com/Zaney/zaneyos
 
@@ -15,6 +21,15 @@
 # https://github.com/misterio77/nix-config
 
 # https://github.com/Misterio77/nix-starter-configs
+
+# modularisation, with mac os as well
+# https://github.com/MatthiasBenaets/nix-config
+
+# Doom emacs guy
+# https://github.com/hlissner/dotfiles
+
+# with emacs stuff
+# https://github.com/vic/vix
 
 # Nice config
 # https://github.com/dbeley/nixos-config/blob/main/flake.nix
