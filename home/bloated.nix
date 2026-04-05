@@ -238,6 +238,7 @@
     # FIX: add editor automatic opening
     yazi = {
       enable = true;
+      shellWrapperName = "yy";
       settings = {
         mgr = {
           show_hidden = true;
@@ -248,6 +249,8 @@
 
     git = {
       enable = true;
+
+      signing.format = "openpgp";
 
       settings = {
         user.email = "jf94.uk@gmail.com";
@@ -272,6 +275,7 @@
     };
 
     sioyek = {
+      # config.startup_commands=[];
       enable = true;
     };
 
