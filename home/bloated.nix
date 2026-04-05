@@ -17,13 +17,15 @@
       popups = 0.9;
       terminal = 0.9;
     };
-    targets.nixvim.enable = false;
-    targets.emacs.enable = false;
 
-    targets.firefox.profileNames = [ "default" ];
+    targets = {
+      nixvim.enable = false;
+      emacs.enable = false;
+      vscode.enable = false;
+      # firefox.profileNames = [ "default" ];
+    };
 
 
-    # FIX: ADD NERD FONTS
     fonts = {
 
       serif = {
@@ -172,9 +174,9 @@
     ./nixvim.nix
   ];
 
-  services.glance = {
-    enable = true;
-  };
+  #services.glance = {
+  #enable = true;
+  #};
 
   programs = {
 
@@ -210,6 +212,27 @@
       # extraPackages = epkgs: [
       # epkgs.proof-general
       # ];
+    };
+
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          vscodevim.vim
+          leanprover.lean4
+        ];
+        userSettings = {
+          vim = {
+            useSystemClipboard = true;
+            hlsearch = true;
+            handleKeys = {
+              "<C-f>" = false;
+              "<C-a>" = false;
+            };
+          };
+        };
+      };
     };
 
     zsh = {

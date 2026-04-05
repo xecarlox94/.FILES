@@ -35,7 +35,7 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # dconf.settings = {
   #   "org/virt-manager/virt-manager/connections" = {

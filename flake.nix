@@ -158,10 +158,11 @@ Add following programs:
 
         machineConfiguration
 
+        { nixpkgs.config.allowUnfree = true; }
+
         home-manager.nixosModules.home-manager
         {
-          # I think it was included by a previous stylix instalation instruction
-          # home-manager.useGlobalPkgs = true;
+          home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
 
