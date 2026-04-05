@@ -59,17 +59,20 @@
 
 Nice refactoring wishes
 
+Modularisation
+    Modularise big configs into their own files
+    Organise modules by
+         <System>/<DesktopEnv>
+    Modularise OS/Hardware configuration
+
+
+add Kmonad to systems: rice it well
+
 Move to wayland:
   Walyland
   Waybar
   Waylock
   Hyperland
-
-Add following programs:
-  Glance
-  Nix-icons
-  sxiv
-  Regreet
 
 Add desktop capabilities:
   I want to be able to get a menu of most used applications
@@ -90,15 +93,15 @@ Configuration:
   Check if there are issues with NUR
     Need to install a few extensions
 
-Modularisation
-    Modularise big configs into their own files
-    Organise modules by
-         <System>/<DesktopEnv>
-    Modularise OS/Hardware configuration
-
 I want a system wide notification system (Working in X11 or Wayland):
   I have heard of Dunst
   I want something with a great interface
+
+Add following programs:
+  Glance
+  Nix-icons
+  sxiv
+  Regreet
 
 */
 
@@ -165,12 +168,14 @@ I want a system wide notification system (Working in X11 or Wayland):
           };
 
           home-manager.users.xecarlox = {
-            imports = with inputs; [
+            imports = [
 
               # FIX: install nixvim as a standalone
-              nixvim.homeModules.nixvim
-              nix-doom-emacs-unstraightened.homeModule
-              stylix.homeModules.stylix
+              inputs.nixvim.homeModules.nixvim
+
+              inputs.nix-doom-emacs-unstraightened.homeModule
+
+              inputs.stylix.homeModules.stylix
 
               ./home/home.nix
             ];
