@@ -108,11 +108,6 @@ I want a system wide notification system (Working in X11 or Wayland):
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -123,73 +118,105 @@ I want a system wide notification system (Working in X11 or Wayland):
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-doom-emacs-unstraightened = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
 
   # FIX: add password management to this environment
 
 
-  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let
 
-    # TODO: modularise keybindings for IDEs, variables, aliases, functions
-    utils = import ./lib;
+  # TODO: modularise keybindings for IDEs, variables, aliases, functions
+  utils = import ./lib;
 
 
-    mkLinuxMachine = hostName: systemArch: machineConfiguration:
-      nixpkgs.lib.nixosSystem {
+  mkLinuxDesktopMachine = { hostName, system, machineConfiguration }: {
+    name=hostName;
+    value=nixpkgs.lib.nixosSystem {
 
-        system = systemArch;
+      inherit system;
 
-        specialArgs = inputs // { inherit hostName; };
+      specialArgs = inputs // { inherit hostName; };
 
-        modules = [
+      modules = [
 
-          machineConfiguration
+        machineConfiguration
 
-          home-manager.nixosModules.home-manager
-          {
-            # I think it was included by a previous stylix instalation instruction
-            # home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
+        home-manager.nixosModules.home-manager
+        {
+          # I think it was included by a previous stylix instalation instruction
+          # home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
 
-            home-manager.extraSpecialArgs = {
-              inherit hostName;
-              inherit utils;
-            };
+          home-manager.extraSpecialArgs = {
+            inherit hostName utils;
+          };
 
+          home-manager.users.xecarlox = {
+            imports = with inputs; [
 
-            # allowUnfree = { nixpkgs.config.allowUnfree = true; };
+              # FIX: install nixvim as a standalone
+              nixvim.homeModules.nixvim
+              nix-doom-emacs-unstraightened.homeModule
+              stylix.homeModules.stylix
 
+              ./home/home.nix
+            ];
+          };
+        }
+      ];
+    };
+  };
 
-            home-manager.users.xecarlox = {
-              imports = [
+  # TODO: Create MACOS config; prepare MacOs configuration adapter
+  #
+  #   MacOs module should only install tooling, no desktop environment
 
-                # FIX: install nixvim as a standalone
-                nixvim.homeModules.nixvim
+  linuxDesktopMachines= map mkLinuxDesktopMachine [
+    { 
+      hostName="nixos";
+      system="x86_64-linux" ; 
+      machineConfiguration=./machines/laptop-hp/configuration.nix;
+    }
+    {
+      hostName="thinkcenter" ;
+      system="x86_64-linux"; 
+      machineConfiguration=./machines/thinkcenter/configuration.nix;
+    }
+  ];
 
-                stylix.homeModules.stylix
+  linuxServerMachines=[];
 
-                ./home/home.nix
-              ];
-            };
-          }
-        ];
-      };
+  macosMachines=[];
+
+  rPiMachines=[];
+
+  mobileMachines=[];
+
+  inherit (builtins) listToAttrs concatLists;
 
   in {
 
-    nixosConfigurations = {
-
-      # TODO: Create MACOS config; prepare MacOs configuration adapter
-      #
-      #   MacOs module should only install tooling, no desktop environment
-
-
-      nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
-
-      thinkcenter = mkLinuxMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
-    };
+    nixosConfigurations = listToAttrs ( concatLists [ 
+        linuxDesktopMachines
+        linuxServerMachines
+        rPiMachines
+        macosMachines
+        mobileMachines
+      ]
+    );
   };
+
 }

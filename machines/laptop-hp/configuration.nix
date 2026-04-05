@@ -16,10 +16,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  environment.systemPackages = with pkgs; [
-    # pkgs.emacs-git # pkgs.emacsGcc
-  ];
-
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
@@ -88,11 +84,6 @@
 
 
     pulseaudio.enable = false;
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
 
     # Enable CUPS to print documents.
     pipewire = {

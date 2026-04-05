@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
 
   # FIX: how to setup monitors
@@ -105,7 +105,7 @@
             git status &&\
             git add . &&\
             git commit -m "$1" &&\
-            git push --all origin
+            git push origin
           else
             echo "ERROR"
         fi
@@ -123,10 +123,6 @@
     ];
 
     # TODO: output config factory to be input for Nix configuration
-
-    sessionPath = [
-      "$HOME/.config/emacs/bin"
-    ];
 
     sessionVariables = {
       XDG_CONFIG_HOME = "$HOME/.config";
@@ -206,6 +202,11 @@
       };
     };
 
+    #doom-emacs = {
+    #enable = true;
+    #doomDir = inputs.doom-config;  # or e.g. `./doom.d` for a local configuration
+    #};
+
     zsh = {
       enable = true;
     };
@@ -221,11 +222,6 @@
 
     bash = {
       enable = true;
-    };
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
     };
 
     gitui = {
