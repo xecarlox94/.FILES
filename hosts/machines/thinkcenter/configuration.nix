@@ -63,6 +63,8 @@
       gdm.enable = true;
     };
 
+    picom.enable = true;
+    picom.backend = "glx";
 
     xserver = {
       # Enable the X11 windowing system.

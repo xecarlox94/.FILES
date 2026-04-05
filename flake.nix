@@ -2,6 +2,9 @@
 # great start
 # https://github.com/jackdbd/nix-config
 
+# guy from the nix book!!
+# https://github.com/ryan4yin/nix-config
+
 # modularisation question
 # https://discourse.nixos.org/t/how-do-you-structure-your-nixos-configs/65851/2
 # Dendentric pattern in nix
@@ -80,6 +83,7 @@ Add desktop capabilities:
 
 Configuration:
   Fix floating terminal in Neovim
+  fix fonts
   configure nushell
   Add transparency
      to alacritty
@@ -106,7 +110,7 @@ Add following programs:
 */
 
 {
-  description = "Local machine configuration";
+  description = "My Nix environments";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -177,33 +181,35 @@ Add following programs:
 
               inputs.stylix.homeModules.stylix
 
-              ./home/home.nix
+              ./home
             ];
           };
         }
       ];
+
+      # FIX: allow unfree problem
+      # nixpkgs.config.allowUnfree = true;
     };
   };
 
-  # TODO: Create MACOS config; prepare MacOs configuration adapter
-  #
-  #   MacOs module should only install tooling, no desktop environment
 
   linuxDesktopMachines= map mkLinuxDesktopMachine [
     { 
       hostName="nixos";
-      system="x86_64-linux" ; 
-      machineConfiguration=./machines/laptop-hp/configuration.nix;
+      system="x86_64-linux"; 
+      machineConfiguration=./hosts/machines/laptop-hp/configuration.nix;
     }
     {
-      hostName="thinkcenter" ;
+      hostName="thinkcenter";
       system="x86_64-linux"; 
-      machineConfiguration=./machines/thinkcenter/configuration.nix;
+      machineConfiguration=./hosts/machines/thinkcenter/configuration.nix;
     }
   ];
 
   linuxServerMachines=[];
 
+  # TODO: Create MACOS config; prepare MacOs configuration adapter
+  #   MacOs module should only install tooling, no desktop environment
   macosMachines=[];
 
   rPiMachines=[];
