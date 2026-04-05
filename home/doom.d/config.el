@@ -42,7 +42,7 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Desktop/org/")
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font"))
 
 (setq doom-symbol-font (font-spec :family "JetBrainsMono Nerd Font"))
 
