@@ -1,46 +1,55 @@
 { pkgs, lib, ... }:
 {
+
+  # FIX: how to setup monitors
+  # https://mynixos.com/nixpkgs/option/services.xserver.xrandrHeads
+
   stylix = {
     enable = true;
-    image = pkgs.fetchurl {
-      url = "https://images.pexels.com/photos/409696/pexels-photo-409696.jpeg";
 
-      hash = "sha256-PUUIl3NyWxdUlgA7RW308fS/aPimZkLZo/qPheDzGKg=";
-    };
+    image = ../assets/wallpapers/iceland.jpg;
+
     polarity = "dark";
+
+    opacity = {
+      applications = 0.7;
+      desktop = 0.7;
+      popups = 0.7;
+      terminal = 0.7;
+    };
+    targets.nixvim.enable = false;
+    targets.emacs.enable = false;
+
+    targets.firefox.profileNames = [ "default" ];
+
 
     # FIX: ADD NERD FONTS
     fonts = {
+
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
 
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
       };
 
       monospace = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans Mono";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+
       };
 
       emoji = {
-        package = pkgs.noto-fonts-color-emoji;
-        name = "Noto Color Emoji";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
     };
-    opacity = {
-      applications = 0.9;
-      desktop = 0.9;
-      popups = 0.9;
-      terminal = 0.9;
-    };
-    targets.nixvim.enable = false;
-
-    targets.firefox.profileNames = [ "default" ];
   };
+
+  fonts.fontconfig.enable = true;
 
   home = {
 
@@ -53,6 +62,10 @@
     shell.enableZshIntegration = true;
 
     packages = with pkgs; [
+
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
+      noto-fonts
 
       ledger-live-desktop
 
@@ -95,7 +108,7 @@
             git status &&\
             git add . &&\
             git commit -m "$1" &&\
-            git push --all origin
+            git push origin
           else
             echo "ERROR"
         fi
@@ -112,9 +125,7 @@
       '')
     ];
 
-    sessionPath = [
-      "$HOME/.config/emacs/bin"
-    ];
+    # TODO: output config factory to be input for Nix configuration
 
     sessionVariables = {
       XDG_CONFIG_HOME = "$HOME/.config";
@@ -189,8 +200,16 @@
       enable = true;
       settings = {
         # FIX: add opacity to terminal
-        # window.opacity = lib.mkFo 0.8;
+        window.opacity = lib.mkForce 0.8;
       };
+    };
+
+    doom-emacs = {
+      enable = true;
+      doomDir = ./doom.d;
+      # extraPackages = epkgs: [
+      # epkgs.proof-general
+      # ];
     };
 
     zsh = {
@@ -208,11 +227,6 @@
 
     bash = {
       enable = true;
-    };
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
     };
 
     gitui = {

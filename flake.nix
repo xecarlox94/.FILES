@@ -2,6 +2,9 @@
 # great start
 # https://github.com/jackdbd/nix-config
 
+# guy from the nix book!!
+# https://github.com/ryan4yin/nix-config
+
 # modularisation question
 # https://discourse.nixos.org/t/how-do-you-structure-your-nixos-configs/65851/2
 # Dendentric pattern in nix
@@ -59,29 +62,42 @@
 
 Nice refactoring wishes
 
-Move to wayland:
-  Walyland
-  Waybar
-  Waylock
-  Hyperland
-
 Modularisation
     Modularise big configs into their own files
     Organise modules by
          <System>/<DesktopEnv>
     Modularise OS/Hardware configuration
 
+
+add Kmonad to systems: rice it well
+
+Move to wayland:
+  Walyland
+  Waybar
+  Waylock
+  Hyperland
 Add desktop capabilities:
   I want to be able to get a menu of most used applications
   perhaps sort them in categories
 
-Configuration todos:
+Configuration:
   Fix floating terminal in Neovim
+  fix fonts
   configure nushell
   Add transparency
      to alacritty
      To neovim
      To zellij
+  check stylix configs for:
+    Firefox
+    Neovim
+    Grub
+    add UseWalpaper option to DisplayManager
+  Check if there are issues with NUR
+    Need to install a few extensions
+
+I want a system wide notification system (Working in X11 or Wayland):
+  I have heard of Dunst
 
 Add following programs:
   Glance
@@ -89,21 +105,13 @@ Add following programs:
   sxiv
   Regreet
 
-I want a system wide notification system (Working in X11 or Wayland):
-  I have heard of Dunst
-
 */
 
 {
-  description = "Local machine configuration";
+  description = "My Nix environments";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -115,63 +123,108 @@ I want a system wide notification system (Working in X11 or Wayland):
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-doom-emacs-unstraightened = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
 
   # FIX: add password management to this environment
 
 
-  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let
 
-    # TODO: modularise keybindings for IDEs, variables, aliases, functions
-    utils = import ./lib;
+  # TODO: modularise keybindings for IDEs, variables, aliases, functions
+  utils = import ./lib;
 
 
-    mkLinuxMachine = hostName: systemArch: machineConfiguration:
-      nixpkgs.lib.nixosSystem {
+  mkLinuxDesktopMachine = { hostName, system, machineConfiguration }: {
+    name=hostName;
+    value=nixpkgs.lib.nixosSystem {
 
-        system = systemArch;
+      inherit system;
 
-        specialArgs = inputs // { inherit hostName; };
+      specialArgs = inputs // { inherit hostName; };
 
-        modules = [
+      modules = [
 
-          machineConfiguration
+        machineConfiguration
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
+        home-manager.nixosModules.home-manager
+        {
+          # I think it was included by a previous stylix instalation instruction
+          # home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
 
-            home-manager.extraSpecialArgs = {
-              inherit hostName;
-              inherit utils;
-            };
+          home-manager.extraSpecialArgs = {
+            inherit hostName utils;
+          };
 
+          home-manager.users.xecarlox = {
+            imports = [
 
-            home-manager.users.xecarlox = {
-              imports = [
+              # FIX: install nixvim as a standalone
+              inputs.nixvim.homeModules.nixvim
 
-                # FIX: install nixvim as a standalone
-                nixvim.homeModules.nixvim
+              inputs.nix-doom-emacs-unstraightened.homeModule
 
-                stylix.homeModules.stylix
+              inputs.stylix.homeModules.stylix
 
-                ./home/home.nix
-              ];
-            };
-          }
-        ];
-      };
+              ./home
+            ];
+          };
+        }
+      ];
 
-  in {
-
-    nixosConfigurations = {
-
-      nixos = mkLinuxMachine "nixos" "x86_64-linux" ./machines/laptop-hp/configuration.nix;
-
-      thinkcenter = mkLinuxMachine "thinkcenter" "x86_64-linux" ./machines/thinkcenter/configuration.nix;
+      # FIX: allow unfree problem
+      # nixpkgs.config.allowUnfree = true;
     };
   };
+
+
+  linuxDesktopMachines= map mkLinuxDesktopMachine [
+    {
+      hostName="nixos";
+      system="x86_64-linux";
+      machineConfiguration=./hosts/machines/laptop-hp/configuration.nix;
+    }
+    {
+      hostName="thinkcenter";
+      system="x86_64-linux";
+      machineConfiguration=./hosts/machines/thinkcenter/configuration.nix;
+    }
+  ];
+
+  linuxServerMachines=[];
+
+  # TODO: Create MACOS config; prepare MacOs configuration adapter
+  #   MacOs module should only install tooling, no desktop environment
+  macosMachines=[];
+
+  rPiMachines=[];
+
+  mobileMachines=[];
+
+  inherit (builtins) listToAttrs concatLists;
+
+  in {
+    nixosConfigurations = listToAttrs ( concatLists [
+        linuxDesktopMachines
+        linuxServerMachines
+        rPiMachines
+        macosMachines
+        mobileMachines
+      ]
+    );
+  };
+
 }

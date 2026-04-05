@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -63,6 +63,8 @@
       gdm.enable = true;
     };
 
+    picom.enable = true;
+    picom.backend = "glx";
 
     xserver = {
       # Enable the X11 windowing system.
@@ -102,8 +104,6 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-
-  programs.hyprland.enable = true;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 

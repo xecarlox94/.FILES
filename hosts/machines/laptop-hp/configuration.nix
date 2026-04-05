@@ -73,11 +73,6 @@
 
     pulseaudio.enable = false;
 
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
-
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -90,6 +85,9 @@
     displayManager = {
       gdm.enable = true;
     };
+
+    picom.enable = true;
+    picom.backend = "glx";
 
     xserver = {
       enable = true;
