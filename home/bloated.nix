@@ -221,6 +221,7 @@
         extensions = with pkgs.vscode-extensions; [
           vscodevim.vim
           leanprover.lean4
+          tamasfe.even-better-toml
         ];
         userSettings = {
           vim = {
