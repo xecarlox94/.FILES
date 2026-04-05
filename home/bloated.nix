@@ -12,10 +12,10 @@
     polarity = "dark";
 
     opacity = {
-      applications = 0.7;
-      desktop = 0.7;
-      popups = 0.7;
-      terminal = 0.7;
+      applications = 0.9;
+      desktop = 0.9;
+      popups = 0.9;
+      terminal = 0.9;
     };
     targets.nixvim.enable = false;
     targets.emacs.enable = false;
