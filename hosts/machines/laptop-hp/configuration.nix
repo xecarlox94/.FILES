@@ -9,18 +9,19 @@
     ../../users
   ];
 
-  users = {
-    users.xecarlox = {
-      isNormalUser = true;
-      description = "xecarlox";
-      extraGroups = [ 
-        "networkmanager" 
-        "wheel" 
-        "docker" 
-        "libvirt" 
-      ];
-    };
-  };
+  # users = {
+  # users.xecarlox = {
+  # isNormalUser = true;
+  # description = "xecarlox";
+  # extraGroups = [ 
+  # "networkmanager" 
+  # "wheel" 
+  # "docker" 
+  # "libvirt" 
+  # ];
+  # };
+  # };
+
   # users.groups.libvirtd.members = ["xecarlox"];
 
 
