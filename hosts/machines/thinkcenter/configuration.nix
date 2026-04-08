@@ -1,27 +1,28 @@
 { pkgs, ... }:
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ 
+    ./hardware-configuration.nix
+    ../../common
+    ../../users
+  ];
 
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 7d";
+  users.users.xecarlox = {
+    isNormalUser = true;
+    description = "xecarlox";
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "docker" 
+    ];
   };
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # nixpkgs.config.allowUnfree = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/London";
 
-  # Configure console keymap
   console.keyMap = "uk";
 
   i18n = rec {
-    # Select internationalisation properties.
     defaultLocale = "en_GB.UTF-8";
 
     extraLocaleSettings = {
@@ -37,27 +38,27 @@
     };
   };
 
-  networking = {
-    hostName = "thinkcenter";
-    networkmanager.enable = true;
-  };
+  # nano ledger device rules
+  services.udev.packages = with pkgs; [
+    ledger-udev-rules
+  ];
 
+  # audio services
   services = {
 
-    udev.packages = [
-      pkgs.ledger-udev-rules
-    ];
-
-    # Enable sound with pipewire.
     pulseaudio.enable = false;
+
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+  };
 
-    libinput.enable = true;
+
+  # X11 services
+  services = {
 
     displayManager = {
       gdm.enable = true;
@@ -68,28 +69,25 @@
       backend = "glx";
       settings = {
         blur = {
-        method = "dual_kawase";
-        strength = 5;
-      };
+          method = "dual_kawase";
+          strength = 5;
+        };
 
-      blur-background-exclude = [
-      "window_type = 'dock'"
-      "window_type = 'desktop'"
-      "_GTK_FRAME_EXTENTS@:c"
-      ];
+        blur-background-exclude = [
+          "window_type = 'dock'"
+          "window_type = 'desktop'"
+          "_GTK_FRAME_EXTENTS@:c"
+        ];
       };
     };
 
     xserver = {
-      # Enable the X11 windowing system.
       enable = true;
 
-      # Cinnammon
       desktopManager = {
         cinnamon.enable = true;
       };
 
-      # Configure keymap in X11
       xkb = {
         layout = "gb";
         variant = "";
@@ -97,28 +95,27 @@
     };
   };
 
+
+  # Security
   security = {
     rtkit.enable = true;
     polkit.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.xecarlox = {
-    isNormalUser = true;
-    description = "xecarlox";
-    extraGroups = [ "networkmanager" "docker" "wheel" ];
+
+  # Networking
+  networking = {
+    hostName = "thinkcenter";
+    networkmanager.enable = true;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-  ];
 
-  # nixpkgs.config.allowUnfree = true;
+  # Boot
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
-  system.stateVersion = "25.05"; # Did you read the comment?
 
+  system.stateVersion = "25.05";
 }

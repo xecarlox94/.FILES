@@ -5,33 +5,42 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../common
+    ../../users
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 7d";
+  users = {
+    users.xecarlox = {
+      isNormalUser = true;
+      description = "xecarlox";
+      extraGroups = [ 
+        "networkmanager" 
+        "wheel" 
+        "docker" 
+        "libvirt" 
+      ];
+    };
   };
+  # users.groups.libvirtd.members = ["xecarlox"];
+
 
   console.keyMap = "uk";
 
   time.timeZone = "Europe/London";
 
-  i18n = {
+  i18n = rec {
     defaultLocale = "en_GB.UTF-8";
 
     extraLocaleSettings = {
-      LC_ADDRESS = "en_GB.UTF-8";
-      LC_IDENTIFICATION = "en_GB.UTF-8";
-      LC_MEASUREMENT = "en_GB.UTF-8";
-      LC_MONETARY = "en_GB.UTF-8";
-      LC_NAME = "en_GB.UTF-8";
-      LC_NUMERIC = "en_GB.UTF-8";
-      LC_PAPER = "en_GB.UTF-8";
-      LC_TELEPHONE = "en_GB.UTF-8";
-      LC_TIME = "en_GB.UTF-8";
+      LC_ADDRESS = defaultLocale;
+      LC_IDENTIFICATION = defaultLocale;
+      LC_MEASUREMENT = defaultLocale;
+      LC_MONETARY = defaultLocale;
+      LC_NAME = defaultLocale;
+      LC_NUMERIC = defaultLocale;
+      LC_PAPER = defaultLocale;
+      LC_TELEPHONE = defaultLocale;
+      LC_TIME = defaultLocale;
     };
   };
 
@@ -56,20 +65,13 @@
     };
   };
 
-  networking = {
+  # nano ledger device
+  services.udev.packages = with pkgs; [
+    ledger-udev-rules
+  ];
 
-    hostName = "nixos";
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-    networkmanager.enable = true;
-  };
-
+  # audio services
   services = {
-
-    udev.packages = [
-      pkgs.ledger-udev-rules
-    ];
-
 
     pulseaudio.enable = false;
 
@@ -79,8 +81,11 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+  };
 
-    libinput.enable = true;
+
+  # X11 services
+  services = {
 
     displayManager = {
       gdm.enable = true;
@@ -91,15 +96,15 @@
       backend = "glx";
       settings = {
         blur = {
-        method = "dual_kawase";
-        strength = 5;
-      };
+          method = "dual_kawase";
+          strength = 5;
+        };
 
-      blur-background-exclude = [
-      "window_type = 'dock'"
-      "window_type = 'desktop'"
-      "_GTK_FRAME_EXTENTS@:c"
-      ];
+        blur-background-exclude = [
+          "window_type = 'dock'"
+          "window_type = 'desktop'"
+          "_GTK_FRAME_EXTENTS@:c"
+        ];
       };
     };
 
@@ -109,30 +114,34 @@
         cinnamon.enable = true;
       };
 
-
       xkb = {
         layout = "gb";
         variant = "";
       };
-
     };
-
   };
 
+
+  # Security
   security = {
     rtkit.enable = true;
     polkit.enable = true;
   };
 
 
-  users = {
-    users.xecarlox = {
-      isNormalUser = true;
-      description = "xecarlox";
-      extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" ];
-    };
-    # groups.libvirtd.members = ["xecarlox"];
+  # Networking
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
   };
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+
+  # Boot
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
+
+
+  system.stateVersion = "24.11";
 }
