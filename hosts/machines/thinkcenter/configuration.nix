@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
     ../../common
     ../../users
@@ -9,10 +9,10 @@
   users.users.xecarlox = {
     isNormalUser = true;
     description = "xecarlox";
-    extraGroups = [ 
-      "networkmanager" 
-      "wheel" 
-      "docker" 
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
     ];
   };
 
@@ -37,11 +37,6 @@
       LC_TIME = defaultLocale;
     };
   };
-
-  # nano ledger device rules
-  services.udev.packages = with pkgs; [
-    ledger-udev-rules
-  ];
 
   # audio services
   services = {

@@ -1,10 +1,13 @@
-{...}: {
+{...}:
+#let
+  # debug = builtins.trace (builtins.attrNames args) null;
+# in 
+{
+  # _debug = debug;
 
-  imports = [];
-
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 7d";
-  };
+  imports = [
+    ./nix.nix
+    ./ledger.nix
+  ];
 
 }

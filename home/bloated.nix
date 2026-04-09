@@ -18,11 +18,12 @@
       terminal = 0.9;
     };
 
+
     targets = {
       nixvim.enable = false;
       emacs.enable = false;
       vscode.enable = false;
-      # firefox.profileNames = [ "default" ];
+      firefox.profileNames = [ "default" ];
     };
 
 
@@ -298,10 +299,10 @@
       exitShellOnExit = true;
     };
 
-    sioyek = {
-      # config.startup_commands=[];
-      enable = true;
-    };
+    # sioyek = {
+    # config.startup_commands=[];
+    # enable = true;
+    # };
 
     qutebrowser = {
       enable = true;

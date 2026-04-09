@@ -9,22 +9,6 @@
     ../../users
   ];
 
-  # users = {
-  # users.xecarlox = {
-  # isNormalUser = true;
-  # description = "xecarlox";
-  # extraGroups = [ 
-  # "networkmanager" 
-  # "wheel" 
-  # "docker" 
-  # "libvirt" 
-  # ];
-  # };
-  # };
-
-  # users.groups.libvirtd.members = ["xecarlox"];
-
-
   console.keyMap = "uk";
 
   time.timeZone = "Europe/London";
@@ -45,6 +29,7 @@
     };
   };
 
+
   # nixpkgs.config.allowUnfree = true;
 
   # dconf.settings = {
@@ -54,8 +39,10 @@
   #   };
   # };
 
+
   programs.virt-manager.enable = true;
 
+  # users.groups.libvirtd.members = ["xecarlox"];
   virtualisation.libvirtd.enable = true;
 
   virtualisation.docker = {
@@ -65,11 +52,6 @@
       setSocketVariable = true;
     };
   };
-
-  # nano ledger device
-  services.udev.packages = with pkgs; [
-    ledger-udev-rules
-  ];
 
   # audio services
   services = {

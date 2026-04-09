@@ -111,6 +111,7 @@ Add following programs:
   description = "My Nix environments";
 
   inputs = {
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -207,10 +208,6 @@ Add following programs:
 
   linuxServerMachines=[];
 
-  # TODO: Create MACOS config; prepare MacOs configuration adapter
-  #   MacOs module should only install tooling, no desktop environment
-  macosMachines=[];
-
   rPiMachines=[];
 
   mobileMachines=[];
@@ -222,7 +219,6 @@ Add following programs:
         linuxDesktopMachines
         linuxServerMachines
         rPiMachines
-        macosMachines
         mobileMachines
       ]
     );
