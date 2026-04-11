@@ -6,25 +6,12 @@
     ../../users
   ];
 
-  users.users.xecarlox = {
-    isNormalUser = true;
-    description = "xecarlox";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-  };
-
   # nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Europe/London";
-
   console.keyMap = "uk";
-
   i18n = rec {
     defaultLocale = "en_GB.UTF-8";
-
     extraLocaleSettings = {
       LC_ADDRESS = defaultLocale;
       LC_IDENTIFICATION = defaultLocale;
