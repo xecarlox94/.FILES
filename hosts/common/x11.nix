@@ -4,7 +4,11 @@ _:
   services = {
 
     displayManager = {
-      gdm.enable = true;
+      # gdm.enable = true;
+      # sddm.enable = true;
+      # sddm.wayland.enable = true;
+      # lightdm.enable = true;
+      ly.enable = true;
     };
 
     picom = {
@@ -26,10 +30,6 @@ _:
 
     xserver = {
       enable = true;
-
-      desktopManager = {
-        cinnamon.enable = true;
-      };
 
       xkb = {
         layout = "gb";
