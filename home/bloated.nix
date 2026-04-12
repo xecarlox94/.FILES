@@ -1,9 +1,12 @@
 { pkgs, lib, ... }:
 {
 
+  # move this to the override function for the system configuration
+  # 
   # FIX: how to setup monitors
   # https://mynixos.com/nixpkgs/option/services.xserver.xrandrHeads
 
+  # move this to stylix module
   stylix = {
     enable = true;
 
