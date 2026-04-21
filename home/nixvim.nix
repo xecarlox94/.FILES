@@ -30,18 +30,28 @@ in
       # TODO: IMPORTANT remake old keybindings to VIM and Neovim
       {
         mode = [ "n" ];
-        key = vimUtils.mkLKeyBind "cn";
-        action = vimUtils.mkCmdAction "e ~/.config/home-manager/home/nixvim.nix";
-        options = {
-          desc = "edit nixvim configuration";
-        };
-      }
-      {
-        mode = [ "n" ];
         key = vimUtils.mkLKeyBind "tl";
         action = vimUtils.mkCmdAction "TodoTrouble";
         options = {
           desc = "List Project Issues";
+        };
+      }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        key = vimUtils.mkLKeyBind "x";
+        action.__raw = ''
+          function()
+            require("conform").format({
+              async = true;
+              lsp_fallback = true;
+            })
+          end
+        '';
+        options = {
+          desc = "Format file or range";
         };
       }
     ];
@@ -50,25 +60,50 @@ in
 
     plugins = {
 
+      conform-nvim = {
+        enable = true;
+        settings = {
+          formatters_by_ft = {
+            bash = [ "shellcheck" ];
+            rust = [ "rustfmt" ];
+            haskell = [ "fourmolu" ];
+            nix = [ "nixfmt" ];
+            "*" = [ "codespell" ];
+            "_" = [ "trim_whitespace" ];
+          };
+        };
+      };
+
       # TODO: CHECK THIS
       bacon.enable = true;
 
-      conform-nvim = {
-        enable = true;
-        settings = {formatters_by_ft.rust = ["rustfmt"];};
-      };
-      # dap-lldb.enable = true;
       rustaceanvim = {
         enable = true;
         settings = {
           tools.enable_clippy = true;
           server = {
             default_settings = {
-              inlayHints = {lifetimeElisionHints = {enable = "always";};};
+              inlayHints = {
+                lifetimeElisionHints = {
+                  enable = "always";
+                };
+              };
               rust-analyzer = {
-                cargo = {allFeatures = true;};
-                check = {command = "clippy";};
-                files = {excludeDirs = ["target" ".git" ".cargo" ".github" ".direnv"];};
+                cargo = {
+                  allFeatures = true;
+                };
+                check = {
+                  command = "clippy";
+                };
+                files = {
+                  excludeDirs = [
+                    "target"
+                    ".git"
+                    ".cargo"
+                    ".github"
+                    ".direnv"
+                  ];
+                };
               };
             };
           };
@@ -80,6 +115,35 @@ in
         enableTelescope = true;
         settings = {
           hls = {
+            on_attach.__raw = ''
+              function(client, bufnr)
+
+                local ht = require('haskell-tools')
+
+                local opts = function(desc)
+                  return { 
+                    buffer=bufnr, 
+                    noremap=true, 
+                    silent=true,
+                    desc="Haskell: " .. desc
+                  }
+                end
+
+
+                vim.keymap.set('n', '<leader>hr', ht.repl.toggle, opts("Toggle Repl"))
+                -- vim.keymap.set('n', '<leader>hq', ht.repl.quit, opts(""))
+
+                vim.keymap.set('n', '<leader>ha', ht.lsp.buf_eval_all, opts("Evaluate buffer expressions"))
+                vim.keymap.set('n', '<leader>hl', vim.lsp.codelens.run, opts("Code lens refresh"))
+
+                vim.keymap.set('n', '<leader>hi', function()
+                  ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+
+                end, opts("GHCI in current buffer"))
+
+
+              end
+            '';
             default_settings = {
               haskell = {
                 formattingProvider = "fourmolu";
@@ -135,19 +199,19 @@ in
           let
             listPairs = [
               {
-                k = "ff";
+                k = "tf";
                 v = "find_files";
               }
               {
-                k = "fg";
+                k = "tg";
                 v = "live_grep";
               }
               {
-                k = "fb";
+                k = "tb";
                 v = "buffers";
               }
               {
-                k = "fh";
+                k = "th";
                 v = "help_tags";
               }
             ];
@@ -271,8 +335,6 @@ in
           nil_ls.enable = true;
           nixd.enable = true;
 
-          html.enable = true;
-          jsonls.enable = true;
           marksman.enable = true;
         };
 
@@ -303,7 +365,6 @@ in
       end
 
     '';
-
 
     extraConfigVim = ''
       "-------------------- SETTINGS

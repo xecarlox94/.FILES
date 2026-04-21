@@ -69,13 +69,16 @@
 
     packages = with pkgs; [
 
+      # haskell-language-server
+      haskellPackages.hoogle
+
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
 
       ledger-live-desktop
 
-      teams-for-linux
+      # teams-for-linux
 
       brave
 
@@ -83,8 +86,6 @@
 
       coreutils
       gcc
-
-      qbittorrent
 
       brave
 
