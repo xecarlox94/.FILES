@@ -75,8 +75,7 @@ in
       };
 
       # TODO: CHECK THIS
-      bacon.enable = true;
-
+      # bacon.enable = true;
       rustaceanvim = {
         enable = true;
         settings = {
@@ -147,6 +146,7 @@ in
             default_settings = {
               haskell = {
                 formattingProvider = "fourmolu";
+                # plugin.stan.globalOn = true;
               };
             };
           };
@@ -229,6 +229,27 @@ in
         };
       };
 
+      snacks = {
+        enable = true;
+        settings = {
+          # dashboard.enabled = true;
+          bigfile.enabled = true;
+          picker.enabled = true;
+          select.enabled = true;
+          input.enabled = true;
+          quickfile.enabled = false;
+          notifier = {
+            enabled = true;
+            timeout = 3000;
+          };
+          statuscolumn.enabled = false;
+          words = {
+            enabled = true;
+            debounce = 100;
+          };
+        };
+      };
+
       neo-tree = {
         enable = true;
 
@@ -244,11 +265,8 @@ in
 
       # TODO: extend keywords
       todo-comments.enable = true;
-      comment.enable = true;
       which-key.enable = true;
 
-      # TODO: check why I need these plugins; configure them
-      indent-blankline.enable = true;
       gitsigns.enable = true;
       lualine.enable = true;
       illuminate.enable = true;
@@ -308,7 +326,6 @@ in
         enable = true;
 
         inlayHints = true;
-        # inlayHints.enable = true;
 
         keymaps = {
           diagnostic = {
@@ -335,7 +352,27 @@ in
           nil_ls.enable = true;
           nixd.enable = true;
 
-          marksman.enable = true;
+          markdown_oxide.enable = true;
+
+          bashls.enable = true;
+          dhall_lsp_server.enable = true;
+
+          gleam.enable = true;
+
+          nushell.enable = true;
+
+          pyright.enable = true;
+
+          rescriptls.enable = true;
+
+          html.enable = true;
+          jsonls.enable = true;
+
+          sqls.enable = true;
+
+          luau_lsp.enable = true;
+
+          postgres_lsp.enable = true;
         };
 
       };
@@ -357,6 +394,11 @@ in
       vim.opt.colorcolumn = "80"
       vim.opt.cursorline = true
       vim.opt.wrap = true
+
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = true,
+      })
 
 
       if vim.env.IN_NIX_SHELL then
