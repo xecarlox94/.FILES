@@ -30,18 +30,28 @@ in
       # TODO: IMPORTANT remake old keybindings to VIM and Neovim
       {
         mode = [ "n" ];
-        key = vimUtils.mkLKeyBind "cn";
-        action = vimUtils.mkCmdAction "e ~/.config/home-manager/home/nixvim.nix";
-        options = {
-          desc = "edit nixvim configuration";
-        };
-      }
-      {
-        mode = [ "n" ];
         key = vimUtils.mkLKeyBind "tl";
         action = vimUtils.mkCmdAction "TodoTrouble";
         options = {
           desc = "List Project Issues";
+        };
+      }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        key = vimUtils.mkLKeyBind "x";
+        action.__raw = ''
+          function()
+            require("conform").format({
+              async = true;
+              lsp_fallback = true;
+            })
+          end
+        '';
+        options = {
+          desc = "Format file or range";
         };
       }
     ];
@@ -50,25 +60,49 @@ in
 
     plugins = {
 
-      # TODO: CHECK THIS
-      bacon.enable = true;
-
       conform-nvim = {
         enable = true;
-        settings = {formatters_by_ft.rust = ["rustfmt"];};
+        settings = {
+          formatters_by_ft = {
+            bash = [ "shellcheck" ];
+            rust = [ "rustfmt" ];
+            haskell = [ "fourmolu" ];
+            nix = [ "nixfmt" ];
+            "*" = [ "codespell" ];
+            "_" = [ "trim_whitespace" ];
+          };
+        };
       };
-      # dap-lldb.enable = true;
+
+      # TODO: CHECK THIS
+      # bacon.enable = true;
       rustaceanvim = {
         enable = true;
         settings = {
           tools.enable_clippy = true;
           server = {
             default_settings = {
-              inlayHints = {lifetimeElisionHints = {enable = "always";};};
+              inlayHints = {
+                lifetimeElisionHints = {
+                  enable = "always";
+                };
+              };
               rust-analyzer = {
-                cargo = {allFeatures = true;};
-                check = {command = "clippy";};
-                files = {excludeDirs = ["target" ".git" ".cargo" ".github" ".direnv"];};
+                cargo = {
+                  allFeatures = true;
+                };
+                check = {
+                  command = "clippy";
+                };
+                files = {
+                  excludeDirs = [
+                    "target"
+                    ".git"
+                    ".cargo"
+                    ".github"
+                    ".direnv"
+                  ];
+                };
               };
             };
           };
@@ -80,9 +114,39 @@ in
         enableTelescope = true;
         settings = {
           hls = {
+            on_attach.__raw = ''
+              function(client, bufnr)
+
+                local ht = require('haskell-tools')
+
+                local opts = function(desc)
+                  return { 
+                    buffer=bufnr, 
+                    noremap=true, 
+                    silent=true,
+                    desc="Haskell: " .. desc
+                  }
+                end
+
+
+                vim.keymap.set('n', '<leader>hr', ht.repl.toggle, opts("Toggle Repl"))
+                -- vim.keymap.set('n', '<leader>hq', ht.repl.quit, opts(""))
+
+                vim.keymap.set('n', '<leader>ha', ht.lsp.buf_eval_all, opts("Evaluate buffer expressions"))
+                vim.keymap.set('n', '<leader>hl', vim.lsp.codelens.run, opts("Code lens refresh"))
+
+                vim.keymap.set('n', '<leader>hi', function()
+                  ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+
+                end, opts("GHCI in current buffer"))
+
+
+              end
+            '';
             default_settings = {
               haskell = {
                 formattingProvider = "fourmolu";
+                # plugin.stan.globalOn = true;
               };
             };
           };
@@ -135,19 +199,19 @@ in
           let
             listPairs = [
               {
-                k = "ff";
+                k = "tf";
                 v = "find_files";
               }
               {
-                k = "fg";
+                k = "tg";
                 v = "live_grep";
               }
               {
-                k = "fb";
+                k = "tb";
                 v = "buffers";
               }
               {
-                k = "fh";
+                k = "th";
                 v = "help_tags";
               }
             ];
@@ -162,6 +226,27 @@ in
         extensions = {
           fzf-native.enable = true;
           file-browser.enable = true;
+        };
+      };
+
+      snacks = {
+        enable = true;
+        settings = {
+          # dashboard.enabled = true;
+          bigfile.enabled = true;
+          picker.enabled = true;
+          select.enabled = true;
+          input.enabled = true;
+          quickfile.enabled = false;
+          notifier = {
+            enabled = true;
+            timeout = 3000;
+          };
+          statuscolumn.enabled = false;
+          words = {
+            enabled = true;
+            debounce = 100;
+          };
         };
       };
 
@@ -180,11 +265,8 @@ in
 
       # TODO: extend keywords
       todo-comments.enable = true;
-      comment.enable = true;
       which-key.enable = true;
 
-      # TODO: check why I need these plugins; configure them
-      indent-blankline.enable = true;
       gitsigns.enable = true;
       lualine.enable = true;
       illuminate.enable = true;
@@ -244,7 +326,6 @@ in
         enable = true;
 
         inlayHints = true;
-        # inlayHints.enable = true;
 
         keymaps = {
           diagnostic = {
@@ -271,9 +352,27 @@ in
           nil_ls.enable = true;
           nixd.enable = true;
 
+          markdown_oxide.enable = true;
+
+          bashls.enable = true;
+          dhall_lsp_server.enable = true;
+
+          gleam.enable = true;
+
+          nushell.enable = true;
+
+          pyright.enable = true;
+
+          rescriptls.enable = true;
+
           html.enable = true;
           jsonls.enable = true;
-          marksman.enable = true;
+
+          sqls.enable = true;
+
+          luau_lsp.enable = true;
+
+          postgres_lsp.enable = true;
         };
 
       };
@@ -296,6 +395,11 @@ in
       vim.opt.cursorline = true
       vim.opt.wrap = true
 
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = true,
+      })
+
 
       if vim.env.IN_NIX_SHELL then
         vim.opt.shell = "bash"
@@ -303,7 +407,6 @@ in
       end
 
     '';
-
 
     extraConfigVim = ''
       "-------------------- SETTINGS

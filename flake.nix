@@ -181,6 +181,7 @@ Add following programs:
 
               inputs.stylix.homeModules.stylix
 
+
               ./home
             ];
           };

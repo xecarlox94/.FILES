@@ -69,6 +69,10 @@
 
     packages = with pkgs; [
 
+      # haskell-language-server
+      haskellPackages.hoogle
+      haskellPackages.fast-tags
+
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
