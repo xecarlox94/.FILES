@@ -75,7 +75,7 @@
 
       ledger-live-desktop
 
-      teams-for-linux
+      # teams-for-linux
 
       brave
 
@@ -84,7 +84,7 @@
       coreutils
       gcc
 
-      qbittorrent
+      # qbittorrent
 
       brave
 
