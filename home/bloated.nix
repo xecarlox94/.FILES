@@ -64,8 +64,12 @@
 
     enableNixpkgsReleaseCheck = false;
 
-    shell.enableNushellIntegration = true;
-    shell.enableZshIntegration = true;
+    preferXdgDirectories = true;
+
+    shell = {
+      enableNushellIntegration = true;
+      enableZshIntegration = true;
+    };
 
     packages = with pkgs; [
 
@@ -152,6 +156,7 @@
       XDG_PUBLICSHARE_DIR = "$HOME/Public";
 
       NIX_STATE_HOME_DIR = "$XDG_STATE_HOME/nix";
+
       NIX_CONFIG = "experimental-features = nix-command flakes";
 
       EDITOR = "vim";
