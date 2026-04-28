@@ -136,8 +136,8 @@ in
                 vim.keymap.set('n', '<leader>hl', vim.lsp.codelens.run, opts("Code lens refresh"))
 
                 vim.keymap.set('n', '<leader>hi', function()
+                  -- nvim_get_current_buf() 
                   ht.repl.toggle(vim.api.nvim_buf_get_name(0))
-
                 end, opts("GHCI in current buffer"))
 
 
@@ -199,19 +199,19 @@ in
           let
             listPairs = [
               {
-                k = "tf";
+                k = "sf";
                 v = "find_files";
               }
               {
-                k = "tg";
+                k = "sg";
                 v = "live_grep";
               }
               {
-                k = "tb";
+                k = "sb";
                 v = "buffers";
               }
               {
-                k = "th";
+                k = "sh";
                 v = "help_tags";
               }
             ];
