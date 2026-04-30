@@ -2,7 +2,7 @@
 {
 
   # move this to the override function for the system configuration
-  # 
+  #
   # FIX: how to setup monitors
   # https://mynixos.com/nixpkgs/option/services.xserver.xrandrHeads
 
@@ -21,14 +21,12 @@
       terminal = 0.9;
     };
 
-
     targets = {
       nixvim.enable = false;
       emacs.enable = false;
       vscode.enable = false;
       firefox.profileNames = [ "default" ];
     };
-
 
     fonts = {
 
@@ -209,6 +207,15 @@
       enable = true;
     };
 
+    direnv = {
+      enable = true;
+
+      enableBashIntegration = true;
+      enableNushellIntegration = true;
+      enableZshIntegration = true;
+
+      nix-direnv.enable = true;
+    };
 
     # FIX: configure this module separately
     alacritty = {
