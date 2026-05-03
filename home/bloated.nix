@@ -242,6 +242,7 @@
           vscodevim.vim
           leanprover.lean4
           tamasfe.even-better-toml
+          rocq-prover.vsrocq
         ];
         userSettings = {
           vim = {
