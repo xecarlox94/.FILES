@@ -146,7 +146,15 @@ in
             default_settings = {
               haskell = {
                 formattingProvider = "fourmolu";
-                # plugin.stan.globalOn = true;
+                plugin = {
+                  # stan = {
+                  # globalOn = true;
+                  # config = {
+                  # analysis.stan.configPath = "./.stan.toml";
+                  # checks.exclude = [ "STAN-0206" ];
+                  # };
+                  # };
+                };
               };
             };
           };
