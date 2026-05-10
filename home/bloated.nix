@@ -114,16 +114,31 @@
       # gurk-rs
 
       (pkgs.writeShellScriptBin "commit" ''
-        if [ $# -ge 1 ]
-        then
-            git fetch --all &&\
-            git status &&\
-            git add . &&\
-            git commit -m "$1" &&\
-            git push origin
-          else
-            echo "ERROR"
-        fi
+
+        clear
+
+        git fetch --all
+        git diff --cached
+        git status
+
+        while true; do 
+          printf "\n\nDo you wish to add files, commit and push to remote? (Yy/Nn)\n" 
+          read YN
+          case $YN in
+            [Yy]* ) 
+              printf "\n\nWhats the commit message? (\"n\" to cancel)\n";
+              read COMMIT_MSG;
+              git add . &&\
+              git commit -m "$COMMIT_MSG" &&\
+              git push origin;;
+
+            [Nn]* ) 
+              echo "Cancelling commit and push action";
+              exit;;
+
+            * ) echo "Answer yes or no.";;
+          esac
+        done
       '')
 
       (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
