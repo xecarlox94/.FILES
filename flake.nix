@@ -1,3 +1,4 @@
+# add sops service, add 1password provider
 
 # great start
 # https://github.com/jackdbd/nix-config

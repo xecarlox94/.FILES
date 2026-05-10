@@ -9,5 +9,6 @@
     ./nix.nix
     ./ledger.nix
     ./x11.nix
+    ./card_reader.nix
   ];
 }
