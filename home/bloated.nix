@@ -11,6 +11,7 @@
     enable = true;
 
     image = ../assets/wallpapers/iceland.jpg;
+    imageScalingMode = "fill";
 
     polarity = "dark";
 
@@ -114,16 +115,32 @@
       # gurk-rs
 
       (pkgs.writeShellScriptBin "commit" ''
-        if [ $# -ge 1 ]
-        then
-            git fetch --all &&\
-            git status &&\
-            git add . &&\
-            git commit -m "$1" &&\
-            git push origin
-          else
-            echo "ERROR"
-        fi
+
+        clear
+
+        git fetch --all
+        git diff --cached
+        git status
+
+        while true; do 
+          printf "\nDo you wish to add files, commit and push to remote? (Yy/Nn)\n" 
+          read YN
+          case $YN in
+            [Yy]* ) 
+              printf "\nWhats the commit message? (\"n\" to cancel)\n";
+              read COMMIT_MSG;
+              git add . &&\
+              git commit -m "$COMMIT_MSG" &&\
+              git push origin;
+              exit 0;;
+
+            [Nn]* ) 
+              echo "Cancelling commit and push action";
+              exit 1;;
+
+            * ) echo "Answer yes or no.";;
+          esac
+        done
       '')
 
       (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
@@ -134,7 +151,9 @@
           --output HDMI-2 --off \
           --output DP-3 --off \
           --output HDMI-3 --mode 1920x1080 --pos 1200x0 --rotate normal \
+
       '')
+      #${pkgs.feh}/bin/feh --bg-fill ${config.stylix.image}
     ];
 
     # TODO: output config factory to be input for Nix configuration
