@@ -127,7 +127,7 @@
           read YN
           case $YN in
             [Yy]* ) 
-              printf "\nWhats the commit message? (\"n\" to cancel)\n";
+              printf "\nWhats the commit message?\n";
               read COMMIT_MSG;
               git add . &&\
               git commit -m "$COMMIT_MSG" &&\
