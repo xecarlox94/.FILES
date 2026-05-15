@@ -10,7 +10,7 @@
   stylix = {
     enable = true;
 
-    image = ../assets/wallpapers/iceland.jpg;
+    image = ../assets/wallpapers/goats.jpg;
     imageScalingMode = "fill";
 
     polarity = "dark";
