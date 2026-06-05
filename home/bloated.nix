@@ -143,6 +143,26 @@
         done
       '')
 
+      (pkgs.writeShellScriptBin "flight_mode_on" ''
+        clear
+        rfkill block all
+
+        printf "\n\nResult:\n\n"
+        rfkill list
+      '')
+
+      (pkgs.writeShellScriptBin "flight_mode_off" ''
+        clear
+        rfkill unblock all
+
+        printf "\n\nResult:\n\n"
+        rfkill list
+      '')
+
+      (pkgs.writeShellScriptBin "flight_mode_check" ''
+        rfkill list
+      '')
+
       (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
         xrandr \
           --output DP-1 --off \
