@@ -76,6 +76,8 @@
       haskellPackages.hoogle
       haskellPackages.fast-tags
 
+      zathura
+
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
@@ -86,7 +88,7 @@
 
       brave
 
-      texliveBasic
+      texliveFull
 
       coreutils
       gcc
@@ -113,6 +115,7 @@
       # Signal, choose the best one
       # signal-desktop
       # gurk-rs
+      discord
 
       (pkgs.writeShellScriptBin "commit" ''
 
@@ -122,11 +125,11 @@
         git diff --cached
         git status
 
-        while true; do 
-          printf "\nDo you wish to add files, commit and push to remote? (Yy/Nn)\n" 
+        while true; do
+          printf "\nDo you wish to add files, commit and push to remote? (Yy/Nn)\n"
           read YN
           case $YN in
-            [Yy]* ) 
+            [Yy]* )
               printf "\nWhats the commit message?\n";
               read COMMIT_MSG;
               git add . &&\
@@ -134,7 +137,7 @@
               git push origin;
               exit 0;;
 
-            [Nn]* ) 
+            [Nn]* )
               echo "Cancelling commit and push action";
               exit 1;;
 
