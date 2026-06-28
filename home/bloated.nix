@@ -352,15 +352,6 @@
       # };
     };
 
-    zellij = {
-      enable = true;
-      settings = {
-        default_mode = "locked"; # FIX:
-      };
-      enableZshIntegration = true;
-      exitShellOnExit = true;
-    };
-
     # sioyek = {
     # config.startup_commands=[];
     # enable = true;
