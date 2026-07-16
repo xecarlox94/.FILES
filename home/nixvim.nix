@@ -242,6 +242,7 @@ in
         settings = {
           # dashboard.enabled = true;
           bigfile.enabled = true;
+          terminal.enabled = true;
           picker.enabled = true;
           select.enabled = true;
           input.enabled = true;
@@ -282,22 +283,6 @@ in
       trouble.enable = true;
 
       web-devicons.enable = true;
-
-      # TODO: add gitui keybinding
-      toggleterm = {
-        enable = true;
-        settings = {
-          direction = "float";
-          float_opts = {
-            border = "curved";
-            heigth = 30;
-            width = 90;
-          };
-          open_mapping = "[[<C-t>]]";
-          persist_mode = true;
-          persist_size = true;
-        };
-      };
 
       cmp-nvim-lsp.enable = true;
       cmp-path.enable = true;

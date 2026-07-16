@@ -93,6 +93,8 @@
       coreutils
       gcc
 
+      tree
+
       # qbittorrent
 
       brave
