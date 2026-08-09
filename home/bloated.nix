@@ -76,6 +76,8 @@
       haskellPackages.hoogle
       haskellPackages.fast-tags
 
+      zathura
+
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       noto-fonts
@@ -86,10 +88,12 @@
 
       brave
 
-      texliveBasic
+      texliveFull
 
       coreutils
       gcc
+
+      tree
 
       # qbittorrent
 
@@ -113,6 +117,7 @@
       # Signal, choose the best one
       # signal-desktop
       # gurk-rs
+      discord
 
       (pkgs.writeShellScriptBin "commit" ''
 
@@ -122,25 +127,45 @@
         git diff --cached
         git status
 
-        while true; do 
-          printf "\nDo you wish to add files, commit and push to remote? (Yy/Nn)\n" 
+        while true; do
+          printf "\nDo you wish to add files, commit and push to remote? (Yy/Nn)\n"
           read YN
           case $YN in
-            [Yy]* ) 
-              printf "\nWhats the commit message? (\"n\" to cancel)\n";
+            [Yy]* )
+              printf "\nWhats the commit message?\n";
               read COMMIT_MSG;
               git add . &&\
               git commit -m "$COMMIT_MSG" &&\
               git push origin;
               exit 0;;
 
-            [Nn]* ) 
+            [Nn]* )
               echo "Cancelling commit and push action";
               exit 1;;
 
             * ) echo "Answer yes or no.";;
           esac
         done
+      '')
+
+      (pkgs.writeShellScriptBin "flight_mode_on" ''
+        clear
+        rfkill block all
+
+        printf "\n\nResult:\n\n"
+        rfkill list
+      '')
+
+      (pkgs.writeShellScriptBin "flight_mode_off" ''
+        clear
+        rfkill unblock all
+
+        printf "\n\nResult:\n\n"
+        rfkill list
+      '')
+
+      (pkgs.writeShellScriptBin "flight_mode_check" ''
+        rfkill list
       '')
 
       (pkgs.writeShellScriptBin "thinkcenter_set_displays_old" ''
@@ -261,6 +286,7 @@
           vscodevim.vim
           leanprover.lean4
           tamasfe.even-better-toml
+          rocq-prover.vsrocq
         ];
         userSettings = {
           vim = {
@@ -326,15 +352,6 @@
       #     defaultBranch = "master";
       #   };
       # };
-    };
-
-    zellij = {
-      enable = true;
-      settings = {
-        default_mode = "locked"; # FIX:
-      };
-      enableZshIntegration = true;
-      exitShellOnExit = true;
     };
 
     # sioyek = {

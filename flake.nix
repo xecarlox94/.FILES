@@ -70,8 +70,6 @@ Modularisation
     Modularise OS/Hardware configuration
 
 
-add Kmonad to systems: rice it well
-
 Move to wayland:
   Walyland
   Waybar
@@ -83,19 +81,15 @@ Add desktop capabilities:
 
 Configuration:
   Fix floating terminal in Neovim
-  fix fonts
   configure nushell
-  Add transparency
-     to alacritty
-     To neovim
-     To zellij
+  Add transparency To neovim
   check stylix configs for:
     Firefox
-    Neovim
     Grub
-    add UseWalpaper option to DisplayManager
   Check if there are issues with NUR
     Need to install a few extensions
+
+add Kmonad to systems: rice it well
 
 I want a system wide notification system (Working in X11 or Wayland):
   I have heard of Dunst
