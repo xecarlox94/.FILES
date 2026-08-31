@@ -4,10 +4,6 @@ _:
   services = {
 
     displayManager = {
-      # gdm.enable = true;
-      # sddm.enable = true;
-      # sddm.wayland.enable = true;
-      # lightdm.enable = true;
       ly.enable = true;
     };
 

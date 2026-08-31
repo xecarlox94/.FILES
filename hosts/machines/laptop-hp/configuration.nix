@@ -37,10 +37,10 @@
   # };
 
 
-  programs.virt-manager.enable = true;
+  #programs.virt-manager.enable = true;
 
   # users.groups.libvirtd.members = ["xecarlox"];
-  virtualisation.libvirtd.enable = true;
+  #virtualisation.libvirtd.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -84,6 +84,9 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+  ];
 
   system.stateVersion = "24.11";
 }

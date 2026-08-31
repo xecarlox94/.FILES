@@ -36,6 +36,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       nixos-hardware,
@@ -117,7 +118,7 @@
       rPiMachines =
         let
           mkRpi3 = { machineName, machineConfiguration }: {
-            name = "rpi3-" ++ machineName;
+            name = "rpi3-" + machineName;
             value = nixpkgs.lib.nixosSystem {
               system = "aarch64-linux";
               modules = [
@@ -125,7 +126,6 @@
                 nixos-hardware.nixosModules.raspberry-pi-3
                 {
                   hardware.raspberry-pi.firmware.uboot.enable = true;
-
                   boot.supportedFilesystems.zfs = nixpkgs.lib.mkForce false;
                 }
                 machineConfiguration
@@ -133,8 +133,7 @@
             };
           };
         in
-        [
-          mkRpi3
+        map mkRpi3 [
           {
             machineName = "first";
             machineConfiguration = ./hosts/machines/rpi3/configuration.nix;
@@ -148,8 +147,10 @@
       nixosConfigurations = listToAttrs (concatLists [
         linuxDesktopMachines
         linuxServerMachines
-        # rPiMachines
+        rPiMachines
       ]);
+
+      images.rpi3-first = self.nixosConfigurations.rpi3-first.config.system.build.sdImage;
     };
 
 }
