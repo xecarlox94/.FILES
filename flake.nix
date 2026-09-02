@@ -121,6 +121,9 @@
             name = "rpi3-" + machineName;
             value = nixpkgs.lib.nixosSystem {
               system = "aarch64-linux";
+              specialArgs = inputs // {
+                hostName = "rpi3-" + machineName;
+              };
               modules = [
                 "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
                 nixos-hardware.nixosModules.raspberry-pi-3
@@ -142,6 +145,11 @@
 
       inherit (builtins) listToAttrs concatLists;
 
+      mainSystem = "x86_64-linux";
+      pkgs = import nixpkgs {
+        system = mainSystem;
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations = listToAttrs (concatLists [
@@ -151,9 +159,21 @@
       ]);
 
       images.rpi3-first = self.nixosConfigurations.rpi3-first.config.system.build.sdImage;
-    };
 
+      devShells.${mainSystem}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          cowsay
+          rpi-imager
+        ];
+        shellHook = ''
+          echo "running"
+          cowsay "Hii"
+        '';
+      };
+
+    };
 }
+
 # add sops service, add 1password provider
 
 # great start
